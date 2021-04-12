@@ -57,6 +57,7 @@
 
 ## intent:recommendation_type
 - [구현](algorithm_type) 문제 알려줘
+- [구현](algorithm_type) 문제 알려줄래?
 
 ## intent:recommendation_level
 - [기초](algorithm_level)문제 알려줘
@@ -64,9 +65,11 @@
 
 ## intent:recommendation_site
 - 추천 공부 사이트 있어?
+- 추천 공부 사이트 있니?
 
 ## intent:problem_type
 - [정렬](algorithm_type)문제 알려줘
+- [정렬](algorithm_type)문제 알려줄래?
 
 ## intent:problem_solve
 - 모르겠어
@@ -74,6 +77,7 @@
 
 ## intent:problem_site
 - 문제풀이 사이트 있어?
+- 문제풀이 사이트 있니?
 
 ## intent:algorithm_type
 - [최단거리](algorithm_type) 알고리즘 알려줘
@@ -82,24 +86,33 @@
 
 ## intent:algorithm_example
 - [정렬](algorithm_type) 예시 좀 알려줘
+- [정렬](algorithm_type) 예시 좀 알려줄래
 
 ## intent:algorithm_explain
 - [정렬](algorithm_type)이 뭐야?
+- [정렬](algorithm_type)이 뭐니?
 
 ## intent:base_explain
 - [정렬](algorithm_type) [조금](explain_type) 설명해줘
+- [정렬](algorithm_type) [조금](explain_type) 설명해줄래
 
 ## intent:detail_explain
 - [정렬](algorithm_type) [자세히](explain_type) 알려줘
+- [정렬](algorithm_type) [자세히](explain_type) 알려줄래
 
 ## intent:contest_type
 - [카카오](contest_name)대회 유형이 뭐야?
+- [카카오](contest_name)대회 유형이 뭐니?
 
 ## intent:contest_information
 - [카카오](contest_name)대회 정보 알려줘
+- [카카오](contest_name)대회 정보 알려줄래
 
 ## intent:contest_schedule
 - [카카오](contest_name)대회 일정 알려줘
+- [카카오](contest_name)대회 일정 알려줄래
 
 ## intent:contest_detail_information
 - [카카오](contest_name)대회 좀 자세히 알려줘
+- [카카오](contest_name)대회 좀 자세히 알려줄래
+
