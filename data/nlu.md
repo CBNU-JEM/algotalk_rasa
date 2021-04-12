@@ -79,7 +79,6 @@
 - [최단거리](algorithm_type) 알고리즘 알려줘
 - [정렬](algorithm_type) 알고리즘 알려줘
 - [스택](algorithm_type)이 뭐야?
-- [큐](algorithm_type)이 뭐야?
 
 ## intent:algorithm_example
 - [정렬](algorithm_type) 예시 좀 알려줘
