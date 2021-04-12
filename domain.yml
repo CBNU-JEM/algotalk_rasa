@@ -6,7 +6,31 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
-
+  - user_level
+  - recommendation_type
+  - recommendation_level
+  - recommendation_site
+  - problem_type
+  - problem_solve
+  - problem_site
+  - algorithm_type
+  - algorithm_example
+  - algorithm_explain
+  - base_explain
+  - detail_explain
+  - contest_type
+  - contest_information
+  - contest_schedule
+  - contest_detail_information
+  
+entitles:
+  - algorithm_type
+  - explain_type
+  - explain_level
+  - algorithm_level
+  - algorithm_type
+  - user_level
+  
 responses:
   utter_greet:
   - text: "안녕 반가워"
@@ -28,6 +52,9 @@ responses:
 
   utter_iamabot:
   - text: "나는 알고봇이라고해."
+  
+  utter_sort_algorithm:
+  - text: "정렬은 원소값을 오름차순이나 내림차순으로 수를 나열하는 알고리즘이야."
 
 session_config:
   session_expiration_time: 60
