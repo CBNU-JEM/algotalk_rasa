@@ -15,7 +15,7 @@ from rasa.nlu.constants import (
 )
 
 import MeCab
-import mecab_ko_dic
+#import mecab_ko_dic
 
 
 class KoreanTokenizer(Tokenizer, Component):
@@ -78,7 +78,8 @@ class KoreanTokenizer(Tokenizer, Component):
                 return [x[0] for x in r]
             return r
 
-        mecab_tagger = MeCab.Tagger(mecab_ko_dic.MECAB_ARGS)
+        #mecab_tagger = MeCab.Tagger(mecab_ko_dic.MECAB_ARGS)
+        mecab_tagger = MeCab.Tagger('-d /usr/local/lib/mecab/dic/mecab-ko-dic')
         a = mecab_tagger.parse(message.get(attribute))
         t = a.split('\n')[:-2]
 
