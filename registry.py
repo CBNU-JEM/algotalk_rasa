@@ -20,7 +20,7 @@ from rasa.nlu.extractors.entity_synonyms import EntitySynonymMapper
 from rasa.nlu.extractors.mitie_entity_extractor import MitieEntityExtractor
 from rasa.nlu.extractors.spacy_entity_extractor import SpacyEntityExtractor
 from rasa.nlu.extractors.regex_entity_extractor import RegexEntityExtractor
-from rasa.nlu.extractors.crf_entity_extractor_korean import CRFEntityExtractorKorean
+#from rasa.nlu.extractors.crf_entity_extractor_korean import CRFEntityExtractorKorean
 from rasa.nlu.featurizers.sparse_featurizer.lexical_syntactic_featurizer import (
     LexicalSyntacticFeaturizer,
 )
@@ -39,7 +39,7 @@ from rasa.nlu.tokenizers.jieba_tokenizer import JiebaTokenizer
 from rasa.nlu.tokenizers.mitie_tokenizer import MitieTokenizer
 from rasa.nlu.tokenizers.spacy_tokenizer import SpacyTokenizer
 from rasa.nlu.tokenizers.whitespace_tokenizer import WhitespaceTokenizer
-from rasa.nlu.tokenizers.korean_tokenizer import KoreanTokenizer
+#from rasa.nlu.tokenizers.korean_tokenizer import KoreanTokenizer
 from rasa.nlu.tokenizers.lm_tokenizer import LanguageModelTokenizer
 from rasa.nlu.utils.mitie_utils import MitieNLP
 from rasa.nlu.utils.spacy_utils import SpacyNLP
