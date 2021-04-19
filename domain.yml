@@ -54,6 +54,12 @@ responses:
   utter_sort_algorithm:
   - text: "정렬은 원소값을 오름차순이나 내림차순으로 수를 나열하는 알고리즘이야."
 
+  utter_SD_algorithm:
+  - text: "최단거 원소값을 오름차순이나 내림차순으로 수를 나열하는 알고리즘이야."
+
+  utter_stack_algorithm:
+  - text: "스택 원소값을 오름차순이나 내림차순으로 수를 나열하는 알고리즘이야."
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
