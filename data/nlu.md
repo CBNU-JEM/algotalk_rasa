@@ -79,11 +79,6 @@
 - 문제풀이 사이트 있어?
 - 문제풀이 사이트 있니?
 
-## intent:algorithm_type
-- [최단거리](algorithm_type) 알고리즘 알려줘
-- [정렬](algorithm_type) 알고리즘 알려줘
-- [스택](algorithm_type)이 뭐야?
-
 ## intent:algorithm_example
 - [정렬](algorithm_type) 예시 좀 알려줘
 - [정렬](algorithm_type) 예시 좀 알려줄래
@@ -91,6 +86,10 @@
 ## intent:algorithm_explain
 - [정렬](algorithm_type)이 뭐야?
 - [정렬](algorithm_type)이 뭐니?
+- [최단거리](algorithm_type) 알고리즘 알려줘
+- [정렬](algorithm_type) 알고리즘 알려줘
+- [스택](algorithm_type)이 뭐야?
+
 
 ## intent:base_explain
 - [정렬](algorithm_type) [조금](explain_type) 설명해줘
