@@ -30,19 +30,9 @@
 * bot_challenge
   - utter_iamabot
 
-## algorithm explain 1
-* algorithm_type{"algorithm_type": "정렬"}
-  - utter_sort_algorithm
-
-
-## algorithm explain 2
-* algorithm_type{"algorithm_type": "최단거리"}
-  - utter_SD_algorithm
-
-
-## algorithm explain 3
-* algorithm_type{"algorithm_type": "스택"}
-  - utter_stack_algorithm
+## algorithm explain
+* algorithm_type
+  - action_algorithm_explain
 
 ## contest
 

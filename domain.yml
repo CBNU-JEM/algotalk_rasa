@@ -22,13 +22,15 @@ intents:
   - contest_information
   - contest_schedule
   - contest_detail_information
-  
+
+actions:
+  - action_algorithm_explain
+
 entitles:
   - algorithm_type
   - explain_type
   - explain_level
   - algorithm_level
-  - algorithm_type
   - user_level
   
 responses:
