@@ -31,7 +31,7 @@
   - utter_iamabot
 
 ## algorithm explain
-* algorithm_type
+* algorithm_explain
   - action_algorithm_explain
 
 ## contest
