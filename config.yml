@@ -4,7 +4,6 @@ language: xx
 pipeline:
   - name: KoreanTokenizer
   - name: RegexFeaturizer
-  - name: CRFEntityExtractorKorean
   - name: EntitySynonymMapper
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
