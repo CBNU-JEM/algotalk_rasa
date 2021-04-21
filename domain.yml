@@ -13,7 +13,6 @@ intents:
   - problem_type
   - problem_solve
   - problem_site
-  - algorithm_type
   - algorithm_example
   - algorithm_explain
   - base_explain
@@ -28,8 +27,6 @@ actions:
 
 entitles:
   - algorithm_type
-  - explain_type
-  - explain_level
   - algorithm_level
   - user_level
   
@@ -52,15 +49,6 @@ responses:
 
   utter_iamabot:
   - text: "나는 알고봇이라고해."
-  
-  utter_sort_algorithm:
-  - text: "정렬은 원소값을 오름차순이나 내림차순으로 수를 나열하는 알고리즘이야."
-
-  utter_SD_algorithm:
-  - text: "최단거리 알고리즘은 네트워크에서 하나의 시작 정점으로부터 모든 다른 정점까지의 최단 경로를 찾는 알고리즘이야."
-
-  utter_stack_algorithm:
-  - text: "스택은 스택은 마지막에 들어온 것이 먼저 나가는 LIFO(Last In First Out) 구조를 가진 자료 구조야"
 
 session_config:
   session_expiration_time: 60

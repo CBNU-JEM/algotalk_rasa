@@ -79,26 +79,25 @@
 - 문제풀이 사이트 있어?
 - 문제풀이 사이트 있니?
 
-## intent:algorithm_type
+## intent:algorithm_explain
 - [최단거리](algorithm_type) 알고리즘 알려줘
 - [정렬](algorithm_type) 알고리즘 알려줘
 - [스택](algorithm_type)이 뭐야?
+- [정렬](algorithm_type)이 뭐야
+- [정렬](algorithm_type)이 뭐니?
 
 ## intent:algorithm_example
 - [정렬](algorithm_type) 예시 좀 알려줘
 - [정렬](algorithm_type) 예시 좀 알려줄래
 
-## intent:algorithm_explain
-- [정렬](algorithm_type)이 뭐야?
-- [정렬](algorithm_type)이 뭐니?
-
 ## intent:base_explain
-- [정렬](algorithm_type) [조금](explain_type) 설명해줘
-- [정렬](algorithm_type) [조금](explain_type) 설명해줄래
+- [정렬](algorithm_type) 조금 설명해줘
+- [정렬](algorithm_type) 조금 설명해줄래
+- [정렬](algorithm_type) 기초 좀 설명해줄래
 
 ## intent:detail_explain
-- [정렬](algorithm_type) [자세히](explain_type) 알려줘
-- [정렬](algorithm_type) [자세히](explain_type) 알려줄래
+- [정렬](algorithm_type) 자세히 알려줘
+- [정렬](algorithm_type) 자세히 알려줄래
 
 ## intent:contest_type
 - [카카오](contest_name)대회 유형이 뭐야?
