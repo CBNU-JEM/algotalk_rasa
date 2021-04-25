@@ -90,19 +90,19 @@ db.execute_query('''CREATE TABLE PROBLEM (
                     URI VARCHAR(200)
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8
                     ''')
-db.execute_query('''create table CONTEST (
-                    contest_id int not null primary key,
+db.execute_query('''CREATE TABLE CONTEST (
+                    CONTEST_ID int not null primary key,
                     NAME VARCHAR(20),
-                    date varchar(20),
-                    reception_period varchar(30),
-                    content varchar(500),
-                    source varchar(200),
-                    uri varchar(200)
+                    DATE varchar(20),
+                    RECEPTION_PERIOD varchar(30),
+                    CONTENT varchar(500),
+                    SOURCE varchar(200),
+                    URI varchar(200)
                     )''')
-db.execute_query('''create table ALGORITHM_CLASSIFICATION (
-                    algorithm_id int not null,
-                    problem_id int not null,
-                    PRIMARY KEY (algorithm_id, problem_id),
+db.execute_query('''CREATE TABLE ALGORITHM_CLASSIFICATION (
+                    ALGORITHM_ID int not null,
+                    PROBLEM_ID int not null,
+                    PRIMARY KEY (ALGORITHM_ID, PROBLEM_ID),
                     CONSTRAINT AC_ALGORITHM_FOREIGN FOREIGN KEY (ALGORITHM_ID) 
                     REFERENCES ALGORITHM (ALGORITHM_ID)
                     ON DELETE CASCADE
@@ -112,10 +112,10 @@ db.execute_query('''create table ALGORITHM_CLASSIFICATION (
                     ON DELETE CASCADE
                     ON UPDATE CASCADE
                     )''')
-db.execute_query('''create table CONTEST_PROBLEM (
-                    contest_id int not null,
-                    problem_id int not null,
-                    PRIMARY KEY (contest_id, problem_id),
+db.execute_query('''CREATE TABLE CONTEST_PROBLEM (
+                    CONTEST_ID int not null,
+                    PROBLEM_ID int not null,
+                    PRIMARY KEY (CONTEST_ID, PROBLEM_ID),
                     CONSTRAINT CP_CONTEST_FOREIGN FOREIGN KEY (CONTEST_ID) 
                     REFERENCES CONTEST (CONTEST_ID)
                     ON DELETE CASCADE

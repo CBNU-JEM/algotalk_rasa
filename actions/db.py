@@ -82,7 +82,7 @@ def execute_query(q):
 
 
 def create_algorithm(part_list):
-    q = 'insert into algorithm values '
+    q = 'INSERT INTO  ALGORITHM values '
     for part in part_list:
         q += f', (\'{part}\')'
     q = q.replace(', ', '', 1)
@@ -90,11 +90,11 @@ def create_algorithm(part_list):
 
 
 def delete_algorithm(part):
-    q = f'delete from algorithm where part=\'{part}\''
+    q = f'DELETE FROM ALGORITHM WHERE part=\'{part}\''
     execute_query(q)
 
 def get_algorithm_by_name(name):
-    q = f'select * from algorithm where name like \'%{name}%\''
+    q = f'SELECT * FROM ALGORITHM WHERE name LIKE \'%{name}%\''
     rows = execute_query(q)
     algorithms = []
     for row in rows:
@@ -102,7 +102,7 @@ def get_algorithm_by_name(name):
     return algorithms
 
 def create_problem(part_list):
-    q = 'insert into problem values '
+    q = 'INSERT INTO PROBLEM VALUES '
     for part in part_list:
         q += f', (\'{part}\')'
     q = q.replace(', ', '', 1)
@@ -110,12 +110,12 @@ def create_problem(part_list):
 
 
 def delete_problem(part):
-    q = f'delete from problem where part=\'{part}\''
+    q = f'DELETE FROM PROBLEM WHERE part=\'{part}\''
     execute_query(q)
 
 
 def create_contest(part_list):
-    q = 'insert into contest values '
+    q = 'INSERT INTO CONTEST VALUES '
     for part in part_list:
         q += f', (\'{part}\')'
     q = q.replace(', ', '', 1)
@@ -123,46 +123,46 @@ def create_contest(part_list):
 
 
 def delete_contest(part):
-    q = f'delete from contest where part=\'{part}\''
+    q = f'DELETE FROM CONTEST WHERE part=\'{part}\''
     execute_query(q)
 
 
 def create_algorithm_classification(problem_id, algorithm_id):
-    q = f'insert into algorithm_classification values problem_id={problem_id},algorithm_id{algorithm_id}'
+    q = f'INSERT INTO ALGORITHM_CLASSIFICATION VALUES problem_id={problem_id},algorithm_id{algorithm_id}'
     execute_query(q)
 
 
 def delete_algorithm_classification(problem_id, algorithm_id):
-    q = f'delete from algorithm_classification where problem_id=\'{problem_id}\' and algorithm_id=\'{algorithm_id}\''
+    q = f'DELETE FROM ALGORITHM_CLASSIFICATION WHERE problem_id=\'{problem_id}\' AND algorithm_id=\'{algorithm_id}\''
     execute_query(q)
 
 
 def create_contest_problem(problem_id, contest_id):
-    q = f'insert into contest_problem values problem_id={problem_id},contest_id{contest_id}'
+    q = f'INSERT INTO CONTEST_PROBLEM VALUES problem_id={problem_id},contest_id{contest_id}'
     execute_query(q)
 
 
 def delete_contest_problem(problem_id, contest_id):
-    q = f'delete from contest_problem where problem_id=\'{problem_id}\' and contest_id=\'{contest_id}\''
+    q = f'DELETE FROM CONTEST_PROBLEM WHERE problem_id=\'{problem_id}\' AND contest_id=\'{contest_id}\''
     execute_query(q)
 
 
 def update_algorithm(name, brief_explain, detail_explain, level, example_code, uri):
-    q = f'update algorithm set name={name}, brief_explain={brief_explain},detail_explain={detail_explain},' \
+    q = f'UPDATE ALGORITHM SET name={name}, brief_explain={brief_explain},detail_explain={detail_explain},' \
         f'level={level},example_code={example_code},uri={uri}'
     q = q.replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
 
 def update_problem(name, level, content, input, output, source, algorithm_classification, uri):
-    q = f'update problem set name={name}, level={level},content={content},input={input}' \
+    q = f'UPDATE PROBLEM SET name={name}, level={level},content={content},input={input}' \
         f',output={output},source={source},algorithm_classification={algorithm_classification}.uri={uri}'
     q = q.replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
 
 def update_contest(name, date, reception_period, content, source, uri):
-    q = f'update contest set name={name}, date={date},reception_period={reception_period},content={content}' \
+    q = f'UPDATE CONTEST SET name={name}, date={date},reception_period={reception_period},content={content}' \
         f',source={source},uri={uri}'
     q = q.replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
