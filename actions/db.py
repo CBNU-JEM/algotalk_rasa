@@ -83,9 +83,10 @@ def execute_query(q):
 
 def create_algorithm(algorithm_list):
     q = 'INSERT INTO  ALGORITHM (NAME, BRIEF_EXPLAIN, DETAIL_EXPLAIN, EXAMPLE_CODE, LEVEL, PARENT) VALUES '
+    tmp_query = ""
     for algorithm in algorithm_list:
-        q += f', (\'{algorithm.name}\', \'{algorithm.brief_explain}\', \'{algorithm.detail_explain}\', \'{algorithm.example_code}\', \'{algorithm.level}\', {algorithm.parent})'
-    q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
+        tmp_query += f', (\'{algorithm.name}\', \'{algorithm.brief_explain}\', \'{algorithm.detail_explain}\', \'{algorithm.example_code}\', \'{algorithm.level}\', {algorithm.parent})'
+    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
 
@@ -105,9 +106,10 @@ def get_algorithm_by_name(name):
 
 def create_problem(problem_list):
     q = 'INSERT INTO PROBLEM (NAME, LEVEL, CONTENT, INPUT, OUTPUT, SOURCE, URI) VALUES '
+    tmp_query = ""
     for problem in problem_list:
-        q += f', (\'{problem.name}\', \'{problem.level}\', \'{problem.content}\', \'{problem.input}\', \'{problem.output}\', \'{problem.source}\', \'{problem.uri}\')'
-    q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
+        tmp_query += f', (\'{problem.name}\', \'{problem.level}\', \'{problem.content}\', \'{problem.input}\', \'{problem.output}\', \'{problem.source}\', \'{problem.uri}\')'
+    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
 
@@ -118,9 +120,10 @@ def delete_problem(part):
 
 def create_contest(contest_list):
     q = 'INSERT INTO CONTEST (NAME, DATE, RECEPTION_PERIOD, CONTENT, SOURCE, URI) VALUES '
+    tmp_query = ""
     for contest in contest_list:
-        q += f', (\'{contest.name}\', \'{contest.date}\', \'{contest.reception_period}\', \'{contest.content}\', \'{contest.source}\', \'{contest.uri}\')'
-    q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
+        tmp_query += f', (\'{contest.name}\', \'{contest.date}\', \'{contest.reception_period}\', \'{contest.content}\', \'{contest.source}\', \'{contest.uri}\')'
+    q = tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
 
