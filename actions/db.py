@@ -81,13 +81,12 @@ def execute_query(q):
     return rows
 
 
-def create_algorithm(part_list):
-    q = 'INSERT INTO  ALGORITHM values '
-    for part in part_list:
-        q += f', (\'{part}\')'
-    q = q.replace(', ', '', 1)
+def create_algorithm(algorithm_list):
+    q = 'INSERT INTO  ALGORITHM VALUES '
+    for algorithm in algorithm_list:
+        q += f', (\'{algorithm.name}\', \'{algorithm.brief_explain}\', \'{algorithm.detail_explain}\', \'{algorithm.example_code}\', \'{algorithm.level}\', \'{algorithm.parent}\')'
+    q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
-
 
 def delete_algorithm(part):
     q = f'DELETE FROM ALGORITHM WHERE part=\'{part}\''
@@ -101,11 +100,11 @@ def get_algorithm_by_name(name):
         algorithms.append(Algorithm(row[1], row[2], row[3], row[4], row[5]))
     return algorithms
 
-def create_problem(part_list):
+def create_problem(problem_list):
     q = 'INSERT INTO PROBLEM VALUES '
-    for part in part_list:
-        q += f', (\'{part}\')'
-    q = q.replace(', ', '', 1)
+    for problem in problem_list:
+        q += f', (\'{problem.name}\', \'{problem.level}\', \'{problem.content}\', \'{problem.input}\', \'{problem.output}\', \'{problem.source}\', \'{problem.uri}\')'
+    q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
 
@@ -114,11 +113,11 @@ def delete_problem(part):
     execute_query(q)
 
 
-def create_contest(part_list):
+def create_contest(contest_list):
     q = 'INSERT INTO CONTEST VALUES '
-    for part in part_list:
-        q += f', (\'{part}\')'
-    q = q.replace(', ', '', 1)
+    for contest in contest_list:
+        q += f', (\'{contest.name}\', \'{contest.date}\', \'{contest.reception_period}\', \'{contest.content}\', \'{contest.source}\', \'{contest.uri}\')'
+    q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
 

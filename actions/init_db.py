@@ -1,4 +1,4 @@
-from actions import db
+import db
 
 algorithm_list = [db.Algorithm('정렬 알고리즘', '자료를 특정 목적에 맞는 순서로 재배열 하는 것',
                                '정렬 알고리즘은 수많은 자료를 특정 목적에 맞게 순서있게 재배치하는 것으로 삽입/선택/버블/병합/큇/버블/힙 정렬 등이 있습니다.',
