@@ -82,26 +82,29 @@ def execute_query(q):
 
 
 def create_algorithm(algorithm_list):
-    q = 'INSERT INTO  ALGORITHM VALUES '
+    q = 'INSERT INTO  ALGORITHM (NAME, BRIEF_EXPLAIN, DETAIL_EXPLAIN, EXAMPLE_CODE, LEVEL, PARENT) VALUES '
     for algorithm in algorithm_list:
-        q += f', (\'{algorithm.name}\', \'{algorithm.brief_explain}\', \'{algorithm.detail_explain}\', \'{algorithm.example_code}\', \'{algorithm.level}\', \'{algorithm.parent}\')'
+        q += f', (\'{algorithm.name}\', \'{algorithm.brief_explain}\', \'{algorithm.detail_explain}\', \'{algorithm.example_code}\', \'{algorithm.level}\', {algorithm.parent})'
     q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
+
 
 def delete_algorithm(part):
     q = f'DELETE FROM ALGORITHM WHERE part=\'{part}\''
     execute_query(q)
 
+
 def get_algorithm_by_name(name):
-    q = f'SELECT * FROM ALGORITHM WHERE name LIKE \'%{name}%\''
+    q = f'SELECT * FROM ALGORITHM WHERE NAME LIKE \'%{name}%\''
     rows = execute_query(q)
     algorithms = []
     for row in rows:
         algorithms.append(Algorithm(row[1], row[2], row[3], row[4], row[5]))
     return algorithms
 
+
 def create_problem(problem_list):
-    q = 'INSERT INTO PROBLEM VALUES '
+    q = 'INSERT INTO PROBLEM (NAME, LEVEL, CONTENT, INPUT, OUTPUT, SOURCE, URI) VALUES '
     for problem in problem_list:
         q += f', (\'{problem.name}\', \'{problem.level}\', \'{problem.content}\', \'{problem.input}\', \'{problem.output}\', \'{problem.source}\', \'{problem.uri}\')'
     q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
@@ -114,7 +117,7 @@ def delete_problem(part):
 
 
 def create_contest(contest_list):
-    q = 'INSERT INTO CONTEST VALUES '
+    q = 'INSERT INTO CONTEST (NAME, DATE, RECEPTION_PERIOD, CONTENT, SOURCE, URI) VALUES '
     for contest in contest_list:
         q += f', (\'{contest.name}\', \'{contest.date}\', \'{contest.reception_period}\', \'{contest.content}\', \'{contest.source}\', \'{contest.uri}\')'
     q = q.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
