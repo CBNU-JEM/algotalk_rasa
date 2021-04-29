@@ -14,9 +14,7 @@ intents:
   - problem_solve
   - problem_site
   - algorithm_example
-  - algorithm_explain
-  - base_explain
-  - detail_explain
+  - request_algorithm
   - contest_type
   - contest_information
   - contest_schedule
@@ -25,11 +23,20 @@ intents:
 actions:
   - action_algorithm_explain
 
-entitles:
+slots:
+  brief_explain:
+    type: unfeaturized
+  detail_explain:
+    type: unfeaturized
+
+forms:
+  - algorithm_form
+
+entities:
   - algorithm_type
   - algorithm_level
   - user_level
-  
+
 responses:
   utter_greet:
   - text: "안녕 반가워"
@@ -49,6 +56,9 @@ responses:
 
   utter_iamabot:
   - text: "나는 알고봇이라고해."
+
+  utter_what_algorithm:
+  - text: "무슨 알고리즘을 알려줘?"
 
 session_config:
   session_expiration_time: 60

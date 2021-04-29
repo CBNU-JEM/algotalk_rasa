@@ -7,11 +7,12 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List, Union
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from . import db
+from rasa_sdk.forms import FormAction
+from actions import db
 
 
 class ActionHelloWorld(Action):
@@ -28,7 +29,7 @@ class ActionHelloWorld(Action):
         return []
 
 
-class ActionAlgorithmExplain(Action):
+class ActionAlgorithmExplain(FormAction):
 
     def name(self) -> Text:
         return "action_algorithm_explain"
@@ -37,10 +38,10 @@ class ActionAlgorithmExplain(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        algorithm_name = tracker.latest_message['entities'][0]['value']
-
-        print(tracker.latest_message)
-        print(tracker.latest_message['entities'])
+        #algorithm_name = tracker.latest_message['entities'][0]['value']
+        algorithm_name = tracker.get_latest_entity_values("algorithm_type")
+        print(algorithm_name)
+        print(tracker.get_latest_entity_values("정렬"))
         explain_text = "잘 모르곘어..."
         algorithms = db.get_algorithm_by_name(algorithm_name)
         if algorithms:
@@ -49,3 +50,39 @@ class ActionAlgorithmExplain(Action):
         dispatcher.utter_message(explain_text)
 
         return []
+
+
+class AlgorithmForm(FormAction):
+
+    def name(self) -> Text:
+        return "algorithm_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        """A list of required slots that the form has to fill"""
+
+        return ["algorithm_type"]
+
+    def slot_mapping(self):
+        # type: () -> Dict[Text: Union[Text, Dict, List[Text, Dict]]]
+        """algorithm_form"""
+
+        return {"brief_explain": self.from_entity(entity="algorithm_type"),
+                "detail_explain": self.from_text(intent="detail_explain")
+                }
+
+    def validate_brief_explain(self, value, dispatcher, tracker, domain) -> Dict[Text, Any]:
+        """check brief"""
+        if(any(tracker.get_latest_entity_values("brief_explain"))):
+            return {"brief_explain": value}
+        else:
+            #dispatcher.utter_message(template="utter_what_algorithm")
+            return {"brief_explain": None}
+
+    def validate_detail_explain(self, value, dispatcher, tracker, domain) -> Dict[Text, Any]:
+        """check detail"""
+        if(any(tracker.get_latest_entity_values("detail_explain"))):
+            return {"detail_explain": value}
+        else:
+            #dispatcher.utter_message(template="utter_what_algorithm")
+            return {"detail_explain": None}

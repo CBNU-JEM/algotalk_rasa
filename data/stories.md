@@ -30,8 +30,20 @@
 * bot_challenge
   - utter_iamabot
 
-## algorithm explain
-* algorithm_explain
+## algorithm brief explain 
+* base_explain
+  - algorithm_form
+  - form{"name": "algorithm_form"}
+  - slot{"requested_slot": "algorithm_type"}
+  - form{"name": null}
+  - action_algorithm_explain
+
+## algorithm detail explain
+* detail_explain
+  - algorithm_form
+  - form{"name": "algorithm_form"}
+  - slot{"requested_slot": "algorithm_type"}
+  - form{"name": null}
   - action_algorithm_explain
 
 ## contest
