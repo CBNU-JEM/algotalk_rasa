@@ -102,6 +102,13 @@
 ## intent:detail_explain
 - [정렬](algorithm_type) 자세히 알려줘
 - [정렬](algorithm_type) 자세히 알려줄래
+- [최단거리](algorithm_type) 알고리즘 좀 더 알려줘
+- [정렬](algorithm_type) 알고리즘 자세히 알려줘
+- [스택](algorithm_type)이 정확히 뭐야?
+- [정렬](algorithm_type)이 정확히 뭐니?
+- [알고리즘](algorithm_type)이 정확히 뭐야?
+- [정렬](algorithm_type) 깊게 설명해줘
+- [스택](algorithm_type) 상세히 설명해줄래
 
 ## intent:algorithm_example
 - [정렬](algorithm_type) 예시 좀 알려줘

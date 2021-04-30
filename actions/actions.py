@@ -43,7 +43,7 @@ class ActionAlgorithmExplain(FormAction):
         print(algorithm_name)
         print(tracker.get_latest_entity_values("정렬"))
         explain_text = "잘 모르곘어..."
-        algorithms = db.get_algorithm_by_name(algorithm_name)
+        algorithms = db.get_algorithm_by_name(brief_explain)
         if algorithms:
             explain_text = algorithms[0].brief_explain
 
@@ -74,10 +74,12 @@ class AlgorithmForm(FormAction):
     def validate_brief_explain(self, value, dispatcher, tracker, domain) -> Dict[Text, Any]:
         """check brief"""
         if(any(tracker.get_latest_entity_values("brief_explain"))):
-            return {"brief_explain": value}
+            return {"brief_explain": value, "detail_explain": None}
+        elif(any(tracker.get_latest_entity_values("detail_explain"))):
+            return {"detail_explain": value, "brief_explain": None}
         else:
             #dispatcher.utter_message(template="utter_what_algorithm")
-            return {"brief_explain": None}
+            return {"brief_explain": None, "detail_explain": None}
 
     def submit(self,
     			   dispatcher: CollectingDispatcher,
