@@ -49,6 +49,15 @@
 - 나 누구랑 대화하고 있어?
 - 너 누구야?
 
+# intent:detail
+- 자세히
+- 자세하게
+
+#intent: brief
+- 간단히
+- 간단하게
+- 쉽게
+
 ## intent:user_level
 - 나 [초보](user_level)야
 - [초보](user_level)야

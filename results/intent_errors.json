@@ -1,282 +1,50 @@
 [
   {
-    "text": "안녕하세요너는누구니",
-    "intent": "greet",
+    "text": "정렬 자세히 알려줘",
+    "intent": "detail_explain",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
+      "name": "problem_type",
+      "confidence": 0.25736159086227417
     }
   },
   {
-    "text": "안녕하세요저는류한민입",
-    "intent": "greet",
+    "text": "정렬 자세히 알려줄래",
+    "intent": "detail_explain",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "problem_type",
+      "confidence": 0.2802090346813202
     }
   },
   {
-    "text": "안ㅇㅇㅇㅇㅇㅇㅇd",
-    "intent": "greet",
+    "text": "정렬 예시 좀 알려줘",
+    "intent": "algorithm_example",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "problem_type",
+      "confidence": 0.17358125746250153
     }
   },
   {
-    "text": "helloddㅇ",
-    "intent": "greet",
+    "text": "정렬 예시 좀 알려줄래",
+    "intent": "algorithm_example",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "problem_type",
+      "confidence": 0.1733565330505371
     }
   },
   {
-    "text": "hi",
-    "intent": "greet",
+    "text": "카카오대회 좀 자세히 알려줘",
+    "intent": "contest_detail_information",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
+      "name": "contest_information",
+      "confidence": 0.15397188067436218
     }
   },
   {
-    "text": "good morning",
-    "intent": "greet",
+    "text": "카카오대회 좀 자세히 알려줄래",
+    "intent": "contest_detail_information",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "good evening",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "hey there",
-    "intent": "greet",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
-    }
-  },
-  {
-    "text": "bye",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "goodbye",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "see you around",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "see you later",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "yes",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "indeed",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
-    }
-  },
-  {
-    "text": "of course",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "that sounds good",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "correct",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "no",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592884063720703
-    }
-  },
-  {
-    "text": "never",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592884063720703
-    }
-  },
-  {
-    "text": "I don't think so",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "don't like that",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "no way",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "not really",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "perfect",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "very good",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "great",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "amazing",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
-    }
-  },
-  {
-    "text": "wonderful",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "I am feeling very good",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "I am great",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "I'm good",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "are you a bot?",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "are you a human?",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.1659288853406906
-    }
-  },
-  {
-    "text": "am I talking to a bot?",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "am I talking to a human?",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "contest_information",
+      "confidence": 0.16997650265693665
     }
   }
 ]

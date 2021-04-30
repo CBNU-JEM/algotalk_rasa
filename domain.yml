@@ -19,7 +19,10 @@ intents:
   - contest_information
   - contest_schedule
   - contest_detail_information
-
+  - base_explain
+  - detail_explain
+  - brief
+  - detail
 actions:
   - action_algorithm_explain
 
@@ -27,6 +30,8 @@ slots:
   brief_explain:
     type: unfeaturized
   detail_explain:
+    type: unfeaturized
+  algorithm_type:
     type: unfeaturized
 
 forms:

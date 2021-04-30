@@ -1,23 +1,16 @@
 {
-  "bot_challenge": {
-    "precision": 1.0,
+  "problem_type": {
+    "precision": 0.3333333333333333,
     "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4,
+    "f1-score": 0.5,
+    "support": 2,
     "confused_with": {}
   },
-  "greet": {
+  "problem_site": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 5,
-    "confused_with": {}
-  },
-  "mood_great": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 6,
+    "support": 2,
     "confused_with": {}
   },
   "goodbye": {
@@ -27,6 +20,34 @@
     "support": 4,
     "confused_with": {}
   },
+  "mood_unhappy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "problem_solve": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "greet": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "contest_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
   "affirm": {
     "precision": 1.0,
     "recall": 1.0,
@@ -34,12 +55,67 @@
     "support": 5,
     "confused_with": {}
   },
-  "mood_unhappy": {
+  "contest_schedule": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 8,
+    "support": 2,
     "confused_with": {}
+  },
+  "contest_detail_information": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "contest_information": 2
+    }
+  },
+  "user_level": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "recommendation_level": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "detail_explain": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "problem_type": 2
+    }
+  },
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "recommendation_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "algorithm_example": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1-score": 0.0,
+    "support": 2,
+    "confused_with": {
+      "problem_type": 2
+    }
   },
   "deny": {
     "precision": 1.0,
@@ -48,17 +124,45 @@
     "support": 4,
     "confused_with": {}
   },
-  "accuracy": 1.0,
-  "macro avg": {
+  "contest_information": {
+    "precision": 0.5,
+    "recall": 1.0,
+    "f1-score": 0.6666666666666666,
+    "support": 2,
+    "confused_with": {}
+  },
+  "mood_great": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 36
+    "support": 6,
+    "confused_with": {}
+  },
+  "recommendation_site": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "base_explain": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "accuracy": 0.9230769230769231,
+  "macro avg": {
+    "precision": 0.8015873015873015,
+    "recall": 0.8571428571428571,
+    "f1-score": 0.8174603174603173,
+    "support": 78
   },
   "weighted avg": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 36
+    "precision": 0.893162393162393,
+    "recall": 0.9230769230769231,
+    "f1-score": 0.9017094017094018,
+    "support": 78
   }
 }

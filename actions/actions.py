@@ -67,8 +67,8 @@ class AlgorithmForm(FormAction):
         # type: () -> Dict[Text: Union[Text, Dict, List[Text, Dict]]]
         """algorithm_form"""
 
-        return {"brief_explain": self.from_entity(entity="algorithm_type"),
-                "detail_explain": self.from_text(intent="detail_explain")
+        return {"brief_explain": self.from_entity(entity="algorithm_type", intent="base_explain"),
+                "detail_explain": self.from_entity(entity="algorithm_type", intent="detail_explain"),
                 }
 
     def validate_brief_explain(self, value, dispatcher, tracker, domain) -> Dict[Text, Any]:
@@ -79,10 +79,20 @@ class AlgorithmForm(FormAction):
             #dispatcher.utter_message(template="utter_what_algorithm")
             return {"brief_explain": None}
 
-    def validate_detail_explain(self, value, dispatcher, tracker, domain) -> Dict[Text, Any]:
-        """check detail"""
-        if(any(tracker.get_latest_entity_values("detail_explain"))):
-            return {"detail_explain": value}
-        else:
-            #dispatcher.utter_message(template="utter_what_algorithm")
-            return {"detail_explain": None}
+    def submit(self,
+    			   dispatcher: CollectingDispatcher,
+    			   tracker: Tracker,
+    			   domain: Dict[Text, Any]) -> List[Dict]:
+    		"""Define what the form has to do
+    			after all required slots are filled"""
+
+    		# utter submit template
+
+    		return []
+#     def validate_detail_explain(self, value, dispatcher, tracker, domain) -> Dict[Text, Any]:
+#         """check detail"""
+#         if(any(tracker.get_latest_entity_values("detail_explain"))):
+#             return {"detail_explain": value}
+#         else:
+#             #dispatcher.utter_message(template="utter_what_algorithm")
+#             return {"detail_explain": None}

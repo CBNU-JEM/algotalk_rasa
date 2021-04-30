@@ -67,7 +67,7 @@ db.execute_query('drop table CONTESTPROBLEM')
 db.execute_query('drop table PROBLEM')
 db.execute_query('drop table ALGORITHM')
 db.execute_query('drop table CONTEST')
-
+print("algodb create")
 db.execute_query('''CREATE TABLE ALGORITHM (
                     ALGORITHM_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
                     NAME VARCHAR(20) NOT NULL,
