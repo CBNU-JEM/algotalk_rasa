@@ -21,11 +21,12 @@ intents:
   - contest_information
   - contest_schedule
   - contest_detail_information
+#  - problem_info
 
 actions:
   - action_algorithm_explain
 
-entitles:
+entities:
   - algorithm_type
   - algorithm_level
   - user_level
@@ -53,3 +54,35 @@ responses:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+slots:
+  algorithm_type:
+    type: unfeaturized
+    initial_value: "알고리즘"
+    
+#  problem_name:
+#      type: unfeaturized
+#  problem_level:
+#    type: unfeaturized
+#  problem_content:
+#    type: unfeaturized
+#  problem_input:
+#    type: unfeaturized
+#  problem_output:
+#    type: unfeaturized
+#  problem_source:
+#    type: unfeaturized
+#  problem_uri:
+#    type: unfeaturized
+#
+#forms:
+#  - problem_form
+#
+#entities:
+#  - problem_name
+#  - problem_level
+#  - problem_content
+#  - problem_input
+#  - problem_output
+#  - problem_source
+#  - problem_uri

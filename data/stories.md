@@ -34,6 +34,10 @@
 * algorithm_explain
   - action_algorithm_explain
 
+[comment]: <> (* algorithm_type_explain{"algorithm_type": "정렬"})
+
+[comment]: <> (  - action_algorithm_explain)
+
 ## contest
 
 ## recommendation
