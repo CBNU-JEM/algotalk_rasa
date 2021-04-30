@@ -38,9 +38,13 @@ class ActionAlgorithmExplain(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+
         #algorithm_name = tracker.latest_message['entities'][0]['value']
-        algorithm_name = tracker.get_latest_entity_values("algorithm_type")
-        print(algorithm_name)
+        brief_explain = tracker.get_slot('brief_explain')
+        detail_explain = tracker.get_slot('detail_explain')
+        #algorithm_name = tracker.get_latest_entity_values("algorithm_type")
+        print(brief_explain)
+        print(detail_explain)
         print(tracker.get_latest_entity_values("정렬"))
         explain_text = "잘 모르곘어..."
         algorithms = db.get_algorithm_by_name(brief_explain)
