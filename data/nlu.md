@@ -49,14 +49,29 @@
 - 나 누구랑 대화하고 있어?
 - 너 누구야?
 
-# intent:detail
-- 자세히
-- 자세하게
+## intent:detail
+- [자세히](detail)
+- [자세하](detail)
+- [좀 더](detail)
+- [정확히](detail)
+- [상세하](detail)
+- [정확하](detail)
+- [어렵게 해](detail)
+- [샅샅이](detail)
+- [길게](detail)
+- [깊히](detail)
 
-#intent: brief
-- 간단히
-- 간단하게
-- 쉽게
+## intent: brief
+- [간단히](brief)
+- [간단하](brief)
+- [쉽게](brief)
+- [조금](brief)
+- [짧게](brief)
+- [간략하](brief)
+- [대충](brief)
+- [대강](brief)
+- [대략](brief)
+- [쫌만](brief)
 
 ## intent:user_level
 - 나 [초보](user_level)야
@@ -88,9 +103,9 @@
 - 문제풀이 사이트 있어?
 - 문제풀이 사이트 있니?
 
-## intent:base_explain
-- [최단거리](algorithm_type) 알고리즘 알려줘
-- [정렬](algorithm_type) 알고리즘 알려줘
+## intent:algorithm_explain
+- [최단거리](algorithm_type) [알고리즘](algorithm) 알려줘
+- [정렬](algorithm_type) [알고리즘](algorithm) 알려줘
 - [스택](algorithm_type)이 뭐야?
 - [정렬](algorithm_type)이 뭐야
 - [정렬](algorithm_type)이 뭐니?
@@ -98,8 +113,6 @@
 - [정렬](algorithm_type) 조금 설명해줘
 - [정렬](algorithm_type) 조금 설명해줄래
 - [정렬](algorithm_type) 기초 좀 설명해줄래
-
-## intent:detail_explain
 - [정렬](algorithm_type) 자세히 알려줘
 - [정렬](algorithm_type) 자세히 알려줄래
 - [최단거리](algorithm_type) 알고리즘 좀 더 알려줘
@@ -129,4 +142,3 @@
 ## intent:contest_detail_information
 - [카카오](contest_name)대회 좀 자세히 알려줘
 - [카카오](contest_name)대회 좀 자세히 알려줄래
-

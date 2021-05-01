@@ -19,17 +19,17 @@ intents:
   - contest_information
   - contest_schedule
   - contest_detail_information
-  - base_explain
-  - detail_explain
+  - algorithm_explain
   - brief
   - detail
+
 actions:
   - action_algorithm_explain
 
 slots:
-  brief_explain:
+  brief:
     type: unfeaturized
-  detail_explain:
+  detail:
     type: unfeaturized
   algorithm_type:
     type: unfeaturized
@@ -39,8 +39,11 @@ forms:
 
 entities:
   - algorithm_type
+  - brief
+  - detail
   - algorithm_level
   - user_level
+  - algorithm
 
 responses:
   utter_greet:
