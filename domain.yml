@@ -1,11 +1,13 @@
 intents:
-  - greet
-  - goodbye
+  - greet: {triggers: utter_greet}
+  - goodbye : {triggers: utter_goodbye}
   - affirm
   - deny
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - ask_whatspossible
+  - thanks
   - user_level
   - recommendation_type
   - recommendation_level
@@ -64,6 +66,12 @@ responses:
 
   utter_iamabot:
   - text: "나는 알고봇이라고해."
+
+  utter_explain_whatspossible:
+    - text: "나는 알고리즘에 대한 모든 것을 알려줄 수 있어 😀"
+
+  utter_thank:
+    - text: "나도 너를 도울 수 있어서 기뻐 👍"
 
   utter_what_algorithm:
   - text: "무슨 알고리즘을 알려줘?"
