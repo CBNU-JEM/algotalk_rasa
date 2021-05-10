@@ -29,6 +29,14 @@
 ## bot challenge
 * bot_challenge
   - utter_iamabot
+  
+## user asks whats possible
+* ask_whatspossible
+  - utter_explain_whatspossible
+  
+## say thanks
+* thanks
+  - utter_thank
 
 ## algorithm explain 
 * algorithm_explain
