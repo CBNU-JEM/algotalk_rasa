@@ -47,6 +47,7 @@ class ActionAlgorithmExplain(FormAction):
 
         algorithms = db.get_algorithm_by_name(algorithm_name)
         buttons = []
+        explain_text = ""
         if algorithms and detail:
             explain_text = algorithms[0].detail_explain
             buttons = [{"title": "간단한 설명", "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "brief":"간단한"}}"""},

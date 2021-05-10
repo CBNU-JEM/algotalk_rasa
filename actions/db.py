@@ -85,7 +85,7 @@ def create_algorithm(algorithm_list):
     q = 'INSERT INTO  ALGORITHM (NAME, BRIEF_EXPLAIN, DETAIL_EXPLAIN, LEVEL, EXAMPLE_CODE, PARENT) VALUES '
     tmp_query = ""
     for algorithm in algorithm_list:
-        tmp_query += f', (\'{algorithm.name}\', \'{algorithm.brief_explain}\', \'{algorithm.detail_explain}\', \'{algorithm.example_code}\', \'{algorithm.level}\', {algorithm.parent})'
+        tmp_query += f', (\'{algorithm.name}\', \'{algorithm.brief_explain}\', \'{algorithm.detail_explain}\', \'{algorithm.level}\', \'{algorithm.example_code}\', {algorithm.parent})'
     q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
