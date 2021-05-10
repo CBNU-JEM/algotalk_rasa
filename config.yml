@@ -4,7 +4,6 @@ language: xx
 pipeline:
   - name: KoreanTokenizer
   - name: RegexFeaturizer
-  - name: EntitySynonymMapper
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
     analyzer: "char_wb"
@@ -12,6 +11,7 @@ pipeline:
     max_ngram: 4
   - name: DIETClassifier
     epochs: 100
+  - name: EntitySynonymMapper
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

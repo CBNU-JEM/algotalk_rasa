@@ -2,7 +2,66 @@ import db
 
 algorithm_list = [db.Algorithm('정렬 알고리즘', '자료를 특정 목적에 맞는 순서로 재배열 하는 것',
                                '정렬 알고리즘은 수많은 자료를 특정 목적에 맞게 순서있게 재배치하는 것으로 삽입/선택/버블/병합/큇/버블/힙 정렬 등이 있습니다.',
-                               '하', '_'),
+                               '하',
+                               '''
+# include <stdio.h>
+# define MAX_SIZE 9
+# define SWAP(x, y, temp) ( (temp)=(x), (x)=(y), (y)=(temp) )
+
+// 1. 피벗을 기준으로 2개의 부분 리스트로 나눈다.
+// 2. 피벗보다 작은 값은 모두 왼쪽 부분 리스트로, 큰 값은 오른쪽 부분 리스트로 옮긴다.
+/* 2개의 비균등 배열 list[left...pivot-1]와 list[pivot+1...right]의 합병 과정 */
+/* (실제로 숫자들이 정렬되는 과정) */
+int partition(int list[], int left, int right){
+  int pivot, temp;
+  int low, high;
+
+  low = left;
+  high = right + 1;
+  pivot = list[left]; // 정렬할 리스트의 가장 왼쪽 데이터를 피벗으로 선택(임의의 값을 피벗으로 선택)
+
+  /* low와 high가 교차할 때까지 반복(low<high) */
+  do{
+    /* list[low]가 피벗보다 작으면 계속 low를 증가 */
+    do {
+      low++; // low는 left+1 에서 시작
+    } while (low<=right && list[low]<pivot);
+
+    /* list[high]가 피벗보다 크면 계속 high를 감소 */
+    do {
+      high--; //high는 right 에서 시작
+    } while (high>=left && list[high]>pivot);
+
+    // 만약 low와 high가 교차하지 않았으면 list[low]를 list[high] 교환
+    if(low<high){
+      SWAP(list[low], list[high], temp);
+    }
+  } while (low<high);
+
+  // low와 high가 교차했으면 반복문을 빠져나와 list[left]와 list[high]를 교환
+  SWAP(list[left], list[high], temp);
+
+  // 피벗의 위치인 high를 반환
+  return high;
+}
+
+// 퀵 정렬
+void quick_sort(int list[], int left, int right){
+
+  /* 정렬할 범위가 2개 이상의 데이터이면(리스트의 크기가 0이나 1이 아니면) */
+  if(left<right){
+    // partition 함수를 호출하여 피벗을 기준으로 리스트를 비균등 분할 -분할(Divide)
+    int q = partition(list, left, right); // q: 피벗의 위치
+
+    // 피벗은 제외한 2개의 부분 리스트를 대상으로 순환 호출
+    quick_sort(list, left, q-1); // (left ~ 피벗 바로 앞) 앞쪽 부분 리스트 정렬 -정복(Conquer)
+    quick_sort(list, q+1, right); // (피벗 바로 뒤 ~ right) 뒤쪽 부분 리스트 정렬 -정복(Conquer)
+  }
+
+}
+https://gmlwjd9405.github.io/2018/05/10/algorithm-quick-sort.html
+                               '''
+                               ),
                   db.Algorithm('최단거리 알고리즘', '네트워크에서 최단 경로를 찾는 알고리즘',
                                '최단거리 알고리즘은 네트워크에서 하나의 시작 정점으로부터 모든 다른 정점까지의 최단 경로를 찾는 알고리즘이야.',
                                '중', '_')]
@@ -62,41 +121,45 @@ contest_list = [db.Contest('준파고를 잡아라', '2021.06.07', '2021.05.10 ~
 # }
 # }
 
-db.execute_query('drop table ALGORITHMCLASSIFICATION')
-db.execute_query('drop table CONTESTPROBLEM')
+print("algodb drop")
+
+db.execute_query('drop table ALGORITHM_CLASSIFICATION')
+db.execute_query('drop table CONTEST_PROBLEM')
 db.execute_query('drop table PROBLEM')
 db.execute_query('drop table ALGORITHM')
 db.execute_query('drop table CONTEST')
+
 print("algodb create")
+
 db.execute_query('''CREATE TABLE ALGORITHM (
                     ALGORITHM_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                    NAME VARCHAR(20) NOT NULL,
+                    NAME VARCHAR(100) NOT NULL,
                     BRIEF_EXPLAIN VARCHAR(50),
-                    DETAIL_EXPLAIN VARCHAR(100),
-                    EXAMPLE_CODE VARCHAR(200),
+                    DETAIL_EXPLAIN VARCHAR(250),
                     LEVEL VARCHAR(20),
+                    EXAMPLE_CODE VARCHAR(5000),
                     PARENT INT,
                     CONSTRAINT PARENT_ALGORITHM FOREIGN KEY (PARENT) REFERENCES ALGORITHM (ALGORITHM_ID)
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8
                     ''')
 db.execute_query('''CREATE TABLE PROBLEM (
                     PROBLEM_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                    NAME VARCHAR(20),
+                    NAME VARCHAR(100),
                     LEVEL VARCHAR(20),
-                    CONTENT VARCHAR(50),
-                    INPUT VARCHAR(100),
-                    OUTPUT VARCHAR(100),
-                    SOURCE VARCHAR(200),
+                    CONTENT VARCHAR(5000),
+                    INPUT VARCHAR(1000),
+                    OUTPUT VARCHAR(1000),
+                    SOURCE VARCHAR(5000),
                     URI VARCHAR(200)
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8
                     ''')
 db.execute_query('''CREATE TABLE CONTEST (
                     CONTEST_ID int not null primary key,
-                    NAME VARCHAR(20),
+                    NAME VARCHAR(100),
                     DATE varchar(20),
                     RECEPTION_PERIOD varchar(30),
-                    CONTENT varchar(500),
-                    SOURCE varchar(200),
+                    CONTENT varchar(5000),
+                    SOURCE varchar(5000),
                     URI varchar(200)
                     )''')
 db.execute_query('''CREATE TABLE ALGORITHM_CLASSIFICATION (

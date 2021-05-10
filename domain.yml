@@ -22,6 +22,8 @@ intents:
   - algorithm_explain
   - brief
   - detail
+  - code
+  - level
 
 actions:
   - action_algorithm_explain
@@ -32,6 +34,10 @@ slots:
   detail:
     type: unfeaturized
   algorithm_type:
+    type: unfeaturized
+  level:
+    type: unfeaturized
+  code:
     type: unfeaturized
 
 forms:
@@ -44,6 +50,8 @@ entities:
   - algorithm_level
   - user_level
   - algorithm
+  - level
+  - code
 
 responses:
   utter_greet:

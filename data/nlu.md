@@ -49,6 +49,31 @@
 - 나 누구랑 대화하고 있어?
 - 너 누구야?
 
+## intent:code
+- [코드](code)
+- [소스](code)
+- [소스코드](code)
+- [코드](code)가 어떻게 돼?
+- [소스코드](code)가 어떻게 돼?
+- 구현은 어떻게 해?
+- 어떻게 만들어?
+- 어떻게 해?
+- [code](code)
+- [로직](code)
+- 어떤 [로직](code)이야?
+- [예제](code)
+- [예제](code) 좀 알려줘
+- [예제 코드](code)
+
+## intent:level
+- [난이도](level)
+- [레벨](level)
+- [수준](level)
+- [level](level)
+- 얼마나 어려워?
+- 얼마나 쉬워?
+- 많이 어려워?
+
 ## intent:detail
 - [자세히](detail)
 - [자세하](detail)
