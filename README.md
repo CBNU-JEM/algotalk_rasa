@@ -22,8 +22,22 @@ rasa/nlu
 - create database algotalk_db default character set utf8;
 - grant all privileges on algotalk_db.* to algotalk@localhost;
 
+# 사용 중인 포트 죽이기
+###fuser -k -n tcp 5005
+- rasa 서버
+###fuser -k -n tcp 5055
+- rasa action 서버
 
-# action 서버 실행
+
+# rasa 서버
+## rasa 서버 실행
+/home/rasa/algotalk_rasa
+screen -p rasa
+rasa run --endpoints endpoints.yml
+
+## rasa action 서버 실행
+/home/rasa/algotalk_rasa
+screen -p rasa_action
 rasa run actions --actions actions.actions
 
 # form
