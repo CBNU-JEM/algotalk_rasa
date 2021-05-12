@@ -123,7 +123,7 @@ def create_contest(contest_list):
     tmp_query = ""
     for contest in contest_list:
         tmp_query += f', (\'{contest.name}\', \'{contest.date}\', \'{contest.reception_period}\', \'{contest.content}\', \'{contest.source}\', \'{contest.uri}\')'
-    q = tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
+    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
 

@@ -154,13 +154,13 @@ db.execute_query('''CREATE TABLE PROBLEM (
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8
                     ''')
 db.execute_query('''CREATE TABLE CONTEST (
-                    CONTEST_ID int not null primary key,
+                    CONTEST_ID int not null AUTO_INCREMENT primary key,
                     NAME VARCHAR(100),
-                    DATE varchar(20),
-                    RECEPTION_PERIOD varchar(30),
-                    CONTENT varchar(5000),
-                    SOURCE varchar(5000),
-                    URI varchar(200)
+                    DATE VARCHAR(20),
+                    RECEPTION_PERIOD VARCHAR(30),
+                    CONTENT VARCHAR(5000),
+                    SOURCE VARCHAR(5000),
+                    URI VARCHAR(200)
                     )''')
 db.execute_query('''CREATE TABLE ALGORITHM_CLASSIFICATION (
                     ALGORITHM_ID int not null,
