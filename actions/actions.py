@@ -164,41 +164,6 @@ class AlgorithmForm(FormAction):
             "algorithm_type": [self.from_entity(entity="algorithm_type")]
         }
 
-    # def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
-    #     # type: () -> Dict[Text: Union[Text, Dict, List[Text, Dict]]]
-    #     """algorithm_form"""
-    #     return {"brief_explain": self.from_text(entity="algorithm_type")}
-    #
-    # def validate_brief(
-    #         self,
-    #         value: Text,
-    #         dispatcher: CollectingDispatcher,
-    #         tracker: Tracker,
-    #         domain: Dict[Text, Any],
-    # ) -> Dict[Text, Any]:
-    #     """check brief"""
-    #     # print(f"validate: ${tracker.get_latest_entity_values('brief_explain')}")
-    #     print(f"brief {value}")
-    #     if (any(tracker.get_latest_entity_values('brief'))):
-    #         return {"brief": True, "detail": None}
-    #     else:
-    #         return {"brief": None}
-    #
-    # def validate_detail(
-    #         self,
-    #         value: Text,
-    #         dispatcher: CollectingDispatcher,
-    #         tracker: Tracker,
-    #         domain: Dict[Text, Any],
-    # ) -> Dict[Text, Any]:
-    #     """check detail"""
-    #     # print(f"validate: ${tracker.get_latest_entity_values('brief_explain')}")
-    #     print(f"detail {value}")
-    #     if (any(tracker.get_latest_entity_values('detail'))):
-    #         return {"detail": True, "brief": None}
-    #     else:
-    #         return {"detail": None, "brief": True}
-
     def validate_algorithm_type(
             self,
             value: Text,
@@ -207,7 +172,7 @@ class AlgorithmForm(FormAction):
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         """check algorithm_type"""
-        # print(f"validate: ${tracker.get_latest_entity_values('brief_explain')}")
+
         print(f"algorithm_type {value}")
         if (any(tracker.get_latest_entity_values('algorithm_type'))):
             return {"algorithm_type": value}
@@ -223,14 +188,86 @@ class AlgorithmForm(FormAction):
         # utter submit template
         return []
 
+class ActionContestExplain(FormAction):
 
-#     def validate_detail_explain(self, value, dispatcher, tracker, domain) -> Dict[Text, Any]:
-#         """check detail"""
-#         if(any(tracker.get_latest_entity_values("detail_explain"))):
-#             return {"detail_explain": value}
-#         else:
-#             #dispatcher.utter_message(template="utter_what_algorithm")
-#             return {"detail_explain": None}
+    def name(self) -> Text:
+        return "action_contest_explain"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        brief = tracker.get_slot('brief')
+        detail = tracker.get_slot('detail')
+        past = tracker.get_slot('past')
+
+        schedule = tracker.get_slot('schedule')
+        contest_name = tracker.get_slot('contest_name')
+
+        contests = db.get_contest_by_name(contest_name)
+        buttons = []
+        explain_text = ""
+        if contests:
+            explain_text = contests[0].content
+            buttons = [{"title": "간단한 설명", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "brief":"간단한"}}"""},
+                       {"title": "난이도", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "level":"난이도"}}"""},
+                       {"title": "코드", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "code":"예제"}}"""},
+                       {"title": "관련 문제", "payload": "/"}]
+        elif algorithms:
+            explain_text = contests[0].brief_explain
+            buttons = [{"title": "자세한 설명", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "detail":"자세한"}}"""},
+                       {"title": "난이도", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "level":"난이도"}}"""},
+                       {"title": "코드", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "code":"예제"}}"""},
+                       {"title": "관련 문제", "payload": "/"}]
+
+
+        dispatcher.utter_message(text=explain_text, buttons=buttons)
+
+        print(f"contest_name : {contest_name}")
+
+        return []
+
+
+class ContestForm(FormAction):
+
+    def name(self) -> Text:
+        return "contest_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        return ["contest_name"]
+
+    def slot_mappings(self):
+        return {
+            "brief": [self.from_entity(entity="brief")],
+            "detail": [self.from_entity(entity="detail")],
+            "schedule": [self.from_entity(entity="schedule")],
+            "contest_name": [self.from_entity(entity="contest_name")]
+        }
+
+    def validate_contest_name(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        """check contest_name"""
+
+        print(f"contest_name {value}")
+        if (any(tracker.get_latest_entity_values('contest_name'))):
+            return {"contest_name": value}
+        else:
+            return {"contest_name": None}
+
+    def submit(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        # utter submit template
+        return []
 
 
 class ProblemForm(FormAction):

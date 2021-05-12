@@ -155,6 +155,21 @@ def delete_contest(part):
     q = f'DELETE FROM CONTEST WHERE part=\'{part}\''
     execute_query(q)
 
+def get_contest_by_name(name):
+    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \'%{name}%\' ORDER BY DATE desc'
+    rows = execute_query(q)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[1], row[2], row[3], row[4], row[5], row[6]))
+    return contests
+
+def get_contest_by_sql(sql):
+    rows = execute_query(sql)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[1], row[2], row[3], row[4], row[5], row[6]))
+    return contests
+
 
 def create_algorithm_problem_classification(algorithm_name, problem_name):
     q = f'INSERT INTO ALGORITHM_PROBLEM_CLASSIFICATION (algorithm_name, problem_name) VALUES (\'{algorithm_name}\', \'{problem_name}\')'

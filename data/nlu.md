@@ -174,21 +174,120 @@
 - [정렬](algorithm_type) 예시 좀 알려줘
 - [정렬](algorithm_type) 예시 좀 알려줄래
 
-## intent:contest_type
-- [카카오](contest_name)대회 유형이 뭐야?
-- [카카오](contest_name)대회 유형이 뭐니?
+## intent:past
+- [지난](past)
+- [지난번](past)
+- [저번](past)
+- [저번](past)에
+- [예전](past)
+- [예전](past)에
+- [과거](past)
+- [과거](past)에
+
+## intent:one_year_ago
+- 1년전
+- 1년 전
+- 작년
+- 작년에
+- 저번 년도
+- 지난 해
+- 전해
+- 거년
+- 지난해
+- 지난해에
+
+## intent:two_year_ago
+- 2년전
+- 2년 전
+- 재작년
+- 재작년에
+- 재작년도
+- 저저번년도
+- 저저번해
+
+## intent:three_year_ago
+- 3년전
+- 3년 전
+- 재재작년
+- 재재작년에
+
+## intent:proceeding
+- 지금
+- 현재
+- 진행중
+- 진행 중
+- 하고있는
+- 열려있는
+- 진행중인
+- 참가가능한
+- 참가 가능한
+- 열린
+- 지원 가능한
+- 지원할 수 있는
+- 참여할 수 있는
+- 참여할
+
+## intent:expected
+- 최근
+- 요즘
+- 요즘에
+- 곧
+- 다음번에
+- 다음에
+- 곧 열리는
+- 열릴 예정인
+- 나중에
+
+## schedule
+- [일정](schedule)
+- [날짜](schedule)
+- [시간](schedule)
+- [언제](schedule)
+- [기간](schedule)
+
+## company
+- [배민](company)
+- [쿠팡](company)
+- [네이버](company)
+- [라인](company)
+- [카카오](company)
+- [크래프톤](company)
+- [원스토어](company)
+- [넷마블](company)
+- [넥슨](company)
+- [당근마켓](company)
+- [직방](company)
+- [스타트업](company)
+- [줌](company)
+- [구글](company)
+- [아마존](company)
+- [배달의 민족](company)
+- [sk](company)
+- [kt](company)
+- [lg](company)
+- [삼성](company)
+- [samgsung](company)
+- [skt](company)
+- [하이닉스](company)
+- [프로그래머스](company)
+- [코드포스](company)
+- [코포](company)
+- [백준](company)
 
 ## intent:contest_information
 - [카카오](contest_name)대회 정보 알려줘
 - [카카오](contest_name)대회 정보 알려줄래
-
-## intent:contest_schedule
-- [카카오](contest_name)대회 일정 알려줘
-- [카카오](contest_name)대회 일정 알려줄래
-
-## intent:contest_detail_information
 - [카카오](contest_name)대회 좀 자세히 알려줘
 - [카카오](contest_name)대회 좀 자세히 알려줄래
+- [카카오](contest_name)대회 일정 알려줘
+- [카카오](contest_name)대회 일정 알려줄래
+- [카카오](contest_name)대회가 뭐야?
+- [카카오](contest_name)대회가 뭐니?
+- [scpc](contest_name) 일정 알려줘
+- [scpc](contest_name) 언제 열려?
+- [프로그래머스](contest_name) 최근 대회가 뭐야?
+- [코드포스](contest_name) 일정 알려줘
+- [코포](contest_name) 언제 시작해?
 
 ## intent:number
 - [1](number)개

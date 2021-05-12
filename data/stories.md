@@ -46,6 +46,14 @@
   - form{"name": null}
   - action_algorithm_explain
 
+## contest explain
+* contest_explain
+  - contest_form
+  - form{"name": "contest_form"}
+  - slot{"requested_slot": "contest_name"}
+  - form{"name": null}
+  - action_contest_explain
+
 ## recommendation
 * problem_type
   - problem_form
