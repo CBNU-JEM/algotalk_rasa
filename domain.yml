@@ -9,7 +9,6 @@ intents:
   - ask_whatspossible
   - thanks
   - user_level
-  - recommendation_type
   - recommendation_level
   - recommendation_site
   - problem_type
@@ -26,6 +25,7 @@ intents:
   - detail
   - code
   - level
+  - number
 
 actions:
   - action_algorithm_explain
@@ -41,9 +41,16 @@ slots:
     type: unfeaturized
   code:
     type: unfeaturized
+  number:
+    type: unfeaturized
+  problem_name:
+    type: unfeaturized
+  contest_name:
+    type: unfeaturized
 
 forms:
   - algorithm_form
+  - problem_form
 
 entities:
   - algorithm_type
@@ -54,6 +61,9 @@ entities:
   - algorithm
   - level
   - code
+  - number
+  - problem_name
+  - contest_name
 
 responses:
   utter_greet:

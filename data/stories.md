@@ -49,5 +49,11 @@
 ## contest
 
 ## recommendation
+* problem_type
+  - problem_form
+  - form{"name": "problem_form"}
+  - form{"name": null}
+  - action_problem_recommended
+  
 
 ## tutorial

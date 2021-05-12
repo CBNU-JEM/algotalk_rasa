@@ -123,9 +123,6 @@
 - [처음](user_level)이야
 - 난 [처음](user_level)해봐
 
-## intent:recommendation_type
-- [구현](algorithm_type) 문제 알려줘
-- [구현](algorithm_type) 문제 알려줄래?
 
 ## intent:recommendation_level
 - [기초](algorithm_level)문제 알려줘
@@ -136,8 +133,14 @@
 - 추천 공부 사이트 있니?
 
 ## intent:problem_type
-- [정렬](algorithm_type)문제 알려줘
-- [정렬](algorithm_type)문제 알려줄래?
+- [정렬](algorithm_type) 문제 알려줘
+- [최단거리](algorithm_type) 문제 알려줄래?
+- [정렬](algorithm_type) [알고리즘](algorithm) 문제 풀고싶어
+- [정렬](algorithm_type) 문제 풀고싶어
+- [정렬](algorithm_type) 문제 풀거야
+- [정렬](algorithm_type) 문제 추천해줘
+- [정렬](algorithm_type) 문제 없어?
+- [정렬](algorithm_type) 문제 뭐가 있을까?
 
 ## intent:problem_solve
 - 모르겠어
@@ -186,3 +189,23 @@
 ## intent:contest_detail_information
 - [카카오](contest_name)대회 좀 자세히 알려줘
 - [카카오](contest_name)대회 좀 자세히 알려줄래
+
+## intent:number
+- [1](number)개
+- [2](number)개
+- [3](number)개
+- [4](number)개
+- [5](number)개
+- [6](number)개
+- [7](number)개
+- [8](number)개
+- [9](number)개
+- [10](number)개
+- [1](number)년
+- [2](number)년
+- [3](number)년
+- [4](number)년
+- [5](number)년
+- [2020](number)년
+
+

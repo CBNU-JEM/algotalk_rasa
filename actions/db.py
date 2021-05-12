@@ -1,5 +1,5 @@
 import pymysql
-
+from func import UserLevel
 debug = True
 
 db = pymysql.connect(host='localhost', user='algotalk', password='algojem', db='algotalk_db', autocommit=True,
@@ -116,6 +116,29 @@ def create_problem(problem_list):
 def delete_problem(part):
     q = f'DELETE FROM PROBLEM WHERE part=\'{part}\''
     execute_query(q)
+
+
+def get_problem(problem_name, algorithm_name, level, contest_name, number):
+    q = f'SELECT P.NAME, P.LEVEL, P.CONTENT, P.INPUT, P.OUTPUT, P.SOURCE, P.URI, C.NAME, A.NAME FROM PROBLEM AS P '\
+        'LEFT JOIN CONTEST_PROBLEM AS CP ON P.NAME =CP.NAME LEFT JOIN CONTEST AS C ON CP.NAME = C.NAME '\
+        'LEFT JOIN ALGORITHM_CLASSIFICATION AS AP ON P.NAME=AP.NAME LEFT JOIN ALGORITHM AS A ON AP.NAME=A.NAME '
+
+    num = number if number else 10
+    if problem_name:
+        q += "WHERE " + f"P.NAME LIKE \'%{problem_name}%\'"
+    if algorithm_name:
+        q += "AND " if q.contains("WHERE") else "WHERE " + f"A.NAME LIKE%\'{algorithm_name}\'%"
+    if contest_name:
+        q += "AND " if q.contains("WHERE") else "WHERE " + f"C.NAME LIKE%\'{contest_name}\'%"
+    if level:  # 수정필요 난이도정해져 있는경우와 아닌경우 구분
+        UserLevel.find_level()
+        q += "AND " if q.contains("WHERE") else "WHERE " + f"LEVEL LIKE%\'{problem_name}\'%"
+    q += f"ORDER BY RAND() LIMIT {num}"
+    rows = execute_query(q)
+    problems = []
+    for row in rows:
+        problems.append(Problem(row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
+    return problems
 
 
 def create_contest(contest_list):
