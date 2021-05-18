@@ -1,0 +1,692 @@
+{
+    "algorithm": [
+        {
+            "classification": "수학",
+            "url": "https://www.acmicpc.net/problem/tag/124"
+        },
+        {
+            "classification": "다이나믹 프로그래밍",
+            "url": "https://www.acmicpc.net/problem/tag/25"
+        },
+        {
+            "classification": "구현",
+            "url": "https://www.acmicpc.net/problem/tag/102"
+        },
+        {
+            "classification": "그래프 이론",
+            "url": "https://www.acmicpc.net/problem/tag/7"
+        },
+        {
+            "classification": "자료 구조",
+            "url": "https://www.acmicpc.net/problem/tag/175"
+        },
+        {
+            "classification": "문자열",
+            "url": "https://www.acmicpc.net/problem/tag/158"
+        },
+        {
+            "classification": "그리디 알고리즘",
+            "url": "https://www.acmicpc.net/problem/tag/33"
+        },
+        {
+            "classification": "그래프 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/11"
+        },
+        {
+            "classification": "브루트포스 알고리즘",
+            "url": "https://www.acmicpc.net/problem/tag/125"
+        },
+        {
+            "classification": "세그먼트 트리",
+            "url": "https://www.acmicpc.net/problem/tag/65"
+        },
+        {
+            "classification": "정렬",
+            "url": "https://www.acmicpc.net/problem/tag/97"
+        },
+        {
+            "classification": "트리",
+            "url": "https://www.acmicpc.net/problem/tag/120"
+        },
+        {
+            "classification": "이분 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/12"
+        },
+        {
+            "classification": "기하학",
+            "url": "https://www.acmicpc.net/problem/tag/100"
+        },
+        {
+            "classification": "정수론",
+            "url": "https://www.acmicpc.net/problem/tag/95"
+        },
+        {
+            "classification": "너비 우선 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/126"
+        },
+        {
+            "classification": "조합론",
+            "url": "https://www.acmicpc.net/problem/tag/6"
+        },
+        {
+            "classification": "사칙연산",
+            "url": "https://www.acmicpc.net/problem/tag/121"
+        },
+        {
+            "classification": "누적 합",
+            "url": "https://www.acmicpc.net/problem/tag/139"
+        },
+        {
+            "classification": "깊이 우선 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/127"
+        },
+        {
+            "classification": "시뮬레이션",
+            "url": "https://www.acmicpc.net/problem/tag/141"
+        },
+        {
+            "classification": "다익스트라",
+            "url": "https://www.acmicpc.net/problem/tag/22"
+        },
+        {
+            "classification": "비트마스킹",
+            "url": "https://www.acmicpc.net/problem/tag/14"
+        },
+        {
+            "classification": "분리 집합",
+            "url": "https://www.acmicpc.net/problem/tag/81"
+        },
+        {
+            "classification": "분할 정복",
+            "url": "https://www.acmicpc.net/problem/tag/24"
+        },
+        {
+            "classification": "애드 혹",
+            "url": "https://www.acmicpc.net/problem/tag/109"
+        },
+        {
+            "classification": "구성적",
+            "url": "https://www.acmicpc.net/problem/tag/128"
+        },
+        {
+            "classification": "백트래킹",
+            "url": "https://www.acmicpc.net/problem/tag/5"
+        },
+        {
+            "classification": "스위핑",
+            "url": "https://www.acmicpc.net/problem/tag/106"
+        },
+        {
+            "classification": "Case work",
+            "url": "https://www.acmicpc.net/problem/tag/137"
+        },
+        {
+            "classification": "스택",
+            "url": "https://www.acmicpc.net/problem/tag/71"
+        },
+        {
+            "classification": "우선순위 큐",
+            "url": "https://www.acmicpc.net/problem/tag/59"
+        },
+        {
+            "classification": "트리에서의 다이나믹 프로그래밍",
+            "url": "https://www.acmicpc.net/problem/tag/92"
+        },
+        {
+            "classification": "최대 유량",
+            "url": "https://www.acmicpc.net/problem/tag/45"
+        },
+        {
+            "classification": "파싱",
+            "url": "https://www.acmicpc.net/problem/tag/96"
+        },
+        {
+            "classification": "느리게 갱신되는 세그먼트 트리",
+            "url": "https://www.acmicpc.net/problem/tag/66"
+        },
+        {
+            "classification": "두 포인터",
+            "url": "https://www.acmicpc.net/problem/tag/80"
+        },
+        {
+            "classification": "비트필드를 이용한 다이나믹 프로그래밍",
+            "url": "https://www.acmicpc.net/problem/tag/87"
+        },
+        {
+            "classification": "트리를 사용한 집합과 맵",
+            "url": "https://www.acmicpc.net/problem/tag/74"
+        },
+        {
+            "classification": "소수 판정",
+            "url": "https://www.acmicpc.net/problem/tag/9"
+        },
+        {
+            "classification": "오프라인 쿼리",
+            "url": "https://www.acmicpc.net/problem/tag/123"
+        },
+        {
+            "classification": "게임 이론",
+            "url": "https://www.acmicpc.net/problem/tag/140"
+        },
+        {
+            "classification": "분할 정복을 이용한 거듭제곱",
+            "url": "https://www.acmicpc.net/problem/tag/39"
+        },
+        {
+            "classification": "이분 매칭",
+            "url": "https://www.acmicpc.net/problem/tag/13"
+        },
+        {
+            "classification": "임의 정밀도 / 큰 수 연산",
+            "url": "https://www.acmicpc.net/problem/tag/117"
+        },
+        {
+            "classification": "최소 스패닝 트리",
+            "url": "https://www.acmicpc.net/problem/tag/49"
+        },
+        {
+            "classification": "해싱",
+            "url": "https://www.acmicpc.net/problem/tag/8"
+        },
+        {
+            "classification": "최소 공통 조상",
+            "url": "https://www.acmicpc.net/problem/tag/41"
+        },
+        {
+            "classification": "재귀",
+            "url": "https://www.acmicpc.net/problem/tag/62"
+        },
+        {
+            "classification": "에라토스테네스의 체",
+            "url": "https://www.acmicpc.net/problem/tag/67"
+        },
+        {
+            "classification": "해시를 사용한 집합과 맵",
+            "url": "https://www.acmicpc.net/problem/tag/136"
+        },
+        {
+            "classification": "강한 연결 요소",
+            "url": "https://www.acmicpc.net/problem/tag/76"
+        },
+        {
+            "classification": "플로이드–와샬",
+            "url": "https://www.acmicpc.net/problem/tag/31"
+        },
+        {
+            "classification": "고속 푸리에 변환",
+            "url": "https://www.acmicpc.net/problem/tag/28"
+        },
+        {
+            "classification": "위상 정렬",
+            "url": "https://www.acmicpc.net/problem/tag/78"
+        },
+        {
+            "classification": "볼록 껍질",
+            "url": "https://www.acmicpc.net/problem/tag/20"
+        },
+        {
+            "classification": "선형대수학",
+            "url": "https://www.acmicpc.net/problem/tag/144"
+        },
+        {
+            "classification": "트라이",
+            "url": "https://www.acmicpc.net/problem/tag/79"
+        },
+        {
+            "classification": "포함 배제의 원리",
+            "url": "https://www.acmicpc.net/problem/tag/38"
+        },
+        {
+            "classification": "값 / 좌표 압축",
+            "url": "https://www.acmicpc.net/problem/tag/161"
+        },
+        {
+            "classification": "볼록 껍질을 이용한 최적화",
+            "url": "https://www.acmicpc.net/problem/tag/89"
+        },
+        {
+            "classification": "KMP",
+            "url": "https://www.acmicpc.net/problem/tag/40"
+        },
+        {
+            "classification": "배낭 문제",
+            "url": "https://www.acmicpc.net/problem/tag/148"
+        },
+        {
+            "classification": "접미사 배열과 LCP 배열",
+            "url": "https://www.acmicpc.net/problem/tag/77"
+        },
+        {
+            "classification": "희소 배열",
+            "url": "https://www.acmicpc.net/problem/tag/84"
+        },
+        {
+            "classification": "최소 비용 최대 유량",
+            "url": "https://www.acmicpc.net/problem/tag/48"
+        },
+        {
+            "classification": "제곱근 분할법",
+            "url": "https://www.acmicpc.net/problem/tag/130"
+        },
+        {
+            "classification": "작은 집합에서 큰 집합으로 합치는 테크닉",
+            "url": "https://www.acmicpc.net/problem/tag/169"
+        },
+        {
+            "classification": "유클리드 호제법",
+            "url": "https://www.acmicpc.net/problem/tag/26"
+        },
+        {
+            "classification": "덱",
+            "url": "https://www.acmicpc.net/problem/tag/73"
+        },
+        {
+            "classification": "확률론",
+            "url": "https://www.acmicpc.net/problem/tag/177"
+        },
+        {
+            "classification": "런타임 전의 전처리",
+            "url": "https://www.acmicpc.net/problem/tag/172"
+        },
+        {
+            "classification": "스프라그–그런디 정리",
+            "url": "https://www.acmicpc.net/problem/tag/70"
+        },
+        {
+            "classification": "매개 변수 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/170"
+        },
+        {
+            "classification": "가장 긴 증가하는 부분 수열: O(n log n)",
+            "url": "https://www.acmicpc.net/problem/tag/43"
+        },
+        {
+            "classification": "중간에서 만나기",
+            "url": "https://www.acmicpc.net/problem/tag/46"
+        },
+        {
+            "classification": "Heavy-light 분할",
+            "url": "https://www.acmicpc.net/problem/tag/35"
+        },
+        {
+            "classification": "선분 교차 판정",
+            "url": "https://www.acmicpc.net/problem/tag/42"
+        },
+        {
+            "classification": "센트로이드 분할",
+            "url": "https://www.acmicpc.net/problem/tag/18"
+        },
+        {
+            "classification": "슬라이딩 윈도우",
+            "url": "https://www.acmicpc.net/problem/tag/68"
+        },
+        {
+            "classification": "무작위화",
+            "url": "https://www.acmicpc.net/problem/tag/115"
+        },
+        {
+            "classification": "오일러 경로 테크닉",
+            "url": "https://www.acmicpc.net/problem/tag/150"
+        },
+        {
+            "classification": "2-SAT",
+            "url": "https://www.acmicpc.net/problem/tag/1"
+        },
+        {
+            "classification": "삼분 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/101"
+        },
+        {
+            "classification": "미적분학",
+            "url": "https://www.acmicpc.net/problem/tag/111"
+        },
+        {
+            "classification": "최대 유량 최소 컷 정리",
+            "url": "https://www.acmicpc.net/problem/tag/167"
+        },
+        {
+            "classification": "가우스 소거법",
+            "url": "https://www.acmicpc.net/problem/tag/32"
+        },
+        {
+            "classification": "휴리스틱",
+            "url": "https://www.acmicpc.net/problem/tag/142"
+        },
+        {
+            "classification": "단절점과 단절선",
+            "url": "https://www.acmicpc.net/problem/tag/4"
+        },
+        {
+            "classification": "퍼시스턴트 세그먼트 트리",
+            "url": "https://www.acmicpc.net/problem/tag/55"
+        },
+        {
+            "classification": "3차원 기하학",
+            "url": "https://www.acmicpc.net/problem/tag/131"
+        },
+        {
+            "classification": "오일러 경로",
+            "url": "https://www.acmicpc.net/problem/tag/93"
+        },
+        {
+            "classification": "선인장",
+            "url": "https://www.acmicpc.net/problem/tag/143"
+        },
+        {
+            "classification": "비트 집합",
+            "url": "https://www.acmicpc.net/problem/tag/152"
+        },
+        {
+            "classification": "중국인의 나머지 정리",
+            "url": "https://www.acmicpc.net/problem/tag/19"
+        },
+        {
+            "classification": "분할 정복을 사용한 최적화",
+            "url": "https://www.acmicpc.net/problem/tag/91"
+        },
+        {
+            "classification": "큐",
+            "url": "https://www.acmicpc.net/problem/tag/72"
+        },
+        {
+            "classification": "Mo's",
+            "url": "https://www.acmicpc.net/problem/tag/50"
+        },
+        {
+            "classification": "벨만–포드",
+            "url": "https://www.acmicpc.net/problem/tag/10"
+        },
+        {
+            "classification": "병렬 이분 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/54"
+        },
+        {
+            "classification": "벌래캠프–매시",
+            "url": "https://www.acmicpc.net/problem/tag/110"
+        },
+        {
+            "classification": "오일러 지표 (χ=V-E+F)",
+            "url": "https://www.acmicpc.net/problem/tag/119"
+        },
+        {
+            "classification": "다차원 세그먼트 트리",
+            "url": "https://www.acmicpc.net/problem/tag/166"
+        },
+        {
+            "classification": "평면 그래프",
+            "url": "https://www.acmicpc.net/problem/tag/168"
+        },
+        {
+            "classification": "아호-코라식",
+            "url": "https://www.acmicpc.net/problem/tag/2"
+        },
+        {
+            "classification": "스플레이 트리",
+            "url": "https://www.acmicpc.net/problem/tag/69"
+        },
+        {
+            "classification": "순열 사이클 분할",
+            "url": "https://www.acmicpc.net/problem/tag/171"
+        },
+        {
+            "classification": "페르마의 소정리",
+            "url": "https://www.acmicpc.net/problem/tag/29"
+        },
+        {
+            "classification": "라빈–카프",
+            "url": "https://www.acmicpc.net/problem/tag/61"
+        },
+        {
+            "classification": "확장 유클리드 호제법",
+            "url": "https://www.acmicpc.net/problem/tag/27"
+        },
+        {
+            "classification": "회전하는 캘리퍼스",
+            "url": "https://www.acmicpc.net/problem/tag/64"
+        },
+        {
+            "classification": "커넥션 프로파일을 이용한 다이나믹 프로그래밍",
+            "url": "https://www.acmicpc.net/problem/tag/107"
+        },
+        {
+            "classification": "물리학",
+            "url": "https://www.acmicpc.net/problem/tag/116"
+        },
+        {
+            "classification": "이중 연결 요소",
+            "url": "https://www.acmicpc.net/problem/tag/153"
+        },
+        {
+            "classification": "머지 소트 트리",
+            "url": "https://www.acmicpc.net/problem/tag/155"
+        },
+        {
+            "classification": "뫼비우스 반전 공식",
+            "url": "https://www.acmicpc.net/problem/tag/51"
+        },
+        {
+            "classification": "덱을 이용한 다이나믹 프로그래밍",
+            "url": "https://www.acmicpc.net/problem/tag/108"
+        },
+        {
+            "classification": "정규 표현식",
+            "url": "https://www.acmicpc.net/problem/tag/63"
+        },
+        {
+            "classification": "링크/컷 트리",
+            "url": "https://www.acmicpc.net/problem/tag/98"
+        },
+        {
+            "classification": "매내처",
+            "url": "https://www.acmicpc.net/problem/tag/44"
+        },
+        {
+            "classification": "볼록 다각형 내부의 점 판정",
+            "url": "https://www.acmicpc.net/problem/tag/56"
+        },
+        {
+            "classification": "오일러 피 함수",
+            "url": "https://www.acmicpc.net/problem/tag/151"
+        },
+        {
+            "classification": "연결 리스트",
+            "url": "https://www.acmicpc.net/problem/tag/154"
+        },
+        {
+            "classification": "0-1 너비 우선 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/176"
+        },
+        {
+            "classification": "수치해석",
+            "url": "https://www.acmicpc.net/problem/tag/122"
+        },
+        {
+            "classification": "외판원 순회 문제",
+            "url": "https://www.acmicpc.net/problem/tag/138"
+        },
+        {
+            "classification": "인터프리터",
+            "url": "https://www.acmicpc.net/problem/tag/156"
+        },
+        {
+            "classification": "폴라드 로",
+            "url": "https://www.acmicpc.net/problem/tag/58"
+        },
+        {
+            "classification": "Alien 트릭",
+            "url": "https://www.acmicpc.net/problem/tag/134"
+        },
+        {
+            "classification": "함수 개형을 이용한 최적화",
+            "url": "https://www.acmicpc.net/problem/tag/157"
+        },
+        {
+            "classification": "모듈로 곱셈 역원",
+            "url": "https://www.acmicpc.net/problem/tag/164"
+        },
+        {
+            "classification": "다각형의 넓이",
+            "url": "https://www.acmicpc.net/problem/tag/3"
+        },
+        {
+            "classification": "기댓값의 선형성",
+            "url": "https://www.acmicpc.net/problem/tag/179"
+        },
+        {
+            "classification": "오프라인 동적 연결성 판정",
+            "url": "https://www.acmicpc.net/problem/tag/52"
+        },
+        {
+            "classification": "선형 계획법",
+            "url": "https://www.acmicpc.net/problem/tag/103"
+        },
+        {
+            "classification": "번사이드 보조정리",
+            "url": "https://www.acmicpc.net/problem/tag/16"
+        },
+        {
+            "classification": "오목 다각형 내부의 점 판정",
+            "url": "https://www.acmicpc.net/problem/tag/57"
+        },
+        {
+            "classification": "피타고라스 정리",
+            "url": "https://www.acmicpc.net/problem/tag/60"
+        },
+        {
+            "classification": "키타마사",
+            "url": "https://www.acmicpc.net/problem/tag/112"
+        },
+        {
+            "classification": "트리 동형 사상",
+            "url": "https://www.acmicpc.net/problem/tag/145"
+        },
+        {
+            "classification": "홀의 결혼 정리",
+            "url": "https://www.acmicpc.net/problem/tag/34"
+        },
+        {
+            "classification": "헝가리안",
+            "url": "https://www.acmicpc.net/problem/tag/36"
+        },
+        {
+            "classification": "이산 로그",
+            "url": "https://www.acmicpc.net/problem/tag/146"
+        },
+        {
+            "classification": "최소 외접원",
+            "url": "https://www.acmicpc.net/problem/tag/162"
+        },
+        {
+            "classification": "밀러–라빈 소수 판별법",
+            "url": "https://www.acmicpc.net/problem/tag/47"
+        },
+        {
+            "classification": "도미네이터 트리",
+            "url": "https://www.acmicpc.net/problem/tag/135"
+        },
+        {
+            "classification": "단조 큐를 이용한 최적화",
+            "url": "https://www.acmicpc.net/problem/tag/165"
+        },
+        {
+            "classification": "쌍대성",
+            "url": "https://www.acmicpc.net/problem/tag/180"
+        },
+        {
+            "classification": "쌍대 그래프",
+            "url": "https://www.acmicpc.net/problem/tag/181"
+        },
+        {
+            "classification": "일반적인 매칭",
+            "url": "https://www.acmicpc.net/problem/tag/15"
+        },
+        {
+            "classification": "회문 트리",
+            "url": "https://www.acmicpc.net/problem/tag/53"
+        },
+        {
+            "classification": "스토어–바그너",
+            "url": "https://www.acmicpc.net/problem/tag/75"
+        },
+        {
+            "classification": "Z",
+            "url": "https://www.acmicpc.net/problem/tag/83"
+        },
+        {
+            "classification": "크누스 최적화",
+            "url": "https://www.acmicpc.net/problem/tag/90"
+        },
+        {
+            "classification": "매트로이드",
+            "url": "https://www.acmicpc.net/problem/tag/104"
+        },
+        {
+            "classification": "뤼카 정리",
+            "url": "https://www.acmicpc.net/problem/tag/113"
+        },
+        {
+            "classification": "양방향 탐색",
+            "url": "https://www.acmicpc.net/problem/tag/129"
+        },
+        {
+            "classification": "이산 제곱근",
+            "url": "https://www.acmicpc.net/problem/tag/147"
+        },
+        {
+            "classification": "유향 최소 신장 트리",
+            "url": "https://www.acmicpc.net/problem/tag/23"
+        },
+        {
+            "classification": "보로노이 다이어그램",
+            "url": "https://www.acmicpc.net/problem/tag/82"
+        },
+        {
+            "classification": "4차원 이상의 기하학",
+            "url": "https://www.acmicpc.net/problem/tag/132"
+        },
+        {
+            "classification": "보이어–무어 다수결 투표",
+            "url": "https://www.acmicpc.net/problem/tag/160"
+        },
+        {
+            "classification": "히르쉬버그",
+            "url": "https://www.acmicpc.net/problem/tag/163"
+        },
+        {
+            "classification": "통계학",
+            "url": "https://www.acmicpc.net/problem/tag/178"
+        },
+        {
+            "classification": "로프",
+            "url": "https://www.acmicpc.net/problem/tag/159"
+        },
+        {
+            "classification": "춤추는 링크",
+            "url": "https://www.acmicpc.net/problem/tag/173"
+        },
+        {
+            "classification": "크누스 X",
+            "url": "https://www.acmicpc.net/problem/tag/174"
+        },
+        {
+            "classification": "접미사 트리",
+            "url": "https://www.acmicpc.net/problem/tag/182"
+        },
+        {
+            "classification": "델로네 삼각분할",
+            "url": "https://www.acmicpc.net/problem/tag/21"
+        },
+        {
+            "classification": "레드-블랙 트리",
+            "url": "https://www.acmicpc.net/problem/tag/94"
+        },
+        {
+            "classification": "탑 트리",
+            "url": "https://www.acmicpc.net/problem/tag/105"
+        },
+        {
+            "classification": "이산 k제곱근",
+            "url": "https://www.acmicpc.net/problem/tag/149"
+        }
+    ]
+}
