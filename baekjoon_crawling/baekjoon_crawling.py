@@ -81,7 +81,7 @@ def get_problem_information_step_1():
 
     for a in problem_list_data['problem']:
         get_problem_information_step_2(a['classification'], a['url'])
-        time.sleep(3)
+        time.sleep(1)
 
 
 def get_problem_information_step_2(classification, url_of_problem):
@@ -98,10 +98,18 @@ def get_problem_information_step_2(classification, url_of_problem):
     else:
         problem_information['problem_information'] = []
 
-    title = soup.select_one('#problem_title').text
-    content = soup.select_one('#problem_description > p').text
-    input_value = soup.select_one('#problem_input > p').text
-    output_value = soup.select_one('#problem_output > p').text
+    title = soup.select_one('#problem_title')
+    if title is not None:
+        title = title.text
+    content = soup.select_one('#problem_description > p')
+    if content is not None:
+        content = content.text
+    input_value = soup.select_one('#problem_input > p')
+    if input_value is not None:
+        input_value = input_value.text
+    output_value = soup.select_one('#problem_output > p')
+    if output_value is not None:
+        output_value = output_value.text
 
     problem_information['problem_information'].append({
         "classification": classification,
@@ -112,12 +120,19 @@ def get_problem_information_step_2(classification, url_of_problem):
         "uri": url_of_problem
     })
 
-    print(problem_information)
+    print(classification)
+    print(title)
+    # print(problem_information)
 
     with open(file_path, 'w', encoding='UTF-8') as outfile:
         json.dump(problem_information, outfile, indent=4, ensure_ascii=False)
 
 
+# 알고리즘 별 문제 모아놓은 페이지 url 크롤링
 # get_url_of_algorithm()
-# get_problem_url_per_algorithm_step_1()
-get_problem_information_step_1()
+
+# 알고리즘 별 문제 모아놓은 페이지에서 문제 url 크롤링
+get_problem_url_per_algorithm_step_1()
+
+# 각 문제 페이지에서 문제 정보 크롤링
+# get_problem_information_step_1()
