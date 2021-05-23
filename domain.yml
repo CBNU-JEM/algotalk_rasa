@@ -93,7 +93,10 @@ responses:
     - text: "나도 너를 도울 수 있어서 기뻐 👍"
 
   utter_what_algorithm:
-  - text: "무슨 알고리즘을 알려줘?"
+    - text: "무슨 알고리즘을 알려줘?"
+
+  utter_what_level:
+    - text: "어떤 난이도를 알려줄까?"
 
 session_config:
   session_expiration_time: 60

@@ -272,7 +272,7 @@ class ProblemForm(FormAction):
         if (any(tracker.get_latest_entity_values('level'))):
             return {"level": value}
         else:
-
+            dispatcher.utter_message(template="utter_what_level")
             return {"level": None}
     def submit(
             self,

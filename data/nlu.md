@@ -75,6 +75,7 @@
 - [코드](code)가 어떻게 돼?
 - [소스코드](code)가 어떻게 돼?
 - 구현은 어떻게 해?
+- 구현 방법 알려줘?
 - 어떻게 만들어?
 - 어떻게 해?
 - [code](code)
@@ -83,6 +84,43 @@
 - [예제](code)
 - [예제](code) 좀 알려줘
 - [예제 코드](code)
+- [코드](code) 없을까?
+- [코드](code) 없을까요?
+- [코드](code) 없겠습니다?
+- [코드](code) 없나요?
+- [코드](code) 없나요?
+- [코드](code) 없나?
+- [코드](code) 없어?
+- [코드](code) 좀
+- [코드](code) 좀 줄래?
+- [코드](code) 좀 줘라
+- [코드](code) 좀 줘봐
+- [코드](code) 좀 줘
+- [코드](code) 좀 주쇼
+- [코드](code) 좀 주십시오
+- [코드](code) 좀 주시오
+- [코드](code) 좀 주실래요?
+- [코드](code) 좀 주실 수 있나요?
+- [코드](code) 좀 줄래요?
+- [코드](code) 받습니다
+- [코드](code) 받는다
+- [코드](code) 받아요
+- [코드](code) 받고 싶어요
+- [코드](code) 받고 싶어
+- [코드](code) 받습 싶은데
+- [코드](code) 줄래?
+- [코드](code) 줘라
+- [코드](code) 줘봐
+- [코드](code) 줘
+- [코드](code) 주쇼
+- [코드](code) 주십시오
+- [코드](code) 주시오
+- [코드](code) 주실래요?
+- [코드](code) 주실 수 있나요?
+- [코드](code) 줄래요?
+
+
+
 
 ## intent:level
 - [난이도](level)
@@ -92,6 +130,22 @@
 - 얼마나 어려워?
 - 얼마나 쉬워?
 - 많이 어려워?
+- [상](level)
+- [중](level)
+- [하](level)
+- [브론즈](level)
+- [실버](level)
+- [골드](level)
+- [플레티넘](level)
+- [플레](level)
+- [다이아](level)
+- 어렵게 해줘
+- 어렵게
+- 어려운 걸로
+- 어려운 걸로 해줘
+- 어려운 걸로 해주세요
+- 어려운 문제로  
+- 쉬운 걸로
 
 ## intent:detail
 - [자세히](detail)
@@ -133,14 +187,447 @@
 - 추천 공부 사이트 있니?
 
 ## intent:problem_type
-- [정렬](algorithm_type) 문제 알려줘
-- [최단거리](algorithm_type) 문제 알려줄래?
-- [정렬](algorithm_type) [알고리즘](algorithm) 문제 풀고싶어
+- [정렬](algorithm_type) 알고리즘 문제 풀고싶어
+- [정렬](algorithm_type) 알고리즘 문제 풀고싶은데
+- [정렬](algorithm_type) 알고리즘 문제 풀거야
+- [정렬](algorithm_type) 알고리즘 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 문제 추천해줄래?
+- [정렬](algorithm_type) 알고리즘 문제 추천 받는다
+- [정렬](algorithm_type) 알고리즘 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 문제 추천 받고 싶어
+- [정렬](algorithm_type) 알고리즘 문제 추천 받아요
+- [정렬](algorithm_type) 알고리즘 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 문제 없어?
+- [정렬](algorithm_type) 알고리즘 문제 뭐가 있을까?
+- [정렬](algorithm_type) 알고리즘 문제 없을까?
+- [정렬](algorithm_type) 알고리즘 문제 없을까요?
+- [정렬](algorithm_type) 알고리즘 문제 없겠습니까?
+- [정렬](algorithm_type) 알고리즘 문제 없나요?
+- [정렬](algorithm_type) 알고리즘 문제 없나?
+- [정렬](algorithm_type) 알고리즘 문제 없어?
+- [정렬](algorithm_type) 알고리즘 문제 알려줘
+- [정렬](algorithm_type) 알고리즘 문제 알려주십시오
+- [정렬](algorithm_type) 알고리즘 문제 알려줄래?
+- [정렬](algorithm_type) 알고리즘 문제 알려주쇼
+- [정렬](algorithm_type) 알고리즘 문제 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 문제 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 문제 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 문제 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 문제 좀
+- [정렬](algorithm_type) 알고리즘 문제 받습니다
+- [정렬](algorithm_type) 알고리즘 문제 받는다
+- [정렬](algorithm_type) 알고리즘 문제 받아요
+- [정렬](algorithm_type) 알고리즘 문제 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 문제 받고 싶어
+
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 풀고싶어
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 풀고싶은데
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 풀거야
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 추천해줄래?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 추천 받는다
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 추천 받아요
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 없어?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 없을까?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 없을까요?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 없겠습니까?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 없나요?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 없나?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 없어?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알려줘
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알려주십시오
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알려줄래?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알려주쇼
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 좀
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 받습니다
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 받는다
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 받아요
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 사용하는 문제 받고 싶어
+
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 풀고싶어
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 풀고싶은데
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 풀거야
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 추천해줄래?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 추천 받는다
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 추천 받아요
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 없어?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 없을까?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 없을까요?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 없겠습니까?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 없나요?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 없나?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 없어?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알려줘
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알려주십시오
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알려줄래?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알려주쇼
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 좀
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 받습니다
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 받는다
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 받아요
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 쓰는 문제 받고 싶어
+
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 풀고싶어
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 풀고싶은데
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 풀거야
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 추천해줄래?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 추천 받는다
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 추천 받아요
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 없어?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 없을까?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 없을까요?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 없겠습니까?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 없나요?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 없나?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 없어?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알려줘
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알려주십시오
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알려줄래?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알려주쇼
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 좀
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 받습니다
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 받는다
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 받아요
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 활용하는 문제 받고 싶어
+
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 풀고싶어
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 풀고싶은데
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 풀거야
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 추천해줄래?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 추천 받는다
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 추천 받아요
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 추천해줘
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 없어?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 없을까?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 없을까요?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 없겠습니까?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 없나요?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 없나?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 없어?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알려줘
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알려주십시오
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알려줄래?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알려주쇼
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 좀
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 받습니다
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 받는다
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 받아요
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 써먹는 문제 받고 싶어
+
 - [정렬](algorithm_type) 문제 풀고싶어
+- [정렬](algorithm_type) 문제 풀고싶은데  
 - [정렬](algorithm_type) 문제 풀거야
+- [정렬](algorithm_type) 문제 추천해줘
+- [정렬](algorithm_type) 문제 추천해줄래?
+- [정렬](algorithm_type) 문제 추천 받는다
+- [정렬](algorithm_type) 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 문제 추천 받고 싶어
+- [정렬](algorithm_type) 문제 추천 받아요
 - [정렬](algorithm_type) 문제 추천해줘
 - [정렬](algorithm_type) 문제 없어?
 - [정렬](algorithm_type) 문제 뭐가 있을까?
+- [정렬](algorithm_type) 문제 없을까?
+- [정렬](algorithm_type) 문제 없을까요?
+- [정렬](algorithm_type) 문제 없겠습니까?
+- [정렬](algorithm_type) 문제 없나요?
+- [정렬](algorithm_type) 문제 없나?
+- [정렬](algorithm_type) 문제 없어?
+- [정렬](algorithm_type) 문제 알려줘
+- [정렬](algorithm_type) 문제 알려주십시오
+- [정렬](algorithm_type) 문제 알려줄래?
+- [정렬](algorithm_type) 문제 알려주쇼
+- [정렬](algorithm_type) 문제 알려주실래요?
+- [정렬](algorithm_type) 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 문제 알려 줄래요?
+- [정렬](algorithm_type) 문제 알고 싶어요
+- [정렬](algorithm_type) 문제 알고 싶은데
+- [정렬](algorithm_type) 문제 좀
+- [정렬](algorithm_type) 문제 받습니다
+- [정렬](algorithm_type) 문제 받는다
+- [정렬](algorithm_type) 문제 받아요
+- [정렬](algorithm_type) 문제 받고 싶어요
+- [정렬](algorithm_type) 문제 받고 싶어
+
+- [정렬](algorithm_type) 사용하는 문제 풀고싶어
+- [정렬](algorithm_type) 사용하는 문제 풀고싶은데
+- [정렬](algorithm_type) 사용하는 문제 풀거야
+- [정렬](algorithm_type) 사용하는 문제 추천해줘
+- [정렬](algorithm_type) 사용하는 문제 추천해줄래?
+- [정렬](algorithm_type) 사용하는 문제 추천 받는다
+- [정렬](algorithm_type) 사용하는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 사용하는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 사용하는 문제 추천 받아요
+- [정렬](algorithm_type) 사용하는 문제 추천해줘
+- [정렬](algorithm_type) 사용하는 문제 없어?
+- [정렬](algorithm_type) 사용하는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 사용하는 문제 없을까?
+- [정렬](algorithm_type) 사용하는 문제 없을까요?
+- [정렬](algorithm_type) 사용하는 문제 없겠습니까?
+- [정렬](algorithm_type) 사용하는 문제 없나요?
+- [정렬](algorithm_type) 사용하는 문제 없나?
+- [정렬](algorithm_type) 사용하는 문제 없어?
+- [정렬](algorithm_type) 사용하는 문제 알려줘
+- [정렬](algorithm_type) 사용하는 문제 알려주십시오
+- [정렬](algorithm_type) 사용하는 문제 알려줄래?
+- [정렬](algorithm_type) 사용하는 문제 알려주쇼
+- [정렬](algorithm_type) 사용하는 문제 알려주실래요?
+- [정렬](algorithm_type) 사용하는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 사용하는 문제 알려 줄래요?
+- [정렬](algorithm_type) 사용하는 문제 알고 싶어요
+- [정렬](algorithm_type) 사용하는 문제 알고 싶은데
+- [정렬](algorithm_type) 사용하는 문제 좀
+- [정렬](algorithm_type) 사용하는 문제 받습니다
+- [정렬](algorithm_type) 사용하는 문제 받는다
+- [정렬](algorithm_type) 사용하는 문제 받아요
+- [정렬](algorithm_type) 사용하는 문제 받고 싶어요
+- [정렬](algorithm_type) 사용하는 문제 받고 싶어
+
+- [정렬](algorithm_type) 나오는 문제 풀고싶어
+- [정렬](algorithm_type) 나오는 문제 풀고싶은데
+- [정렬](algorithm_type) 나오는 문제 풀거야
+- [정렬](algorithm_type) 나오는 문제 추천해줘
+- [정렬](algorithm_type) 나오는 문제 추천해줄래?
+- [정렬](algorithm_type) 나오는 문제 추천 받는다
+- [정렬](algorithm_type) 나오는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 나오는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 나오는 문제 추천 받아요
+- [정렬](algorithm_type) 나오는 문제 추천해줘
+- [정렬](algorithm_type) 나오는 문제 없어?
+- [정렬](algorithm_type) 나오는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 나오는 문제 없을까?
+- [정렬](algorithm_type) 나오는 문제 없을까요?
+- [정렬](algorithm_type) 나오는 문제 없겠습니까?
+- [정렬](algorithm_type) 나오는 문제 없나요?
+- [정렬](algorithm_type) 나오는 문제 없나?
+- [정렬](algorithm_type) 나오는 문제 없어?
+- [정렬](algorithm_type) 나오는 문제 알려줘
+- [정렬](algorithm_type) 나오는 문제 알려주십시오
+- [정렬](algorithm_type) 나오는 문제 알려줄래?
+- [정렬](algorithm_type) 나오는 문제 알려주쇼
+- [정렬](algorithm_type) 나오는 문제 알려주실래요?
+- [정렬](algorithm_type) 나오는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 나오는 문제 알려 줄래요?
+- [정렬](algorithm_type) 나오는 문제 알고 싶어요
+- [정렬](algorithm_type) 나오는 문제 알고 싶은데
+- [정렬](algorithm_type) 나오는 문제 좀
+- [정렬](algorithm_type) 나오는 문제 받습니다
+- [정렬](algorithm_type) 나오는 문제 받는다
+- [정렬](algorithm_type) 나오는 문제 받아요
+- [정렬](algorithm_type) 나오는 문제 받고 싶어요
+- [정렬](algorithm_type) 나오는 문제 받고 싶어
+
+- [정렬](algorithm_type) 쓰는 문제 풀고싶어
+- [정렬](algorithm_type) 쓰는 문제 풀고싶은데
+- [정렬](algorithm_type) 쓰는 문제 풀거야
+- [정렬](algorithm_type) 쓰는 문제 추천해줘
+- [정렬](algorithm_type) 쓰는 문제 추천해줄래?
+- [정렬](algorithm_type) 쓰는 문제 추천 받는다
+- [정렬](algorithm_type) 쓰는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 쓰는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 쓰는 문제 추천 받아요
+- [정렬](algorithm_type) 쓰는 문제 추천해줘
+- [정렬](algorithm_type) 쓰는 문제 없어?
+- [정렬](algorithm_type) 쓰는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 쓰는 문제 없을까?
+- [정렬](algorithm_type) 쓰는 문제 없을까요?
+- [정렬](algorithm_type) 쓰는 문제 없겠습니까?
+- [정렬](algorithm_type) 쓰는 문제 없나요?
+- [정렬](algorithm_type) 쓰는 문제 없나?
+- [정렬](algorithm_type) 쓰는 문제 없어?
+- [정렬](algorithm_type) 쓰는 문제 알려줘
+- [정렬](algorithm_type) 쓰는 문제 알려주십시오
+- [정렬](algorithm_type) 쓰는 문제 알려줄래?
+- [정렬](algorithm_type) 쓰는 문제 알려주쇼
+- [정렬](algorithm_type) 쓰는 문제 알려주실래요?
+- [정렬](algorithm_type) 쓰는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 쓰는 문제 알려 줄래요?
+- [정렬](algorithm_type) 쓰는 문제 알고 싶어요
+- [정렬](algorithm_type) 쓰는 문제 알고 싶은데
+- [정렬](algorithm_type) 쓰는 문제 좀
+- [정렬](algorithm_type) 쓰는 문제 받습니다
+- [정렬](algorithm_type) 쓰는 문제 받는다
+- [정렬](algorithm_type) 쓰는 문제 받아요
+- [정렬](algorithm_type) 쓰는 문제 받고 싶어요
+- [정렬](algorithm_type) 쓰는 문제 받고 싶어
+
+- [정렬](algorithm_type) 활용하는 문제 풀고싶어
+- [정렬](algorithm_type) 활용하는 문제 풀고싶은데
+- [정렬](algorithm_type) 활용하는 문제 풀거야
+- [정렬](algorithm_type) 활용하는 문제 추천해줘
+- [정렬](algorithm_type) 활용하는 문제 추천해줄래?
+- [정렬](algorithm_type) 활용하는 문제 추천 받는다
+- [정렬](algorithm_type) 활용하는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 활용하는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 활용하는 문제 추천 받아요
+- [정렬](algorithm_type) 활용하는 문제 추천해줘
+- [정렬](algorithm_type) 활용하는 문제 없어?
+- [정렬](algorithm_type) 활용하는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 활용하는 문제 없을까?
+- [정렬](algorithm_type) 활용하는 문제 없을까요?
+- [정렬](algorithm_type) 활용하는 문제 없겠습니까?
+- [정렬](algorithm_type) 활용하는 문제 없나요?
+- [정렬](algorithm_type) 활용하는 문제 없나?
+- [정렬](algorithm_type) 활용하는 문제 없어?
+- [정렬](algorithm_type) 활용하는 문제 알려줘
+- [정렬](algorithm_type) 활용하는 문제 알려주십시오
+- [정렬](algorithm_type) 활용하는 문제 알려줄래?
+- [정렬](algorithm_type) 활용하는 문제 알려주쇼
+- [정렬](algorithm_type) 활용하는 문제 알려주실래요?
+- [정렬](algorithm_type) 활용하는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 활용하는 문제 알려 줄래요?
+- [정렬](algorithm_type) 활용하는 문제 알고 싶어요
+- [정렬](algorithm_type) 활용하는 문제 알고 싶은데
+- [정렬](algorithm_type) 활용하는 문제 좀
+- [정렬](algorithm_type) 활용하는 문제 받습니다
+- [정렬](algorithm_type) 활용하는 문제 받는다
+- [정렬](algorithm_type) 활용하는 문제 받아요
+- [정렬](algorithm_type) 활용하는 문제 받고 싶어요
+- [정렬](algorithm_type) 활용하는 문제 받고 싶어
+
+- [정렬](algorithm_type) 써먹는 문제 풀고싶어
+- [정렬](algorithm_type) 써먹는 문제 풀고싶은데
+- [정렬](algorithm_type) 써먹는 문제 풀거야
+- [정렬](algorithm_type) 써먹는 문제 추천해줘
+- [정렬](algorithm_type) 써먹는 문제 추천해줄래?
+- [정렬](algorithm_type) 써먹는 문제 추천 받는다
+- [정렬](algorithm_type) 써먹는 문제 추천 받고 싶어요
+- [정렬](algorithm_type) 써먹는 문제 추천 받고 싶어
+- [정렬](algorithm_type) 써먹는 문제 추천 받아요
+- [정렬](algorithm_type) 써먹는 문제 추천해줘
+- [정렬](algorithm_type) 써먹는 문제 없어?
+- [정렬](algorithm_type) 써먹는 문제 뭐가 있을까?
+- [정렬](algorithm_type) 써먹는 문제 없을까?
+- [정렬](algorithm_type) 써먹는 문제 없을까요?
+- [정렬](algorithm_type) 써먹는 문제 없겠습니까?
+- [정렬](algorithm_type) 써먹는 문제 없나요?
+- [정렬](algorithm_type) 써먹는 문제 없나?
+- [정렬](algorithm_type) 써먹는 문제 없어?
+- [정렬](algorithm_type) 써먹는 문제 알려줘
+- [정렬](algorithm_type) 써먹는 문제 알려주십시오
+- [정렬](algorithm_type) 써먹는 문제 알려줄래?
+- [정렬](algorithm_type) 써먹는 문제 알려주쇼
+- [정렬](algorithm_type) 써먹는 문제 알려주실래요?
+- [정렬](algorithm_type) 써먹는 문제 알려주실 수 있나요?
+- [정렬](algorithm_type) 써먹는 문제 알려 줄래요?
+- [정렬](algorithm_type) 써먹는 문제 알고 싶어요
+- [정렬](algorithm_type) 써먹는 문제 알고 싶은데
+- [정렬](algorithm_type) 써먹는 문제 좀
+- [정렬](algorithm_type) 써먹는 문제 받습니다
+- [정렬](algorithm_type) 써먹는 문제 받는다
+- [정렬](algorithm_type) 써먹는 문제 받아요
+- [정렬](algorithm_type) 써먹는 문제 받고 싶어요
+- [정렬](algorithm_type) 써먹는 문제 받고 싶어
+
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 풀고싶어
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 풀고싶은데
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 풀거야
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 추천해줘
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 추천해줄래?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 추천 받는다
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 추천 받고 싶어요
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 추천 받고 싶어
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 추천 받아요
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 추천해줘
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 없어?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 뭐가 있을까?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 없을까?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 없을까요?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 없겠습니까?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 없나요?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 없나?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 없어?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알려줘
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알려주십시오
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알려줄래?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알려주쇼
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알려주실래요?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알려주실 수 있나요?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알려 줄래요?
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알고 싶어요
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 알고 싶은데
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 좀
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 받습니다
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 받는다
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 받아요
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 받고 싶어요
+- 쉬운 [정렬](algorithm_type) 알고리즘 문제 받고 싶어
+
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 풀고싶어
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 풀고싶은데
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 풀거야
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 추천해줘
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 추천해줄래?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 추천 받는다
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 추천 받고 싶어요
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 추천 받고 싶어
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 추천 받아요
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 추천해줘
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 없어?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 뭐가 있을까?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 없을까?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 없을까요?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 없겠습니까?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 없나요?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 없나?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 없어?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알려줘
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알려주십시오
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알려줄래?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알려주쇼
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알려주실래요?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알려주실 수 있나요?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알려 줄래요?
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알고 싶어요
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 알고 싶은데
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 좀
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 받습니다
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 받는다
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 받아요
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 받고 싶어요
+- 어려운 [정렬](algorithm_type) 알고리즘 문제 받고 싶어
 
 ## intent:problem_solve
 - 모르겠어
@@ -151,11 +638,12 @@
 - 문제풀이 사이트 있니?
 
 ## intent:algorithm_explain
-- [최단거리](algorithm_type) [알고리즘](algorithm) 알려줘
-- [정렬](algorithm_type) [알고리즘](algorithm) 알려줘
+- [최단거리](algorithm_type) 알고리즘 알려줘
+- [정렬](algorithm_type) 알고리즘 알려줘
 - [스택](algorithm_type)이 뭐야?
 - [정렬](algorithm_type)이 뭐야
 - [정렬](algorithm_type)이 뭐니?
+- [정렬](algorithm_type)이 뭔데?
 - [알고리즘](algorithm_type)이 뭐야?
 - [정렬](algorithm_type) 조금 설명해줘
 - [정렬](algorithm_type) 조금 설명해줄래
@@ -169,7 +657,420 @@
 - [알고리즘](algorithm_type)이 정확히 뭐야?
 - [정렬](algorithm_type) 깊게 설명해줘
 - [스택](algorithm_type) 상세히 설명해줄래
+  
+- [정렬](algorithm_type) 알려줘
+- [정렬](algorithm_type) 알려주십시오
+- [정렬](algorithm_type) 알려줄래?
+- [정렬](algorithm_type) 알려주쇼
+- [정렬](algorithm_type) 알려주실래요?
+- [정렬](algorithm_type) 알려주실 수 있나요?
+- [정렬](algorithm_type) 알려 줄래요?
+- [정렬](algorithm_type) 알고 싶어요
+- [정렬](algorithm_type) 알고 싶은데
+- [정렬](algorithm_type) 좀
+- [정렬](algorithm_type) 받습니다
+- [정렬](algorithm_type) 받는다
+- [정렬](algorithm_type) 받아요
+- [정렬](algorithm_type) 받고 싶어요
+- [정렬](algorithm_type) 받고 싶어
+- [정렬](algorithm_type) 설명해줘
+- [정렬](algorithm_type) 설명해줄래
+- [정렬](algorithm_type) 설명해주십시오
+- [정렬](algorithm_type) 설명해주쇼
+- [정렬](algorithm_type) 설명
 
+- [정렬](algorithm_type) 알고리즘 알려줘
+- [정렬](algorithm_type) 알고리즘 알려주십시오
+- [정렬](algorithm_type) 알고리즘 알려줄래?
+- [정렬](algorithm_type) 알고리즘 알려주쇼
+- [정렬](algorithm_type) 알고리즘 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 좀
+- [정렬](algorithm_type) 알고리즘 받습니다
+- [정렬](algorithm_type) 알고리즘 받는다
+- [정렬](algorithm_type) 알고리즘 받아요
+- [정렬](algorithm_type) 알고리즘 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 받고 싶어
+- [정렬](algorithm_type) 알고리즘 설명해줘
+- [정렬](algorithm_type) 알고리즘 설명해줄래
+- [정렬](algorithm_type) 알고리즘 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 설명
+
+- [정렬](algorithm_type) 알고리즘 조금 알려줘
+- [정렬](algorithm_type) 알고리즘 조금 알려주십시오
+- [정렬](algorithm_type) 알고리즘 조금 알려줄래?
+- [정렬](algorithm_type) 알고리즘 조금 알려주쇼
+- [정렬](algorithm_type) 알고리즘 조금 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 조금 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 조금 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 조금 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 조금 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 조금 설명해줘
+- [정렬](algorithm_type) 알고리즘 조금 설명해줄래
+- [정렬](algorithm_type) 알고리즘 조금 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 조금 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 조금 설명
+  
+- [정렬](algorithm_type) 알고리즘 기초 알려줘
+- [정렬](algorithm_type) 알고리즘 기초 알려주십시오
+- [정렬](algorithm_type) 알고리즘 기초 알려줄래?
+- [정렬](algorithm_type) 알고리즘 기초 알려주쇼
+- [정렬](algorithm_type) 알고리즘 기초 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 기초 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 기초 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 기초 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 기초 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 기초 좀
+- [정렬](algorithm_type) 알고리즘 기초 받습니다
+- [정렬](algorithm_type) 알고리즘 기초 받는다
+- [정렬](algorithm_type) 알고리즘 기초 받아요
+- [정렬](algorithm_type) 알고리즘 기초 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 기초 받고 싶어
+- [정렬](algorithm_type) 알고리즘 기초 설명해줘
+- [정렬](algorithm_type) 알고리즘 기초 설명해줄래
+- [정렬](algorithm_type) 알고리즘 기초 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 기초 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 기초 설명
+
+- [정렬](algorithm_type) 알고리즘 간단히 알려줘
+- [정렬](algorithm_type) 알고리즘 간단히 알려주십시오
+- [정렬](algorithm_type) 알고리즘 간단히 알려줄래?
+- [정렬](algorithm_type) 알고리즘 간단히 알려주쇼
+- [정렬](algorithm_type) 알고리즘 간단히 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 간단히 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 간단히 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 간단히 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 간단히 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 간단히 좀
+- [정렬](algorithm_type) 알고리즘 간단히 받습니다
+- [정렬](algorithm_type) 알고리즘 간단히 받는다
+- [정렬](algorithm_type) 알고리즘 간단히 받아요
+- [정렬](algorithm_type) 알고리즘 간단히 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 간단히 받고 싶어
+- [정렬](algorithm_type) 알고리즘 간단히 설명해줘
+- [정렬](algorithm_type) 알고리즘 간단히 설명해줄래
+- [정렬](algorithm_type) 알고리즘 간단히 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 간단히 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 간단히 설명
+
+- [정렬](algorithm_type) 알고리즘 쉽게 알려줘
+- [정렬](algorithm_type) 알고리즘 쉽게 알려주십시오
+- [정렬](algorithm_type) 알고리즘 쉽게 알려줄래?
+- [정렬](algorithm_type) 알고리즘 쉽게 알려주쇼
+- [정렬](algorithm_type) 알고리즘 쉽게 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 쉽게 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 쉽게 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 쉽게 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 쉽게 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 쉽게 좀
+- [정렬](algorithm_type) 알고리즘 쉽게 받습니다
+- [정렬](algorithm_type) 알고리즘 쉽게 받는다
+- [정렬](algorithm_type) 알고리즘 쉽게 받아요
+- [정렬](algorithm_type) 알고리즘 쉽게 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 쉽게 받고 싶어
+- [정렬](algorithm_type) 알고리즘 쉽게 설명해줘
+- [정렬](algorithm_type) 알고리즘 쉽게 설명해줄래
+- [정렬](algorithm_type) 알고리즘 쉽게 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 쉽게 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 쉽게 설명
+
+- [정렬](algorithm_type) 알고리즘 간략하게 알려줘
+- [정렬](algorithm_type) 알고리즘 간략하게 알려주십시오
+- [정렬](algorithm_type) 알고리즘 간략하게 알려줄래?
+- [정렬](algorithm_type) 알고리즘 간략하게 알려주쇼
+- [정렬](algorithm_type) 알고리즘 간략하게 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 간략하게 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 간략하게 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 간략하게 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 간략하게 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 간략하게 좀
+- [정렬](algorithm_type) 알고리즘 간략하게 받습니다
+- [정렬](algorithm_type) 알고리즘 간략하게 받는다
+- [정렬](algorithm_type) 알고리즘 간략하게 받아요
+- [정렬](algorithm_type) 알고리즘 간략하게 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 간략하게 받고 싶어
+- [정렬](algorithm_type) 알고리즘 간략하게 설명해줘
+- [정렬](algorithm_type) 알고리즘 간략하게 설명해줄래
+- [정렬](algorithm_type) 알고리즘 간략하게 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 간략하게 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 간략하게 설명
+
+- [정렬](algorithm_type) 알고리즘 대충 알려줘
+- [정렬](algorithm_type) 알고리즘 대충 알려주십시오
+- [정렬](algorithm_type) 알고리즘 대충 알려줄래?
+- [정렬](algorithm_type) 알고리즘 대충 알려주쇼
+- [정렬](algorithm_type) 알고리즘 대충 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 대충 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 대충 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 대충 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 대충 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 대충 좀
+- [정렬](algorithm_type) 알고리즘 대충 받습니다
+- [정렬](algorithm_type) 알고리즘 대충 받는다
+- [정렬](algorithm_type) 알고리즘 대충 받아요
+- [정렬](algorithm_type) 알고리즘 대충 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 대충 받고 싶어
+- [정렬](algorithm_type) 알고리즘 대충 설명해줘
+- [정렬](algorithm_type) 알고리즘 대충 설명해줄래
+- [정렬](algorithm_type) 알고리즘 대충 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 대충 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 대충 설명
+
+- [정렬](algorithm_type) 알고리즘 대략 알려줘
+- [정렬](algorithm_type) 알고리즘 대략 알려주십시오
+- [정렬](algorithm_type) 알고리즘 대략 알려줄래?
+- [정렬](algorithm_type) 알고리즘 대략 알려주쇼
+- [정렬](algorithm_type) 알고리즘 대략 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 대략 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 대략 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 대략 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 대략 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 대략 좀
+- [정렬](algorithm_type) 알고리즘 대략 받습니다
+- [정렬](algorithm_type) 알고리즘 대략 받는다
+- [정렬](algorithm_type) 알고리즘 대략 받아요
+- [정렬](algorithm_type) 알고리즘 대략 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 대략 받고 싶어
+- [정렬](algorithm_type) 알고리즘 대략 설명해줘
+- [정렬](algorithm_type) 알고리즘 대략 설명해줄래
+- [정렬](algorithm_type) 알고리즘 대략 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 대략 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 대략 설명
+
+- [정렬](algorithm_type) 알고리즘 쫌만 알려줘
+- [정렬](algorithm_type) 알고리즘 쫌만 알려주십시오
+- [정렬](algorithm_type) 알고리즘 쫌만 알려줄래?
+- [정렬](algorithm_type) 알고리즘 쫌만 알려주쇼
+- [정렬](algorithm_type) 알고리즘 쫌만 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 쫌만 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 쫌만 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 쫌만 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 쫌만 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 쫌만 좀
+- [정렬](algorithm_type) 알고리즘 쫌만 받습니다
+- [정렬](algorithm_type) 알고리즘 쫌만 받는다
+- [정렬](algorithm_type) 알고리즘 쫌만 받아요
+- [정렬](algorithm_type) 알고리즘 쫌만 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 쫌만 받고 싶어
+- [정렬](algorithm_type) 알고리즘 쫌만 설명해줘
+- [정렬](algorithm_type) 알고리즘 쫌만 설명해줄래
+- [정렬](algorithm_type) 알고리즘 쫌만 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 쫌만 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 쫌만 설명
+
+- [정렬](algorithm_type) 알고리즘 자세히 알려줘
+- [정렬](algorithm_type) 알고리즘 자세히 알려주십시오
+- [정렬](algorithm_type) 알고리즘 자세히 알려줄래?
+- [정렬](algorithm_type) 알고리즘 자세히 알려주쇼
+- [정렬](algorithm_type) 알고리즘 자세히 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 자세히 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 자세히 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 자세히 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 자세히 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 자세히 좀
+- [정렬](algorithm_type) 알고리즘 자세히 받습니다
+- [정렬](algorithm_type) 알고리즘 자세히 받는다
+- [정렬](algorithm_type) 알고리즘 자세히 받아요
+- [정렬](algorithm_type) 알고리즘 자세히 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 자세히 받고 싶어
+- [정렬](algorithm_type) 알고리즘 자세히 설명해줘
+- [정렬](algorithm_type) 알고리즘 자세히 설명해줄래
+- [정렬](algorithm_type) 알고리즘 자세히 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 자세히 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 자세히 설명
+
+- [정렬](algorithm_type) 알고리즘 자세하게 알려줘
+- [정렬](algorithm_type) 알고리즘 자세하게 알려주십시오
+- [정렬](algorithm_type) 알고리즘 자세하게 알려줄래?
+- [정렬](algorithm_type) 알고리즘 자세하게 알려주쇼
+- [정렬](algorithm_type) 알고리즘 자세하게 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 자세하게 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 자세하게 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 자세하게 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 자세하게 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 자세하게 좀
+- [정렬](algorithm_type) 알고리즘 자세하게 받습니다
+- [정렬](algorithm_type) 알고리즘 자세하게 받는다
+- [정렬](algorithm_type) 알고리즘 자세하게 받아요
+- [정렬](algorithm_type) 알고리즘 자세하게 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 자세하게 받고 싶어
+- [정렬](algorithm_type) 알고리즘 자세하게 설명해줘
+- [정렬](algorithm_type) 알고리즘 자세하게 설명해줄래
+- [정렬](algorithm_type) 알고리즘 자세하게 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 자세하게 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 자세하게 설명
+
+- [정렬](algorithm_type) 알고리즘 좀 더 알려줘
+- [정렬](algorithm_type) 알고리즘 좀 더 알려주십시오
+- [정렬](algorithm_type) 알고리즘 좀 더 알려줄래?
+- [정렬](algorithm_type) 알고리즘 좀 더 알려주쇼
+- [정렬](algorithm_type) 알고리즘 좀 더 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 좀 더 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 좀 더 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 좀 더 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 좀 더 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 좀 더 받습니다
+- [정렬](algorithm_type) 알고리즘 좀 더 받는다
+- [정렬](algorithm_type) 알고리즘 좀 더 받아요
+- [정렬](algorithm_type) 알고리즘 좀 더 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 좀 더 받고 싶어
+- [정렬](algorithm_type) 알고리즘 좀 더 설명해줘
+- [정렬](algorithm_type) 알고리즘 좀 더 설명해줄래
+- [정렬](algorithm_type) 알고리즘 좀 더 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 좀 더 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 좀 더 설명
+
+- [정렬](algorithm_type) 알고리즘 정확히 알려줘
+- [정렬](algorithm_type) 알고리즘 정확히 알려주십시오
+- [정렬](algorithm_type) 알고리즘 정확히 알려줄래?
+- [정렬](algorithm_type) 알고리즘 정확히 알려주쇼
+- [정렬](algorithm_type) 알고리즘 정확히 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 정확히 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 정확히 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 정확히 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 정확히 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 정확히 좀
+- [정렬](algorithm_type) 알고리즘 정확히 받습니다
+- [정렬](algorithm_type) 알고리즘 정확히 받는다
+- [정렬](algorithm_type) 알고리즘 정확히 받아요
+- [정렬](algorithm_type) 알고리즘 정확히 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 정확히 받고 싶어
+- [정렬](algorithm_type) 알고리즘 정확히 설명해줘
+- [정렬](algorithm_type) 알고리즘 정확히 설명해줄래
+- [정렬](algorithm_type) 알고리즘 정확히 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 정확히 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 정확히 설명
+
+- [정렬](algorithm_type) 알고리즘 상세하게 알려줘
+- [정렬](algorithm_type) 알고리즘 상세하게 알려주십시오
+- [정렬](algorithm_type) 알고리즘 상세하게 알려줄래?
+- [정렬](algorithm_type) 알고리즘 상세하게 알려주쇼
+- [정렬](algorithm_type) 알고리즘 상세하게 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 상세하게 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 상세하게 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 상세하게 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 상세하게 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 상세하게 좀
+- [정렬](algorithm_type) 알고리즘 상세하게 받습니다
+- [정렬](algorithm_type) 알고리즘 상세하게 받는다
+- [정렬](algorithm_type) 알고리즘 상세하게 받아요
+- [정렬](algorithm_type) 알고리즘 상세하게 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 상세하게 받고 싶어
+- [정렬](algorithm_type) 알고리즘 상세하게 설명해줘
+- [정렬](algorithm_type) 알고리즘 상세하게 설명해줄래
+- [정렬](algorithm_type) 알고리즘 상세하게 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 상세하게 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 상세하게 설명
+
+- [정렬](algorithm_type) 알고리즘 정확하게 알려줘
+- [정렬](algorithm_type) 알고리즘 정확하게 알려주십시오
+- [정렬](algorithm_type) 알고리즘 정확하게 알려줄래?
+- [정렬](algorithm_type) 알고리즘 정확하게 알려주쇼
+- [정렬](algorithm_type) 알고리즘 정확하게 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 정확하게 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 정확하게 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 정확하게 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 정확하게 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 정확하게 좀
+- [정렬](algorithm_type) 알고리즘 정확하게 받습니다
+- [정렬](algorithm_type) 알고리즘 정확하게 받는다
+- [정렬](algorithm_type) 알고리즘 정확하게 받아요
+- [정렬](algorithm_type) 알고리즘 정확하게 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 정확하게 받고 싶어
+- [정렬](algorithm_type) 알고리즘 정확하게 설명해줘
+- [정렬](algorithm_type) 알고리즘 정확하게 설명해줄래
+- [정렬](algorithm_type) 알고리즘 정확하게 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 정확하게 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 정확하게 설명
+
+- [정렬](algorithm_type) 알고리즘 샅샅이 알려줘
+- [정렬](algorithm_type) 알고리즘 샅샅이 알려주십시오
+- [정렬](algorithm_type) 알고리즘 샅샅이 알려줄래?
+- [정렬](algorithm_type) 알고리즘 샅샅이 알려주쇼
+- [정렬](algorithm_type) 알고리즘 샅샅이 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 샅샅이 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 샅샅이 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 샅샅이 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 샅샅이 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 샅샅이 좀
+- [정렬](algorithm_type) 알고리즘 샅샅이 받습니다
+- [정렬](algorithm_type) 알고리즘 샅샅이 받는다
+- [정렬](algorithm_type) 알고리즘 샅샅이 받아요
+- [정렬](algorithm_type) 알고리즘 샅샅이 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 샅샅이 받고 싶어
+- [정렬](algorithm_type) 알고리즘 샅샅이 설명해줘
+- [정렬](algorithm_type) 알고리즘 샅샅이 설명해줄래
+- [정렬](algorithm_type) 알고리즘 샅샅이 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 샅샅이 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 샅샅이 설명
+
+- [정렬](algorithm_type) 알고리즘 길게 알려줘
+- [정렬](algorithm_type) 알고리즘 길게 알려주십시오
+- [정렬](algorithm_type) 알고리즘 길게 알려줄래?
+- [정렬](algorithm_type) 알고리즘 길게 알려주쇼
+- [정렬](algorithm_type) 알고리즘 길게 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 길게 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 길게 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 길게 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 길게 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 길게 좀
+- [정렬](algorithm_type) 알고리즘 길게 받습니다
+- [정렬](algorithm_type) 알고리즘 길게 받는다
+- [정렬](algorithm_type) 알고리즘 길게 받아요
+- [정렬](algorithm_type) 알고리즘 길게 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 길게 받고 싶어
+- [정렬](algorithm_type) 알고리즘 길게 설명해줘
+- [정렬](algorithm_type) 알고리즘 길게 설명해줄래
+- [정렬](algorithm_type) 알고리즘 길게 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 길게 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 길게 설명
+
+- [정렬](algorithm_type) 알고리즘 어렵게 알려줘
+- [정렬](algorithm_type) 알고리즘 어렵게 알려주십시오
+- [정렬](algorithm_type) 알고리즘 어렵게 알려줄래?
+- [정렬](algorithm_type) 알고리즘 어렵게 알려주쇼
+- [정렬](algorithm_type) 알고리즘 어렵게 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 어렵게 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 어렵게 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 어렵게 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 어렵게 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 어렵게 좀
+- [정렬](algorithm_type) 알고리즘 어렵게 받습니다
+- [정렬](algorithm_type) 알고리즘 어렵게 받는다
+- [정렬](algorithm_type) 알고리즘 어렵게 받아요
+- [정렬](algorithm_type) 알고리즘 어렵게 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 어렵게 받고 싶어
+- [정렬](algorithm_type) 알고리즘 어렵게 설명해줘
+- [정렬](algorithm_type) 알고리즘 어렵게 설명해줄래
+- [정렬](algorithm_type) 알고리즘 어렵게 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 어렵게 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 어렵게 설명
+
+- [정렬](algorithm_type) 알고리즘 깊히 알려줘
+- [정렬](algorithm_type) 알고리즘 깊히 알려주십시오
+- [정렬](algorithm_type) 알고리즘 깊히 알려줄래?
+- [정렬](algorithm_type) 알고리즘 깊히 알려주쇼
+- [정렬](algorithm_type) 알고리즘 깊히 알려주실래요?
+- [정렬](algorithm_type) 알고리즘 깊히 알려주실 수 있나요?
+- [정렬](algorithm_type) 알고리즘 깊히 알려 줄래요?
+- [정렬](algorithm_type) 알고리즘 깊히 알고 싶어요
+- [정렬](algorithm_type) 알고리즘 깊히 알고 싶은데
+- [정렬](algorithm_type) 알고리즘 깊히 좀
+- [정렬](algorithm_type) 알고리즘 깊히 받습니다
+- [정렬](algorithm_type) 알고리즘 깊히 받는다
+- [정렬](algorithm_type) 알고리즘 깊히 받아요
+- [정렬](algorithm_type) 알고리즘 깊히 받고 싶어요
+- [정렬](algorithm_type) 알고리즘 깊히 받고 싶어
+- [정렬](algorithm_type) 알고리즘 깊히 설명해줘
+- [정렬](algorithm_type) 알고리즘 깊히 설명해줄래
+- [정렬](algorithm_type) 알고리즘 깊히 설명해주십시오
+- [정렬](algorithm_type) 알고리즘 깊히 설명해주쇼
+- [정렬](algorithm_type) 알고리즘 깊히 설명
+  
 ## intent:algorithm_example
 - [정렬](algorithm_type) 예시 좀 알려줘
 - [정렬](algorithm_type) 예시 좀 알려줄래
