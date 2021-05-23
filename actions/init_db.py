@@ -80,7 +80,7 @@ problem_list = [db.Problem('수 정렬하기', '브론즈 1', 'N개의 수가 �
                            '_',
                            'https://www.acmicpc.net/problem/14940')]
 
-contest_list = [db.Contest('준파고를 잡아라', '2021.06.07', '2021.05.10 ~ 21',
+contest_list = [db.Contest('준파고를 잡아라', '2021-06-07 00:00:00','2021-06-07 00:00:00', '2021-05-10 00:00:00','2021:05:10 00:00:00',
                            '준파고보다 빨리 코팅해라! 준파고의 코딩을 따라잡는 스피드 코딩 대회!',
                            '프로그래머스', 'https://programmers.co.kr/competitions')]
 
@@ -123,7 +123,7 @@ contest_list = [db.Contest('준파고를 잡아라', '2021.06.07', '2021.05.10 ~
 
 print("algodb drop")
 
-db.execute_query('drop table ALGORITHM_CLASSIFICATION')
+db.execute_query('drop table ALGORITHM_PROBLEM_CLASSIFICATION')
 db.execute_query('drop table CONTEST_PROBLEM')
 db.execute_query('drop table PROBLEM')
 db.execute_query('drop table ALGORITHM')
@@ -132,19 +132,17 @@ db.execute_query('drop table CONTEST')
 print("algodb create")
 
 db.execute_query('''CREATE TABLE ALGORITHM (
-                    ALGORITHM_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                    NAME VARCHAR(100) NOT NULL,
+                    NAME VARCHAR(100) NOT NULL PRIMARY KEY,
                     BRIEF_EXPLAIN VARCHAR(50),
                     DETAIL_EXPLAIN VARCHAR(250),
                     LEVEL VARCHAR(20),
                     EXAMPLE_CODE VARCHAR(5000),
-                    PARENT INT,
-                    CONSTRAINT PARENT_ALGORITHM FOREIGN KEY (PARENT) REFERENCES ALGORITHM (ALGORITHM_ID)
+                    PARENT VARCHAR(100),
+                    CONSTRAINT PARENT_ALGORITHM FOREIGN KEY (PARENT) REFERENCES ALGORITHM (NAME)
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8
                     ''')
 db.execute_query('''CREATE TABLE PROBLEM (
-                    PROBLEM_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                    NAME VARCHAR(100),
+                    NAME VARCHAR(100) NOT NULL PRIMARY KEY,
                     LEVEL VARCHAR(20),
                     CONTENT VARCHAR(5000),
                     INPUT VARCHAR(1000),
@@ -154,37 +152,38 @@ db.execute_query('''CREATE TABLE PROBLEM (
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8
                     ''')
 db.execute_query('''CREATE TABLE CONTEST (
-                    CONTEST_ID int not null AUTO_INCREMENT primary key,
-                    NAME VARCHAR(100),
-                    DATE VARCHAR(20),
-                    RECEPTION_PERIOD VARCHAR(30),
+                    NAME VARCHAR(100) NOT NULL PRIMARY KEY,
+                    CONTEST_START DATETIME,
+                    CONTEST_END DATETIME,
+                    RECEPTION_START DATETIME,
+                    RECEPTION_END DATETIME,
                     CONTENT VARCHAR(5000),
                     SOURCE VARCHAR(5000),
                     URI VARCHAR(200)
                     )''')
-db.execute_query('''CREATE TABLE ALGORITHM_CLASSIFICATION (
-                    ALGORITHM_ID int not null,
-                    PROBLEM_ID int not null,
-                    PRIMARY KEY (ALGORITHM_ID, PROBLEM_ID),
-                    CONSTRAINT AC_ALGORITHM_FOREIGN FOREIGN KEY (ALGORITHM_ID) 
-                    REFERENCES ALGORITHM (ALGORITHM_ID)
+db.execute_query('''CREATE TABLE ALGORITHM_PROBLEM_CLASSIFICATION (
+                    ALGORITHM_NAME VARCHAR(100) not null,
+                    PROBLEM_NAME VARCHAR(100) not null,
+                    PRIMARY KEY (ALGORITHM_NAME, PROBLEM_NAME),
+                    FOREIGN KEY (ALGORITHM_NAME) 
+                    REFERENCES ALGORITHM (NAME)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE,
-                    CONSTRAINT AC_PROBLEM_FOREIGN FOREIGN KEY (PROBLEM_ID) 
-                    REFERENCES PROBLEM (PROBLEM_ID)
+                    FOREIGN KEY (PROBLEM_NAME) 
+                    REFERENCES PROBLEM (NAME)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE
                     )''')
 db.execute_query('''CREATE TABLE CONTEST_PROBLEM (
-                    CONTEST_ID int not null,
-                    PROBLEM_ID int not null,
-                    PRIMARY KEY (CONTEST_ID, PROBLEM_ID),
-                    CONSTRAINT CP_CONTEST_FOREIGN FOREIGN KEY (CONTEST_ID) 
-                    REFERENCES CONTEST (CONTEST_ID)
+                    CONTEST_NAME VARCHAR(100) not null,
+                    PROBLEM_NAME VARCHAR(100) not null,
+                    PRIMARY KEY (CONTEST_NAME, PROBLEM_NAME),
+                    CONSTRAINT CP_CONTEST_FOREIGN FOREIGN KEY (CONTEST_NAME) 
+                    REFERENCES CONTEST (NAME)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE,
-                    CONSTRAINT CP_PROBLEM_FOREIGN FOREIGN KEY (PROBLEM_ID) 
-                    REFERENCES PROBLEM (PROBLEM_ID)
+                    CONSTRAINT CP_PROBLEM_FOREIGN FOREIGN KEY (PROBLEM_NAME) 
+                    REFERENCES PROBLEM (NAME)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE
                     )''')
@@ -193,6 +192,8 @@ db.create_algorithm(algorithm_list)
 db.create_problem(problem_list)
 db.create_contest(contest_list)
 
+db.create_algorithm_problem_classification("정렬 알고리즘","수 정렬하기")
+db.create_contest_problem("준파고를 잡아라","쉬운 최단거리")
 # CONSTRAINT `B_M_ID`
 # FOREIGN KEY (`M_ID`)
 # REFERENCES `my_movie`.`MOVIE` (`M_ID`)
