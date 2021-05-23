@@ -99,14 +99,14 @@ class ActionProblemRecommended(FormAction):
             number = 1
         ##이름, 알고리즘, 난이도, 대회이름
         problem = db.get_problem(problem_name, algorithm_name, level, contest_name, number)
-
+        print(problem)
         buttons = []
         explain_text = ""
         #대회 문제면 대회버튼, 다른 문제 확인?
-        if problem and contest_name:
-            explain_text = problem[0].input
-            explain_text += problem[0].output
-            explain_text += problem[0].content
+        if problem  and contest_name:
+            explain_text = problem[0].input + '\n'
+            explain_text += problem[0].output + '\n'
+            explain_text += problem[0].content + '\n'
             buttons = [{"title": "사용 알고리즘",
                         "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}"}}"""},
                        {"title": "대회",
@@ -272,6 +272,7 @@ class ProblemForm(FormAction):
         if (any(tracker.get_latest_entity_values('level'))):
             return {"level": value}
         else:
+
             return {"level": None}
     def submit(
             self,

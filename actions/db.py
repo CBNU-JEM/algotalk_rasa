@@ -1,4 +1,5 @@
 import pymysql
+
 debug = True
 
 db = pymysql.connect(host='localhost', user='algotalk', password='algojem', db='algotalk_db', autocommit=True,
@@ -18,9 +19,9 @@ class Algorithm:
 
 
 class AlgorithmClassification:
-    def __init__(self, problem_id=None, algorithm_id=None):
-        self.problem_id = problem_id
-        self.algorithm_id = algorithm_id
+    def __init__(self, problem_name=None, algorithm_name=None):
+        self.problem_name = problem_name
+        self.algorithm_name = algorithm_name
 
 
 class Problem:
@@ -36,16 +37,19 @@ class Problem:
 
 
 class ContestProblem:
-    def __init__(self, problem_id=None, contest_id=None):
-        self.problem_id = problem_id
-        self.contest_id = contest_id
+    def __init__(self, problem_name=None, contest_name=None):
+        self.problem_name = problem_name
+        self.contest_name = contest_name
 
 
 class Contest:
-    def __init__(self, name=None, date=None, reception_period=None, content=None, source=None, uri=None):
+    def __init__(self, name=None, contest_start=None, contest_end=None, reception_start=None, reception_end=None,
+                 content=None, source=None, uri=None):
         self.name = name
-        self.date = date
-        self.reception_period = reception_period
+        self.contest_start = contest_start
+        self.contest_end = contest_end
+        self.reception_start = reception_start
+        self.reception_end = reception_end
         self.content = content
         self.source = source
         self.uri = uri
@@ -118,18 +122,18 @@ def delete_problem(part):
 
 
 def get_problem(problem_name, algorithm_name, level, contest_name, number):
-    q = f'SELECT P.NAME, P.LEVEL, P.CONTENT, P.INPUT, P.OUTPUT, P.SOURCE, P.URI, C.NAME, A.NAME FROM PROBLEM AS P '\
-        'LEFT JOIN CONTEST_PROBLEM AS CP ON P.NAME =CP.NAME LEFT JOIN CONTEST AS C ON CP.NAME = C.NAME '\
-        'LEFT JOIN ALGORITHM_CLASSIFICATION AS AP ON P.NAME=AP.NAME LEFT JOIN ALGORITHM AS A ON AP.NAME=A.NAME '
+    q = f'SELECT P.NAME, P.LEVEL, P.CONTENT, P.INPUT, P.OUTPUT, P.SOURCE, P.URI, C.NAME, A.NAME FROM PROBLEM AS P ' \
+        'LEFT JOIN CONTEST_PROBLEM AS CP ON P.NAME =CP.PROBLEM_NAME LEFT JOIN CONTEST AS C ON CP.CONTEST_NAME = C.NAME ' \
+        'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.NAME=AP.PROBLEM_NAME LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_NAME=A.NAME '
 
     if problem_name:
         q += "WHERE " + f"P.NAME LIKE \'%{problem_name}%\' "
     if algorithm_name:
-        q +=( "AND " if q.find("WHERE")!=-1 else "WHERE ") + f"A.NAME LIKE \'%{algorithm_name}%\' "
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"A.NAME LIKE \'%{algorithm_name}%\' "
     if contest_name:
-        q +=( "AND " if q.find("WHERE")!=-1 else "WHERE ") + f"C.NAME LIKE \'%{contest_name}%\' "
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"C.NAME LIKE \'%{contest_name}%\' "
     if level:
-        q +=( "AND " if q.find("WHERE")!=-1 else "WHERE ") + f"P.LEVEL LIKE \'%하%\' "
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"P.LEVEL LIKE \'%브론즈%\' "
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
     problems = []
@@ -139,10 +143,10 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
 
 
 def create_contest(contest_list):
-    q = 'INSERT INTO CONTEST (NAME, DATE, RECEPTION_PERIOD, CONTENT, SOURCE, URI) VALUES '
+    q = 'INSERT INTO CONTEST (NAME, CONTEST_START, CONTEST_END, RECEPTION_START, RECEPTION_END, CONTENT, SOURCE, URI) VALUES '
     tmp_query = ""
     for contest in contest_list:
-        tmp_query += f', (\'{contest.name}\', \'{contest.date}\', \'{contest.reception_period}\', \'{contest.content}\', \'{contest.source}\', \'{contest.uri}\')'
+        tmp_query += f', (\'{contest.name}\', \'{contest.contest_start}\', \'{contest.contest_end}\', \'{contest.reception_start}\', \'{contest.reception_end}\', \'{contest.content}\', \'{contest.source}\', \'{contest.uri}\')'
     q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
@@ -152,23 +156,23 @@ def delete_contest(part):
     execute_query(q)
 
 
-def create_algorithm_classification(problem_id, algorithm_id):
-    q = f'INSERT INTO ALGORITHM_CLASSIFICATION VALUES problem_id={problem_id},algorithm_id{algorithm_id}'
+def create_algorithm_problem_classification(algorithm_name, problem_name):
+    q = f'INSERT INTO ALGORITHM_PROBLEM_CLASSIFICATION (algorithm_name, problem_name) VALUES (\'{algorithm_name}\', \'{problem_name}\')'
     execute_query(q)
 
 
-def delete_algorithm_classification(problem_id, algorithm_id):
-    q = f'DELETE FROM ALGORITHM_CLASSIFICATION WHERE problem_id=\'{problem_id}\' AND algorithm_id=\'{algorithm_id}\''
+def delete_algorithm_problem_classification(algorithm_name, problem_name):
+    q = f'DELETE FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE problem_name=\'{problem_name}\' AND algorithm_name=\'{algorithm_name}\''
     execute_query(q)
 
 
-def create_contest_problem(problem_id, contest_id):
-    q = f'INSERT INTO CONTEST_PROBLEM VALUES problem_id={problem_id},contest_id{contest_id}'
+def create_contest_problem(contest_name, problem_name):
+    q = f'INSERT INTO CONTEST_PROBLEM (contest_name, problem_name)VALUES (\'{contest_name}\', \'{problem_name}\')'
     execute_query(q)
 
 
-def delete_contest_problem(problem_id, contest_id):
-    q = f'DELETE FROM CONTEST_PROBLEM WHERE problem_id=\'{problem_id}\' AND contest_id=\'{contest_id}\''
+def delete_contest_problem(contest_name, problem_name):
+    q = f'DELETE FROM CONTEST_PROBLEM WHERE problem_name=\'{problem_name}\' AND contest_name=\'{contest_name}\''
     execute_query(q)
 
 
@@ -179,9 +183,9 @@ def update_algorithm(name, brief_explain, detail_explain, level, example_code, u
     execute_query(q)
 
 
-def update_problem(name, level, content, input, output, source, algorithm_classification, uri):
+def update_problem(name, level, content, input, output, source, algorithm_problem_classification, uri):
     q = f'UPDATE PROBLEM SET name={name}, level={level},content={content},input={input}' \
-        f',output={output},source={source},algorithm_classification={algorithm_classification}.uri={uri}'
+        f',output={output},source={source},algorithm_problem_classification={algorithm_problem_classification}.uri={uri}'
     q = q.replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
