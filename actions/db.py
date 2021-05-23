@@ -1,5 +1,4 @@
 import pymysql
-from func import UserLevel
 debug = True
 
 db = pymysql.connect(host='localhost', user='algotalk', password='algojem', db='algotalk_db', autocommit=True,
