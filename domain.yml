@@ -29,6 +29,7 @@ intents:
 
 actions:
   - action_algorithm_explain
+  - action_problem_recommended
 
 slots:
   brief:
