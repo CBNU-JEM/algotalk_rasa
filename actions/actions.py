@@ -13,6 +13,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from typing import Any, Text, Dict, List
 from actions import db
+import datetime
 
 
 class ActionHelloWorld(Action):
@@ -200,26 +201,30 @@ class ActionContestExplain(FormAction):
         brief = tracker.get_slot('brief')
         detail = tracker.get_slot('detail')
         past = tracker.get_slot('past')
+        proceeding = tracker.get_slot('proceeding')
 
         schedule = tracker.get_slot('schedule')
         contest_name = tracker.get_slot('contest_name')
 
         contests = db.get_contest_by_name(contest_name)
+        # contest를 시간순으로 정렬하고 필터링해서 출력한다.
+        contests.sort(self, key=lambda x: x[1])
+        today = datetime.datetime.now()
+        if past:
+            contests = filter(lambda x: x.date < today, contests)
+        elif proceeding:
+            contests = filter(lambda x: today in x.reception_period, contests)
+        elif schedule:
+            contests = filter(lambda x: x.date > today, contests)
+
         buttons = []
         explain_text = ""
         if contests:
             explain_text = contests[0].content
-            buttons = [{"title": "간단한 설명", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "brief":"간단한"}}"""},
-                       {"title": "난이도", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "level":"난이도"}}"""},
-                       {"title": "코드", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제", "payload": "/"}]
-        elif algorithms:
-            explain_text = contests[0].brief_explain
-            buttons = [{"title": "자세한 설명", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "detail":"자세한"}}"""},
-                       {"title": "난이도", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "level":"난이도"}}"""},
-                       {"title": "코드", "payload": f"""/contest_explain{{"algorithm_type": "{contest_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제", "payload": "/"}]
-
+            buttons = [{"title": "간단한 설명", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "brief":"간단한"}}"""},
+                       {"title": "대회 일정", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}"""},
+                       {"title": "대회 홈페이지", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "homepage":"홈페이지"}}"""},
+                       {"title": "신청 기간", "payload": "/"}]
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
