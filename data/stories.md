@@ -50,6 +50,7 @@
 * problem_type
   - problem_form
   - form{"name": "problem_form"}
+  - slot{"requested_slot":"level"}
   - form{"name": null}
   - action_problem_recommended
 ## contest

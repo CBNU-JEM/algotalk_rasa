@@ -252,9 +252,11 @@ class ProblemForm(FormAction):
             or a list of them, where a first match will be picked"""
         return {
             "problem_name": [self.from_entity(entity="problem_name")],
-            "contest_name": [self.from_entity(entity="contest_name"), self.from_intent(intent="contest_name")],
+            "contest_name": [self.from_entity(entity="contest_name")],
+                #, self.from_intent(intent="contest_name")],
             "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
-            "number": [self.from_entity(entity="number"), self.from_intent(intent="number")],
+            "number": [self.from_entity(entity="number")],
+                #, self.from_intent(intent="number")],
             "algorithm_type": [self.from_entity(entity="algorithm_type")]
         }
     def validate_level(

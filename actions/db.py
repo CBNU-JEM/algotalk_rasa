@@ -123,13 +123,13 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
         'LEFT JOIN ALGORITHM_CLASSIFICATION AS AP ON P.NAME=AP.NAME LEFT JOIN ALGORITHM AS A ON AP.NAME=A.NAME '
 
     if problem_name:
-        q += "WHERE " + f"P.NAME LIKE \'%{problem_name}%\'"
+        q += "WHERE " + f"P.NAME LIKE \'%{problem_name}%\' "
     if algorithm_name:
-        q += "AND " if q.contains("WHERE") else "WHERE " + f"A.NAME LIKE%\'{algorithm_name}\'%"
+        q +=( "AND " if q.find("WHERE")!=-1 else "WHERE ") + f"A.NAME LIKE \'%{algorithm_name}%\' "
     if contest_name:
-        q += "AND " if q.contains("WHERE") else "WHERE " + f"C.NAME LIKE%\'{contest_name}\'%"
+        q +=( "AND " if q.find("WHERE")!=-1 else "WHERE ") + f"C.NAME LIKE \'%{contest_name}%\' "
     if level:
-        q += "AND " if q.contains("WHERE") else "WHERE " + f"LEVEL LIKE%\'{level}\'%"
+        q +=( "AND " if q.find("WHERE")!=-1 else "WHERE ") + f"P.LEVEL LIKE \'%하%\' "
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
     problems = []
