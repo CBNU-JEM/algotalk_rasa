@@ -96,7 +96,8 @@ class ActionProblemRecommended(FormAction):
         problem_name = tracker.get_slot('problem_name')
         contest_name = tracker.get_slot('contest_name')
         level = tracker.get_slot('level')
-
+        if number is None :
+            number = 1
         ##이름, 알고리즘, 난이도, 대회이름
         problem = db.get_problem(problem_name, algorithm_name, level, contest_name, number)
 
@@ -136,7 +137,7 @@ class ActionProblemRecommended(FormAction):
         print(f"contest_name : {contest_name}")
         print(f"algorithm_name : {algorithm_name}")
 
-        return [SlotSet("number", None), SlotSet("problem_name", None), SlotSet("contest_name", None), SlotSet("level", None)]
+        return []
 
 
 class AlgorithmForm(FormAction):
@@ -160,7 +161,7 @@ class AlgorithmForm(FormAction):
             "brief": [self.from_entity(entity="brief")],
             "detail": [self.from_entity(entity="detail")],
             "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
-            "code": [self.from_entity(entity="code"), self.from_intent(intent="code", value=True)],,
+            "code": [self.from_entity(entity="code"), self.from_intent(intent="code", value=True)],
             "algorithm_type": [self.from_entity(entity="algorithm_type")]
         }
 
@@ -238,6 +239,12 @@ class ProblemForm(FormAction):
     def name(self) -> Text:
         return "problem_form"
 
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        """A list of required slots that the form has to fill"""
+
+        return ["level"]
+
     def slot_mappings(self):
         """A dictionary to map required slots to
             - an extracted entity
@@ -251,7 +258,20 @@ class ProblemForm(FormAction):
             "number": [self.from_entity(entity="number"), self.from_intent(intent="number")],
             "algorithm_type": [self.from_entity(entity="algorithm_type")]
         }
-
+    def validate_level(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        """check algorithm_type"""
+        # print(f"validate: ${tracker.get_latest_entity_values('brief_explain')}")
+        print(f"level {value}")
+        if (any(tracker.get_latest_entity_values('level'))):
+            return {"level": value}
+        else:
+            return {"level": None}
     def submit(
             self,
             dispatcher: CollectingDispatcher,
