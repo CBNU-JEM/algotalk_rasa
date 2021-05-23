@@ -42,7 +42,6 @@
 * algorithm_explain
   - algorithm_form
   - form{"name": "algorithm_form"}
-  - slot{"requested_slot": "algorithm_type"}
   - form{"name": null}
   - action_algorithm_explain
 
@@ -61,8 +60,7 @@
   - slot{"requested_slot":"level"}
   - form{"name": null}
   - action_problem_recommended
-## contest
-
   
+## contest
 
 ## tutorial

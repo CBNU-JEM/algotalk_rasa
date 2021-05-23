@@ -72,6 +72,7 @@ class ActionAlgorithmExplain(FormAction):
         if algorithms and example_code:
             explain_text += f"\n예제 코드\n{algorithms[0].example_code}"
 
+        print(algorithms)
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
         print(f"detail : {detail}")
@@ -162,7 +163,7 @@ class AlgorithmForm(FormAction):
             "detail": [self.from_entity(entity="detail")],
             "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
             "code": [self.from_entity(entity="code"), self.from_intent(intent="code", value=True)],
-            "algorithm_type": [self.from_entity(entity="algorithm_type")]
+            "algorithm_type": [self.from_entity(entity="algorithm_type"), self.from_entity(entity="algorithm")]
         }
 
     def validate_algorithm_type(
@@ -175,10 +176,7 @@ class AlgorithmForm(FormAction):
         """check algorithm_type"""
 
         print(f"algorithm_type {value}")
-        if (any(tracker.get_latest_entity_values('algorithm_type'))):
-            return {"algorithm_type": value}
-        else:
-            return {"algorithm_type": None}
+        return {"algorithm_type": value}
 
     def submit(
             self,
@@ -260,10 +258,7 @@ class ContestForm(FormAction):
         """check contest_name"""
 
         print(f"contest_name {value}")
-        if (any(tracker.get_latest_entity_values('contest_name'))):
-            return {"contest_name": value}
-        else:
-            return {"contest_name": None}
+        return {"contest_name": value}
 
     def submit(
             self,
@@ -299,7 +294,7 @@ class ProblemForm(FormAction):
             "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
             "number": [self.from_entity(entity="number")],
                 #, self.from_intent(intent="number")],
-            "algorithm_type": [self.from_entity(entity="algorithm_type")]
+            "algorithm_type": [self.from_entity(entity="algorithm_type"), self.from_entity(entity="algorithm")]
         }
     def validate_level(
             self,

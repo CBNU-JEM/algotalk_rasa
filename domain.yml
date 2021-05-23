@@ -26,10 +26,13 @@ intents:
   - code
   - level
   - number
+  - contest_explain
+  - algorithm
 
 actions:
   - action_algorithm_explain
   - action_problem_recommended
+  - action_contest_explain
 
 slots:
   brief:
@@ -52,6 +55,7 @@ slots:
 forms:
   - algorithm_form
   - problem_form
+  - contest_form
 
 entities:
   - algorithm_type
