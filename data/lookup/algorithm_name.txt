@@ -1,172 +1,174 @@
-- [수학](algorithm_name)
-- [다이나믹 프로그래밍](algorithm_name)
-- [구현](algorithm_name)
-- [그래프 이론](algorithm_name)
-- [자료 구조](algorithm_name)
-- [문자열](algorithm_name)
-- [그리디 알고리즘](algorithm_name)
-- [그래프 탐색](algorithm_name)
-- [브루트포스 알고리즘](algorithm_name)
-- [세그먼트 트리](algorithm_name)
-- [정렬](algorithm_name)
-- [트리](algorithm_name)
-- [이분 탐색](algorithm_name)
-- [기하학](algorithm_name)
-- [정수론](algorithm_name)
-- [너비 우선 탐색](algorithm_name)
-- [조합론](algorithm_name)
-- [사칙연산](algorithm_name)
-- [누적 합](algorithm_name)
-- [깊이 우선 탐색](algorithm_name)
-- [시뮬레이션](algorithm_name)
-- [다익스트라](algorithm_name)
-- [비트마스킹](algorithm_name)
-- [분리 집합](algorithm_name)
-- [분할 정복](algorithm_name)
-- [애드 혹](algorithm_name)
-- [구성적](algorithm_name)
-- [백트래킹](algorithm_name)
-- [스위핑](algorithm_name)
-- [Case work](algorithm_name)
-- [스택](algorithm_name)
-- [우선순위 큐](algorithm_name)
-- [트리에서의 다이나믹 프로그래밍](algorithm_name)
-- [최대 유량](algorithm_name)
-- [파싱](algorithm_name)
-- [느리게 갱신되는 세그먼트 트리](algorithm_name)
-- [투 포인터](algorithm_name)
-- [비트필드를 이용한 다이나믹 프로그래밍](algorithm_name)
-- [트리를 사용한 집합과 맵](algorithm_name)
-- [소수 판정](algorithm_name)
-- [오프라인 쿼리](algorithm_name)
-- [게임 이론](algorithm_name)
-- [분할 정복을 이용한 거듭제곱](algorithm_name)
-- [이분 매칭](algorithm_name)
-- [임의 정밀도 / 큰 수 연산](algorithm_name)
-- [최소 스패닝 트리](algorithm_name)
-- [해싱](algorithm_name)
-- [최소 공통 조상](algorithm_name)
-- [재귀](algorithm_name)
-- [에라토스테네스의 체](algorithm_name)
-- [해시를 사용한 집합과 맵](algorithm_name)
-- [강한 연결 요소](algorithm_name)
-- [플로이드–와샬](algorithm_name)
-- [고속 푸리에 변환](algorithm_name)
-- [위상 정렬](algorithm_name)
-- [볼록 껍질](algorithm_name)
-- [선형대수학](algorithm_name)
-- [트라이](algorithm_name)
-- [포함 배제의 원리](algorithm_name)
-- [값 / 좌표 압축](algorithm_name)
-- [볼록 껍질을 이용한 최적화](algorithm_name)
-- [KMP](algorithm_name)
-- [배낭 문제](algorithm_name)
-- [접미사 배열과 LCP 배열](algorithm_name)
-- [희소 배열](algorithm_name)
-- [최소 비용 최대 유량](algorithm_name)
-- [제곱근 분할법](algorithm_name)
-- [작은 집합에서 큰 집합으로 합치는 테크닉](algorithm_name)
-- [유클리드 호제법](algorithm_name)
-- [덱](algorithm_name)
-- [확률론](algorithm_name)
-- [런타임 전의 전처리](algorithm_name)
-- [스프라그–그런디 정리](algorithm_name)
-- [매개 변수 탐색](algorithm_name)
-- [가장 긴 증가하는 부분 수열: O(n log n)](algorithm_name)
-- [중간에서 만나기](algorithm_name)
-- [Heavy-light 분할](algorithm_name)
-- [선분 교차 판정](algorithm_name)
-- [센트로이드 분할](algorithm_name)
-- [슬라이딩 윈도우](algorithm_name)
-- [무작위화](algorithm_name)
-- [오일러 경로 테크닉](algorithm_name)
-- [2-SAT](algorithm_name)
-- [삼분 탐색](algorithm_name)
-- [미적분학](algorithm_name)
-- [최대 유량 최소 컷 정리](algorithm_name)
-- [가우스 소거법](algorithm_name)
-- [휴리스틱](algorithm_name)
-- [단절점과 단절선](algorithm_name)
-- [퍼시스턴트 세그먼트 트리](algorithm_name)
-- [3차원 기하학](algorithm_name)
-- [오일러 경로](algorithm_name)
-- [선인장](algorithm_name)
-- [비트 집합](algorithm_name)
-- [중국인의 나머지 정리](algorithm_name)
-- [분할 정복을 사용한 최적화](algorithm_name)
-- [큐](algorithm_name)
-- [Mo's](algorithm_name)
-- [벨만–포드](algorithm_name)
-- [병렬 이분 탐색](algorithm_name)
-- [벌래캠프–매시](algorithm_name)
-- [오일러 지표 (χ=V-E+F)](algorithm_name)
-- [다차원 세그먼트 트리](algorithm_name)
-- [평면 그래프](algorithm_name)
-- [아호-코라식](algorithm_name)
-- [스플레이 트리](algorithm_name)
-- [순열 사이클 분할](algorithm_name)
-- [페르마의 소정리](algorithm_name)
-- [라빈–카프](algorithm_name)
-- [확장 유클리드 호제법](algorithm_name)
-- [회전하는 캘리퍼스](algorithm_name)
-- [커넥션 프로파일을 이용한 다이나믹 프로그래밍](algorithm_name)
-- [물리학](algorithm_name)
-- [이중 연결 요소](algorithm_name)
-- [머지 소트 트리](algorithm_name)
-- [뫼비우스 반전 공식](algorithm_name)
-- [덱을 이용한 다이나믹 프로그래밍](algorithm_name)
-- [정규 표현식](algorithm_name)
-- [링크/컷 트리](algorithm_name)
-- [매내처](algorithm_name)
-- [볼록 다각형 내부의 점 판정](algorithm_name)
-- [오일러 피 함수](algorithm_name)
-- [연결 리스트](algorithm_name)
-- [0-1 너비 우선 탐색](algorithm_name)
-- [수치해석](algorithm_name)
-- [외판원 순회 문제](algorithm_name)
-- [인터프리터](algorithm_name)
-- [폴라드 로](algorithm_name)
-- [Alien 트릭](algorithm_name)
-- [함수 개형을 이용한 최적화](algorithm_name)
-- [모듈로 곱셈 역원](algorithm_name)
-- [다각형의 넓이](algorithm_name)
-- [기댓값의 선형성](algorithm_name)
-- [오프라인 동적 연결성 판정](algorithm_name)
-- [선형 계획법](algorithm_name)
-- [번사이드 보조정리](algorithm_name)
-- [오목 다각형 내부의 점 판정](algorithm_name)
-- [피타고라스 정리](algorithm_name)
-- [키타마사](algorithm_name)
-- [트리 동형 사상](algorithm_name)
-- [홀의 결혼 정리](algorithm_name)
-- [헝가리안](algorithm_name)
-- [이산 로그](algorithm_name)
-- [최소 외접원](algorithm_name)
-- [밀러–라빈 소수 판별법](algorithm_name)
-- [도미네이터 트리](algorithm_name)
-- [단조 큐를 이용한 최적화](algorithm_name)
-- [쌍대성](algorithm_name)
-- [쌍대 그래프](algorithm_name)
-- [일반적인 매칭](algorithm_name)
-- [회문 트리](algorithm_name)
-- [스토어–바그너](algorithm_name)
-- [Z](algorithm_name)
-- [크누스 최적화](algorithm_name)
-- [매트로이드](algorithm_name)
-- [뤼카 정리](algorithm_name)
-- [양방향 탐색](algorithm_name)
-- [이산 제곱근](algorithm_name)
-- [유향 최소 신장 트리](algorithm_name)
-- [보로노이 다이어그램](algorithm_name)
-- [4차원 이상의 기하학](algorithm_name)
-- [보이어–무어 다수결 투표](algorithm_name)
-- [히르쉬버그](algorithm_name)
-- [통계학](algorithm_name)
-- [로프](algorithm_name)
-- [춤추는 링크](algorithm_name)
-- [크누스 X](algorithm_name)
-- [접미사 트리](algorithm_name)
-- [델로네 삼각분할](algorithm_name)
-- [레드-블랙 트리](algorithm_name)
-- [탑 트리](algorithm_name)
-- [이산 k제곱근](algorithm_name)
+수학
+다이나믹 프로그래밍
+구현
+그래프 이론
+자료 구조
+문자열
+그리디 알고리즘
+그래프 탐색
+브루트포스 알고리즘
+세그먼트 트리
+정렬
+트리
+이분 탐색
+기하학
+정수론
+너비 우선 탐색
+조합론
+사칙연산
+누적 합
+깊이 우선 탐색
+시뮬레이션
+다익스트라
+비트마스킹
+분리 집합
+분할 정복
+애드 혹
+구성적
+백트래킹
+스위핑
+Case work
+스택
+우선순위 큐
+트리에서의 다이나믹 프로그래밍
+최대 유량
+파싱
+느리게 갱신되는 세그먼트 트리
+투 포인터
+비트필드를 이용한 다이나믹 프로그래밍
+트리를 사용한 집합과 맵
+소수 판정
+오프라인 쿼리
+게임 이론
+분할 정복을 이용한 거듭제곱
+이분 매칭
+임의 정밀도 / 큰 수 연산
+최소 스패닝 트리
+해싱
+최소 공통 조상
+재귀
+에라토스테네스의 체
+해시를 사용한 집합과 맵
+강한 연결 요소
+플로이드–와샬
+고속 푸리에 변환
+위상 정렬
+볼록 껍질
+선형대수학
+
+트라이
+포함 배제의 원리
+값 / 좌표 압축
+볼록 껍질을 이용한 최적화
+KMP
+배낭 문제
+접미사 배열과 LCP 배열
+희소 배열
+최소 비용 최대 유량
+제곱근 분할법
+작은 집합에서 큰 집합으로 합치는 테크닉
+유클리드 호제법
+덱
+확률론
+런타임 전의 전처리
+스프라그–그런디 정리
+매개 변수 탐색
+가장 긴 증가하는 부분 수열: O(n log n)
+중간에서 만나기
+Heavy-light 분할
+선분 교차 판정
+센트로이드 분할
+슬라이딩 윈도우
+무작위화
+오일러 경로 테크닉
+2-SAT
+삼분 탐색
+미적분학
+최대 유량 최소 컷 정리
+가우스 소거법
+휴리스틱
+단절점과 단절선
+퍼시스턴트 세그먼트 트리
+3차원 기하학
+오일러 경로
+선인장
+비트 집합
+중국인의 나머지 정리
+분할 정복을 사용한 최적화
+큐
+Mo's
+벨만–포드
+병렬 이분 탐색
+벌래캠프–매시
+오일러 지표 (χ=V-E+F)
+다차원 세그먼트 트리
+평면 그래프
+아호-코라식
+스플레이 트리
+순열 사이클 분할
+페르마의 소정리
+라빈–카프
+확장 유클리드 호제법
+회전하는 캘리퍼스
+커넥션 프로파일을 이용한 다이나믹 프로그래밍
+물리학
+이중 연결 요소
+머지 소트 트리
+
+뫼비우스 반전 공식
+덱을 이용한 다이나믹 프로그래밍
+정규 표현식
+링크/컷 트리
+매내처
+볼록 다각형 내부의 점 판정
+오일러 피 함수
+연결 리스트
+0-1 너비 우선 탐색
+수치해석
+외판원 순회 문제
+인터프리터
+폴라드 로
+Alien 트릭
+함수 개형을 이용한 최적화
+모듈로 곱셈 역원
+다각형의 넓이
+기댓값의 선형성
+오프라인 동적 연결성 판정
+선형 계획법
+번사이드 보조정리
+오목 다각형 내부의 점 판정
+피타고라스 정리
+키타마사
+트리 동형 사상
+홀의 결혼 정리
+헝가리안
+이산 로그
+최소 외접원
+밀러–라빈 소수 판별법
+도미네이터 트리
+단조 큐를 이용한 최적화
+쌍대성
+쌍대 그래프
+일반적인 매칭
+회문 트리
+스토어–바그너
+Z
+크누스 최적화
+매트로이드
+뤼카 정리
+양방향 탐색
+이산 제곱근
+유향 최소 신장 트리
+보로노이 다이어그램
+4차원 이상의 기하학
+보이어–무어 다수결 투표
+히르쉬버그
+통계학
+로프
+춤추는 링크
+크누스 X
+접미사 트리
+델로네 삼각분할
+레드-블랙 트리
+탑 트리
+이산 k제곱근

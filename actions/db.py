@@ -20,10 +20,10 @@ class Algorithm:
         self.parent = parent
 
 
-class AlgorithmClassification:
-    def __init__(self, problem_name=None, algorithm_name=None):
-        self.problem_name = problem_name
+class AlgorithmProblemClassification:
+    def __init__(self, algorithm_name=None, problem_name=None):
         self.algorithm_name = algorithm_name
+        self.problem_name = problem_name
 
 
 class Problem:
@@ -85,11 +85,11 @@ def execute_query(q):
 
 
 def create_algorithm(algorithm_list):
-    q = 'INSERT INTO  ALGORITHM (NAME, BRIEF_EXPLAIN, DETAIL_EXPLAIN, LEVEL, EXAMPLE_CODE, PARENT) VALUES '
+    q = "INSERT IGNORE INTO  ALGORITHM (NAME, BRIEF_EXPLAIN, DETAIL_EXPLAIN, LEVEL, EXAMPLE_CODE, PARENT) VALUES "
     tmp_query = ""
     for algorithm in algorithm_list:
-        tmp_query += f', (\'{algorithm.name}\', \'{algorithm.brief_explain}\', \'{algorithm.detail_explain}\', \'{algorithm.level}\', \'{algorithm.example_code}\', {algorithm.parent})'
-    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
+        tmp_query += f', (\"{algorithm.name}\", \"{algorithm.brief_explain}\", \"{algorithm.detail_explain}\", \"{algorithm.level}\", \"{algorithm.example_code}\", \"{algorithm.parent}\")'
+    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
     execute_query(q)
 
 
@@ -112,7 +112,7 @@ def create_problem(problem_list):
     tmp_query = ""
     for problem in problem_list:
         tmp_query += f', (\"{problem.name}\", \"{problem.level}\", \"{problem.content}\", \"{problem.input}\", \"{problem.output}\", \"{problem.uri}\")'
-    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
+    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
     execute_query(q)
 
 
@@ -146,17 +146,24 @@ def create_contest(contest_list):
     q = 'INSERT INTO CONTEST (NAME, CONTEST_START, CONTEST_END, RECEPTION_START, RECEPTION_END, CONTENT, SOURCE, URI) VALUES '
     tmp_query = ""
     for contest in contest_list:
-        tmp_query += f', (\'{contest.name}\', \'{contest.contest_start}\', \'{contest.contest_end}\', \'{contest.reception_start}\', \'{contest.reception_end}\', \'{contest.content}\', \'{contest.source}\', \'{contest.uri}\')'
-    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
+        tmp_query += f', (\"{contest.name}\", \"{contest.contest_start}\", \"{contest.contest_end}\", \"{contest.reception_start}\", \"{contest.reception_end}\", \"{contest.content}\", \"{contest.source}\", \"{contest.uri}\")'
+    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
     execute_query(q)
 
+def create_algorithm_problem_classification(algorithm_problem_list):
+    q = 'INSERT INTO ALGORITHM_PROBLEM_CLASSIFICATION (ALGORITHM_NAME, PROBLEM_NAME) VALUES '
+    tmp_query = ""
+    for algorithm_problem in algorithm_problem_list:
+        tmp_query += f', (\"{algorithm_problem.algorithm_name}\", \"{algorithm_problem.problem_name}\")'
+    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
+    execute_query(q)
 
 def delete_contest(part):
     q = f'DELETE FROM CONTEST WHERE part=\'{part}\''
     execute_query(q)
 
 def get_contest_by_name(name):
-    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \'%{name}%\' ORDER BY DATE desc'
+    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \"%{name}%\" ORDER BY DATE desc'
     rows = execute_query(q)
     contests = []
     for row in rows:
@@ -171,23 +178,23 @@ def get_contest_by_sql(sql):
     return contests
 
 
-def create_algorithm_problem_classification(algorithm_name, problem_name):
-    q = f'INSERT INTO ALGORITHM_PROBLEM_CLASSIFICATION (algorithm_name, problem_name) VALUES (\'{algorithm_name}\', \'{problem_name}\')'
+def create_algorithm_problem_classification_one(algorithm_name, problem_name):
+    q = f'INSERT INTO ALGORITHM_PROBLEM_CLASSIFICATION (algorithm_name, problem_name) VALUES (\"{algorithm_name}\", \"{problem_name}\")'
     execute_query(q)
 
 
 def delete_algorithm_problem_classification(algorithm_name, problem_name):
-    q = f'DELETE FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE problem_name=\'{problem_name}\' AND algorithm_name=\'{algorithm_name}\''
+    q = f'DELETE FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE problem_name=\"{problem_name}\" AND algorithm_name=\"{algorithm_name}\"'
     execute_query(q)
 
 
 def create_contest_problem(contest_name, problem_name):
-    q = f'INSERT INTO CONTEST_PROBLEM (contest_name, problem_name)VALUES (\'{contest_name}\', \'{problem_name}\')'
+    q = f'INSERT INTO CONTEST_PROBLEM (contest_name, problem_name)VALUES (\"{contest_name}\", \"{problem_name}\")'
     execute_query(q)
 
 
 def delete_contest_problem(contest_name, problem_name):
-    q = f'DELETE FROM CONTEST_PROBLEM WHERE problem_name=\'{problem_name}\' AND contest_name=\'{contest_name}\''
+    q = f'DELETE FROM CONTEST_PROBLEM WHERE problem_name=\"{problem_name}\" AND contest_name=\"{contest_name}\"'
     execute_query(q)
 
 
