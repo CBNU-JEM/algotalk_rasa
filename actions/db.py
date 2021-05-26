@@ -29,7 +29,7 @@ class AlgorithmProblemClassification:
 class Problem:
     def __init__(self, name=None, level=None, content=None, input=None, output=None, uri=None):
         self.name = name
-        self.level = random.choice(["브론즈", "실버", "골드", "플레티넘", "다이아"])
+        self.level = level
         self.content = content
         self.input = input
         self.output = output
