@@ -1,8 +1,64 @@
 {
-  "problem_type": {
-    "precision": 0.3333333333333333,
+  "greet": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.5,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "bot_challenge": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
+  "number": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16,
+    "confused_with": {}
+  },
+  "ask_whatspossible": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "change": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 46,
+    "confused_with": {}
+  },
+  "detail": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 10,
+    "confused_with": {}
+  },
+  "deny": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 4,
+    "confused_with": {}
+  },
+  "contest_detail_information": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "recommendation_site": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
     "support": 2,
     "confused_with": {}
   },
@@ -13,6 +69,68 @@
     "support": 2,
     "confused_with": {}
   },
+  "mood_unhappy": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 8,
+    "confused_with": {}
+  },
+  "change_easy": {
+    "precision": 0.8448275862068966,
+    "recall": 0.98,
+    "f1-score": 0.9074074074074074,
+    "support": 50,
+    "confused_with": {
+      "change_hard": 1
+    }
+  },
+  "brief": {
+    "precision": 1.0,
+    "recall": 0.9,
+    "f1-score": 0.9473684210526316,
+    "support": 10,
+    "confused_with": {
+      "change_easy": 1
+    }
+  },
+  "contest_information": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2,
+    "confused_with": {}
+  },
+  "problem_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 403,
+    "confused_with": {}
+  },
+  "change_hard": {
+    "precision": 0.9767441860465116,
+    "recall": 0.84,
+    "f1-score": 0.9032258064516129,
+    "support": 50,
+    "confused_with": {
+      "change_easy": 8
+    }
+  },
+  "mood_great": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6,
+    "confused_with": {}
+  },
+  "code": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 48,
+    "confused_with": {}
+  },
   "goodbye": {
     "precision": 1.0,
     "recall": 1.0,
@@ -20,11 +138,11 @@
     "support": 4,
     "confused_with": {}
   },
-  "mood_unhappy": {
+  "recommendation_level": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 8,
+    "support": 2,
     "confused_with": {}
   },
   "problem_solve": {
@@ -34,14 +152,7 @@
     "support": 2,
     "confused_with": {}
   },
-  "greet": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 5,
-    "confused_with": {}
-  },
-  "contest_type": {
+  "algorithm_example": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
@@ -62,14 +173,26 @@
     "support": 2,
     "confused_with": {}
   },
-  "contest_detail_information": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2,
-    "confused_with": {
-      "contest_information": 2
-    }
+  "thanks": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 7,
+    "confused_with": {}
+  },
+  "level": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13,
+    "confused_with": {}
+  },
+  "algorithm_explain": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 410,
+    "confused_with": {}
   },
   "user_level": {
     "precision": 1.0,
@@ -78,91 +201,24 @@
     "support": 4,
     "confused_with": {}
   },
-  "recommendation_level": {
+  "contest_type": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 2,
     "confused_with": {}
   },
-  "detail_explain": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2,
-    "confused_with": {
-      "problem_type": 2
-    }
-  },
-  "bot_challenge": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 9,
-    "confused_with": {}
-  },
-  "recommendation_type": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2,
-    "confused_with": {}
-  },
-  "algorithm_example": {
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1-score": 0.0,
-    "support": 2,
-    "confused_with": {
-      "problem_type": 2
-    }
-  },
-  "deny": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 4,
-    "confused_with": {}
-  },
-  "contest_information": {
-    "precision": 0.5,
-    "recall": 1.0,
-    "f1-score": 0.6666666666666666,
-    "support": 2,
-    "confused_with": {}
-  },
-  "mood_great": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 6,
-    "confused_with": {}
-  },
-  "recommendation_site": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2,
-    "confused_with": {}
-  },
-  "base_explain": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 9,
-    "confused_with": {}
-  },
-  "accuracy": 0.9230769230769231,
+  "accuracy": 0.9911504424778761,
   "macro avg": {
-    "precision": 0.8015873015873015,
-    "recall": 0.8571428571428571,
-    "f1-score": 0.8174603174603173,
-    "support": 78
+    "precision": 0.9938473024914968,
+    "recall": 0.9903448275862069,
+    "f1-score": 0.9916552287900571,
+    "support": 1130
   },
   "weighted avg": {
-    "precision": 0.893162393162393,
-    "recall": 0.9230769230769231,
-    "f1-score": 0.9017094017094018,
-    "support": 78
+    "precision": 0.9921049456749297,
+    "recall": 0.9911504424778761,
+    "f1-score": 0.9911551724809534,
+    "support": 1130
   }
 }

@@ -53,6 +53,23 @@
   - slot{"requested_slot":"level"}
   - form{"name": null}
   - action_problem_recommended
+  
+## change_problem
+* change
+  - action_problem_recommended
+
+
+## change_problem_easy
+* change_easy
+  - action_level_change_easy
+  - action_problem_recommended
+
+
+## change_problem_hard
+* change_hard
+  - action_level_change_hard
+  - action_problem_recommended
+  
 ## contest
 
   

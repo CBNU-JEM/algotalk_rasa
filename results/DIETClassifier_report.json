@@ -1,15 +1,51 @@
 {
-  "algorithm_type": {
-    "precision": 1.0,
-    "recall": 0.9473684210526315,
-    "f1-score": 0.972972972972973,
-    "support": 19
-  },
   "contest_name": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
     "support": 8
+  },
+  "code": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 51
+  },
+  "algorithm_type": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 819
+  },
+  "number": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16
+  },
+  "algorithm_level": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 2
+  },
+  "brief": {
+    "precision": 0.8823529411764706,
+    "recall": 1.0,
+    "f1-score": 0.9375,
+    "support": 15
+  },
+  "level": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16
+  },
+  "detail": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 18
   },
   "user_level": {
     "precision": 1.0,
@@ -17,28 +53,22 @@
     "f1-score": 1.0,
     "support": 4
   },
-  "algorithm_level": {
-    "precision": 0.6666666666666666,
-    "recall": 1.0,
-    "f1-score": 0.8,
-    "support": 2
-  },
   "micro avg": {
-    "precision": 0.9696969696969697,
-    "recall": 0.9696969696969697,
-    "f1-score": 0.9696969696969697,
-    "support": 33
+    "precision": 0.9978969505783386,
+    "recall": 1.0,
+    "f1-score": 0.9989473684210526,
+    "support": 949
   },
   "macro avg": {
-    "precision": 0.9166666666666666,
-    "recall": 0.9868421052631579,
-    "f1-score": 0.9432432432432432,
-    "support": 33
+    "precision": 0.9869281045751634,
+    "recall": 1.0,
+    "f1-score": 0.9930555555555556,
+    "support": 949
   },
   "weighted avg": {
-    "precision": 0.9797979797979799,
-    "recall": 0.9696969696969697,
-    "f1-score": 0.9723177723177723,
-    "support": 33
+    "precision": 0.9981404574474679,
+    "recall": 1.0,
+    "f1-score": 0.9990121180189674,
+    "support": 949
   }
 }
