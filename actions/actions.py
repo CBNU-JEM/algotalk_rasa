@@ -134,7 +134,8 @@ class ActionProblemRecommended(FormAction):
         buttons = []
         explain_text = ""
         if problem and contest_name:
-            explain_text = problem[0].input + '\n'
+            explain_text = problem[0].name + '\n'
+            explain_text += problem[0].input + '\n'
             explain_text += problem[0].output + '\n'
             explain_text += problem[0].content + '\n'
             buttons = [{"title": "사용 알고리즘",
@@ -145,7 +146,8 @@ class ActionProblemRecommended(FormAction):
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "다른 문제", "payload": "/"}]
         elif problem and number:
-            explain_text = problem[0].input + '\n'
+            explain_text = problem[0].name + '\n'
+            explain_text += problem[0].input + '\n'
             explain_text += problem[0].output + '\n'
             explain_text += problem[0].content + '\n'
             ## 알고리즘 db에서 검색 후 모두 출력
