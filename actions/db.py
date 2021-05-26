@@ -138,7 +138,7 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
     rows = execute_query(q)
     problems = []
     for row in rows:
-        problems.append(Problem(row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
+        problems.append(Problem(row[1], row[2], row[3], row[4], row[5], row[6]))
     return problems
 
 
