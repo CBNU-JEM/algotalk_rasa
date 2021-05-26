@@ -12,7 +12,9 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from typing import Any, Text, Dict, List
+
 from actions import db
+from actions.func import UserLevel
 
 
 class ActionHelloWorld(Action):
@@ -26,7 +28,34 @@ class ActionHelloWorld(Action):
         dispatcher.utter_message(text="Hello World!")
 
         return []
+class ActionLevelChangeEasy(Action):
 
+    def name(self) -> Text:
+        return "action_level_change_easy"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        level = tracker.get_slot('level')
+        print(f"\nlevel= {level}")
+        ul=UserLevel()
+        level = ul.level_up(level)
+        SlotSet("level", level)
+        return []
+class ActionLevelChangeHard(Action):
+
+    def name(self) -> Text:
+        return "action_level_change_hard"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        level = tracker.get_slot('level')
+        print(f"\nlevel= {level}")
+        ul=UserLevel()
+        level = ul.level_down(level)
+        SlotSet("level", level)
+        return []
 
 class ActionAlgorithmExplain(FormAction):
 
@@ -95,15 +124,14 @@ class ActionProblemRecommended(FormAction):
         problem_name = tracker.get_slot('problem_name')
         contest_name = tracker.get_slot('contest_name')
         level = tracker.get_slot('level')
-        if number is None :
+        if number is None:
             number = 1
         ##이름, 알고리즘, 난이도, 대회이름
         problem = db.get_problem(problem_name, algorithm_name, level, contest_name, number)
         print(problem)
         buttons = []
         explain_text = ""
-        #대회 문제면 대회버튼, 다른 문제 확인?
-        if problem  and contest_name:
+        if problem and contest_name:
             explain_text = problem[0].input + '\n'
             explain_text += problem[0].output + '\n'
             explain_text += problem[0].content + '\n'
@@ -114,10 +142,10 @@ class ActionProblemRecommended(FormAction):
                        {"title": "난이도",
                         "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "다른 문제", "payload": "/"}]
-        elif problem and number :
-            explain_text = problem[0].input
-            explain_text += problem[0].output
-            explain_text += problem[0].content
+        elif problem and number:
+            explain_text = problem[0].input + '\n'
+            explain_text += problem[0].output + '\n'
+            explain_text += problem[0].content + '\n'
             ## 알고리즘 db에서 검색 후 모두 출력
             buttons = [{"title": "사용 알고리즘",
                         "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}"}}"""},
@@ -253,12 +281,13 @@ class ProblemForm(FormAction):
         return {
             "problem_name": [self.from_entity(entity="problem_name")],
             "contest_name": [self.from_entity(entity="contest_name")],
-                #, self.from_intent(intent="contest_name")],
+            # , self.from_intent(intent="contest_name")],
             "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
             "number": [self.from_entity(entity="number")],
-                #, self.from_intent(intent="number")],
+            # , self.from_intent(intent="number")],
             "algorithm_type": [self.from_entity(entity="algorithm_type")]
         }
+
     def validate_level(
             self,
             value: Text,
@@ -272,12 +301,71 @@ class ProblemForm(FormAction):
         if (any(tracker.get_latest_entity_values('level'))):
             return {"level": value}
         else:
-            dispatcher.utter_message(template="utter_what_level")
+            # dispatcher.utter_message(template="utter_what_level")
             return {"level": None}
+
     def submit(
             self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> List[Dict]:
+        return []
+
+
+class ChangeForm(FormAction):
+
+    def name(self) -> Text:
+        return "change_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        """A list of required slots that the form has to fill"""
+
+    def slot_mappings(self):
+        """A dictionary to map required slots to
+            - an extracted entity
+            - intent: value pairs
+            - a whole message
+            or a list of them, where a first match will be picked"""
+        return {
+            "problem_name": [self.from_entity(entity="problem_name")],
+            "contest_name": [self.from_entity(entity="contest_name")],
+            # , self.from_intent(intent="contest_name")],
+            "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
+            "number": [self.from_entity(entity="number")],
+            # , self.from_intent(intent="number")],
+            "algorithm_type": [self.from_entity(entity="algorithm_type")]
+        }
+
+    def validate_level_change(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        """check algorithm_type"""
+
+        print(f"\nlevel change1 {value}")
+        # print(f"validate: ${tracker.get_latest_entity_values('brief_explain')}")
+        # print(f"level change {value}")
+        #
+        # level = tracker.get_slot('level')
+        # #level change
+        # if value.find('easy') != -1 :
+        #     level = UserLevel.level_down(level)
+        # elif value.find('hard') !=-1 :
+        #     level = UserLevel.level_up(level)
+        # tracker.set_slot("level",level)
+
+        return {"level": value}
+
+    def submit(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[Dict]:
+        # utter submit template
         return []

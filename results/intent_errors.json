@@ -1,50 +1,82 @@
 [
   {
-    "text": "정렬 자세히 알려줘",
-    "intent": "detail_explain",
+    "text": "너무 어려운데 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "problem_type",
-      "confidence": 0.25736159086227417
+      "name": "change_hard",
+      "confidence": 0.5230783224105835
     }
   },
   {
-    "text": "정렬 자세히 알려줄래",
-    "intent": "detail_explain",
+    "text": "쉬워 어려운 걸로",
+    "intent": "change_hard",
     "intent_prediction": {
-      "name": "problem_type",
-      "confidence": 0.2802090346813202
+      "name": "change_easy",
+      "confidence": 0.56063312292099
     }
   },
   {
-    "text": "정렬 예시 좀 알려줘",
-    "intent": "algorithm_example",
+    "text": "쉬운 것 같아 어려운 걸로",
+    "intent": "change_hard",
     "intent_prediction": {
-      "name": "problem_type",
-      "confidence": 0.17358125746250153
+      "name": "change_easy",
+      "confidence": 0.6065229177474976
     }
   },
   {
-    "text": "정렬 예시 좀 알려줄래",
-    "intent": "algorithm_example",
+    "text": "쉬운 것 같다 어려운 걸로",
+    "intent": "change_hard",
     "intent_prediction": {
-      "name": "problem_type",
-      "confidence": 0.1733565330505371
+      "name": "change_easy",
+      "confidence": 0.5929462909698486
     }
   },
   {
-    "text": "카카오대회 좀 자세히 알려줘",
-    "intent": "contest_detail_information",
+    "text": "쉬운데 어려운 걸로",
+    "intent": "change_hard",
     "intent_prediction": {
-      "name": "contest_information",
-      "confidence": 0.15397188067436218
+      "name": "change_easy",
+      "confidence": 0.523908793926239
     }
   },
   {
-    "text": "카카오대회 좀 자세히 알려줄래",
-    "intent": "contest_detail_information",
+    "text": "쉽다 어려운 걸로",
+    "intent": "change_hard",
     "intent_prediction": {
-      "name": "contest_information",
-      "confidence": 0.16997650265693665
+      "name": "change_easy",
+      "confidence": 0.589810848236084
+    }
+  },
+  {
+    "text": "너무 쉬운 것 같아 어려운 걸로",
+    "intent": "change_hard",
+    "intent_prediction": {
+      "name": "change_easy",
+      "confidence": 0.5319623947143555
+    }
+  },
+  {
+    "text": "너무 쉬운 것 같다 어려운 걸로",
+    "intent": "change_hard",
+    "intent_prediction": {
+      "name": "change_easy",
+      "confidence": 0.5410792231559753
+    }
+  },
+  {
+    "text": "너무 쉽다 어려운 걸로",
+    "intent": "change_hard",
+    "intent_prediction": {
+      "name": "change_easy",
+      "confidence": 0.521040141582489
+    }
+  },
+  {
+    "text": "쉽게",
+    "intent": "brief",
+    "intent_prediction": {
+      "name": "change_easy",
+      "confidence": 0.6452715396881104
     }
   }
 ]
