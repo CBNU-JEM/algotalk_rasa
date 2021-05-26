@@ -193,7 +193,7 @@ db.create_algorithm(algorithm_list)
 db.create_problem(problem_list)
 db.create_contest(contest_list)
 
-db.create_algorithm_problem_classification("정렬 알고리즘","수 정렬하기")
+db.create_algorithm_problem_classification([db.AlgorithmProblemClassification("정렬 알고리즘", "수 정렬하기")])
 db.create_contest_problem("준파고를 잡아라","쉬운 최단거리")
 # CONSTRAINT `B_M_ID`
 # FOREIGN KEY (`M_ID`)
