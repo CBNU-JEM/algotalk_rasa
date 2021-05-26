@@ -42,7 +42,7 @@ class ActionAlgorithmExplain(FormAction):
         detail = tracker.get_slot('detail')
         level = tracker.get_slot('level')
         example_code = tracker.get_slot('code')
-        algorithm_name = tracker.get_slot('algorithm_type')
+        algorithm_name = tracker.get_slot('algorithm_name')
 
         algorithms = db.get_algorithm_by_name(algorithm_name)
         buttons = []
@@ -50,20 +50,20 @@ class ActionAlgorithmExplain(FormAction):
         if algorithms and detail:
             explain_text = algorithms[0].detail_explain
             buttons = [{"title": "간단한 설명",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "brief":"간단한"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "brief":"간단한"}}"""},
                        {"title": "난이도",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "level":"난이도"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "코드",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "code":"예제"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
                        {"title": "관련 문제", "payload": "/"}]
         elif algorithms:
             explain_text = algorithms[0].brief_explain
             buttons = [{"title": "자세한 설명",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "detail":"자세한"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "detail":"자세한"}}"""},
                        {"title": "난이도",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "level":"난이도"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "코드",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "code":"예제"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
                        {"title": "관련 문제", "payload": "/"}]
 
         if algorithms and level:
@@ -92,7 +92,7 @@ class ActionProblemRecommended(FormAction):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        algorithm_name = tracker.get_slot('algorithm_type')
+        algorithm_name = tracker.get_slot('algorithm_name')
         number = tracker.get_slot('number')
         problem_name = tracker.get_slot('problem_name')
         contest_name = tracker.get_slot('contest_name')
@@ -110,11 +110,11 @@ class ActionProblemRecommended(FormAction):
             explain_text += problem[0].output + '\n'
             explain_text += problem[0].content + '\n'
             buttons = [{"title": "사용 알고리즘",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}"""},
                        {"title": "대회",
                         "payload": f"""/contest_type{{"contest_type": "{contest_name}"}}"""},
                        {"title": "난이도",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "level":"난이도"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "다른 문제", "payload": "/"}]
         elif problem and number :
             explain_text = problem[0].input
@@ -122,9 +122,9 @@ class ActionProblemRecommended(FormAction):
             explain_text += problem[0].content
             ## 알고리즘 db에서 검색 후 모두 출력
             buttons = [{"title": "사용 알고리즘",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}"""},
                        {"title": "난이도",
-                        "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "level":"난이도"}}"""},
+                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "다른 문제", "payload": "/"}]
 
         if problem and level:
@@ -150,7 +150,7 @@ class AlgorithmForm(FormAction):
     def required_slots(tracker: Tracker) -> List[Text]:
         """A list of required slots that the form has to fill"""
 
-        return ["algorithm_type"]
+        return ["algorithm_name"]
 
     def slot_mappings(self):
         """A dictionary to map required slots to
@@ -163,20 +163,20 @@ class AlgorithmForm(FormAction):
             "detail": [self.from_entity(entity="detail")],
             "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
             "code": [self.from_entity(entity="code"), self.from_intent(intent="code", value=True)],
-            "algorithm_type": [self.from_entity(entity="algorithm_type"), self.from_entity(entity="algorithm")]
+            "algorithm_name": [self.from_entity(entity="algorithm_type"), self.from_entity(entity="algorithm_name")]
         }
 
-    def validate_algorithm_type(
+    def validate_algorithm_name(
             self,
             value: Text,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
-        """check algorithm_type"""
+        """check algorithm_name"""
 
-        print(f"algorithm_type {value}")
-        return {"algorithm_type": value}
+        print(f"algorithm_name {value}")
+        return {"algorithm_name": value}
 
     def submit(
             self,
@@ -294,7 +294,7 @@ class ProblemForm(FormAction):
             "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
             "number": [self.from_entity(entity="number")],
                 #, self.from_intent(intent="number")],
-            "algorithm_type": [self.from_entity(entity="algorithm_type"), self.from_entity(entity="algorithm")]
+            "algorithm_name": [self.from_entity(entity="algorithm_type"), self.from_entity(entity="algorithm_name")]
         }
     def validate_level(
             self,
@@ -303,7 +303,7 @@ class ProblemForm(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
-        """check algorithm_type"""
+        """check level"""
         # print(f"validate: ${tracker.get_latest_entity_values('brief_explain')}")
         print(f"level {value}")
         if (any(tracker.get_latest_entity_values('level'))):

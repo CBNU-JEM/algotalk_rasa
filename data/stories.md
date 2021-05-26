@@ -42,6 +42,7 @@
 * algorithm_explain
   - algorithm_form
   - form{"name": "algorithm_form"}
+  - slot{"requested_slot": "algorithm_name"}
   - form{"name": null}
   - action_algorithm_explain
 

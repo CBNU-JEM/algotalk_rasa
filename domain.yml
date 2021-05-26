@@ -27,7 +27,8 @@ intents:
   - level
   - number
   - contest_explain
-  - algorithm
+  - algorithm_name
+  - problem_name
 
 actions:
   - action_algorithm_explain
@@ -39,7 +40,7 @@ slots:
     type: unfeaturized
   detail:
     type: unfeaturized
-  algorithm_type:
+  algorithm_name:
     type: unfeaturized
   level:
     type: unfeaturized
@@ -58,17 +59,17 @@ forms:
   - contest_form
 
 entities:
-  - algorithm_type
   - brief
   - detail
   - algorithm_level
   - user_level
-  - algorithm
   - level
   - code
   - number
   - problem_name
   - contest_name
+  - algorithm_name
+  - algorithm_type
 
 responses:
   utter_greet:
@@ -96,7 +97,7 @@ responses:
   utter_thank:
     - text: "나도 너를 도울 수 있어서 기뻐 👍"
 
-  utter_what_algorithm:
+  utter_ask_algorithm_name:
   - text: "무슨 알고리즘을 알려줘?"
 
 session_config:
