@@ -26,6 +26,9 @@ intents:
   - code
   - level
   - number
+  - contest_explain
+  - algorithm_name
+  - problem_name
   - change
   - change_easy
   - change_hard
@@ -33,6 +36,7 @@ intents:
 actions:
   - action_algorithm_explain
   - action_problem_recommended
+  - action_contest_explain
   - action_level_change_easy
   - action_level_change_hard
 
@@ -41,7 +45,7 @@ slots:
     type: unfeaturized
   detail:
     type: unfeaturized
-  algorithm_type:
+  algorithm_name:
     type: unfeaturized
   level:
     type: unfeaturized
@@ -59,20 +63,21 @@ slots:
 forms:
   - algorithm_form
   - problem_form
+  - contest_form
   - change_form
 
 entities:
-  - algorithm_type
   - brief
   - detail
   - algorithm_level
   - user_level
-  - algorithm
   - level
   - code
   - number
   - problem_name
   - contest_name
+  - algorithm_name
+  - algorithm_type
   - level_change
 
 responses:
@@ -101,8 +106,8 @@ responses:
   utter_thank:
     - text: "나도 너를 도울 수 있어서 기뻐 👍"
 
-  utter_ask_algorithm:
-    - text: "무슨 알고리즘을 알려줘?"
+  utter_ask_algorithm_name:
+  - text: "무슨 알고리즘을 알려줘?"
 
   utter_ask_level:
     - text: "어떤 난이도를 알려줄까?"

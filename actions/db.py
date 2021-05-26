@@ -1,3 +1,5 @@
+import random
+
 import pymysql
 
 debug = True
@@ -25,14 +27,12 @@ class AlgorithmClassification:
 
 
 class Problem:
-    def __init__(self, name=None, level=None, content=None, input=None, output=None,
-                 source=None, uri=None):
+    def __init__(self, name=None, level=None, content=None, input=None, output=None, uri=None):
         self.name = name
-        self.level = level
+        self.level = random.choice(["브론즈", "실버", "골드", "플레티넘", "다이아"])
         self.content = content
         self.input = input
         self.output = output
-        self.source = source
         self.uri = uri
 
 
@@ -108,10 +108,10 @@ def get_algorithm_by_name(name):
 
 
 def create_problem(problem_list):
-    q = 'INSERT INTO PROBLEM (NAME, LEVEL, CONTENT, INPUT, OUTPUT, SOURCE, URI) VALUES '
+    q = 'INSERT IGNORE INTO PROBLEM (NAME, LEVEL, CONTENT, INPUT, OUTPUT, URI) VALUES '
     tmp_query = ""
     for problem in problem_list:
-        tmp_query += f', (\'{problem.name}\', \'{problem.level}\', \'{problem.content}\', \'{problem.input}\', \'{problem.output}\', \'{problem.source}\', \'{problem.uri}\')'
+        tmp_query += f', (\"{problem.name}\", \"{problem.level}\", \"{problem.content}\", \"{problem.input}\", \"{problem.output}\", \"{problem.uri}\")'
     q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL')
     execute_query(q)
 
@@ -154,6 +154,21 @@ def create_contest(contest_list):
 def delete_contest(part):
     q = f'DELETE FROM CONTEST WHERE part=\'{part}\''
     execute_query(q)
+
+def get_contest_by_name(name):
+    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \'%{name}%\' ORDER BY DATE desc'
+    rows = execute_query(q)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[1], row[2], row[3], row[4], row[5], row[6]))
+    return contests
+
+def get_contest_by_sql(sql):
+    rows = execute_query(sql)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[1], row[2], row[3], row[4], row[5], row[6]))
+    return contests
 
 
 def create_algorithm_problem_classification(algorithm_name, problem_name):

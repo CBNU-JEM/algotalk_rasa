@@ -42,9 +42,17 @@
 * algorithm_explain
   - algorithm_form
   - form{"name": "algorithm_form"}
-  - slot{"requested_slot": "algorithm_type"}
+  - slot{"requested_slot": "algorithm_name"}
   - form{"name": null}
   - action_algorithm_explain
+
+## contest explain
+* contest_explain
+  - contest_form
+  - form{"name": "contest_form"}
+  - slot{"requested_slot": "contest_name"}
+  - form{"name": null}
+  - action_contest_explain
 
 ## recommendation
 * problem_type
@@ -71,7 +79,5 @@
   - action_problem_recommended
   
 ## contest
-
-  
 
 ## tutorial
