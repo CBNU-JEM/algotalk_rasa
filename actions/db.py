@@ -133,7 +133,7 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
     if contest_name:
         q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"C.NAME LIKE \'%{contest_name}%\' "
     if level:
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"P.LEVEL LIKE \'%브론즈%\' "
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"P.LEVEL LIKE \'%{level}%\' "
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
     problems = []
