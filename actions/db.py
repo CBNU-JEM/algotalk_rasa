@@ -103,7 +103,7 @@ def get_algorithm_by_name(name):
     rows = execute_query(q)
     algorithms = []
     for row in rows:
-        algorithms.append(Algorithm(row[1], row[2], row[3], row[4], row[5]))
+        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4]))
     return algorithms
 
 
@@ -138,7 +138,7 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
     rows = execute_query(q)
     problems = []
     for row in rows:
-        problems.append(Problem(row[1], row[2], row[3], row[4], row[5], row[6]))
+        problems.append(Problem(row[0], row[1], row[2], row[3], row[4], row[5]))
     return problems
 
 
@@ -167,14 +167,14 @@ def get_contest_by_name(name):
     rows = execute_query(q)
     contests = []
     for row in rows:
-        contests.append(Contest(row[1], row[2], row[3], row[4], row[5], row[6]))
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5]))
     return contests
 
 def get_contest_by_sql(sql):
     rows = execute_query(sql)
     contests = []
     for row in rows:
-        contests.append(Contest(row[1], row[2], row[3], row[4], row[5], row[6]))
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5]))
     return contests
 
 
