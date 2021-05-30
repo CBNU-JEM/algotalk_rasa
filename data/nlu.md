@@ -1226,14 +1226,14 @@
 - [정렬](algorithm_name) 예시 좀 알려줄래
 
 
-## schedule
+## intent:schedule
 - [일정](schedule)
 - [날짜](schedule)
 - [시간](schedule)
 - [언제](schedule)
 - [기간](schedule)
 
-## company
+## intent:company
 - [배민](company)
 - [쿠팡](company)
 - [네이버](company)
@@ -1262,7 +1262,7 @@
 - [코포](company)
 - [백준](company)
 
-## intent:contest_information
+## intent:contest_explain
 - [카카오](contest_name)대회 정보 알려줘
 - [카카오](contest_name)대회 정보 알려줄래
 - [카카오](contest_name)대회 좀 자세히 알려줘
@@ -1294,6 +1294,18 @@
 - [4](number)년
 - [5](number)년
 - [2020](number)년
+
+## intent:reception_period
+- 신청 기간 알려줘
+- 신청 기간이 어떻게 돼?
+- 언제까지 신청가능해?
+- 언제까지 접수하면 돼?
+- 접수 기간 알려줘
+- 신청기간
+- 신청날짜
+- 신청시간
+- 신청
+- 접수
 
 ## lookup:algorithm_name
 data/lookup/algorithm_name.txt

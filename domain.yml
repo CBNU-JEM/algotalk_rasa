@@ -16,22 +16,20 @@ intents:
   - problem_site
   - algorithm_example
   - request_algorithm
-  - contest_type
-  - contest_information
-  - contest_schedule
-  - contest_detail_information
   - algorithm_explain
   - brief
   - detail
   - code
   - level
   - number
-  - contest_explain
   - algorithm_name
   - problem_name
   - change
   - change_easy
   - change_hard
+  - contest_explain
+  - company
+  - schedule
 
 actions:
   - action_algorithm_explain
@@ -79,6 +77,9 @@ entities:
   - algorithm_name
   - algorithm_type
   - level_change
+  - schedule
+  - company
+  - reception_period
 
 responses:
   utter_greet:
@@ -101,16 +102,19 @@ responses:
   - text: "나는 알고봇이라고해."
 
   utter_explain_whatspossible:
-    - text: "나는 알고리즘에 대한 모든 것을 알려줄 수 있어 😀"
+  - text: "나는 알고리즘에 대한 모든 것을 알려줄 수 있어 😀"
 
   utter_thank:
-    - text: "나도 너를 도울 수 있어서 기뻐 👍"
+  - text: "나도 너를 도울 수 있어서 기뻐 👍"
 
   utter_ask_algorithm_name:
   - text: "무슨 알고리즘을 알려줘?"
 
   utter_ask_level:
-    - text: "어떤 난이도를 알려줄까?"
+  - text: "어떤 난이도를 알려줄까?"
+
+  utter_ask_contest_name:
+  - text: "어떤 대회를 알려줘?"
 
 session_config:
   session_expiration_time: 60

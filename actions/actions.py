@@ -231,6 +231,7 @@ class ActionContestExplain(FormAction):
         detail = tracker.get_slot('detail')
         past = tracker.get_slot('past')
         proceeding = tracker.get_slot('proceeding')
+        reception_period = tracker.get_slot('reception_period')
 
         schedule = tracker.get_slot('schedule')
         contest_name = tracker.get_slot('contest_name')
@@ -254,6 +255,8 @@ class ActionContestExplain(FormAction):
                        {"title": "대회 일정", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}"""},
                        {"title": "대회 홈페이지", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "homepage":"홈페이지"}}"""},
                        {"title": "신청 기간", "payload": "/"}]
+        if reception_period:
+            explain_text += contests[0].reception_start + "부터 " + contests[0].reception_end + "까지야."
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
@@ -276,7 +279,8 @@ class ContestForm(FormAction):
             "brief": [self.from_entity(entity="brief")],
             "detail": [self.from_entity(entity="detail")],
             "schedule": [self.from_entity(entity="schedule")],
-            "contest_name": [self.from_entity(entity="contest_name")]
+            "reception_period": [self.from_intent(intent="reception_period", value=True)],
+            "contest_name": [self.from_entity(entity="contest_name"), self.form_entity(entity="company")]
         }
 
     def validate_contest_name(

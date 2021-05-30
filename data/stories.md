@@ -78,6 +78,4 @@
   - action_level_change_hard
   - action_problem_recommended
   
-## contest
-
 ## tutorial
