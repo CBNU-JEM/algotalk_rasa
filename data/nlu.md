@@ -136,6 +136,9 @@
 - [플레티넘](level)
 - [플레](level)
 - [다이아](level)
+- [초급](level)
+- [중급](level)
+- [고급](level)
 
 ## intent:change_easy
 - 쉬운걸로
@@ -1263,6 +1266,7 @@
 - [백준](company)
 
 ## intent:contest_explain
+- [준파고를 잡아라](contest_name)대회 알려줘
 - [카카오](contest_name)대회 정보 알려줘
 - [카카오](contest_name)대회 정보 알려줄래
 - [카카오](contest_name)대회 좀 자세히 알려줘
@@ -1276,6 +1280,18 @@
 - [프로그래머스](contest_name) 최근 대회가 뭐야?
 - [코드포스](contest_name) 일정 알려줘
 - [코포](contest_name) 언제 시작해?
+- [카카오](contest_name)대회 없나?
+- [카카오](contest_name)대회 없어?
+- [카카오](contest_name)대회 정보 줘
+- [카카오](contest_name)대회 정보 줄래
+- [카카오](contest_name)대회 정보 좀
+- [카카오](contest_name)대회 없을까?
+- [카카오](contest_name)대회 알고 싶은데
+- [카카오](contest_name)대회 알고 싶어
+- [카카오](contest_name)대회 알고 싶어요
+- [카카오](contest_name)대회 알려줘
+- [2021 카카오 인턴쉽](contest_name) 알려줘
+
 
 ## intent:number
 - [1](number)개
@@ -1306,6 +1322,7 @@
 - 신청시간
 - 신청
 - 접수
+- 언제 열려?
 
 ## lookup:algorithm_name
 data/lookup/algorithm_name.txt

@@ -75,15 +75,18 @@ problem_list = [db.Problem('수 정렬하기', '브론즈 1', 'N개의 수가 �
                            '이 수는 절댓값이 1,000보다 작거나 같은 정수이다. 수는 중복되지 않는다.',
                            '첫째 줄부터 N개의 줄에 오름차순으로 정렬한 결과를 한 줄에 하나씩 출력한다.',
                            'https://www.acmicpc.net/problem/2750'),
-                db.Problem('쉬운 최단거리', '골드 5', '''지도가 주어지면 모든 지점에 대해서 목표지점까지의 거리를 구하여라. 
-                문제를 쉽게 만들기 위해 오직 가로와 세로로만 움직일 수 있다고 하자.''',
+                db.Problem('쉬운 최단거리', '골드 5', '''지도가 주어지면 모든 지점에 대해서 목표지점까지의 거리를 구하여라. \
+                            문제를 쉽게 만들기 위해 오직 가로와 세로로만 움직일 수 있다고 하자.''',
                            '지도의 크기 n과 m이 주어진다. n은 세로의 크기, m은 가로의 크기다.(2 ≤ n ≤ 1000, 2 ≤ m ≤ 1000) ' +
                            '다음 n개의 줄에 m개의 숫자가 주어진다. 0은 갈 수 없는 땅이고 1은 갈 수 있는 땅, 2는 목표지점이다. 입력에서 2는 단 한개이다.',
                            '각 지점에서 목표지점까지의 거리를 출력한다. 원래 벽인 위치는 0을 출력하고, 원래 땅인 부분 중에서 도달할 수 없는 위치는 -1을 출력한다.',
                            'https://www.acmicpc.net/problem/14940')]
 
-contest_list = [db.Contest('준파고를 잡아라', '2021-06-07 00:00:00','2021-06-07 00:00:00', '2021-05-10 00:00:00','2021:05:10 00:00:00',
+contest_list = [db.Contest('준파고를 잡아라', '2021-06-07 00:00:00','2021-06-07 00:00:00', '2021-05-10 00:00:00','2021:05:15 00:00:00',
                            '준파고보다 빨리 코팅해라! 준파고의 코딩을 따라잡는 스피드 코딩 대회!',
+                           '프로그래머스', 'https://programmers.co.kr/competitions'),
+                db.Contest('2021 카카오 인턴쉽', '2021-06-07 13:00:00','2021-06-07 18:00:00', '2021-05-30 00:00:00','2021:06:01 13:00:00',
+                           '2021 카카오 인턴쉽 코딩 테스트입니다. 많은 참여 부탁드려요 카카오에 오세요.',
                            '프로그래머스', 'https://programmers.co.kr/competitions')]
 
 # INSERT INTO Films (Title) VALUES ('Title2');
@@ -193,8 +196,8 @@ db.create_algorithm(algorithm_list)
 db.create_problem(problem_list)
 db.create_contest(contest_list)
 
-db.create_algorithm_problem_classification([db.AlgorithmProblemClassification("정렬 알고리즘", "수 정렬하기")])
-db.create_contest_problem("준파고를 잡아라","쉬운 최단거리")
+db.create_algorithm_problem_classification([db.AlgorithmProblemClassification("정렬", "수 정렬하기")])
+db.create_contest_problem("준파고를 잡아라", "쉬운 최단거리")
 # CONSTRAINT `B_M_ID`
 # FOREIGN KEY (`M_ID`)
 # REFERENCES `my_movie`.`MOVIE` (`M_ID`)

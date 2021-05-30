@@ -7,32 +7,19 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
+import datetime
+from typing import Any, Text, Dict, List
+
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
-from typing import Any, Text, Dict, List
 
 from actions import db
-from actions.func import UserLevel
-import datetime
-
-
-class ActionHelloWorld(Action):
-
-    def name(self) -> Text:
-        return "action_hello_world"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="Hello World!")
-
-        return []
+from actions.func import level_up, level_down
 
 
 class ActionLevelChangeEasy(Action):
-
     def name(self) -> Text:
         return "action_level_change_easy"
 
@@ -41,12 +28,11 @@ class ActionLevelChangeEasy(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         level = tracker.get_slot('level')
         print(f"\nlevel= {level}")
-        ul = UserLevel()
-        level = ul.level_up(level)
-        return [SlotSet('level',level)]
+        level_up(level)
+        return [SlotSet('level', level)]
+
 
 class ActionLevelChangeHard(Action):
-
     def name(self) -> Text:
         return "action_level_change_hard"
 
@@ -55,19 +41,18 @@ class ActionLevelChangeHard(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         level = tracker.get_slot('level')
         print(f"\nlevel= {level}")
-        ul = UserLevel()
-        level = ul.level_down(level)
-        return [SlotSet('level',level)]
+        level_down(level)
+        return [SlotSet('level', level)]
+
 
 class ActionAlgorithmExplain(FormAction):
-
     def name(self) -> Text:
         return "action_algorithm_explain"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # algorithm_name = tracker.latest_message['entities'][0]['value']
+
         brief = tracker.get_slot('brief')
         detail = tracker.get_slot('detail')
         level = tracker.get_slot('level')
@@ -78,35 +63,58 @@ class ActionAlgorithmExplain(FormAction):
         buttons = []
         explain_text = ""
         if algorithms and detail:
-            explain_text = algorithms[0].detail_explain
-            buttons = [{"title": "간단한 설명",
-                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "brief":"간단한"}}"""},
-                       {"title": "난이도",
-                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
-                       {"title": "코드",
-                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제",
-                        "payload": f"""/problem_type{{"level":"{level},"algorithm_type:"{algorithm_name}"}}"""}]
+            if algorithms[0].detail_explain:
+                explain_text = algorithms[0].detail_explain
+                buttons = [{"title": "간단한 설명",
+                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "brief":"간단한"}}"""},
+                           {"title": "난이도",
+                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
+                           {"title": "코드",
+                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
+                           {"title": "문제 추천",
+                            "payload": f"""/problem_type{{"level":"{level}, "algorithm_name:"{algorithm_name}"}}"""}]
+            elif algorithms[0].brief_explain:
+                explain_text = f"자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithms[0].brief_explain}"
+                buttons = [{"title": "난이도",
+                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
+                           {"title": "코드",
+                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
+                           {"title": "문제 추천",
+                            "payload": f"""/problem_type{{"level":"{level}, "algorithm_name:"{algorithm_name}"}}"""}]
+            else:
+                explain_text = f"나도 잘 모르겠어.";
         elif algorithms:
-            explain_text = algorithms[0].brief_explain
-            buttons = [{"title": "자세한 설명",
-                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "detail":"자세한"}}"""},
-                       {"title": "난이도",
-                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
-                       {"title": "코드",
-                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제",
-                        "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
+            if algorithms[0].brief_explain:
+                explain_text = algorithms[0].brief_explain
+                buttons = [{"title": "자세한 설명",
+                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "detail":"자세한"}}"""},
+                           {"title": "난이도",
+                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
+                           {"title": "코드",
+                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
+                           {"title": "문제 추천",
+                            "payload": f"""/problem_type{{"level":"{level}, "algorithm_name":"{algorithm_name}"}}"""}]
+            else:
+                explain_text = f"나도 잘 모르겠어.";
 
-        if algorithms and level:
-            explain_text += f"\n난이도는 {algorithms[0].level}야"
+        if algorithms and level and algorithms[0].level:
+            if algorithms[0].example_code:
+                explain_text += f"\n난이도는 {algorithms[0].level}야"
+            else:
+                explain_text += f"\n난이도는 모르겠어."
 
         if algorithms and example_code:
-            explain_text += f"\n예제 코드\n{algorithms[0].example_code}"
+            if algorithms[0].example_code:
+                explain_text += f"\n예제 코드\n{algorithms[0].example_code}"
+            else:
+                explain_text += f"\n예제 코드는 준비중이야."
 
-        print(algorithms)
+        if algorithms is None:
+            explain_text = "그런 알고리즘은 처음 들어봐."
+
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
+        print(algorithms)
         print(f"detail : {detail}")
         print(f"brief : {brief}")
         print(f"level : {level}")
@@ -117,7 +125,6 @@ class ActionAlgorithmExplain(FormAction):
 
 
 class ActionProblemRecommended(FormAction):
-
     def name(self) -> Text:
         return "action_problem_recommended"
 
@@ -137,32 +144,61 @@ class ActionProblemRecommended(FormAction):
         buttons = []
         explain_text = ""
         if problem and contest_name:
-            explain_text = problem[0].name + '\n'
-            explain_text += problem[0].input + '\n'
-            explain_text += problem[0].output + '\n'
-            explain_text += problem[0].content + '\n'
+            if problem[0].name:
+                explain_text += "이름\n" + problem[0].name
+            else:
+                explain_text += "이름 : 없음"
+            if problem[0].input:
+                explain_text += "\n입력\n" + problem[0].input
+            else:
+                explain_text += "\n입력 : 없음"
+            if problem[0].output:
+                explain_text += "\n출력\n" + problem[0].output
+            else:
+                explain_text += "\n출력 : 없음"
+            if problem[0].content:
+                explain_text += "\n설명\n" + problem[0].content
+            else:
+                explain_text += "\n설명 : 없음"
+
             buttons = [{"title": "사용 알고리즘",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}"""},
                        {"title": "대회",
-                        "payload": f"""/contest_type{{"contest_type": "{contest_name}"}}"""},
-                       {"title": "난이도",
-                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
+                        "payload": f"""/contest_explain{{"contest_name": "{contest_name}"}}"""},
+                       # {"title": "난이도",
+                       #  "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"{난이도}"}}"""},
                        {"title": "다른 문제",
                         "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
         elif problem and number:
-            explain_text = problem[0].name + '\n'
-            explain_text += problem[0].input + '\n'
-            explain_text += problem[0].output + '\n'
-            explain_text += problem[0].content + '\n'
-            ## 알고리즘 db에서 검색 후 모두 출력
+            if problem[0].name:
+                explain_text += "이름\n : " + problem[0].name
+            else:
+                explain_text += "이름 : 없음"
+            if problem[0].input:
+                explain_text += "\n입력\n : " + problem[0].input
+            else:
+                explain_text += "\n입력 : 없음"
+            if problem[0].output:
+                explain_text += "\n출력\n : " + problem[0].output
+            else:
+                explain_text += "\n출력 : 없음"
+            if problem[0].content:
+                explain_text += "\n설명\n" + problem[0].content
+            else:
+                explain_text += "\n설명 : 없음"
+            # 알고리즘 db에서 검색 후 모두 출력
             buttons = [{"title": "사용 알고리즘",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}"""},
-                       {"title": "난이도",
-                        "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
+                       # {"title": "난이도",
+                       #  "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "다른 문제",
                         "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
+
         if problem and level:
-            explain_text += f"\n난이도는 {problem[0].level}야"
+            if problem[0].level:
+                explain_text += f"\n난이도는 {problem[0].level}야"
+            else:
+                explain_text += f"\n난이도 : 없음"
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
@@ -197,7 +233,7 @@ class AlgorithmForm(FormAction):
             "detail": [self.from_entity(entity="detail")],
             "level": [self.from_entity(entity="level"), self.from_intent(intent="level", value=True)],
             "code": [self.from_entity(entity="code"), self.from_intent(intent="code", value=True)],
-            "algorithm_name": [self.from_entity(entity="algorithm_type"), self.from_entity(entity="algorithm_name")]
+            "algorithm_name": [self.from_entity(entity="algorithm_name")]
         }
 
     def validate_algorithm_name(
@@ -221,6 +257,7 @@ class AlgorithmForm(FormAction):
         # utter submit template
         return []
 
+
 class ActionContestExplain(FormAction):
 
     def name(self) -> Text:
@@ -241,25 +278,34 @@ class ActionContestExplain(FormAction):
 
         contests = db.get_contest_by_name(contest_name)
         # contest를 시간순으로 정렬하고 필터링해서 출력한다.
-        contests.sort(self, key=lambda x: x[1])
+        contests.sort(key=lambda x: x[1])
         today = datetime.datetime.now()
         if past:
-            contests = filter(lambda x: x.date < today, contests)
+            contests = list(filter(lambda x: x.date < today, contests))
         elif proceeding:
-            contests = filter(lambda x: today in x.reception_period, contests)
-        elif schedule:
-            contests = filter(lambda x: x.date > today, contests)
+            contests = list(filter(lambda x: x.reception_start <= today <= x.reception_end, contests))
 
         buttons = []
         explain_text = ""
         if contests:
             explain_text = contests[0].content
-            buttons = [{"title": "간단한 설명", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "brief":"간단한"}}"""},
-                       {"title": "대회 일정", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}"""},
-                       {"title": "대회 홈페이지", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "homepage":"홈페이지"}}"""},
-                       {"title": "신청 기간", "payload": "/"}]
+            buttons = [{"title": "대회 일정",
+                        "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}"""},
+                       {"title": "대회 홈페이지",
+                        "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "homepage":"홈페이지"}}"""},
+                       {"title": "신청 기간", "payload": f"""/contest_explain{{"contest_name": "{contest_name}", "reception_period":"신청 기간"}}"""}]
+
         if reception_period:
-            explain_text += contests[0].reception_start + "부터 " + contests[0].reception_end + "까지야."
+            if contests[0].reception_start and contests[0].reception_end:
+                explain_text += "\n신청 기간은 " + contests[0].reception_start + "부터 " + contests[0].reception_end + "까지야."
+            else:
+                explain_text += "\n신청 기간은 잘 모르겠어."
+
+        if schedule:
+            if contests[0].contest_start and contests[0].contest_end:
+                explain_text += "\n대회 시간은 " + contests[0].contest_start + "부터 " + contests[0].contest_end + "까지야."
+            else:
+                explain_text += "\n대회 시간은 잘 모르겠어"
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
