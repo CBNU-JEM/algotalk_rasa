@@ -163,7 +163,7 @@ def delete_contest(part):
     execute_query(q)
 
 def get_contest_by_name(name):
-    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \"%{name}%\" ORDER BY DATE desc'
+    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \"%{name}%\"'
     rows = execute_query(q)
     contests = []
     for row in rows:
@@ -201,7 +201,7 @@ def delete_contest_problem(contest_name, problem_name):
 def update_algorithm(algorithm):
     q = f'UPDATE ALGORITHM SET brief_explain=\"{algorithm.brief_explain}\",detail_explain=\"{algorithm.detail_explain}\", ' \
         f'level="{algorithm.level}", example_code="{algorithm.example_code}", parent="{algorithm.parent}" WHERE NAME ="{algorithm.name}"'
-    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('"NULL"', 'NULL')
+    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL')
     execute_query(q)
 
 
