@@ -29,6 +29,8 @@ class ActionHelloWorld(Action):
         dispatcher.utter_message(text="Hello World!")
 
         return []
+
+
 class ActionLevelChangeEasy(Action):
 
     def name(self) -> Text:
@@ -39,9 +41,10 @@ class ActionLevelChangeEasy(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         level = tracker.get_slot('level')
         print(f"\nlevel= {level}")
-        ul=UserLevel()
+        ul = UserLevel()
         level = ul.level_up(level)
         return [SlotSet('level',level)]
+
 class ActionLevelChangeHard(Action):
 
     def name(self) -> Text:
@@ -52,7 +55,7 @@ class ActionLevelChangeHard(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         level = tracker.get_slot('level')
         print(f"\nlevel= {level}")
-        ul=UserLevel()
+        ul = UserLevel()
         level = ul.level_down(level)
         return [SlotSet('level',level)]
 
@@ -82,8 +85,8 @@ class ActionAlgorithmExplain(FormAction):
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "코드",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제", 
-                        "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
+                       {"title": "관련 문제",
+                        "payload": f"""/problem_type{{"level":"{level},"algorithm_type:"{algorithm_name}"}}"""}]
         elif algorithms:
             explain_text = algorithms[0].brief_explain
             buttons = [{"title": "자세한 설명",
@@ -92,7 +95,7 @@ class ActionAlgorithmExplain(FormAction):
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "코드",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제", 
+                       {"title": "관련 문제",
                         "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
 
         if algorithms and level:
@@ -144,7 +147,7 @@ class ActionProblemRecommended(FormAction):
                         "payload": f"""/contest_type{{"contest_type": "{contest_name}"}}"""},
                        {"title": "난이도",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
-                       {"title": "다른 문제", 
+                       {"title": "다른 문제",
                         "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
         elif problem and number:
             explain_text = problem[0].name + '\n'

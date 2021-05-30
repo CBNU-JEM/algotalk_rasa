@@ -198,10 +198,10 @@ def delete_contest_problem(contest_name, problem_name):
     execute_query(q)
 
 
-def update_algorithm(name, brief_explain, detail_explain, level, example_code, uri):
-    q = f'UPDATE ALGORITHM SET name={name}, brief_explain={brief_explain},detail_explain={detail_explain},' \
-        f'level={level},example_code={example_code},uri={uri}'
-    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL')
+def update_algorithm(algorithm):
+    q = f'UPDATE ALGORITHM SET brief_explain=\"{algorithm.brief_explain}\",detail_explain=\"{algorithm.detail_explain}\", ' \
+        f'level="{algorithm.level}", example_code="{algorithm.example_code}", parent="{algorithm.parent}" WHERE NAME ="{algorithm.name}"'
+    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL')
     execute_query(q)
 
 
