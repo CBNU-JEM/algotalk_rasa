@@ -16,7 +16,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 
 from actions import db
-from actions.func import level_up, level_down
+from actions.func import level_up, level_down, level_mapping
 
 
 class ActionLevelChangeEasy(Action):
@@ -60,6 +60,20 @@ class ActionAlgorithmExplain(FormAction):
         algorithms = db.get_algorithm_by_normalized_name(algorithm_name)
         buttons = []
         explain_text = ""
+
+        if not algorithms:
+            explain_text += "조건에 맞는 알고리즘이 없는거같아..."
+            dispatcher.utter_message(text=explain_text)
+            return []
+
+        if algorithms and level:
+            if algorithms[0].level:
+                explain_text += f"\n난이도는 {algorithms[0].level}야"
+            else:
+                explain_text += f"\n난이도는 모르겠어."
+            dispatcher.utter_message(text=explain_text)
+            return [SlotSet("algorithm_level", None)]
+
         if algorithms and detail:
             if algorithms[0].detail_explain:
                 explain_text = algorithms[0].detail_explain
@@ -133,6 +147,12 @@ class ActionProblemRecommended(FormAction):
         print(problem)
         buttons = []
         explain_text = ""
+
+        if not problem:
+            explain_text += "조건에 맞는 문제가 없는거같아..."
+            dispatcher.utter_message(text=explain_text)
+            return []
+
         if problem and contest_name:
             if problem[0].name:
                 explain_text += "이름\n" + problem[0].name
@@ -275,6 +295,48 @@ class ActionContestExplain(FormAction):
             contests = list(filter(lambda x: x.reception_start <= today <= x.reception_end, contests))
 
         explain_text = ""
+
+        if not contests:
+            explain_text += "조건에 맞는 대회가 없는거같아..."
+            dispatcher.utter_message(text=explain_text)
+            return []
+
+        print(f"contest_name : {contest_name}")
+        print(f"reception_period : {reception_period}")
+        print(f"schedule : {schedule}")
+
+        buttons = [{"title": "대회 일정",
+                    "payload": f'/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}'},
+                   {"title": "대회 홈페이지",
+                    "payload": f'/contest_explain{{"contest_name": "{contest_name}", "homepage":"홈페이지"}}'},
+                   {"title": "신청 기간",
+                    "payload": f'/contest_explain{{"contest_name": "{contest_name}", "reception_period": "신청 기간"}}'}]
+
+        if homepage:
+            if contests[0].name and contests[0].uri:
+                explain_text = contests[0].name
+                explain_text += "\n홈페이지 : " + contests[0].uri
+            else:
+                explain_text += "홈페이지 주소는 잘 모르곘어..."
+            dispatcher.utter_message(text=explain_text, buttons=buttons)
+            return [SlotSet("homepage", None)]
+
+        if reception_period:
+            if contests[0].reception_start and contests[0].reception_end:
+                explain_text += "신청 기간은 " + contests[0].reception_start + "부터 " + contests[0].reception_end + "까지야."
+            else:
+                explain_text += "신청 기간은 잘 모르겠어."
+            dispatcher.utter_message(text=explain_text, buttons=buttons)
+            return [SlotSet("reception_period", None)]
+
+        if schedule:
+            if contests[0].contest_start and contests[0].contest_end:
+                explain_text += "대회 시간은 " + contests[0].contest_start + "부터 " + contests[0].contest_end + "까지야."
+            else:
+                explain_text += "대회 시간은 잘 모르겠어"
+            dispatcher.utter_message(text=explain_text, buttons=buttons)
+            return [SlotSet("schedule", None)]
+
         if contests:
             explain_text = contests[0].content
             dispatcher.utter_message(text=explain_text, buttons=buttons)
