@@ -201,7 +201,7 @@ def delete_contest_problem(contest_name, problem_name):
 def update_algorithm(algorithm):
     q = f'UPDATE ALGORITHM SET brief_explain=\"{algorithm.brief_explain}\",detail_explain=\"{algorithm.detail_explain}\", ' \
         f'level="{algorithm.level}", example_code="{algorithm.example_code}", parent="{algorithm.parent}" WHERE NAME ="{algorithm.name}"'
-    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL')
+    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('"NULL"', 'NULL')
     execute_query(q)
 
 
