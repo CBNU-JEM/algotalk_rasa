@@ -28,6 +28,8 @@ class ActionHelloWorld(Action):
         dispatcher.utter_message(text="Hello World!")
 
         return []
+
+
 class ActionLevelChangeEasy(Action):
 
     def name(self) -> Text:
@@ -38,10 +40,12 @@ class ActionLevelChangeEasy(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         level = tracker.get_slot('level')
         print(f"\nlevel= {level}")
-        ul=UserLevel()
+        ul = UserLevel()
         level = ul.level_up(level)
         SlotSet("level", level)
         return []
+
+
 class ActionLevelChangeHard(Action):
 
     def name(self) -> Text:
@@ -52,10 +56,11 @@ class ActionLevelChangeHard(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         level = tracker.get_slot('level')
         print(f"\nlevel= {level}")
-        ul=UserLevel()
+        ul = UserLevel()
         level = ul.level_down(level)
         SlotSet("level", level)
         return []
+
 
 class ActionAlgorithmExplain(FormAction):
 
@@ -83,7 +88,8 @@ class ActionAlgorithmExplain(FormAction):
                         "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "코드",
                         "payload": f"""/algorithm_explain{{"algorithm_type": "{algorithm_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제", "payload": "/"}]
+                       {"title": "관련 문제",
+                        "payload": f"""/problem_type{{"level":"{level},"algorithm_type:"{algorithm_name}"}}"""}]
         elif algorithms:
             explain_text = algorithms[0].brief_explain
             buttons = [{"title": "자세한 설명",
