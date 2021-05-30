@@ -278,7 +278,7 @@ class ActionContestExplain(FormAction):
 
         contests = db.get_contest_by_name(contest_name)
         # contest를 시간순으로 정렬하고 필터링해서 출력한다.
-        contests.sort(key=lambda x: x[1])
+        contests.sort(key=lambda x: x.contest_start)
         today = datetime.datetime.now()
         if past:
             contests = list(filter(lambda x: x.date < today, contests))

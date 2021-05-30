@@ -99,6 +99,15 @@ def delete_algorithm(part):
 
 
 def get_algorithm_by_name(name):
+    q = f'SELECT * FROM ALGORITHM WHERE NAME LIKE \'{name}\''
+    rows = execute_query(q)
+    algorithms = []
+    for row in rows:
+        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4]))
+
+    if algorithms:
+        return algorithms
+
     q = f'SELECT * FROM ALGORITHM WHERE NAME LIKE \'%{name}%\''
     rows = execute_query(q)
     algorithms = []
@@ -120,18 +129,41 @@ def delete_problem(part):
     q = f'DELETE FROM PROBLEM WHERE part=\'{part}\''
     execute_query(q)
 
-
 def get_problem(problem_name, algorithm_name, level, contest_name, number):
     q = f'SELECT P.NAME, P.LEVEL, P.CONTENT, P.INPUT, P.OUTPUT, P.URI, C.NAME, A.NAME FROM PROBLEM AS P ' \
         'LEFT JOIN CONTEST_PROBLEM AS CP ON P.NAME =CP.PROBLEM_NAME LEFT JOIN CONTEST AS C ON CP.CONTEST_NAME = C.NAME ' \
         'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.NAME=AP.PROBLEM_NAME LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_NAME=A.NAME '
 
     if problem_name:
+        q += "WHERE " + f"P.NAME LIKE \'{problem_name}\' "
+    if get_algorithm_by_name(algorithm_name):
+        db_algorithm_name = get_algorithm_by_name(algorithm_name)[0].name
+        q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f"A.NAME LIKE \'{db_algorithm_name}\' "
+    if get_contest_by_name(contest_name):
+        db_contest_name = get_contest_by_name(contest_name)[0].name
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"C.NAME LIKE \'{db_contest_name}\' "
+    if level:
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"P.LEVEL LIKE \'%{level}%\' "
+    q += f"ORDER BY RAND() LIMIT {number}"
+    rows = execute_query(q)
+    problems = []
+    for row in rows:
+        problems.append(Problem(row[0], row[1], row[2], row[3], row[4], row[5]))
+    if problems:
+        return problems
+
+    q = f'SELECT P.NAME, P.LEVEL, P.CONTENT, P.INPUT, P.OUTPUT, P.URI, C.NAME, A.NAME FROM PROBLEM AS P ' \
+        'LEFT JOIN CONTEST_PROBLEM AS CP ON P.NAME =CP.PROBLEM_NAME LEFT JOIN CONTEST AS C ON CP.CONTEST_NAME = C.NAME ' \
+        'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.NAME=AP.PROBLEM_NAME LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_NAME=A.NAME '
+
+    if problem_name:
         q += "WHERE " + f"P.NAME LIKE \'%{problem_name}%\' "
-    if algorithm_name:
-        q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f"A.NAME LIKE \'%{algorithm_name}%\' "
-    if contest_name:
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"C.NAME LIKE \'%{contest_name}%\' "
+    if get_algorithm_by_name(algorithm_name):
+        db_algorithm_name = get_algorithm_by_name(algorithm_name)[0].name
+        q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f"A.NAME LIKE \'{db_algorithm_name}\' "
+    if get_contest_by_name(contest_name):
+        db_contest_name = get_contest_by_name(contest_name)[0].name
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"C.NAME LIKE \'{db_contest_name}\' "
     if level:
         q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"P.LEVEL LIKE \'%{level}%\' "
     q += f"ORDER BY RAND() LIMIT {number}"
@@ -163,6 +195,14 @@ def delete_contest(part):
     execute_query(q)
 
 def get_contest_by_name(name):
+    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \"{name}\"'
+    rows = execute_query(q)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5]))
+    if contests:
+        return contests
+
     q = f'SELECT * FROM CONTEST WHERE NAME LIKE \"%{name}%\"'
     rows = execute_query(q)
     contests = []

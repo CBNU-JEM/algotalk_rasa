@@ -809,18 +809,18 @@
 - [선형대수학](algorithm_name)이 뭐니?
 - [정렬](algorithm_name)이 뭔데?
 - [알고리즘](algorithm_name)이 뭐야?
-- [기하학](algorithm_name) 조금 설명해줘
-- [볼록 껍질](algorithm_name) 조금 설명해줄래
-- [수학](algorithm_name) 기초 좀 설명해줄래
-- [선형대수학](algorithm_name) 자세히 알려줘
-- [정렬](algorithm_name) 자세히 알려줄래
+- [기하학](algorithm_name)  설명해줘
+- [볼록 껍질](algorithm_name)  설명해줄래
+- [수학](algorithm_name)  좀 설명해줄래
+- [선형대수학](algorithm_name)  알려줘
+- [정렬](algorithm_name)  알려줄래
 - [최단거리](algorithm_name) 알고리즘 좀 더 알려줘
-- [정렬](algorithm_name) 알고리즘 자세히 알려줘
-- [스택](algorithm_name)이 정확히 뭐야?
-- [정렬](algorithm_name)이 정확히 뭐니?
-- [알고리즘](algorithm_name)이 정확히 뭐야?
-- [시뮬레이션](algorithm_name) 깊게 설명해줘
-- [스택](algorithm_name) 상세히 설명해줄래
+- [정렬](algorithm_name) 알고리즘  알려줘
+- [스택](algorithm_name)이 뭐야?
+- [정렬](algorithm_name)이 뭐니?
+- [알고리즘](algorithm_name)이 뭐야?
+- [시뮬레이션](algorithm_name) 설명해줘
+- [스택](algorithm_name) 설명해줄래
   
 - [수학](algorithm_name) 알려줘
 - [다이나믹 프로그래밍](algorithm_name) 알려주십시오
@@ -862,359 +862,134 @@
 - [트리를 사용한 집합과 맵](algorithm_name) 알고리즘 설명해주십시오
 - [소수 판정](algorithm_name) 알고리즘 설명해주쇼
 - [오프라인 쿼리](algorithm_name) 알고리즘 설명
-- [분할 정복을 이용한 거듭제곱](algorithm_name) 알고리즘 조금 알려줘
-- [이분 매칭](algorithm_name) 알고리즘 조금 알려주십시오
-- [임의 정밀도 / 큰 수 연산](algorithm_name) 알고리즘 조금 알려줄래?
-- [최소 스패닝 트리](algorithm_name) 알고리즘 조금 알려주쇼
-- [해싱](algorithm_name) 알고리즘 조금 알려주실래요?
-- [최소 공통 조상](algorithm_name) 알고리즘 조금 알려주실 수 있나요?
-- [재귀](algorithm_name) 알고리즘 조금 알려 줄래요?
-- [에라토스테네스의 체](algorithm_name) 알고리즘 조금 알고 싶어요
-- [해시를 사용한 집합과 맵](algorithm_name) 알고리즘 조금 알고 싶은데
-- [강한 연결 요소](algorithm_name) 알고리즘 조금 설명해줘
-- [플로이드–와샬](algorithm_name) 알고리즘 조금 설명해줄래
-- [고속 푸리에 변환](algorithm_name) 알고리즘 조금 설명해주십시오
-- [위상 정렬](algorithm_name) 알고리즘 조금 설명해주쇼
-- [볼록 껍질](algorithm_name) 알고리즘 조금 설명
-- [트라이](algorithm_name) 알고리즘 기초 알려줘
-- [포함 배제의 원리](algorithm_name) 알고리즘 기초 알려주십시오
-- [값 / 좌표 압축](algorithm_name) 알고리즘 기초 알려줄래?
-- [볼록 껍질을 이용한 최적화](algorithm_name) 알고리즘 기초 알려주쇼
-- [KMP](algorithm_name) 알고리즘 기초 알려주실래요?
-- [배낭 문제](algorithm_name) 알고리즘 기초 알려주실 수 있나요?
-- [접미사 배열과 LCP 배열](algorithm_name) 알고리즘 기초 알려 줄래요?
-- [희소 배열](algorithm_name) 알고리즘 기초 알고 싶어요
-- [최소 비용 최대 유량](algorithm_name) 알고리즘 기초 알고 싶은데
-- [제곱근 분할법](algorithm_name) 알고리즘 기초 좀
-- [작은 집합에서 큰 집합으로 합치는 테크닉](algorithm_name) 알고리즘 기초 받습니다
-- [유클리드 호제법](algorithm_name) 알고리즘 기초 받는다
-- [덱](algorithm_name) 알고리즘 기초 받아요
-- [확률론](algorithm_name) 알고리즘 기초 받고 싶어요
-- [런타임 전의 전처리](algorithm_name) 알고리즘 기초 받고 싶어
-- [스프라그–그런디 정리](algorithm_name) 알고리즘 기초 설명해줘
-- [매개 변수 탐색](algorithm_name) 알고리즘 기초 설명해줄래
-- [가장 긴 증가하는 부분 수열: O(n log n)](algorithm_name) 알고리즘 기초 설명해주십시오
-- [중간에서 만나기](algorithm_name) 알고리즘 기초 설명해주쇼
-- [Heavy-light 분할](algorithm_name) 알고리즘 기초 설명
-- [센트로이드 분할](algorithm_name) 알고리즘 간단히 알려줘
-- [슬라이딩 윈도우](algorithm_name) 알고리즘 간단히 알려주십시오
-- [무작위화](algorithm_name) 알고리즘 간단히 알려줄래?
-- [오일러 경로 테크닉](algorithm_name) 알고리즘 간단히 알려주쇼
-- [2-SAT](algorithm_name) 알고리즘 간단히 알려주실래요?
-- [삼분 탐색](algorithm_name) 알고리즘 간단히 알려주실 수 있나요?
-- [미적분학](algorithm_name) 알고리즘 간단히 알려 줄래요?
-- [최대 유량 최소 컷 정리](algorithm_name) 알고리즘 간단히 알고 싶어요
-- [가우스 소거법](algorithm_name) 알고리즘 간단히 알고 싶은데
-- [휴리스틱](algorithm_name) 알고리즘 간단히 좀
-- [단절점과 단절선](algorithm_name) 알고리즘 간단히 받습니다
-- [퍼시스턴트 세그먼트 트리](algorithm_name) 알고리즘 간단히 받는다
-- [3차원 기하학](algorithm_name) 알고리즘 간단히 받아요
-- [오일러 경로](algorithm_name) 알고리즘 간단히 받고 싶어요
-- [선인장](algorithm_name) 알고리즘 간단히 받고 싶어
-- [비트 집합](algorithm_name) 알고리즘 간단히 설명해줘
-- [중국인의 나머지 정리](algorithm_name) 알고리즘 간단히 설명해줄래
-- [분할 정복을 사용한 최적화](algorithm_name) 알고리즘 간단히 설명해주십시오
-- [큐](algorithm_name) 알고리즘 간단히 설명해주쇼
-- [Mo's](algorithm_name) 알고리즘 간단히 설명
-- [병렬 이분 탐색](algorithm_name) 알고리즘 쉽게 알려줘
-- [벌래캠프–매시](algorithm_name) 알고리즘 쉽게 알려주십시오
-- [오일러 지표 (χ=V-E+F)](algorithm_name) 알고리즘 쉽게 알려줄래?
-- [다차원 세그먼트 트리](algorithm_name) 알고리즘 쉽게 알려주쇼
-- [평면 그래프](algorithm_name) 알고리즘 쉽게 알려주실래요?
-- [아호-코라식](algorithm_name) 알고리즘 쉽게 알려주실 수 있나요?
-- [스플레이 트리](algorithm_name) 알고리즘 쉽게 알려 줄래요?
-- [순열 사이클 분할](algorithm_name) 알고리즘 쉽게 알고 싶어요
-- [페르마의 소정리](algorithm_name) 알고리즘 쉽게 알고 싶은데
-- [라빈–카프](algorithm_name) 알고리즘 쉽게 좀
-- [확장 유클리드 호제법](algorithm_name) 알고리즘 쉽게 받습니다
-- [회전하는 캘리퍼스](algorithm_name) 알고리즘 쉽게 받는다
-- [커넥션 프로파일을 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘 쉽게 받아요
-- [물리학](algorithm_name) 알고리즘 쉽게 받고 싶어요
-- [이중 연결 요소](algorithm_name) 알고리즘 쉽게 받고 싶어
-- [머지 소트 트리](algorithm_name) 알고리즘 쉽게 설명해줘
-- [뫼비우스 반전 공식](algorithm_name) 알고리즘 쉽게 설명해줄래
-- [덱을 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘 쉽게 설명해주십시오
-- [정규 표현식](algorithm_name) 알고리즘 쉽게 설명해주쇼
-- [링크/컷 트리](algorithm_name) 알고리즘 쉽게 설명
-- [볼록 다각형 내부의 점 판정](algorithm_name) 알고리즘 간략하게 알려줘
-- [오일러 피 함수](algorithm_name) 알고리즘 간략하게 알려주십시오
-- [연결 리스트](algorithm_name) 알고리즘 간략하게 알려줄래?
-- [0-1 너비 우선 탐색](algorithm_name) 알고리즘 간략하게 알려주쇼
-- [수치해석](algorithm_name) 알고리즘 간략하게 알려주실래요?
-- [외판원 순회 문제](algorithm_name) 알고리즘 간략하게 알려주실 수 있나요?
-- [인터프리터](algorithm_name) 알고리즘 간략하게 알려 줄래요?
-- [폴라드 로](algorithm_name) 알고리즘 간략하게 알고 싶어요
-- [Alien 트릭](algorithm_name) 알고리즘 간략하게 알고 싶은데
-- [함수 개형을 이용한 최적화](algorithm_name) 알고리즘 간략하게 좀
-- [모듈로 곱셈 역원](algorithm_name) 알고리즘 간략하게 받습니다
-- [다각형의 넓이](algorithm_name) 알고리즘 간략하게 받는다
-- [기댓값의 선형성](algorithm_name) 알고리즘 간략하게 받아요
-- [오프라인 동적 연결성 판정](algorithm_name) 알고리즘 간략하게 받고 싶어요
-- [선형 계획법](algorithm_name) 알고리즘 간략하게 받고 싶어
-- [번사이드 보조정리](algorithm_name) 알고리즘 간략하게 설명해줘
-- [오목 다각형 내부의 점 판정](algorithm_name) 알고리즘 간략하게 설명해줄래
-- [피타고라스 정리](algorithm_name) 알고리즘 간략하게 설명해주십시오
-- [키타마사](algorithm_name) 알고리즘 간략하게 설명해주쇼
-- [트리 동형 사상](algorithm_name) 알고리즘 간략하게 설명
-- [헝가리안](algorithm_name) 알고리즘 대충 알려줘
-- [이산 로그](algorithm_name) 알고리즘 대충 알려주십시오
-- [최소 외접원](algorithm_name) 알고리즘 대충 알려줄래?
-- [밀러–라빈 소수 판별법](algorithm_name) 알고리즘 대충 알려주쇼
-- [도미네이터 트리](algorithm_name) 알고리즘 대충 알려주실래요?
-- [단조 큐를 이용한 최적화](algorithm_name) 알고리즘 대충 알려주실 수 있나요?
-- [쌍대성](algorithm_name) 알고리즘 대충 알려 줄래요?
-- [쌍대 그래프](algorithm_name) 알고리즘 대충 알고 싶어요
-- [일반적인 매칭](algorithm_name) 알고리즘 대충 알고 싶은데
-- [회문 트리](algorithm_name) 알고리즘 대충 좀
-- [스토어–바그너](algorithm_name) 알고리즘 대충 받습니다
-- [Z](algorithm_name) 알고리즘 대충 받는다
-- [크누스 최적화](algorithm_name) 알고리즘 대충 받아요
-- [매트로이드](algorithm_name) 알고리즘 대충 받고 싶어요
-- [뤼카 정리](algorithm_name) 알고리즘 대충 받고 싶어
-- [양방향 탐색](algorithm_name) 알고리즘 대충 설명해줘
-- [이산 제곱근](algorithm_name) 알고리즘 대충 설명해줄래
-- [유향 최소 신장 트리](algorithm_name) 알고리즘 대충 설명해주십시오
-- [보로노이 다이어그램](algorithm_name) 알고리즘 대충 설명해주쇼
-- [4차원 이상의 기하학](algorithm_name) 알고리즘 대충 설명
-- [정렬](algorithm_name) 알고리즘 대략 알려줘
-- [통계학](algorithm_name) 알고리즘 대략 알려주십시오
-- [로프](algorithm_name) 알고리즘 대략 알려줄래?
-- [춤추는 링크](algorithm_name) 알고리즘 대략 알려주쇼
-- [크누스 X](algorithm_name) 알고리즘 대략 알려주실래요?
-- [접미사 트리](algorithm_name) 알고리즘 대략 알려주실 수 있나요?
-- [델로네 삼각분할](algorithm_name) 알고리즘 대략 알려 줄래요?
-- [레드-블랙 트리](algorithm_name) 알고리즘 대략 알고 싶어요
-- [탑 트리](algorithm_name) 알고리즘 대략 알고 싶은데
-- [이산 k제곱근](algorithm_name) 알고리즘 대략 좀
-- [홀의 결혼 정리 ](algorithm_name) 알고리즘 대략 받습니다
-- [게임 이론](algorithm_name) 알고리즘 대략 받는다
-- [벨만–포드](algorithm_name) 알고리즘 대략 받아요
-- [선분 교차 판정](algorithm_name) 알고리즘 대략 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 대략 받고 싶어
-- [정렬](algorithm_name) 알고리즘 대략 설명해줘
-- [정렬](algorithm_name) 알고리즘 대략 설명해줄래
-- [정렬](algorithm_name) 알고리즘 대략 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 대략 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 대략 설명
-- [정렬](algorithm_name) 알고리즘 쫌만 알려줘
-- [정렬](algorithm_name) 알고리즘 쫌만 알려주십시오
-- [정렬](algorithm_name) 알고리즘 쫌만 알려줄래?
-- [정렬](algorithm_name) 알고리즘 쫌만 알려주쇼
-- [정렬](algorithm_name) 알고리즘 쫌만 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 쫌만 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 쫌만 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 쫌만 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 쫌만 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 쫌만 좀
-- [정렬](algorithm_name) 알고리즘 쫌만 받습니다
-- [정렬](algorithm_name) 알고리즘 쫌만 받는다
-- [정렬](algorithm_name) 알고리즘 쫌만 받아요
-- [정렬](algorithm_name) 알고리즘 쫌만 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 쫌만 받고 싶어
-- [정렬](algorithm_name) 알고리즘 쫌만 설명해줘
-- [정렬](algorithm_name) 알고리즘 쫌만 설명해줄래
-- [정렬](algorithm_name) 알고리즘 쫌만 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 쫌만 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 쫌만 설명
-- [정렬](algorithm_name) 알고리즘 자세히 알려줘
-- [정렬](algorithm_name) 알고리즘 자세히 알려주십시오
-- [정렬](algorithm_name) 알고리즘 자세히 알려줄래?
-- [정렬](algorithm_name) 알고리즘 자세히 알려주쇼
-- [정렬](algorithm_name) 알고리즘 자세히 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 자세히 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 자세히 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 자세히 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 자세히 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 자세히 좀
-- [정렬](algorithm_name) 알고리즘 자세히 받습니다
-- [정렬](algorithm_name) 알고리즘 자세히 받는다
-- [정렬](algorithm_name) 알고리즘 자세히 받아요
-- [정렬](algorithm_name) 알고리즘 자세히 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 자세히 받고 싶어
-- [정렬](algorithm_name) 알고리즘 자세히 설명해줘
-- [정렬](algorithm_name) 알고리즘 자세히 설명해줄래
-- [정렬](algorithm_name) 알고리즘 자세히 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 자세히 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 자세히 설명
-- [정렬](algorithm_name) 알고리즘 자세하게 알려줘
-- [정렬](algorithm_name) 알고리즘 자세하게 알려주십시오
-- [정렬](algorithm_name) 알고리즘 자세하게 알려줄래?
-- [정렬](algorithm_name) 알고리즘 자세하게 알려주쇼
-- [정렬](algorithm_name) 알고리즘 자세하게 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 자세하게 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 자세하게 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 자세하게 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 자세하게 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 자세하게 좀
-- [정렬](algorithm_name) 알고리즘 자세하게 받습니다
-- [정렬](algorithm_name) 알고리즘 자세하게 받는다
-- [정렬](algorithm_name) 알고리즘 자세하게 받아요
-- [정렬](algorithm_name) 알고리즘 자세하게 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 자세하게 받고 싶어
-- [정렬](algorithm_name) 알고리즘 자세하게 설명해줘
-- [정렬](algorithm_name) 알고리즘 자세하게 설명해줄래
-- [정렬](algorithm_name) 알고리즘 자세하게 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 자세하게 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 자세하게 설명
-- [정렬](algorithm_name) 알고리즘 좀 더 알려줘
-- [정렬](algorithm_name) 알고리즘 좀 더 알려주십시오
-- [정렬](algorithm_name) 알고리즘 좀 더 알려줄래?
-- [정렬](algorithm_name) 알고리즘 좀 더 알려주쇼
-- [정렬](algorithm_name) 알고리즘 좀 더 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 좀 더 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 좀 더 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 좀 더 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 좀 더 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 좀 더 받습니다
-- [정렬](algorithm_name) 알고리즘 좀 더 받는다
-- [정렬](algorithm_name) 알고리즘 좀 더 받아요
-- [정렬](algorithm_name) 알고리즘 좀 더 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 좀 더 받고 싶어
-- [정렬](algorithm_name) 알고리즘 좀 더 설명해줘
-- [정렬](algorithm_name) 알고리즘 좀 더 설명해줄래
-- [정렬](algorithm_name) 알고리즘 좀 더 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 좀 더 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 좀 더 설명
-- [정렬](algorithm_name) 알고리즘 정확히 알려줘
-- [정렬](algorithm_name) 알고리즘 정확히 알려주십시오
-- [정렬](algorithm_name) 알고리즘 정확히 알려줄래?
-- [정렬](algorithm_name) 알고리즘 정확히 알려주쇼
-- [정렬](algorithm_name) 알고리즘 정확히 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 정확히 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 정확히 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 정확히 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 정확히 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 정확히 좀
-- [정렬](algorithm_name) 알고리즘 정확히 받습니다
-- [정렬](algorithm_name) 알고리즘 정확히 받는다
-- [정렬](algorithm_name) 알고리즘 정확히 받아요
-- [정렬](algorithm_name) 알고리즘 정확히 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 정확히 받고 싶어
-- [정렬](algorithm_name) 알고리즘 정확히 설명해줘
-- [정렬](algorithm_name) 알고리즘 정확히 설명해줄래
-- [정렬](algorithm_name) 알고리즘 정확히 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 정확히 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 정확히 설명
-- [정렬](algorithm_name) 알고리즘 상세하게 알려줘
-- [정렬](algorithm_name) 알고리즘 상세하게 알려주십시오
-- [정렬](algorithm_name) 알고리즘 상세하게 알려줄래?
-- [정렬](algorithm_name) 알고리즘 상세하게 알려주쇼
-- [정렬](algorithm_name) 알고리즘 상세하게 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 상세하게 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 상세하게 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 상세하게 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 상세하게 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 상세하게 좀
-- [정렬](algorithm_name) 알고리즘 상세하게 받습니다
-- [정렬](algorithm_name) 알고리즘 상세하게 받는다
-- [정렬](algorithm_name) 알고리즘 상세하게 받아요
-- [정렬](algorithm_name) 알고리즘 상세하게 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 상세하게 받고 싶어
-- [정렬](algorithm_name) 알고리즘 상세하게 설명해줘
-- [정렬](algorithm_name) 알고리즘 상세하게 설명해줄래
-- [정렬](algorithm_name) 알고리즘 상세하게 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 상세하게 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 상세하게 설명
-- [정렬](algorithm_name) 알고리즘 정확하게 알려줘
-- [정렬](algorithm_name) 알고리즘 정확하게 알려주십시오
-- [정렬](algorithm_name) 알고리즘 정확하게 알려줄래?
-- [정렬](algorithm_name) 알고리즘 정확하게 알려주쇼
-- [정렬](algorithm_name) 알고리즘 정확하게 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 정확하게 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 정확하게 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 정확하게 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 정확하게 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 정확하게 좀
-- [정렬](algorithm_name) 알고리즘 정확하게 받습니다
-- [정렬](algorithm_name) 알고리즘 정확하게 받는다
-- [정렬](algorithm_name) 알고리즘 정확하게 받아요
-- [정렬](algorithm_name) 알고리즘 정확하게 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 정확하게 받고 싶어
-- [정렬](algorithm_name) 알고리즘 정확하게 설명해줘
-- [정렬](algorithm_name) 알고리즘 정확하게 설명해줄래
-- [정렬](algorithm_name) 알고리즘 정확하게 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 정확하게 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 정확하게 설명
-- [정렬](algorithm_name) 알고리즘 샅샅이 알려줘
-- [정렬](algorithm_name) 알고리즘 샅샅이 알려주십시오
-- [정렬](algorithm_name) 알고리즘 샅샅이 알려줄래?
-- [정렬](algorithm_name) 알고리즘 샅샅이 알려주쇼
-- [정렬](algorithm_name) 알고리즘 샅샅이 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 샅샅이 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 샅샅이 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 샅샅이 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 샅샅이 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 샅샅이 좀
-- [정렬](algorithm_name) 알고리즘 샅샅이 받습니다
-- [정렬](algorithm_name) 알고리즘 샅샅이 받는다
-- [정렬](algorithm_name) 알고리즘 샅샅이 받아요
-- [정렬](algorithm_name) 알고리즘 샅샅이 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 샅샅이 받고 싶어
-- [정렬](algorithm_name) 알고리즘 샅샅이 설명해줘
-- [정렬](algorithm_name) 알고리즘 샅샅이 설명해줄래
-- [정렬](algorithm_name) 알고리즘 샅샅이 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 샅샅이 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 샅샅이 설명
-- [정렬](algorithm_name) 알고리즘 길게 알려줘
-- [정렬](algorithm_name) 알고리즘 길게 알려주십시오
-- [정렬](algorithm_name) 알고리즘 길게 알려줄래?
-- [정렬](algorithm_name) 알고리즘 길게 알려주쇼
-- [정렬](algorithm_name) 알고리즘 길게 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 길게 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 길게 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 길게 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 길게 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 길게 좀
-- [정렬](algorithm_name) 알고리즘 길게 받습니다
-- [정렬](algorithm_name) 알고리즘 길게 받는다
-- [정렬](algorithm_name) 알고리즘 길게 받아요
-- [정렬](algorithm_name) 알고리즘 길게 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 길게 받고 싶어
-- [정렬](algorithm_name) 알고리즘 길게 설명해줘
-- [정렬](algorithm_name) 알고리즘 길게 설명해줄래
-- [정렬](algorithm_name) 알고리즘 길게 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 길게 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 길게 설명
-- [정렬](algorithm_name) 알고리즘 어렵게 알려줘
-- [정렬](algorithm_name) 알고리즘 어렵게 알려주십시오
-- [정렬](algorithm_name) 알고리즘 어렵게 알려줄래?
-- [정렬](algorithm_name) 알고리즘 어렵게 알려주쇼
-- [정렬](algorithm_name) 알고리즘 어렵게 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 어렵게 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 어렵게 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 어렵게 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 어렵게 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 어렵게 좀
-- [정렬](algorithm_name) 알고리즘 어렵게 받습니다
-- [정렬](algorithm_name) 알고리즘 어렵게 받는다
-- [정렬](algorithm_name) 알고리즘 어렵게 받아요
-- [정렬](algorithm_name) 알고리즘 어렵게 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 어렵게 받고 싶어
-- [정렬](algorithm_name) 알고리즘 어렵게 설명해줘
-- [정렬](algorithm_name) 알고리즘 어렵게 설명해줄래
-- [정렬](algorithm_name) 알고리즘 어렵게 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 어렵게 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 어렵게 설명
-- [정렬](algorithm_name) 알고리즘 깊히 알려줘
-- [정렬](algorithm_name) 알고리즘 깊히 알려주십시오
-- [정렬](algorithm_name) 알고리즘 깊히 알려줄래?
-- [정렬](algorithm_name) 알고리즘 깊히 알려주쇼
-- [정렬](algorithm_name) 알고리즘 깊히 알려주실래요?
-- [정렬](algorithm_name) 알고리즘 깊히 알려주실 수 있나요?
-- [정렬](algorithm_name) 알고리즘 깊히 알려 줄래요?
-- [정렬](algorithm_name) 알고리즘 깊히 알고 싶어요
-- [정렬](algorithm_name) 알고리즘 깊히 알고 싶은데
-- [정렬](algorithm_name) 알고리즘 깊히 좀
-- [정렬](algorithm_name) 알고리즘 깊히 받습니다
-- [정렬](algorithm_name) 알고리즘 깊히 받는다
-- [정렬](algorithm_name) 알고리즘 깊히 받아요
-- [정렬](algorithm_name) 알고리즘 깊히 받고 싶어요
-- [정렬](algorithm_name) 알고리즘 깊히 받고 싶어
-- [정렬](algorithm_name) 알고리즘 깊히 설명해줘
-- [정렬](algorithm_name) 알고리즘 깊히 설명해줄래
-- [정렬](algorithm_name) 알고리즘 깊히 설명해주십시오
-- [정렬](algorithm_name) 알고리즘 깊히 설명해주쇼
-- [정렬](algorithm_name) 알고리즘 깊히 설명
+- [분할 정복을 이용한 거듭제곱](algorithm_name) 알고리즘  알려줘
+- [이분 매칭](algorithm_name) 알고리즘  알려주십시오
+- [임의 정밀도 / 큰 수 연산](algorithm_name) 알고리즘  알려줄래?
+- [최소 스패닝 트리](algorithm_name) 알고리즘  알려주쇼
+- [해싱](algorithm_name) 알고리즘  알려주실래요?
+- [최소 공통 조상](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [재귀](algorithm_name) 알고리즘  알려 줄래요?
+- [에라토스테네스의 체](algorithm_name) 알고리즘  알고 싶어요
+- [해시를 사용한 집합과 맵](algorithm_name) 알고리즘  알고 싶은데
+- [강한 연결 요소](algorithm_name) 알고리즘  설명해줘
+- [플로이드–와샬](algorithm_name) 알고리즘  설명해줄래
+- [고속 푸리에 변환](algorithm_name) 알고리즘  설명해주십시오
+- [위상 정렬](algorithm_name) 알고리즘  설명해주쇼
+- [볼록 껍질](algorithm_name) 알고리즘  설명
+- [트라이](algorithm_name) 알고리즘  알려줘
+- [포함 배제의 원리](algorithm_name) 알고리즘  알려주십시오
+- [값 / 좌표 압축](algorithm_name) 알고리즘  알려줄래?
+- [볼록 껍질을 이용한 최적화](algorithm_name) 알고리즘  알려주쇼
+- [KMP](algorithm_name) 알고리즘  알려주실래요?
+- [배낭 문제](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [접미사 배열과 LCP 배열](algorithm_name) 알고리즘  알려 줄래요?
+- [희소 배열](algorithm_name) 알고리즘  알고 싶어요
+- [최소 비용 최대 유량](algorithm_name) 알고리즘  알고 싶은데
+- [제곱근 분할법](algorithm_name) 알고리즘  좀
+- [작은 집합에서 큰 집합으로 합치는 테크닉](algorithm_name) 알고리즘  받습니다
+- [유클리드 호제법](algorithm_name) 알고리즘  받는다
+- [덱](algorithm_name) 알고리즘  받아요
+- [확률론](algorithm_name) 알고리즘  받고 싶어요
+- [런타임 전의 전처리](algorithm_name) 알고리즘  받고 싶어
+- [스프라그–그런디 정리](algorithm_name) 알고리즘  설명해줘
+- [매개 변수 탐색](algorithm_name) 알고리즘  설명해줄래
+- [가장 긴 증가하는 부분 수열: O(n log n)](algorithm_name) 알고리즘  설명해주십시오
+- [중간에서 만나기](algorithm_name) 알고리즘  설명해주쇼
+- [Heavy-light 분할](algorithm_name) 알고리즘  설명
+- [센트로이드 분할](algorithm_name) 알고리즘  알려줘
+- [슬라이딩 윈도우](algorithm_name) 알고리즘  알려주십시오
+- [무작위화](algorithm_name) 알고리즘  알려줄래?
+- [오일러 경로 테크닉](algorithm_name) 알고리즘  알려주쇼
+- [2-SAT](algorithm_name) 알고리즘  알려주실래요?
+- [삼분 탐색](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [미적분학](algorithm_name) 알고리즘  알려 줄래요?
+- [최대 유량 최소 컷 정리](algorithm_name) 알고리즘  알고 싶어요
+- [가우스 소거법](algorithm_name) 알고리즘  알고 싶은데
+- [휴리스틱](algorithm_name) 알고리즘  좀
+- [단절점과 단절선](algorithm_name) 알고리즘  받습니다
+- [퍼시스턴트 세그먼트 트리](algorithm_name) 알고리즘  받는다
+- [3차원 기하학](algorithm_name) 알고리즘  받아요
+- [오일러 경로](algorithm_name) 알고리즘  받고 싶어요
+- [선인장](algorithm_name) 알고리즘  받고 싶어
+- [비트 집합](algorithm_name) 알고리즘  설명해줘
+- [중국인의 나머지 정리](algorithm_name) 알고리즘  설명해줄래
+- [분할 정복을 사용한 최적화](algorithm_name) 알고리즘  설명해주십시오
+- [큐](algorithm_name) 알고리즘  설명해주쇼
+- [Mo's](algorithm_name) 알고리즘  설명
+- [병렬 이분 탐색](algorithm_name) 알고리즘  알려줘
+- [벌래캠프–매시](algorithm_name) 알고리즘  알려주십시오
+- [오일러 지표 (χ=V-E+F)](algorithm_name) 알고리즘  알려줄래?
+- [다차원 세그먼트 트리](algorithm_name) 알고리즘  알려주쇼
+- [평면 그래프](algorithm_name) 알고리즘  알려주실래요?
+- [아호-코라식](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [스플레이 트리](algorithm_name) 알고리즘  알려 줄래요?
+- [순열 사이클 분할](algorithm_name) 알고리즘  알고 싶어요
+- [페르마의 소정리](algorithm_name) 알고리즘  알고 싶은데
+- [라빈–카프](algorithm_name) 알고리즘  좀
+- [확장 유클리드 호제법](algorithm_name) 알고리즘  받습니다
+- [회전하는 캘리퍼스](algorithm_name) 알고리즘  받는다
+- [커넥션 프로파일을 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘  받아요
+- [물리학](algorithm_name) 알고리즘  받고 싶어요
+- [이중 연결 요소](algorithm_name) 알고리즘  받고 싶어
+- [머지 소트 트리](algorithm_name) 알고리즘  설명해줘
+- [뫼비우스 반전 공식](algorithm_name) 알고리즘  설명해줄래
+- [덱을 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘  설명해주십시오
+- [정규 표현식](algorithm_name) 알고리즘  설명해주쇼
+- [링크/컷 트리](algorithm_name) 알고리즘  설명
+- [볼록 다각형 내부의 점 판정](algorithm_name) 알고리즘  알려줘
+- [오일러 피 함수](algorithm_name) 알고리즘  알려주십시오
+- [연결 리스트](algorithm_name) 알고리즘  알려줄래?
+- [0-1 너비 우선 탐색](algorithm_name) 알고리즘  알려주쇼
+- [수치해석](algorithm_name) 알고리즘  알려주실래요?
+- [외판원 순회 문제](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [인터프리터](algorithm_name) 알고리즘  알려 줄래요?
+- [폴라드 로](algorithm_name) 알고리즘  알고 싶어요
+- [Alien 트릭](algorithm_name) 알고리즘  알고 싶은데
+- [함수 개형을 이용한 최적화](algorithm_name) 알고리즘  좀
+- [모듈로 곱셈 역원](algorithm_name) 알고리즘  받습니다
+- [다각형의 넓이](algorithm_name) 알고리즘  받는다
+- [기댓값의 선형성](algorithm_name) 알고리즘  받아요
+- [오프라인 동적 연결성 판정](algorithm_name) 알고리즘  받고 싶어요
+- [선형 계획법](algorithm_name) 알고리즘  받고 싶어
+- [번사이드 보조정리](algorithm_name) 알고리즘  설명해줘
+- [오목 다각형 내부의 점 판정](algorithm_name) 알고리즘  설명해줄래
+- [피타고라스 정리](algorithm_name) 알고리즘  설명해주십시오
+- [키타마사](algorithm_name) 알고리즘  설명해주쇼
+- [트리 동형 사상](algorithm_name) 알고리즘  설명
+- [헝가리안](algorithm_name) 알고리즘  알려줘
+- [이산 로그](algorithm_name) 알고리즘  알려주십시오
+- [최소 외접원](algorithm_name) 알고리즘  알려줄래?
+- [밀러–라빈 소수 판별법](algorithm_name) 알고리즘  알려주쇼
+- [도미네이터 트리](algorithm_name) 알고리즘  알려주실래요?
+- [단조 큐를 이용한 최적화](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [쌍대성](algorithm_name) 알고리즘  알려 줄래요?
+- [쌍대 그래프](algorithm_name) 알고리즘  알고 싶어요
+- [일반적인 매칭](algorithm_name) 알고리즘  알고 싶은데
+- [회문 트리](algorithm_name) 알고리즘  좀
+- [스토어–바그너](algorithm_name) 알고리즘  받습니다
+- [Z](algorithm_name) 알고리즘  받는다
+- [크누스 최적화](algorithm_name) 알고리즘  받아요
+- [매트로이드](algorithm_name) 알고리즘  받고 싶어요
+- [뤼카 정리](algorithm_name) 알고리즘  받고 싶어
+- [양방향 탐색](algorithm_name) 알고리즘  설명해줘
+- [이산 제곱근](algorithm_name) 알고리즘  설명해줄래
+- [유향 최소 신장 트리](algorithm_name) 알고리즘  설명해주십시오
+- [보로노이 다이어그램](algorithm_name) 알고리즘  설명해주쇼
+- [4차원 이상의 기하학](algorithm_name) 알고리즘  설명
+- [정렬](algorithm_name) 알고리즘  알려줘
+- [통계학](algorithm_name) 알고리즘  알려주십시오
+- [로프](algorithm_name) 알고리즘  알려줄래?
+- [춤추는 링크](algorithm_name) 알고리즘  알려주쇼
+- [크누스 X](algorithm_name) 알고리즘  알려주실래요?
+- [접미사 트리](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [델로네 삼각분할](algorithm_name) 알고리즘  알려 줄래요?
+- [레드-블랙 트리](algorithm_name) 알고리즘  알고 싶어요
+- [탑 트리](algorithm_name) 알고리즘  알고 싶은데
+- [이산 k제곱근](algorithm_name) 알고리즘  좀
+- [홀의 결혼 정리 ](algorithm_name) 알고리즘  받습니다
+- [게임 이론](algorithm_name) 알고리즘  받는다
+- [벨만–포드](algorithm_name) 알고리즘  받아요
+- [선분 교차 판정](algorithm_name) 알고리즘  받고 싶어요
   
 - [그래프 이론](algorithm_name)이 뭐야?
 - [자료 구조](algorithm_name)가 뭐야?
@@ -1269,8 +1044,8 @@
 - [준파고를 잡아라](contest_name)대회 알려줘
 - [카카오](contest_name)대회 정보 알려줘
 - [카카오](contest_name)대회 정보 알려줄래
-- [카카오](contest_name)대회 좀 자세히 알려줘
-- [카카오](contest_name)대회 좀 자세히 알려줄래
+- [카카오](contest_name)대회 좀  알려줘
+- [카카오](contest_name)대회 좀  알려줄래
 - [카카오](contest_name)대회 일정 알려줘
 - [카카오](contest_name)대회 일정 알려줄래
 - [카카오](contest_name)대회가 뭐야?
