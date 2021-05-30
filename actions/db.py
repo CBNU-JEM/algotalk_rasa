@@ -1,4 +1,5 @@
 import random
+import re
 
 import pymysql
 
@@ -18,6 +19,7 @@ class Algorithm:
         self.level = level
         self.example_code = example_code
         self.parent = parent
+        self.normalized_name = normalize(name)
 
 
 class AlgorithmProblemClassification:
@@ -34,6 +36,7 @@ class Problem:
         self.input = input
         self.output = output
         self.uri = uri
+        self.normalized_name = normalize(name)
 
 
 class ContestProblem:
@@ -53,6 +56,7 @@ class Contest:
         self.content = content
         self.source = source
         self.uri = uri
+        self.normalized_name = normalize(name)
 
 
 def get_query():
@@ -85,65 +89,72 @@ def execute_query(q):
 
 
 def create_algorithm(algorithm_list):
-    q = "INSERT IGNORE INTO  ALGORITHM (NAME, BRIEF_EXPLAIN, DETAIL_EXPLAIN, LEVEL, EXAMPLE_CODE, PARENT) VALUES "
+    q = "INSERT IGNORE INTO  ALGORITHM (NAME, BRIEF_EXPLAIN, DETAIL_EXPLAIN, LEVEL, EXAMPLE_CODE, PARENT, NORMALIZED_NAME) VALUES "
     tmp_query = ""
     for algorithm in algorithm_list:
-        tmp_query += f', (\"{algorithm.name}\", \"{algorithm.brief_explain}\", \"{algorithm.detail_explain}\", \"{algorithm.level}\", \"{algorithm.example_code}\", \"{algorithm.parent}\")'
-    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
+        tmp_query += f', ("{algorithm.name}", "{algorithm.brief_explain}", "{algorithm.detail_explain}", ' \
+                     f'"{algorithm.level}", "{algorithm.example_code}", "{algorithm.parent}", "{normalize(algorithm.name)}")'
+    q += tmp_query.replace(', ', '', 1)
+    execute_query(none_to_null(q))
+
+
+def delete_algorithm(name):
+    q = f'DELETE FROM ALGORITHM WHERE part="{name}"'
     execute_query(q)
 
 
-def delete_algorithm(part):
-    q = f'DELETE FROM ALGORITHM WHERE part=\'{part}\''
-    execute_query(q)
-
-
-def get_algorithm_by_name(name):
-    q = f'SELECT * FROM ALGORITHM WHERE NAME LIKE \'{name}\''
+def get_algorithm_by_normalized_name(name):
+    normalized_name = normalize(name)
+    q = f'SELECT * FROM ALGORITHM WHERE NORMALIZED_NAME LIKE "{normalized_name}"'
     rows = execute_query(q)
     algorithms = []
     for row in rows:
-        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4]))
+        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4], row[5]))
 
     if algorithms:
         return algorithms
 
-    q = f'SELECT * FROM ALGORITHM WHERE NAME LIKE \'%{name}%\''
+    q = f'SELECT * FROM ALGORITHM WHERE NORMALIZED_NAME LIKE "%{normalized_name}%"'
     rows = execute_query(q)
     algorithms = []
     for row in rows:
-        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4]))
+        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4], row[5]))
     return algorithms
 
 
 def create_problem(problem_list):
-    q = 'INSERT IGNORE INTO PROBLEM (NAME, LEVEL, CONTENT, INPUT, OUTPUT, URI) VALUES '
+    q = 'INSERT IGNORE INTO PROBLEM (NAME, LEVEL, CONTENT, INPUT, OUTPUT, URI, NORMALIZED_NAME) VALUES '
     tmp_query = ""
     for problem in problem_list:
-        tmp_query += f', (\"{problem.name}\", \"{problem.level}\", \"{problem.content}\", \"{problem.input}\", \"{problem.output}\", \"{problem.uri}\")'
-    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
-    execute_query(q)
+        tmp_query += f', ("{problem.name}", "{problem.level}", "{problem.content}", ' \
+                     f'"{problem.input}", "{problem.output}", "{problem.uri}", "{normalize(problem.name)}")'
+    q += tmp_query.replace(', ', '', 1)
+    execute_query(none_to_null(q))
 
 
-def delete_problem(part):
-    q = f'DELETE FROM PROBLEM WHERE part=\'{part}\''
+def delete_problem(name):
+    q = f'DELETE FROM PROBLEM WHERE NAME="{name}"'
     execute_query(q)
+
 
 def get_problem(problem_name, algorithm_name, level, contest_name, number):
     q = f'SELECT P.NAME, P.LEVEL, P.CONTENT, P.INPUT, P.OUTPUT, P.URI, C.NAME, A.NAME FROM PROBLEM AS P ' \
         'LEFT JOIN CONTEST_PROBLEM AS CP ON P.NAME =CP.PROBLEM_NAME LEFT JOIN CONTEST AS C ON CP.CONTEST_NAME = C.NAME ' \
-        'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.NAME=AP.PROBLEM_NAME LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_NAME=A.NAME '
+        'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.NAME=AP.PROBLEM_NAME ' \
+        'LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_NAME=A.NAME '
+
+    normalized_problem_name = normalize(problem_name)
 
     if problem_name:
-        q += "WHERE " + f"P.NAME LIKE \'{problem_name}\' "
-    if get_algorithm_by_name(algorithm_name):
-        db_algorithm_name = get_algorithm_by_name(algorithm_name)[0].name
-        q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f"A.NAME LIKE \'{db_algorithm_name}\' "
-    if get_contest_by_name(contest_name):
-        db_contest_name = get_contest_by_name(contest_name)[0].name
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"C.NAME LIKE \'{db_contest_name}\' "
+        q += "WHERE " + f'P.NORMALIZED_NAME LIKE "{normalized_problem_name}" '
+    if get_algorithm_by_normalized_name(algorithm_name):
+        db_algorithm_name = get_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
+        q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f'A.NORMALIZED_NAME LIKE "{db_algorithm_name}" '
+    if get_contest_by_normalized_name(contest_name):
+        db_contest_name = get_contest_by_normalized_name(contest_name)[0].normalized_name
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'C.NORMALIZED_NAME LIKE "{db_contest_name}" '
     if level:
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"P.LEVEL LIKE \'%{level}%\' "
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL LIKE "%{level}%" '
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
     problems = []
@@ -154,18 +165,19 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
 
     q = f'SELECT P.NAME, P.LEVEL, P.CONTENT, P.INPUT, P.OUTPUT, P.URI, C.NAME, A.NAME FROM PROBLEM AS P ' \
         'LEFT JOIN CONTEST_PROBLEM AS CP ON P.NAME =CP.PROBLEM_NAME LEFT JOIN CONTEST AS C ON CP.CONTEST_NAME = C.NAME ' \
-        'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.NAME=AP.PROBLEM_NAME LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_NAME=A.NAME '
+        'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.NAME=AP.PROBLEM_NAME ' \
+        'LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_NAME=A.NAME '
 
     if problem_name:
-        q += "WHERE " + f"P.NAME LIKE \'%{problem_name}%\' "
-    if get_algorithm_by_name(algorithm_name):
-        db_algorithm_name = get_algorithm_by_name(algorithm_name)[0].name
-        q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f"A.NAME LIKE \'{db_algorithm_name}\' "
-    if get_contest_by_name(contest_name):
-        db_contest_name = get_contest_by_name(contest_name)[0].name
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"C.NAME LIKE \'{db_contest_name}\' "
+        q += "WHERE " + f'P.NAME LIKE "%{normalized_problem_name}%" '
+    if get_algorithm_by_normalized_name(algorithm_name):
+        db_algorithm_name = get_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
+        q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f'A.NORMALIZED_NAME LIKE "{db_algorithm_name}" '
+    if get_contest_by_normalized_name(contest_name):
+        db_contest_name = get_contest_by_normalized_name(contest_name)[0].normalized_name
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'C.NORMALIZED_NAME LIKE "{db_contest_name}" '
     if level:
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"P.LEVEL LIKE \'%{level}%\' "
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL LIKE "%{level}%" '
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
     problems = []
@@ -175,88 +187,108 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
 
 
 def create_contest(contest_list):
-    q = 'INSERT INTO CONTEST (NAME, CONTEST_START, CONTEST_END, RECEPTION_START, RECEPTION_END, CONTENT, SOURCE, URI) VALUES '
+    q = 'INSERT INTO CONTEST (NAME, CONTEST_START, CONTEST_END, RECEPTION_START, RECEPTION_END, ' \
+        'CONTENT, SOURCE, URI, NORMALIZED_NAME) VALUES '
     tmp_query = ""
     for contest in contest_list:
-        tmp_query += f', (\"{contest.name}\", \"{contest.contest_start}\", \"{contest.contest_end}\", \"{contest.reception_start}\", \"{contest.reception_end}\", \"{contest.content}\", \"{contest.source}\", \"{contest.uri}\")'
-    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
-    execute_query(q)
+        tmp_query += f', ("{contest.name}", "{contest.contest_start}", "{contest.contest_end}", ' \
+                     f'"{contest.reception_start}", "{contest.reception_end}", "{contest.content}", ' \
+                     f'"{contest.source}", "{contest.uri}", "{normalize(contest.name)}")'
+    q += tmp_query.replace(', ', '', 1)
+    execute_query(none_to_null(q))
+
 
 def create_algorithm_problem_classification(algorithm_problem_list):
     q = 'INSERT INTO ALGORITHM_PROBLEM_CLASSIFICATION (ALGORITHM_NAME, PROBLEM_NAME) VALUES '
+
     tmp_query = ""
     for algorithm_problem in algorithm_problem_list:
-        tmp_query += f', (\"{algorithm_problem.algorithm_name}\", \"{algorithm_problem.problem_name}\")'
-    q += tmp_query.replace(', ', '', 1).replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
+        tmp_query += f', ("{algorithm_problem.algorithm_name}", "{algorithm_problem.problem_name}")'
+    q += tmp_query.replace(', ', '', 1)
+    execute_query(none_to_null(q))
+
+
+def delete_contest(name):
+    q = f'DELETE FROM CONTEST WHERE NAME="{name}"'
     execute_query(q)
 
-def delete_contest(part):
-    q = f'DELETE FROM CONTEST WHERE part=\'{part}\''
-    execute_query(q)
 
-def get_contest_by_name(name):
-    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \"{name}\"'
+def get_contest_by_normalized_name(name):
+    normalized_name = normalize(name)
+    q = f'SELECT * FROM CONTEST WHERE NORMALIZED_NAME LIKE "{normalized_name}"'
     rows = execute_query(q)
     contests = []
     for row in rows:
-        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5]))
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
     if contests:
         return contests
 
-    q = f'SELECT * FROM CONTEST WHERE NAME LIKE \"%{name}%\"'
+    q = f'SELECT * FROM CONTEST WHERE NORMALIZED_NAME LIKE "%{normalized_name}%"'
     rows = execute_query(q)
     contests = []
     for row in rows:
-        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5]))
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
     return contests
+
 
 def get_contest_by_sql(sql):
     rows = execute_query(sql)
     contests = []
     for row in rows:
-        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5]))
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]))
     return contests
 
 
 def create_algorithm_problem_classification_one(algorithm_name, problem_name):
-    q = f'INSERT INTO ALGORITHM_PROBLEM_CLASSIFICATION (algorithm_name, problem_name) VALUES (\"{algorithm_name}\", \"{problem_name}\")'
+    q = f'INSERT INTO ALGORITHM_PROBLEM_CLASSIFICATION (algorithm_name, problem_name) VALUES ("{algorithm_name}", "{problem_name}")'
     execute_query(q)
 
 
 def delete_algorithm_problem_classification(algorithm_name, problem_name):
-    q = f'DELETE FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE problem_name=\"{problem_name}\" AND algorithm_name=\"{algorithm_name}\"'
+    q = f'DELETE FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE problem_name="{problem_name}" AND algorithm_name="{algorithm_name}"'
     execute_query(q)
 
 
 def create_contest_problem(contest_name, problem_name):
-    q = f'INSERT INTO CONTEST_PROBLEM (contest_name, problem_name)VALUES (\"{contest_name}\", \"{problem_name}\")'
+    q = f'INSERT INTO CONTEST_PROBLEM (contest_name, problem_name)VALUES ("{contest_name}", "{problem_name}")'
     execute_query(q)
 
 
 def delete_contest_problem(contest_name, problem_name):
-    q = f'DELETE FROM CONTEST_PROBLEM WHERE problem_name=\"{problem_name}\" AND contest_name=\"{contest_name}\"'
+    q = f'DELETE FROM CONTEST_PROBLEM WHERE problem_name="{problem_name}" AND contest_name="{contest_name}"'
     execute_query(q)
 
 
 def update_algorithm(algorithm):
+    normalized_name = normalize(algorithm.name)
     q = f'UPDATE ALGORITHM SET brief_explain=\"{algorithm.brief_explain}\",detail_explain=\"{algorithm.detail_explain}\", ' \
-        f'level="{algorithm.level}", example_code="{algorithm.example_code}", parent="{algorithm.parent}" WHERE NAME ="{algorithm.name}"'
-    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL')
-    execute_query(q)
+        f'level="{algorithm.level}", example_code="{algorithm.example_code}", parent="{algorithm.parent}", ' \
+        f'normalized_name="{normalized_name}" WHERE NAME ="{algorithm.name}"'
+    execute_query(none_to_null(q))
 
 
-def update_problem(name, level, content, input, output, source, algorithm_problem_classification, uri):
-    q = f'UPDATE PROBLEM SET name={name}, level={level},content={content},input={input}' \
-        f',output={output},source={source},algorithm_problem_classification={algorithm_problem_classification}.uri={uri}'
-    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL')
-    execute_query(q)
+def update_problem(problem):
+    normalized_name = normalize(problem.name)
+    q = f'UPDATE PROBLEM SET name=\"{problem.name}\", level=\"{problem.level}\", content=\"{problem.content}\", ' \
+        f'input=\"{problem.input}\", output=\"{problem.output}\", uri={problem.uri}, normalized_name={normalized_name} ' \
+        f'WHERE NAME="{problem.name}"'
+    execute_query(none_to_null(q))
 
 
-def update_contest(name, date, reception_period, content, source, uri):
-    q = f'UPDATE CONTEST SET name={name}, date={date},reception_period={reception_period},content={content}' \
-        f',source={source},uri={uri}'
-    q = q.replace('None', 'NULL').replace('\'None\'', 'NULL')
-    execute_query(q)
+def update_contest(contest):
+    normalized_name = normalize(contest.name)
+    q = f'UPDATE CONTEST SET name="{contest.name}", CONTEST_START="{contest.contest_start}", CONTEST_END="{contest.contest_end}", ' \
+        f'RECEPTION_START="{contest.reception_start}", RECEPTION_END="{contest.reception_end}", CONTENT="{contest.content}", ' \
+        f'SOURCE="{contest.source}", URI="{contest.uri}", NORMALIZED_NAME="{normalized_name}" WHERE NAME ="{contest.name}"'
+    execute_query(none_to_null(q))
+
+
+def normalize(name):
+    return re.sub("[-/: –\\s]", "", name)
+
+
+def none_to_null(q):
+    return q.replace('None', 'NULL').replace('\'None\'', 'NULL').replace('\"None\"', 'NULL').replace('\"NULL\"', 'NULL')
 
 
 if __name__ == "__main__":

@@ -9,9 +9,8 @@ intents:
   - ask_whatspossible
   - thanks
   - user_level
-  - recommendation_level
   - recommendation_site
-  - problem_type
+  - problem_recommendation
   - problem_solve
   - problem_site
   - algorithm_example
@@ -20,7 +19,6 @@ intents:
   - brief
   - detail
   - code
-  - level
   - number
   - algorithm_name
   - problem_name
@@ -30,6 +28,9 @@ intents:
   - contest_explain
   - company
   - schedule
+  - homepage
+  - algorithm_level
+  - problem_level
 
 actions:
   - action_algorithm_explain
@@ -45,7 +46,9 @@ slots:
     type: unfeaturized
   algorithm_name:
     type: unfeaturized
-  level:
+  algorithm_level:
+    type: unfeaturized
+  problem_level:
     type: unfeaturized
   code:
     type: unfeaturized
@@ -57,6 +60,12 @@ slots:
     type: unfeaturized
   level_change:
     type: unfeaturized
+  reception_period:
+    type: unfeaturized
+  homepage:
+    type: unfeaturized
+  schedule:
+    type: unfeaturized
 
 forms:
   - algorithm_form
@@ -67,9 +76,9 @@ forms:
 entities:
   - brief
   - detail
-  - algorithm_level
   - user_level
-  - level
+  - algorithm_level
+  - problem_level
   - code
   - number
   - problem_name
@@ -80,6 +89,7 @@ entities:
   - schedule
   - company
   - reception_period
+  - homepage
 
 responses:
   utter_greet:
@@ -110,7 +120,7 @@ responses:
   utter_ask_algorithm_name:
   - text: "무슨 알고리즘을 알려줘?"
 
-  utter_ask_level:
+  utter_ask_problem_level:
   - text: "어떤 난이도를 알려줄까?"
 
   utter_ask_contest_name:

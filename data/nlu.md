@@ -119,26 +119,27 @@
 - [코드](code) 주실 수 있나요?
 - [코드](code) 줄래요?
 
+## intent:algorithm_level
+- [난이도](algorithm_level)
+- [레벨](algorithm_level)
+- [수준](algorithm_level)
+- [algorithm_level](algorithm_level)
+- [어려워?](algorithm_level)
+- [쉬워?](algorithm_level)
 
-
-
-## intent:level
-- [난이도](level)
-- [레벨](level)
-- [수준](level)
-- [level](level)
-- [상](level)
-- [중](level)
-- [하](level)
-- [브론즈](level)
-- [실버](level)
-- [골드](level)
-- [플레티넘](level)
-- [플레](level)
-- [다이아](level)
-- [초급](level)
-- [중급](level)
-- [고급](level)
+## intent:problem_level
+- [상](problem_level)
+- [중](problem_level)
+- [하](problem_level)
+- [브론즈](problem_level)
+- [실버](problem_level)
+- [골드](problem_level)
+- [플레티넘](problem_level)
+- [플레](problem_level)
+- [다이아](problem_level)
+- [초급](problem_level)
+- [중급](problem_level)
+- [고급](problem_level)
 
 ## intent:change_easy
 - 쉬운걸로
@@ -325,15 +326,11 @@
 - 난 [처음](user_level)해봐
 
 
-## intent:recommendation_level
-- [기초](algorithm_level)문제 알려줘
-- [기초](algorithm_level) 알려주세요
-
 ## intent:recommendation_site
 - 추천 공부 사이트 있어?
 - 추천 공부 사이트 있니?
 
-## intent:problem_type
+## intent:problem_recommendation
 - [정렬](algorithm_name) 문제 알려줘
 - [최단거리](algorithm_name) 문제 알려줄래?
 - [정렬](algorithm_name) 알고리즘 문제 풀고싶어
@@ -776,14 +773,14 @@
 - 어려운 [정렬](algorithm_name) 알고리즘 문제 받는다
 - 어려운 [정렬](algorithm_name) 알고리즘 문제 받아요
 - 어려운 [정렬](algorithm_name) 알고리즘 문제 받고 싶어요
-- [브론즈](level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
-- [플레](level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
-- [다이아](level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
-- [골드](level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
-- [실버](level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
-- [상](level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
-- [중](level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
-- [하](level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [브론즈](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [플레](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [다이아](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [골드](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [실버](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [상](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [중](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [하](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
 
 ## intent:problem_solve
 - 모르겠어
@@ -1087,17 +1084,40 @@
 - [2020](number)년
 
 ## intent:reception_period
-- 신청 기간 알려줘
-- 신청 기간이 어떻게 돼?
-- 언제까지 신청가능해?
-- 언제까지 접수하면 돼?
-- 접수 기간 알려줘
-- 신청기간
-- 신청날짜
-- 신청시간
-- 신청
-- 접수
+- [신청 기간](reception_period)알려줘
+- [신청 기간](reception_period)이 어떻게 돼?
+- 언제까지 [신청](reception_period)가능해?
+- 언제까지 [접수](reception_period)하면 돼?
+- [접수 기간](reception_period) 알려줘
+- [신청기간](reception_period)
+- [신청날짜](reception_period)
+- [신청시간](reception_period)
+- [신청](reception_period)
+- [접수](reception_period)
 - 언제 열려?
+
+## intent:homepage
+- 어디서 봐?
+- [홈페이지](homepage) 없어?
+- [홈페이지](homepage) 알려줘
+- [홈페이지](homepage)이 어떻게 돼?
+- [홈페이지](homepage) 내놔
+- [홈페이지](homepage) 알려줘
+- [홈페이지](homepage)
+- [URL](homepage) 알려줘
+- [URL](homepage)이 어떻게 돼?
+- [URL](homepage) 내놔
+- [URL](homepage) 알려줘
+- [URL](homepage) 없어?
+- [url](homepage)
+- [uri](homepage)
+- [URI](homepage)
+- [링크](homepage) 없어?
+- [링크](homepage) 알려줘
+- [링크](homepage)이 어떻게 돼?
+- [링크](homepage) 내놔
+- [링크](homepage) 알려줘
+- [링크](homepage)
 
 ## lookup:algorithm_name
 data/lookup/algorithm_name.txt

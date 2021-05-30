@@ -55,10 +55,10 @@
   - action_contest_explain
 
 ## recommendation
-* problem_type
+* problem_recommendation
   - problem_form
   - form{"name": "problem_form"}
-  - slot{"requested_slot":"level"}
+  - slot{"requested_slot":"problem_level"}
   - form{"name": null}
   - action_problem_recommended
   
