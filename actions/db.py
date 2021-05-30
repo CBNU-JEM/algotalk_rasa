@@ -129,7 +129,7 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
     if problem_name:
         q += "WHERE " + f"P.NAME LIKE \'%{problem_name}%\' "
     if algorithm_name:
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"A.NAME LIKE \'%{algorithm_name}%\' "
+        q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f"A.NAME LIKE \'%{algorithm_name}%\' "
     if contest_name:
         q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f"C.NAME LIKE \'%{contest_name}%\' "
     if level:

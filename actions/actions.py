@@ -41,8 +41,7 @@ class ActionLevelChangeEasy(Action):
         print(f"\nlevel= {level}")
         ul=UserLevel()
         level = ul.level_up(level)
-        SlotSet("level", level)
-        return []
+        return [SlotSet('level',level)]
 class ActionLevelChangeHard(Action):
 
     def name(self) -> Text:
@@ -55,8 +54,7 @@ class ActionLevelChangeHard(Action):
         print(f"\nlevel= {level}")
         ul=UserLevel()
         level = ul.level_down(level)
-        SlotSet("level", level)
-        return []
+        return [SlotSet('level',level)]
 
 class ActionAlgorithmExplain(FormAction):
 
@@ -84,7 +82,8 @@ class ActionAlgorithmExplain(FormAction):
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "코드",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제", "payload": "/"}]
+                       {"title": "관련 문제", 
+                        "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
         elif algorithms:
             explain_text = algorithms[0].brief_explain
             buttons = [{"title": "자세한 설명",
@@ -93,7 +92,8 @@ class ActionAlgorithmExplain(FormAction):
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
                        {"title": "코드",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
-                       {"title": "관련 문제", "payload": "/"}]
+                       {"title": "관련 문제", 
+                        "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
 
         if algorithms and level:
             explain_text += f"\n난이도는 {algorithms[0].level}야"
@@ -144,7 +144,8 @@ class ActionProblemRecommended(FormAction):
                         "payload": f"""/contest_type{{"contest_type": "{contest_name}"}}"""},
                        {"title": "난이도",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
-                       {"title": "다른 문제", "payload": "/"}]
+                       {"title": "다른 문제", 
+                        "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
         elif problem and number:
             explain_text = problem[0].name + '\n'
             explain_text += problem[0].input + '\n'
@@ -155,8 +156,8 @@ class ActionProblemRecommended(FormAction):
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}"""},
                        {"title": "난이도",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "level":"난이도"}}"""},
-                       {"title": "다른 문제", "payload": "/"}]
-
+                       {"title": "다른 문제",
+                        "payload": f"""/problem_type{{"algorithm_name":"{algorithm_name}"}}"""}]
         if problem and level:
             explain_text += f"\n난이도는 {problem[0].level}야"
 
