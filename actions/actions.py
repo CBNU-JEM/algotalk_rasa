@@ -307,8 +307,8 @@ class ActionContestExplain(FormAction):
         print(f"reception_period : {reception_period}")
         print(f"schedule : {schedule}")
 
-        buttons = [{{"title": "대회 정보",
-                     "payload": f'/contest_explain{{"contest_name": "{contest_name}"}}'}},
+        buttons = [{"title": "대회 정보",
+                     "payload": f'/contest_explain{{"contest_name": "{contest_name}"}}'},
                    {"title": "대회 일정",
                     "payload": f'/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}'},
                    {"title": "대회 홈페이지",
