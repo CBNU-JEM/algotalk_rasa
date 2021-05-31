@@ -76,7 +76,8 @@ class ActionAlgorithmExplain(FormAction):
 
         if algorithms and detail:
             if algorithms[0].detail_explain:
-                explain_text = algorithms[0].detail_explain
+                explain_text += "이름 : " + algorithms[0].name
+                explain_text += "\n" + algorithms[0].detail_explain
                 buttons = [{"title": "간단한 설명",
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "brief":"간단한"}}"""},
                            {"title": "난이도",
@@ -126,7 +127,8 @@ class ActionAlgorithmExplain(FormAction):
         print(f"example_code : {example_code}")
         print(f"algorithm_name : {algorithm_name}")
 
-        return [SlotSet("brief", None), SlotSet("detail", None), SlotSet("algorithm_level", None), SlotSet("code", None)]
+        return [SlotSet("brief", None), SlotSet("detail", None),
+                SlotSet("algorithm_level", None), SlotSet("code", None)]
 
 
 class ActionProblemRecommended(FormAction):
@@ -243,7 +245,8 @@ class AlgorithmForm(FormAction):
         return {
             "brief": [self.from_entity(entity="brief")],
             "detail": [self.from_entity(entity="detail")],
-            "algorithm_level": [self.from_entity(entity="algorithm_level"), self.from_intent(intent="algorithm_level", value=True)],
+            "algorithm_level": [self.from_entity(entity="algorithm_level"),
+                                self.from_intent(intent="algorithm_level", value=True)],
             "code": [self.from_entity(entity="code"), self.from_intent(intent="code", value=True)],
             "algorithm_name": [self.from_entity(entity="algorithm_name")]
         }
@@ -310,7 +313,7 @@ class ActionContestExplain(FormAction):
         print(f"schedule : {schedule}")
 
         buttons = [{"title": "대회 정보",
-                     "payload": f'/contest_explain{{"contest_name": "{contest_name}"}}'},
+                    "payload": f'/contest_explain{{"contest_name": "{contest_name}"}}'},
                    {"title": "대회 일정",
                     "payload": f'/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}'},
                    {"title": "대회 홈페이지",
@@ -416,10 +419,11 @@ class ProblemForm(FormAction):
             "problem_name": [self.from_entity(entity="problem_name")],
             "contest_name": [self.from_entity(entity="contest_name")],
             # , self.from_intent(intent="contest_name")],
-            "problem_level": [self.from_entity(entity="problem_level"), self.from_intent(intent="problem_level", value=True)],
+            "problem_level": [self.from_entity(entity="problem_level"),
+                              self.from_intent(intent="problem_level", value=True)],
             "number": [self.from_entity(entity="number")],
             # , self.from_intent(intent="number")],
-            "algorithm_name": [ self.from_entity(entity="algorithm_name")]
+            "algorithm_name": [self.from_entity(entity="algorithm_name")]
         }
 
     def validate_problem_level(
@@ -440,62 +444,65 @@ class ProblemForm(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> List[Dict]:
-        return []
+        return [SlotSet("brief", None), SlotSet("detail", None),
+                SlotSet("code", None), SlotSet("algorithm_level", None),
+                SlotSet("reception_period", None), SlotSet("homepage", None),
+                SlotSet("schedule", None)]
 
-
-class ChangeForm(FormAction):
-
-    def name(self) -> Text:
-        return "change_form"
-
-    @staticmethod
-    def required_slots(tracker: Tracker) -> List[Text]:
-        """A list of required slots that the form has to fill"""
-
-    def slot_mappings(self):
-        """A dictionary to map required slots to
-            - an extracted entity
-            - intent: value pairs
-            - a whole message
-            or a list of them, where a first match will be picked"""
-        return {
-            "problem_name": [self.from_entity(entity="problem_name")],
-            "contest_name": [self.from_entity(entity="contest_name")],
-            # , self.from_intent(intent="contest_name")],
-            "problem_level": [self.from_entity(entity="problem_level"), self.from_intent(intent="problem_level", value=True)],
-            "number": [self.from_entity(entity="number")],
-            # , self.from_intent(intent="number")],
-            "algorithm_name": [self.from_entity(entity="algorithm_name")]
-        }
-
-    def validate_level_change(
-            self,
-            value: Text,
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any],
-    ) -> Dict[Text, Any]:
-        """check algorithm_type"""
-
-        print(f"\nlevel change1 {value}")
-        # print(f"validate: ${tracker.get_latest_entity_values('brief_explain')}")
-        # print(f"level change {value}")
-        #
-        # level = tracker.get_slot('level')
-        # #level change
-        # if value.find('easy') != -1 :
-        #     level = UserLevel.level_down(level)
-        # elif value.find('hard') !=-1 :
-        #     level = UserLevel.level_up(level)
-        # tracker.set_slot("level",level)
-
-        return {"problem_level": value}
-
-    def submit(
-            self,
-            dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any],
-    ) -> List[Dict]:
-        # utter submit template
-        return []
+# class ChangeForm(FormAction):
+#
+#     def name(self) -> Text:
+#         return "change_form"
+#
+#     @staticmethod
+#     def required_slots(tracker: Tracker) -> List[Text]:
+#         """A list of required slots that the form has to fill"""
+#
+#     def slot_mappings(self):
+#         """A dictionary to map required slots to
+#             - an extracted entity
+#             - intent: value pairs
+#             - a whole message
+#             or a list of them, where a first match will be picked"""
+#         return {
+#             "problem_name": [self.from_entity(entity="problem_name")],
+#             "contest_name": [self.from_entity(entity="contest_name")],
+#             # , self.from_intent(intent="contest_name")],
+#             "problem_level": [self.from_entity(entity="problem_level"),
+#                               self.from_intent(intent="problem_level", value=True)],
+#             "number": [self.from_entity(entity="number")],
+#             # , self.from_intent(intent="number")],
+#             "algorithm_name": [self.from_entity(entity="algorithm_name")]
+#         }
+#
+#     def validate_level_change(
+#             self,
+#             value: Text,
+#             dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any],
+#     ) -> Dict[Text, Any]:
+#         """check algorithm_type"""
+#
+#         print(f"\nlevel change1 {value}")
+#         # print(f"validate: ${tracker.get_latest_entity_values('brief_explain')}")
+#         # print(f"level change {value}")
+#         #
+#         # level = tracker.get_slot('level')
+#         # #level change
+#         # if value.find('easy') != -1 :
+#         #     level = UserLevel.level_down(level)
+#         # elif value.find('hard') !=-1 :
+#         #     level = UserLevel.level_up(level)
+#         # tracker.set_slot("level",level)
+#
+#         return {"problem_level": value}
+#
+#     def submit(
+#             self,
+#             dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any],
+#     ) -> List[Dict]:
+#         # utter submit template
+#         return []

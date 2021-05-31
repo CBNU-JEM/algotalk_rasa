@@ -27,8 +27,8 @@ for i in range(len(key)):
 
 
 def level_mapping(level):
-    print(changed_level.get(level, "실버"))
-    return changed_level.get(level, "실버")
+    print(changed_level.get(level, None))
+    return changed_level.get(level, None)
 
 class OverlapProblem:
     def __init__(self, problem=None):
