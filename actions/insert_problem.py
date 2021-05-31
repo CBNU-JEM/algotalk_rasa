@@ -10,3 +10,4 @@ with open('problem.json') as json_file:
         problem_list.append(db.Problem(problem['title'], None, problem['content'], problem['input'], problem['output'], problem['uri']))
 
     db.create_problem(list(set(problem_list)))
+    #db.update_problem_list((list(set(problem_list))))

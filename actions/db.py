@@ -261,16 +261,21 @@ def delete_contest_problem(contest_name, problem_name):
 
 def update_algorithm(algorithm):
     normalized_name = normalize(algorithm.name)
-    q = f'UPDATE ALGORITHM SET brief_explain=\"{algorithm.brief_explain}\",detail_explain=\"{algorithm.detail_explain}\", ' \
+    q = f'UPDATE ALGORITHM SET brief_explain="{algorithm.brief_explain}",detail_explain="{algorithm.detail_explain}", ' \
         f'level="{algorithm.level}", example_code="{algorithm.example_code}", parent="{algorithm.parent}", ' \
         f'normalized_name="{normalized_name}" WHERE NAME ="{algorithm.name}"'
     execute_query(none_to_null(q))
 
 
+def update_problem_list(problem_list):
+    for problem in problem_list:
+        update_problem(problem)
+
+
 def update_problem(problem):
     normalized_name = normalize(problem.name)
-    q = f'UPDATE PROBLEM SET name=\"{problem.name}\", level=\"{problem.level}\", content=\"{problem.content}\", ' \
-        f'input=\"{problem.input}\", output=\"{problem.output}\", uri={problem.uri}, normalized_name={normalized_name} ' \
+    q = f'UPDATE PROBLEM SET level="{problem.level}", content="{problem.content}", ' \
+        f'input="{problem.input}", output="{problem.output}", uri="{problem.uri}", normalized_name="{normalized_name}" ' \
         f'WHERE NAME="{problem.name}"'
     execute_query(none_to_null(q))
 
