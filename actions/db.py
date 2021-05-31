@@ -289,6 +289,8 @@ def update_contest(contest):
 
 
 def normalize(name):
+    if not name:
+        return None
     return re.sub("[-/: –\\s]", "", name)
 
 

@@ -218,7 +218,7 @@ class ActionProblemRecommended(FormAction):
         print(f"contest_name : {contest_name}")
         print(f"algorithm_name : {algorithm_name}")
 
-        return []
+        return [SlotSet("number", None)]
 
 
 class AlgorithmForm(FormAction):
@@ -265,7 +265,9 @@ class AlgorithmForm(FormAction):
             domain: Dict[Text, Any],
     ) -> List[Dict]:
         # utter submit template
-        return []
+        return [SlotSet("problem_level", None), SlotSet("problem_name", None),
+                SlotSet("contest_name", None), SlotSet("reception_period", None),
+                SlotSet("homepage", None), SlotSet("schedule", None)]
 
 
 class ActionContestExplain(FormAction):
@@ -277,8 +279,8 @@ class ActionContestExplain(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        # past = tracker.get_slot('past')
-        # proceeding = tracker.get_slot('proceeding')
+        past = tracker.get_slot('past')
+        proceeding = tracker.get_slot('proceeding')
 
         reception_period = tracker.get_slot('reception_period')
         homepage = tracker.get_slot('homepage')
@@ -345,7 +347,6 @@ class ActionContestExplain(FormAction):
 
 
 class ContestForm(FormAction):
-
     def name(self) -> Text:
         return "contest_form"
 
@@ -381,7 +382,10 @@ class ContestForm(FormAction):
             domain: Dict[Text, Any],
     ) -> List[Dict]:
         # utter submit template
-        return []
+        return [SlotSet("brief", None), SlotSet("detail", None),
+                SlotSet("problem_level", None), SlotSet("algorithm_level", None),
+                SlotSet("algorithm_name", None), SlotSet("problem_name", None),
+                SlotSet("number", None)]
 
 
 class ProblemForm(FormAction):
