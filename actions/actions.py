@@ -325,7 +325,8 @@ class ActionContestExplain(FormAction):
 
         if reception_period:
             if contests[0].reception_start and contests[0].reception_end:
-                explain_text += "신청 기간은 " + contests[0].reception_start + "부터 " + contests[0].reception_end + "까지야."
+                explain_text += "신청 기간은 " + contests[0].reception_start.strftime("%Y/%m/%d %H:%M") \
+                                + "부터 " + contests[0].reception_end.strftime("%Y/%m/%d %H:%M") + "까지야."
             else:
                 explain_text += "신청 기간은 잘 모르겠어."
             dispatcher.utter_message(text=explain_text, buttons=buttons)
@@ -333,7 +334,8 @@ class ActionContestExplain(FormAction):
 
         if schedule:
             if contests[0].contest_start and contests[0].contest_end:
-                explain_text += "대회 시간은 " + contests[0].contest_start + "부터 " + contests[0].contest_end + "까지야."
+                explain_text += "대회 시간은 " + contests[0].contest_start.strftime("%Y/%m/%d %H:%M") \
+                                + "부터 " + contests[0].contest_end.strftime("%Y/%m/%d %H:%M") + "까지야."
             else:
                 explain_text += "대회 시간은 잘 모르겠어"
             dispatcher.utter_message(text=explain_text, buttons=buttons)
