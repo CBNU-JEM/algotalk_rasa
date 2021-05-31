@@ -148,7 +148,9 @@ class ActionProblemRecommended(FormAction):
             number = 1
         ##이름, 알고리즘, 난이도, 대회이름
         problem = db.get_problem(problem_name, algorithm_name, level, contest_name, number)
+        algorithm_name = db.get_algorithm_name_by_problem(problem[0])
         print(problem)
+        print(algorithm_name)
         buttons = []
         explain_text = ""
 
@@ -159,19 +161,19 @@ class ActionProblemRecommended(FormAction):
 
         if problem and contest_name:
             if problem[0].name:
-                explain_text += "이름\n" + problem[0].name
+                explain_text += "이름\n" + problem[0].name + "\n"
             else:
                 explain_text += "이름 : 없음"
             if problem[0].input:
-                explain_text += "\n입력\n" + problem[0].input
+                explain_text += "\n입력\n" + problem[0].input + "\n"
             else:
                 explain_text += "\n입력 : 없음"
             if problem[0].output:
-                explain_text += "\n출력\n" + problem[0].output
+                explain_text += "\n출력\n" + problem[0].output + "\n"
             else:
                 explain_text += "\n출력 : 없음"
             if problem[0].content:
-                explain_text += "\n설명\n" + problem[0].content
+                explain_text += "\n설명\n" + problem[0].content + "\n"
             else:
                 explain_text += "\n설명 : 없음"
 
@@ -185,19 +187,19 @@ class ActionProblemRecommended(FormAction):
                         "payload": f'/problem_recommendation{{"algorithm_name":"{algorithm_name}"}}'}]
         elif problem and number:
             if problem[0].name:
-                explain_text += "이름\n" + problem[0].name
+                explain_text += "이름\n" + problem[0].name + "\n"
             else:
                 explain_text += "이름 : 없음"
             if problem[0].input:
-                explain_text += "\n입력\n" + problem[0].input
+                explain_text += "\n입력\n" + problem[0].input + "\n"
             else:
                 explain_text += "\n입력 : 없음"
             if problem[0].output:
-                explain_text += "\n출력\n" + problem[0].output
+                explain_text += "\n출력\n" + problem[0].output + "\n"
             else:
                 explain_text += "\n출력 : 없음"
             if problem[0].content:
-                explain_text += "\n설명\n" + problem[0].content
+                explain_text += "\n설명\n" + problem[0].content + "\n"
             else:
                 explain_text += "\n설명 : 없음"
             # 알고리즘 db에서 검색 후 모두 출력
@@ -210,9 +212,9 @@ class ActionProblemRecommended(FormAction):
 
         if problem and level:
             if problem[0].level:
-                explain_text += f"\n난이도는 {problem[0].level}야"
+                explain_text += f"난이도는 {problem[0].level}야"
             else:
-                explain_text += f"\n난이도 : 없음"
+                explain_text += f"난이도 : 없음"
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
