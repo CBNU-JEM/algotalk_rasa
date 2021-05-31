@@ -307,7 +307,9 @@ class ActionContestExplain(FormAction):
         print(f"reception_period : {reception_period}")
         print(f"schedule : {schedule}")
 
-        buttons = [{"title": "대회 일정",
+        buttons = [{{"title": "대회 정보",
+                     "payload": f'/contest_explain{{"contest_name": "{contest_name}"}}'}},
+                   {"title": "대회 일정",
                     "payload": f'/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}'},
                    {"title": "대회 홈페이지",
                     "payload": f'/contest_explain{{"contest_name": "{contest_name}", "homepage":"홈페이지"}}'},
@@ -321,7 +323,7 @@ class ActionContestExplain(FormAction):
             else:
                 explain_text += "홈페이지 주소는 잘 모르곘어..."
             dispatcher.utter_message(text=explain_text, buttons=buttons)
-            return [SlotSet("homepage", None)]
+            return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
         if reception_period:
             if contests[0].reception_start and contests[0].reception_end:
@@ -330,7 +332,7 @@ class ActionContestExplain(FormAction):
             else:
                 explain_text += "신청 기간은 잘 모르겠어."
             dispatcher.utter_message(text=explain_text, buttons=buttons)
-            return [SlotSet("reception_period", None)]
+            return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
         if schedule:
             if contests[0].contest_start and contests[0].contest_end:
@@ -339,13 +341,14 @@ class ActionContestExplain(FormAction):
             else:
                 explain_text += "대회 시간은 잘 모르겠어"
             dispatcher.utter_message(text=explain_text, buttons=buttons)
-            return [SlotSet("schedule", None)]
+            return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
         if contests:
             explain_text = contests[0].content
+            buttons = buttons[1:]
             dispatcher.utter_message(text=explain_text, buttons=buttons)
 
-        return []
+        return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
 
 class ContestForm(FormAction):
