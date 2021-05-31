@@ -87,7 +87,7 @@ class ActionAlgorithmExplain(FormAction):
                             "payload": f"""/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}"""}]
             elif algorithms[0].brief_explain:
                 explain_text += "이름 : " + algorithms[0].name
-                explain_text += f"자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithms[0].brief_explain}"
+                explain_text += f"\n자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithms[0].brief_explain}"
                 buttons = [{"title": "난이도",
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}"""},
                            {"title": "코드",
@@ -99,7 +99,7 @@ class ActionAlgorithmExplain(FormAction):
         elif algorithms:
             if algorithms[0].brief_explain:
                 explain_text += "이름 : " + algorithms[0].name
-                explain_text += algorithms[0].brief_explain
+                explain_text += "\n" + algorithms[0].brief_explain
                 buttons = [{"title": "자세한 설명",
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "detail":"자세한"}}"""},
                            {"title": "난이도",
