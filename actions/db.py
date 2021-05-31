@@ -308,8 +308,9 @@ if __name__ == "__main__":
 
 def get_algorithm_name_by_problem(problem):
     q = f'SELECT * FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE PROBLEM_NAME LIKE "{problem.name}" LIMIT 1'
-    row = execute_query(q)
-    algorithm_problem_classification = AlgorithmProblemClassification(row[0], row[1])
+    rows = execute_query(q)
+
+    algorithm_problem_classification = AlgorithmProblemClassification(rows[0][0], rows[0][1])
     if algorithm_problem_classification.algorithm_name:
         return algorithm_problem_classification.algorithm_name
     return None
