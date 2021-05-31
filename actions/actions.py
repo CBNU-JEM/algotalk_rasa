@@ -148,16 +148,17 @@ class ActionProblemRecommended(FormAction):
             number = 1
         ##이름, 알고리즘, 난이도, 대회이름
         problem = db.get_problem(problem_name, algorithm_name, level, contest_name, number)
-        algorithm_name = db.get_algorithm_name_by_problem(problem[0])
-        print(problem)
-        print(algorithm_name)
         buttons = []
         explain_text = ""
 
         if not problem:
             explain_text += "조건에 맞는 문제가 없는거같아..."
             dispatcher.utter_message(text=explain_text)
-            return []
+            return [SlotSet("number", None), SlotSet("algorithm_name", None), SlotSet("contest_name", None), SlotSet("problem_level", None) ]
+
+        algorithm_name = db.get_algorithm_name_by_problem(problem[0])
+        print(algorithm_name)
+        print(problem)
 
         if problem and contest_name:
             if problem[0].name:
