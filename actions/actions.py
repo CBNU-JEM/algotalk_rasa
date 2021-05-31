@@ -86,7 +86,8 @@ class ActionAlgorithmExplain(FormAction):
                            {"title": "문제 추천",
                             "payload": f"""/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}"""}]
             elif algorithms[0].brief_explain:
-                explain_text = f"자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithms[0].brief_explain}"
+                explain_text += "이름 : " + algorithms[0].name
+                explain_text += f"자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithms[0].brief_explain}"
                 buttons = [{"title": "난이도",
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}"""},
                            {"title": "코드",
@@ -94,10 +95,11 @@ class ActionAlgorithmExplain(FormAction):
                            {"title": "문제 추천",
                             "payload": f"""/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}"""}]
             else:
-                explain_text = f"나도 잘 모르겠어.";
+                explain_text += f"나도 잘 모르겠어.";
         elif algorithms:
             if algorithms[0].brief_explain:
-                explain_text = algorithms[0].brief_explain
+                explain_text += "이름 : " + algorithms[0].name
+                explain_text += algorithms[0].brief_explain
                 buttons = [{"title": "자세한 설명",
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "detail":"자세한"}}"""},
                            {"title": "난이도",
@@ -107,7 +109,7 @@ class ActionAlgorithmExplain(FormAction):
                            {"title": "문제 추천",
                             "payload": f"""/problem_recommendation{{"algorithm_name":"{algorithm_name}"}}"""}]
             else:
-                explain_text = f"나도 잘 모르겠어.";
+                explain_text += f"나도 잘 모르겠어.";
 
         if algorithms and example_code:
             if algorithms[0].example_code:
@@ -181,15 +183,15 @@ class ActionProblemRecommended(FormAction):
                         "payload": f'/problem_recommendation{{"algorithm_name":"{algorithm_name}"}}'}]
         elif problem and number:
             if problem[0].name:
-                explain_text += "이름\n : " + problem[0].name
+                explain_text += "이름\n" + problem[0].name
             else:
                 explain_text += "이름 : 없음"
             if problem[0].input:
-                explain_text += "\n입력\n : " + problem[0].input
+                explain_text += "\n입력\n" + problem[0].input
             else:
                 explain_text += "\n입력 : 없음"
             if problem[0].output:
-                explain_text += "\n출력\n : " + problem[0].output
+                explain_text += "\n출력\n" + problem[0].output
             else:
                 explain_text += "\n출력 : 없음"
             if problem[0].content:
