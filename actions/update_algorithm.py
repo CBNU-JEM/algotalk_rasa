@@ -2,7 +2,7 @@ import json
 
 import db
 
-with open('algorithm_name_ryu.json', encoding='UTF8') as json_file:
+with open('algorithm_name_s.json', encoding='UTF8') as json_file:
     json_data = json.load(json_file)
     algorithm_list = []
     for algorithm in json_data['algorithm']:
