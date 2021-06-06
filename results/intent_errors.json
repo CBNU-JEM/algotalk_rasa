@@ -1,282 +1,90 @@
 [
   {
-    "text": "안녕하세요너는누구니",
-    "intent": "greet",
+    "text": "어려워 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
+      "name": "change_hard",
+      "confidence": 0.6855771541595459
     }
   },
   {
-    "text": "안녕하세요저는류한민입",
-    "intent": "greet",
+    "text": "어려운 것 같아 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "change_hard",
+      "confidence": 0.5463871359825134
     }
   },
   {
-    "text": "안ㅇㅇㅇㅇㅇㅇㅇd",
-    "intent": "greet",
+    "text": "어려운 것 같다 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "change_hard",
+      "confidence": 0.6327703595161438
     }
   },
   {
-    "text": "helloddㅇ",
-    "intent": "greet",
+    "text": "어려운데 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "change_hard",
+      "confidence": 0.5764421820640564
     }
   },
   {
-    "text": "hi",
-    "intent": "greet",
+    "text": "어렵다 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
+      "name": "change_hard",
+      "confidence": 0.6651414036750793
     }
   },
   {
-    "text": "good morning",
-    "intent": "greet",
+    "text": "너무 어려워 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "change_hard",
+      "confidence": 0.5445429682731628
     }
   },
   {
-    "text": "good evening",
-    "intent": "greet",
+    "text": "너무 어려운 것 같다 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "change_hard",
+      "confidence": 0.5293290615081787
     }
   },
   {
-    "text": "hey there",
-    "intent": "greet",
+    "text": "너무 어렵다 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
+      "name": "change_hard",
+      "confidence": 0.515951931476593
     }
   },
   {
-    "text": "bye",
-    "intent": "goodbye",
+    "text": "너무 쉬운 것 같아 어려운 걸로",
+    "intent": "change_hard",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "change_easy",
+      "confidence": 0.5471960306167603
     }
   },
   {
-    "text": "goodbye",
-    "intent": "goodbye",
+    "text": "너무 쉬운데 어려운 걸로",
+    "intent": "change_hard",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "change_easy",
+      "confidence": 0.5034916996955872
     }
   },
   {
-    "text": "see you around",
-    "intent": "goodbye",
+    "text": "쉽게",
+    "intent": "brief",
     "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "see you later",
-    "intent": "goodbye",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "yes",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "indeed",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
-    }
-  },
-  {
-    "text": "of course",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "that sounds good",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "correct",
-    "intent": "affirm",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "no",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592884063720703
-    }
-  },
-  {
-    "text": "never",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592884063720703
-    }
-  },
-  {
-    "text": "I don't think so",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "don't like that",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "no way",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "not really",
-    "intent": "deny",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "perfect",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "very good",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "great",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "amazing",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592887043952942
-    }
-  },
-  {
-    "text": "wonderful",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "I am feeling very good",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "I am great",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "I'm good",
-    "intent": "mood_great",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "are you a bot?",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "are you a human?",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.1659288853406906
-    }
-  },
-  {
-    "text": "am I talking to a bot?",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
-    }
-  },
-  {
-    "text": "am I talking to a human?",
-    "intent": "bot_challenge",
-    "intent_prediction": {
-      "name": "mood_unhappy",
-      "confidence": 0.16592885553836823
+      "name": "change_easy",
+      "confidence": 0.5762717127799988
     }
   }
 ]

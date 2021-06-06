@@ -1,35 +1,96 @@
 intents:
-  - greet
-  - goodbye
+  - greet: {triggers: utter_greet}
+  - goodbye : {triggers: utter_goodbye}
   - affirm
   - deny
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - ask_whatspossible
+  - thanks
   - user_level
-  - recommendation_type
-  - recommendation_level
   - recommendation_site
-  - problem_type
+  - problem_recommendation
   - problem_solve
   - problem_site
   - algorithm_example
+  - request_algorithm
   - algorithm_explain
-  - base_explain
-  - detail_explain
-  - contest_type
-  - contest_information
-  - contest_schedule
-  - contest_detail_information
+  - brief
+  - detail
+  - code
+  - number
+  - algorithm_name
+  - problem_name
+  - change
+  - change_easy
+  - change_hard
+  - contest_explain
+  - company
+  - schedule
+  - homepage
+  - algorithm_level
+  - problem_level
 
 actions:
   - action_algorithm_explain
+  - action_problem_recommended
+  - action_contest_explain
+  - action_level_change_easy
+  - action_level_change_hard
 
-entitles:
-  - algorithm_type
-  - algorithm_level
+slots:
+  brief:
+    type: unfeaturized
+  detail:
+    type: unfeaturized
+  algorithm_name:
+    type: unfeaturized
+  algorithm_level:
+    type: unfeaturized
+  problem_level:
+    type: unfeaturized
+  code:
+    type: unfeaturized
+  number:
+    type: unfeaturized
+  problem_name:
+    type: unfeaturized
+  contest_name:
+    type: unfeaturized
+  level_change:
+    type: unfeaturized
+  reception_period:
+    type: unfeaturized
+  homepage:
+    type: unfeaturized
+  schedule:
+    type: unfeaturized
+
+forms:
+  - algorithm_form
+  - problem_form
+  - contest_form
+  - change_form
+
+entities:
+  - brief
+  - detail
   - user_level
-  
+  - algorithm_level
+  - problem_level
+  - code
+  - number
+  - problem_name
+  - contest_name
+  - algorithm_name
+  - algorithm_type
+  - level_change
+  - schedule
+  - company
+  - reception_period
+  - homepage
+
 responses:
   utter_greet:
   - text: "안녕 반가워"
@@ -49,6 +110,21 @@ responses:
 
   utter_iamabot:
   - text: "나는 알고봇이라고해."
+
+  utter_explain_whatspossible:
+  - text: "나는 알고리즘에 대한 모든 것을 알려줄 수 있어 😀"
+
+  utter_thank:
+  - text: "나도 너를 도울 수 있어서 기뻐 👍"
+
+  utter_ask_algorithm_name:
+  - text: "무슨 알고리즘을 알려줘?"
+
+  utter_ask_problem_level:
+  - text: "어떤 난이도를 알려줄까?"
+
+  utter_ask_contest_name:
+  - text: "어떤 대회를 알려줘?"
 
 session_config:
   session_expiration_time: 60

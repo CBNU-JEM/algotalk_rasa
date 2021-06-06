@@ -18,7 +18,6 @@
 - 당연하지
 - 알았어
 
-
 ## intent:deny
 - 아니
 - 아니야
@@ -48,6 +47,411 @@
 - 너 사람이야?
 - 나 누구랑 대화하고 있어?
 - 너 누구야?
+- 너 이름이 뭐야?
+- 넌 이름이 뭐니
+
+## intent:ask_whatspossible
+- 너는 뭘 할 수 있어?
+- 너는 뭘 할 수 있니?
+- 뭐 할 수 있어?
+- 뭐 할 수 있니?
+- 뭐 할 수 있냐
+- 할 줄 아는게 뭐야?
+- 뭘 도와줄 수 있어?
+
+## intent:thanks
+- 고마워
+- 고마워요
+- 감사합니다
+- 땡큐
+- 감사
+- 땡쓰
+- 땡스
+
+## intent:code
+- [코드](code)
+- [소스](code)
+- [소스코드](code)
+- [코드](code)가 어떻게 돼?
+- [소스코드](code)가 어떻게 돼?
+- 구현은 어떻게 해?
+- 구현 방법 알려줘?
+- 어떻게 만들어?
+- 어떻게 해?
+- [code](code)
+- [로직](code)
+- 어떤 [로직](code)이야?
+- [예제](code)
+- [예제](code) 좀 알려줘
+- [예제 코드](code)
+- [코드](code) 없을까?
+- [코드](code) 없을까요?
+- [코드](code) 없겠습니다?
+- [코드](code) 없나요?
+- [코드](code) 없나요?
+- [코드](code) 없나?
+- [코드](code) 없어?
+- [코드](code) 좀
+- [코드](code) 좀 줄래?
+- [코드](code) 좀 줘라
+- [코드](code) 좀 줘봐
+- [코드](code) 좀 줘
+- [코드](code) 좀 주쇼
+- [코드](code) 좀 주십시오
+- [코드](code) 좀 주시오
+- [코드](code) 좀 주실래요?
+- [코드](code) 좀 주실 수 있나요?
+- [코드](code) 좀 줄래요?
+- [코드](code) 받습니다
+- [코드](code) 받는다
+- [코드](code) 받아요
+- [코드](code) 받고 싶어요
+- [코드](code) 받고 싶어
+- [코드](code) 받습 싶은데
+- [코드](code) 줄래?
+- [코드](code) 줘라
+- [코드](code) 줘봐
+- [코드](code) 줘
+- [코드](code) 주쇼
+- [코드](code) 주십시오
+- [코드](code) 주시오
+- [코드](code) 주실래요?
+- [코드](code) 주실 수 있나요?
+- [코드](code) 줄래요?
+
+## intent:algorithm_level
+- [난이도](algorithm_level)
+- [레벨](algorithm_level)
+- [수준](algorithm_level)
+- [algorithm_level](algorithm_level)
+- [어려워?](algorithm_level)
+- [쉬워?](algorithm_level)
+
+## intent:problem_level
+- [상](problem_level)
+- [중](problem_level)
+- [하](problem_level)
+- [브론즈](problem_level)
+- [실버](problem_level)
+- [골드](problem_level)
+- [플레티넘](problem_level)
+- [플레](problem_level)
+- [다이아](problem_level)
+- [초급](problem_level)
+- [중급](problem_level)
+- [고급](problem_level)
+
+## intent:change_easy
+- 쉬운걸로
+- 쉬운거
+- 쉽게
+- 쉬운 문제 알려줘
+- 쉬운 문제 알려줄래?
+- 쉬운 문제 알려줄래요?
+- 쉬운 문제 없을까?
+- 쉬운 문제 없을까요?
+- 쉬운 문제 없겠습니까?
+- 쉬운 문제 없나요?
+- 쉬운 문제 없나?
+- 쉬운 문제 없어?
+- 쉬운 문제로 바꿔줘
+- 쉬운 문제로 바꿔줄래
+- 쉬운 문제로 바꿔
+- 쉬운 문제로 해줘
+- 쉬운 문제로 해줄래?
+- 쉬운 문제로 해봐
+- 쉬운 문제로 바꿔줄래요?
+- 쉬운 문제로 
+- 다른 쉬운 문제 알려줘
+- 다른 쉬운 문제 알려줄래?
+- 다른 쉬운 문제 알려줄래요?
+- 다른 쉬운 문제 없을까?
+- 다른 쉬운 문제 없을까요?
+- 다른 쉬운 문제 없겠습니까?
+- 다른 쉬운 문제 없나요?
+- 다른 쉬운 문제 없나?
+- 다른 쉬운 문제 없어?
+- 다른 쉬운 문제로 바꿔줘
+- 다른 쉬운 문제로 바꿔줄래
+- 다른 쉬운 문제로 바꿔
+- 다른 쉬운 문제로 해줘
+- 다른 쉬운 문제로 해줄래?
+- 다른 쉬운 문제로 해봐
+- 다른 쉬운 문제로 바꿔줄래요?
+- 다른 쉬운 문제로
+- 어려워 쉬운 걸로
+- 어려운 것 같아 쉬운 걸로
+- 어려운 것 같다 쉬운 걸로
+- 어려운데 쉬운 걸로
+- 어려운데? 쉬운 걸로
+- 어렵다 쉬운 걸로
+- 어려워요 쉬운 걸로
+- 너무 어려워 쉬운 걸로
+- 너무 어려운 것 같아 쉬운 걸로
+- 너무 어려운데 쉬운 걸로
+- 너무 어려운 것 같다 쉬운 걸로
+- 너무 어렵다 쉬운 걸로
+- 너무 어려워요 쉬운 걸로
+- 어려워 쉬운 걸로
+
+## intent:change_hard
+- 어려운걸로
+- 어려운거
+- 어렵게
+- 어려운 문제 알려줘
+- 어려운 문제 알려줄래?
+- 어려운 문제 알려줄래요?
+- 어려운 문제 없을까?
+- 어려운 문제 없을까요?
+- 어려운 문제 없겠습니까?
+- 어려운 문제 없나요?
+- 어려운 문제 없나?
+- 어려운 문제 없어?
+- 어려운 문제로 바꿔줘
+- 어려운 문제로 바꿔줄래
+- 어려운 문제로 바꿔
+- 어려운 문제로 해줘
+- 어려운 문제로 해줄래?
+- 어려운 문제로 해봐
+- 어려운 문제로 바꿔줄래요?
+- 어려운 문제로
+- 다른 어려운 문제 알려줘
+- 다른 어려운 문제 알려줄래?
+- 다른 어려운 문제 알려줄래요?
+- 다른 어려운 문제 없을까?
+- 다른 어려운 문제 없을까요?
+- 다른 어려운 문제 없겠습니까?
+- 다른 어려운 문제 없나요?
+- 다른 어려운 문제 없나?
+- 다른 어려운 문제 없어?
+- 다른 어려운 문제로 바꿔줘
+- 다른 어려운 문제로 바꿔줄래
+- 다른 어려운 문제로 바꿔
+- 다른 어려운 문제로 해줘
+- 다른 어려운 문제로 해줄래?
+- 다른 어려운 문제로 해봐
+- 다른 어려운 문제로 바꿔줄래요?
+- 다른 어려운 문제로
+- 쉬워 어려운 걸로
+- 쉬운 것 같아 어려운 걸로
+- 쉬운 것 같다 어려운 걸로
+- 쉬운데 어려운 걸로
+- 쉬운데? 어려운 걸로
+- 쉽다 어려운 걸로
+- 쉬워요 어려운 걸로
+- 너무 쉬워 어려운 걸로
+- 너무 쉬운 것 같아 어려운 걸로
+- 너무 쉬운데 어려운 걸로
+- 너무 쉬운 것 같다 어려운 걸로
+- 너무 쉽다 어려운 걸로
+- 너무 쉬워요 어려운 걸로
+- 쉬워 어려운 걸로
+
+## intent:change
+- 다른 걸로 바꿔줘
+- 다른 걸로 바꿔줘봐
+- 다른 걸로 바꿔줄래요?
+- 다른 걸로 바꿔줄래?
+- 다른 걸로
+- 다른 문제 알려줘
+- 다른 문제 알려줄래?
+- 다른 문제 알려줄래요?
+- 다른 문제 없을까?
+- 다른 문제 없을까요?
+- 다른 문제 없겠습니까?
+- 다른 문제 없나요?
+- 다른 문제 없나?
+- 다른 문제 없어?
+- 다른 문제 줘봐
+- 다른 문제로 바꿔줘
+- 다른 문제로 바꿔줄래
+- 다른 문제로 바꿔
+- 다른 문제로 해줘
+- 다른 문제로 해줄래?
+- 다른 문제로 해봐
+- 다른 문제로 바꿔줄래요?
+- 다른 문제로 줘봐
+- 다른 문제로 줘
+- 다른 문제로
+- 다음 문제 알려줘
+- 다음 문제 알려줄래?
+- 다음 문제 알려줄래요?
+- 다음 문제 없을까?
+- 다음 문제 없을까요?
+- 다음 문제 없겠습니까?
+- 다음 문제 없나요?
+- 다음 문제 없나?
+- 다음 문제 없어?
+- 다음 문제로 바꿔줘
+- 다음 문제로 바꿔줄래
+- 다음 문제로 바꿔
+- 다음 문제로 해줘
+- 다음 문제로 해줄래?
+- 다음 문제로 해봐
+- 다음 문제로 바꿔줄래요?
+- 다음 문제로 줘봐
+- 다음 문제로 줘
+- 다음 문제로  
+- 다음 문제
+- 다음거 알려줘
+- 관련된 걸로 바꿔줘
+- 관련된 걸로 바꿔줘봐
+- 관련된 걸로 바꿔줄래요?
+- 관련된 걸로 바꿔줄래?
+- 관련된 걸로
+- 관련된 문제 알려줘
+- 관련된 문제 알려줄래?
+- 관련된 문제 알려줄래요?
+- 관련된 문제 없을까?
+- 관련된 문제 없을까요?
+- 관련된 문제 없겠습니까?
+- 관련된 문제 없나요?
+- 관련된 문제 없나?
+- 관련된 문제 없어?
+- 관련된 문제 줘봐
+- 관련된 문제로 바꿔줘
+- 관련된 문제로 바꿔줄래
+- 관련된 문제로 바꿔
+- 관련된 문제로 해줘
+- 관련된 문제로 해줄래?
+- 관련된 문제로 해봐
+- 관련된 문제로 바꿔줄래요?
+- 관련된 문제로 줘봐
+- 관련된 문제로 줘
+- 관련된 문제로
+- 관련 문제 알려줘
+- 관련 문제 알려줄래?
+- 관련 문제 알려줄래요?
+- 관련 문제 없을까?
+- 관련 문제 없을까요?
+- 관련 문제 없겠습니까?
+- 관련 문제 없나요?
+- 관련 문제 없나?
+- 관련 문제 없어?
+- 관련 문제 줘봐
+- 관련 문제로 바꿔줘
+- 관련 문제로 바꿔줄래
+- 관련 문제로 바꿔
+- 관련 문제로 해줘
+- 관련 문제로 해줄래?
+- 관련 문제로 해봐
+- 관련 문제로 바꿔줄래요?
+- 관련 문제로 줘봐
+- 관련 문제로 줘
+- 관련 문제로
+- 관련 문제
+- 비슷한 문제 알려줘
+- 비슷한 문제 알려줄래?
+- 비슷한 문제 알려줄래요?
+- 비슷한 문제 없을까?
+- 비슷한 문제 없을까요?
+- 비슷한 문제 없겠습니까?
+- 비슷한 문제 없나요?
+- 비슷한 문제 없나?
+- 비슷한 문제 없어?
+- 비슷한 문제로 바꿔줘
+- 비슷한 문제로 바꿔줄래
+- 비슷한 문제로 바꿔
+- 비슷한 문제로 해줘
+- 비슷한 문제로 해줄래?
+- 비슷한 문제로 해봐
+- 비슷한 문제로 바꿔줄래요?
+- 비슷한 문제로 줘봐
+- 비슷한 문제로 줘
+- 비슷한 문제로
+- 비슷한 문제
+- 비슷한거 알려줘
+- 유사한 문제 알려줘
+- 유사한 문제 알려줄래?
+- 유사한 문제 알려줄래요?
+- 유사한 문제 없을까?
+- 유사한 문제 없을까요?
+- 유사한 문제 없겠습니까?
+- 유사한 문제 없나요?
+- 유사한 문제 없나?
+- 유사한 문제 없어?
+- 유사한 문제로 바꿔줘
+- 유사한 문제로 바꿔줄래
+- 유사한 문제로 바꿔
+- 유사한 문제로 해줘
+- 유사한 문제로 해줄래?
+- 유사한 문제로 해봐
+- 유사한 문제로 바꿔줄래요?
+- 유사한 문제로 줘봐
+- 유사한 문제로 줘
+- 유사한 문제로
+- 유사한 문제
+- 유사한거 알려줘
+- 연관된 걸로 바꿔줘
+- 연관된 걸로 바꿔줘봐
+- 연관된 걸로 바꿔줄래요?
+- 연관된 걸로 바꿔줄래?
+- 연관된 걸로
+- 연관된 문제 알려줘
+- 연관된 문제 알려줄래?
+- 연관된 문제 알려줄래요?
+- 연관된 문제 없을까?
+- 연관된 문제 없을까요?
+- 연관된 문제 없겠습니까?
+- 연관된 문제 없나요?
+- 연관된 문제 없나?
+- 연관된 문제 없어?
+- 연관된 문제 줘봐
+- 연관된 문제로 바꿔줘
+- 연관된 문제로 바꿔줄래
+- 연관된 문제로 바꿔
+- 연관된 문제로 해줘
+- 연관된 문제로 해줄래?
+- 연관된 문제로 해봐
+- 연관된 문제로 바꿔줄래요?
+- 연관된 문제로 줘봐
+- 연관된 문제로 줘
+- 연관된 문제로
+- 연관 문제 알려줘
+- 연관 문제 알려줄래?
+- 연관 문제 알려줄래요?
+- 연관 문제 없을까?
+- 연관 문제 없을까요?
+- 연관 문제 없겠습니까?
+- 연관 문제 없나요?
+- 연관 문제 없나?
+- 연관 문제 없어?
+- 연관 문제 줘봐
+- 연관 문제로 바꿔줘
+- 연관 문제로 바꿔줄래
+- 연관 문제로 바꿔
+- 연관 문제로 해줘
+- 연관 문제로 해줄래?
+- 연관 문제로 해봐
+- 연관 문제로 바꿔줄래요?
+- 연관 문제로 줘봐
+- 연관 문제로 줘
+- 연관 문제로
+- 연관 문제
+
+## intent:detail
+- [자세히](detail)
+- [자세하](detail)
+- [좀 더](detail)
+- [정확히](detail)
+- [상세하](detail)
+- [정확하](detail)
+- [어렵게 해](detail)
+- [샅샅이](detail)
+- [길게](detail)
+- [깊히](detail)
+
+## intent: brief
+- [간단히](brief)
+- [간단하](brief)
+- [쉽게](brief)
+- [조금](brief)
+- [짧게](brief)
+- [간략하](brief)
+- [대충](brief)
+- [대강](brief)
+- [대략](brief)
+- [쫌만](brief)
 
 ## intent:user_level
 - 나 [초보](user_level)야
@@ -55,21 +459,462 @@
 - [처음](user_level)이야
 - 난 [처음](user_level)해봐
 
-## intent:recommendation_type
-- [구현](algorithm_type) 문제 알려줘
-- [구현](algorithm_type) 문제 알려줄래?
-
-## intent:recommendation_level
-- [기초](algorithm_level)문제 알려줘
-- [기초](algorithm_level) 알려주세요
 
 ## intent:recommendation_site
 - 추천 공부 사이트 있어?
 - 추천 공부 사이트 있니?
 
-## intent:problem_type
-- [정렬](algorithm_type)문제 알려줘
-- [정렬](algorithm_type)문제 알려줄래?
+## intent:problem_recommendation
+- [정렬](algorithm_name) 문제 알려줘
+- [최단거리](algorithm_name) 문제 알려줄래?
+- [정렬](algorithm_name) 알고리즘 문제 풀고싶어
+- [정렬](algorithm_name) 알고리즘 문제 풀고싶은데
+- [정렬](algorithm_name) 알고리즘 문제 풀거야
+- [정렬](algorithm_name) 알고리즘 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 문제 추천해줄래?
+- [정렬](algorithm_name) 알고리즘 문제 추천 받는다
+- [정렬](algorithm_name) 알고리즘 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 문제 추천 받고 싶어
+- [정렬](algorithm_name) 알고리즘 문제 추천 받아요
+- [정렬](algorithm_name) 알고리즘 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 문제 없어?
+- [정렬](algorithm_name) 알고리즘 문제 뭐가 있을까?
+- [정렬](algorithm_name) 알고리즘 문제 없을까?
+- [정렬](algorithm_name) 알고리즘 문제 없을까요?
+- [정렬](algorithm_name) 알고리즘 문제 없겠습니까?
+- [정렬](algorithm_name) 알고리즘 문제 없나요?
+- [정렬](algorithm_name) 알고리즘 문제 없나?
+- [정렬](algorithm_name) 알고리즘 문제 없어?
+- [정렬](algorithm_name) 알고리즘 문제 알려줘
+- [정렬](algorithm_name) 알고리즘 문제 알려주십시오
+- [정렬](algorithm_name) 알고리즘 문제 알려줄래?
+- [정렬](algorithm_name) 알고리즘 문제 알려주쇼
+- [정렬](algorithm_name) 알고리즘 문제 알려주실래요?
+- [정렬](algorithm_name) 알고리즘 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 알고리즘 문제 알려 줄래요?
+- [정렬](algorithm_name) 알고리즘 문제 알고 싶어요
+- [정렬](algorithm_name) 알고리즘 문제 알고 싶은데
+- [정렬](algorithm_name) 알고리즘 문제 좀
+- [정렬](algorithm_name) 알고리즘 문제 받습니다
+- [정렬](algorithm_name) 알고리즘 문제 받는다
+- [정렬](algorithm_name) 알고리즘 문제 받아요
+- [정렬](algorithm_name) 알고리즘 문제 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 풀고싶어
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 풀고싶은데
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 풀거야
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 추천해줄래?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 추천 받는다
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 추천 받아요
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 없어?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 없을까?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 없을까요?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 없겠습니까?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 없나요?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 없나?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 없어?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알려줘
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알려주십시오
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알려줄래?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알려주쇼
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알려주실래요?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알려 줄래요?
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알고 싶어요
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 알고 싶은데
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 좀
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 받습니다
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 받는다
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 받아요
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 사용하는 문제 받고 싶어
+
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 풀고싶어
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 풀고싶은데
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 풀거야
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 추천해줄래?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 추천 받는다
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 추천 받아요
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 없어?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 없을까?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 없을까요?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 없겠습니까?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 없나요?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 없나?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 없어?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알려줘
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알려주십시오
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알려줄래?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알려주쇼
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알려주실래요?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알려 줄래요?
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알고 싶어요
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 알고 싶은데
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 좀
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 받습니다
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 받는다
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 받아요
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 쓰는 문제 받고 싶어
+
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 풀고싶어
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 풀고싶은데
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 풀거야
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 추천해줄래?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 추천 받는다
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 추천 받아요
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 없어?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 없을까?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 없을까요?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 없겠습니까?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 없나요?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 없나?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 없어?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알려줘
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알려주십시오
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알려줄래?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알려주쇼
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알려주실래요?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알려 줄래요?
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알고 싶어요
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 알고 싶은데
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 좀
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 받습니다
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 받는다
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 받아요
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 활용하는 문제 받고 싶어
+
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 풀고싶어
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 풀고싶은데
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 풀거야
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 추천해줄래?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 추천 받는다
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 추천 받아요
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 추천해줘
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 없어?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 없을까?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 없을까요?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 없겠습니까?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 없나요?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 없나?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 없어?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알려줘
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알려주십시오
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알려줄래?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알려주쇼
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알려주실래요?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알려 줄래요?
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알고 싶어요
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 알고 싶은데
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 좀
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 받습니다
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 받는다
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 받아요
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 받고 싶어요
+- [정렬](algorithm_name) 알고리즘 써먹는 문제 받고 싶어
+
+- [A+B](problem_name) 문제 풀고싶어
+- [A-B](problem_name) 문제 풀고싶은데  
+- [A×B](problem_name) 문제 풀거야
+- [사칙연산](problem_name) 문제 추천해줘
+- [A/B](problem_name) 문제 추천해줄래?
+- [구구단](problem_name) 문제 추천 받는다
+- [나머지](problem_name) 문제 추천 받고 싶어요
+- [합](problem_name) 문제 추천 받고 싶어
+- [두 수 비교하기](problem_name) 문제 추천 받아요
+- [X보다 작은 수](problem_name) 문제 추천해줘
+- [A+B - 3](problem_name) 문제 없어?
+- [윤년](problem_name) 문제 뭐가 있을까?
+- [곱셈](problem_name) 문제 없을까?
+- [더하기 사이클](problem_name) 문제 없을까요?
+- [알람 시계](problem_name) 문제 없겠습니까?
+- [A+B - 5](problem_name) 문제 없나요?
+- [숫자의 개수](problem_name) 문제 없나?
+- [숫자의 합](problem_name) 문제 없어?
+- [A+B - 7](problem_name) 문제 알려줘
+- [A+B - 8](problem_name) 문제 알려주십시오
+- [설탕 배달](problem_name) 문제 알려줄래?
+- [A+B - 4](problem_name) 문제 알려주쇼
+- [최소, 최대](problem_name) 문제 알려주실래요?
+- [빠른 A+B](problem_name) 문제 알려주실 수 있나요?
+- [평균](problem_name) 문제 알려 줄래요?
+- [평균은 넘겠지](problem_name) 문제 알고 싶어요
+- [A+B - 2](problem_name) 문제 알고 싶은데
+- [사분면 고르기](problem_name) 문제 좀
+- [셀프 넘버](problem_name) 문제 받습니다
+- [나머지](problem_name) 문제 받는다
+- [팩토리얼](problem_name) 문제 받아요
+- [소수 찾기](problem_name) 문제 받고 싶어요
+- [평균 점수](problem_name) 문제 받고 싶어
+
+- [정렬](algorithm_name) 사용하는 문제 풀고싶어
+- [정렬](algorithm_name) 사용하는 문제 풀고싶은데
+- [정렬](algorithm_name) 사용하는 문제 풀거야
+- [정렬](algorithm_name) 사용하는 문제 추천해줘
+- [정렬](algorithm_name) 사용하는 문제 추천해줄래?
+- [정렬](algorithm_name) 사용하는 문제 추천 받는다
+- [정렬](algorithm_name) 사용하는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 사용하는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 사용하는 문제 추천 받아요
+- [정렬](algorithm_name) 사용하는 문제 추천해줘
+- [정렬](algorithm_name) 사용하는 문제 없어?
+- [정렬](algorithm_name) 사용하는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 사용하는 문제 없을까?
+- [정렬](algorithm_name) 사용하는 문제 없을까요?
+- [정렬](algorithm_name) 사용하는 문제 없겠습니까?
+- [정렬](algorithm_name) 사용하는 문제 없나요?
+- [정렬](algorithm_name) 사용하는 문제 없나?
+- [정렬](algorithm_name) 사용하는 문제 없어?
+- [정렬](algorithm_name) 사용하는 문제 알려줘
+- [정렬](algorithm_name) 사용하는 문제 알려주십시오
+- [정렬](algorithm_name) 사용하는 문제 알려줄래?
+- [정렬](algorithm_name) 사용하는 문제 알려주쇼
+- [정렬](algorithm_name) 사용하는 문제 알려주실래요?
+- [정렬](algorithm_name) 사용하는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 사용하는 문제 알려 줄래요?
+- [정렬](algorithm_name) 사용하는 문제 알고 싶어요
+- [정렬](algorithm_name) 사용하는 문제 알고 싶은데
+- [정렬](algorithm_name) 사용하는 문제 좀
+- [정렬](algorithm_name) 사용하는 문제 받습니다
+- [정렬](algorithm_name) 사용하는 문제 받는다
+- [정렬](algorithm_name) 사용하는 문제 받아요
+- [정렬](algorithm_name) 사용하는 문제 받고 싶어요
+- [정렬](algorithm_name) 사용하는 문제 받고 싶어
+
+- [정렬](algorithm_name) 나오는 문제 풀고싶어
+- [정렬](algorithm_name) 나오는 문제 풀고싶은데
+- [정렬](algorithm_name) 나오는 문제 풀거야
+- [정렬](algorithm_name) 나오는 문제 추천해줘
+- [정렬](algorithm_name) 나오는 문제 추천해줄래?
+- [정렬](algorithm_name) 나오는 문제 추천 받는다
+- [정렬](algorithm_name) 나오는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 나오는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 나오는 문제 추천 받아요
+- [정렬](algorithm_name) 나오는 문제 추천해줘
+- [정렬](algorithm_name) 나오는 문제 없어?
+- [정렬](algorithm_name) 나오는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 나오는 문제 없을까?
+- [정렬](algorithm_name) 나오는 문제 없을까요?
+- [정렬](algorithm_name) 나오는 문제 없겠습니까?
+- [정렬](algorithm_name) 나오는 문제 없나요?
+- [정렬](algorithm_name) 나오는 문제 없나?
+- [정렬](algorithm_name) 나오는 문제 없어?
+- [정렬](algorithm_name) 나오는 문제 알려줘
+- [정렬](algorithm_name) 나오는 문제 알려주십시오
+- [정렬](algorithm_name) 나오는 문제 알려줄래?
+- [정렬](algorithm_name) 나오는 문제 알려주쇼
+- [정렬](algorithm_name) 나오는 문제 알려주실래요?
+- [정렬](algorithm_name) 나오는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 나오는 문제 알려 줄래요?
+- [정렬](algorithm_name) 나오는 문제 알고 싶어요
+- [정렬](algorithm_name) 나오는 문제 알고 싶은데
+- [정렬](algorithm_name) 나오는 문제 좀
+- [정렬](algorithm_name) 나오는 문제 받습니다
+- [정렬](algorithm_name) 나오는 문제 받는다
+- [정렬](algorithm_name) 나오는 문제 받아요
+- [정렬](algorithm_name) 나오는 문제 받고 싶어요
+- [정렬](algorithm_name) 나오는 문제 받고 싶어
+
+- [정렬](algorithm_name) 쓰는 문제 풀고싶어
+- [정렬](algorithm_name) 쓰는 문제 풀고싶은데
+- [정렬](algorithm_name) 쓰는 문제 풀거야
+- [정렬](algorithm_name) 쓰는 문제 추천해줘
+- [정렬](algorithm_name) 쓰는 문제 추천해줄래?
+- [정렬](algorithm_name) 쓰는 문제 추천 받는다
+- [정렬](algorithm_name) 쓰는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 쓰는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 쓰는 문제 추천 받아요
+- [정렬](algorithm_name) 쓰는 문제 추천해줘
+- [정렬](algorithm_name) 쓰는 문제 없어?
+- [정렬](algorithm_name) 쓰는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 쓰는 문제 없을까?
+- [정렬](algorithm_name) 쓰는 문제 없을까요?
+- [정렬](algorithm_name) 쓰는 문제 없겠습니까?
+- [정렬](algorithm_name) 쓰는 문제 없나요?
+- [정렬](algorithm_name) 쓰는 문제 없나?
+- [정렬](algorithm_name) 쓰는 문제 없어?
+- [정렬](algorithm_name) 쓰는 문제 알려줘
+- [정렬](algorithm_name) 쓰는 문제 알려주십시오
+- [정렬](algorithm_name) 쓰는 문제 알려줄래?
+- [정렬](algorithm_name) 쓰는 문제 알려주쇼
+- [정렬](algorithm_name) 쓰는 문제 알려주실래요?
+- [정렬](algorithm_name) 쓰는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 쓰는 문제 알려 줄래요?
+- [정렬](algorithm_name) 쓰는 문제 알고 싶어요
+- [정렬](algorithm_name) 쓰는 문제 알고 싶은데
+- [정렬](algorithm_name) 쓰는 문제 좀
+- [정렬](algorithm_name) 쓰는 문제 받습니다
+- [정렬](algorithm_name) 쓰는 문제 받는다
+- [정렬](algorithm_name) 쓰는 문제 받아요
+- [정렬](algorithm_name) 쓰는 문제 받고 싶어요
+- [정렬](algorithm_name) 쓰는 문제 받고 싶어
+
+- [정렬](algorithm_name) 활용하는 문제 풀고싶어
+- [정렬](algorithm_name) 활용하는 문제 풀고싶은데
+- [정렬](algorithm_name) 활용하는 문제 풀거야
+- [정렬](algorithm_name) 활용하는 문제 추천해줘
+- [정렬](algorithm_name) 활용하는 문제 추천해줄래?
+- [정렬](algorithm_name) 활용하는 문제 추천 받는다
+- [정렬](algorithm_name) 활용하는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 활용하는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 활용하는 문제 추천 받아요
+- [정렬](algorithm_name) 활용하는 문제 추천해줘
+- [정렬](algorithm_name) 활용하는 문제 없어?
+- [정렬](algorithm_name) 활용하는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 활용하는 문제 없을까?
+- [정렬](algorithm_name) 활용하는 문제 없을까요?
+- [정렬](algorithm_name) 활용하는 문제 없겠습니까?
+- [정렬](algorithm_name) 활용하는 문제 없나요?
+- [정렬](algorithm_name) 활용하는 문제 없나?
+- [정렬](algorithm_name) 활용하는 문제 없어?
+- [정렬](algorithm_name) 활용하는 문제 알려줘
+- [정렬](algorithm_name) 활용하는 문제 알려주십시오
+- [정렬](algorithm_name) 활용하는 문제 알려줄래?
+- [정렬](algorithm_name) 활용하는 문제 알려주쇼
+- [정렬](algorithm_name) 활용하는 문제 알려주실래요?
+- [정렬](algorithm_name) 활용하는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 활용하는 문제 알려 줄래요?
+- [정렬](algorithm_name) 활용하는 문제 알고 싶어요
+- [정렬](algorithm_name) 활용하는 문제 알고 싶은데
+- [정렬](algorithm_name) 활용하는 문제 좀
+- [정렬](algorithm_name) 활용하는 문제 받습니다
+- [정렬](algorithm_name) 활용하는 문제 받는다
+- [정렬](algorithm_name) 활용하는 문제 받아요
+- [정렬](algorithm_name) 활용하는 문제 받고 싶어요
+- [정렬](algorithm_name) 활용하는 문제 받고 싶어
+
+- [정렬](algorithm_name) 써먹는 문제 풀고싶어
+- [정렬](algorithm_name) 써먹는 문제 풀고싶은데
+- [정렬](algorithm_name) 써먹는 문제 풀거야
+- [정렬](algorithm_name) 써먹는 문제 추천해줘
+- [정렬](algorithm_name) 써먹는 문제 추천해줄래?
+- [정렬](algorithm_name) 써먹는 문제 추천 받는다
+- [정렬](algorithm_name) 써먹는 문제 추천 받고 싶어요
+- [정렬](algorithm_name) 써먹는 문제 추천 받고 싶어
+- [정렬](algorithm_name) 써먹는 문제 추천 받아요
+- [정렬](algorithm_name) 써먹는 문제 추천해줘
+- [정렬](algorithm_name) 써먹는 문제 없어?
+- [정렬](algorithm_name) 써먹는 문제 뭐가 있을까?
+- [정렬](algorithm_name) 써먹는 문제 없을까?
+- [정렬](algorithm_name) 써먹는 문제 없을까요?
+- [정렬](algorithm_name) 써먹는 문제 없겠습니까?
+- [정렬](algorithm_name) 써먹는 문제 없나요?
+- [정렬](algorithm_name) 써먹는 문제 없나?
+- [정렬](algorithm_name) 써먹는 문제 없어?
+- [정렬](algorithm_name) 써먹는 문제 알려줘
+- [정렬](algorithm_name) 써먹는 문제 알려주십시오
+- [정렬](algorithm_name) 써먹는 문제 알려줄래?
+- [정렬](algorithm_name) 써먹는 문제 알려주쇼
+- [정렬](algorithm_name) 써먹는 문제 알려주실래요?
+- [정렬](algorithm_name) 써먹는 문제 알려주실 수 있나요?
+- [정렬](algorithm_name) 써먹는 문제 알려 줄래요?
+- [정렬](algorithm_name) 써먹는 문제 알고 싶어요
+- [정렬](algorithm_name) 써먹는 문제 알고 싶은데
+- [정렬](algorithm_name) 써먹는 문제 좀
+- [정렬](algorithm_name) 써먹는 문제 받습니다
+- [정렬](algorithm_name) 써먹는 문제 받는다
+- [정렬](algorithm_name) 써먹는 문제 받아요
+- [정렬](algorithm_name) 써먹는 문제 받고 싶어요
+- [정렬](algorithm_name) 써먹는 문제 받고 싶어
+
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 풀고싶어
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 풀고싶은데
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 풀거야
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 추천해줘
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 추천해줄래?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 추천 받는다
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 추천 받고 싶어요
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 추천 받고 싶어
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 추천 받아요
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 추천해줘
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 없어?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 뭐가 있을까?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 없을까?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 없을까요?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 없겠습니까?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 없나요?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 없나?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 없어?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알려줘
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알려주십시오
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알려줄래?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알려주쇼
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알려주실래요?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알려주실 수 있나요?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알려 줄래요?
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알고 싶어요
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 알고 싶은데
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 좀
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 받습니다
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 받는다
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 받아요
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 받고 싶어요
+- 쉬운 [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 풀고싶어
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 풀고싶은데
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 풀거야
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 추천해줘
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 추천해줄래?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 추천 받는다
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 추천 받고 싶어요
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 추천 받고 싶어
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 추천 받아요
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 추천해줘
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 없어?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 뭐가 있을까?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 없을까?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 없을까요?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 없겠습니까?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 없나요?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 없나?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 없어?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알려줘
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알려주십시오
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알려줄래?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알려주쇼
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알려주실래요?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알려주실 수 있나요?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알려 줄래요?
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알고 싶어요
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 알고 싶은데
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 좀
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 받습니다
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 받는다
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 받아요
+- 어려운 [정렬](algorithm_name) 알고리즘 문제 받고 싶어요
+- [브론즈](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [플레](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [다이아](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [골드](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [실버](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [상](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [중](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [하](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
 
 ## intent:problem_solve
 - 모르겠어
@@ -80,38 +925,336 @@
 - 문제풀이 사이트 있니?
 
 ## intent:algorithm_explain
-- [최단거리](algorithm_type) 알고리즘 알려줘
-- [정렬](algorithm_type) 알고리즘 알려줘
-- [스택](algorithm_type)이 뭐야?
-- [정렬](algorithm_type)이 뭐야
-- [정렬](algorithm_type)이 뭐니?
+- [최단거리](algorithm_name) 알고리즘 알려줘
+- [매내처](algorithm_name) 알고리즘 알려줘
+- 알려줘
+- 설명해줘
+- 이게 뭐야?
+- [인터프리터](algorithm_name)가 뭐야?
+- [고속 푸리에 변환](algorithm_name) 알려줘
+- [위상 정렬](algorithm_name) 좀 설명해줘
+- [최단거리](algorithm_name) 알고리즘 알려줘
+- [정렬](algorithm_name) 알고리즘 알려줘
+- [스택](algorithm_name)이 뭐야?
+- [정렬](algorithm_name)이 뭐야
+- [선형대수학](algorithm_name)이 뭐니?
+- [정렬](algorithm_name)이 뭔데?
+- [알고리즘](algorithm_name)이 뭐야?
+- [기하학](algorithm_name)  설명해줘
+- [볼록 껍질](algorithm_name)  설명해줄래
+- [수학](algorithm_name)  좀 설명해줄래
+- [선형대수학](algorithm_name)  알려줘
+- [정렬](algorithm_name)  알려줄래
+- [최단거리](algorithm_name) 알고리즘 좀 더 알려줘
+- [정렬](algorithm_name) 알고리즘  알려줘
+- [스택](algorithm_name)이 뭐야?
+- [정렬](algorithm_name)이 뭐니?
+- [알고리즘](algorithm_name)이 뭐야?
+- [시뮬레이션](algorithm_name) 설명해줘
+- [스택](algorithm_name) 설명해줄래
+  
+- [수학](algorithm_name) 알려줘
+- [다이나믹 프로그래밍](algorithm_name) 알려주십시오
+- [구현](algorithm_name) 알려줄래?
+- [그래프 이론](algorithm_name) 알려주쇼
+- [자료 구조](algorithm_name) 알려주실래요?
+- [문자열](algorithm_name) 알려주실 수 있나요?
+- [그리디 알고리즘](algorithm_name) 알려 줄래요?
+- [그래프 탐색](algorithm_name) 알고 싶어요
+- [브루트포스 알고리즘](algorithm_name) 알고 싶은데
+- [세그먼트 트리](algorithm_name) 좀
+- [정렬](algorithm_name) 받습니다
+- [트리](algorithm_name) 받는다
+- [이분 탐색](algorithm_name) 받아요
+- [기하학](algorithm_name) 받고 싶어요
+- [정수론](algorithm_name) 받고 싶어
+- [너비 우선 탐색](algorithm_name) 설명해줘
+- [조합론](algorithm_name) 설명해줄래
+- [사칙연산](algorithm_name) 설명해주십시오
+- [누적 합](algorithm_name) 설명해주쇼
+- [깊이 우선 탐색](algorithm_name) 설명
+- [다익스트라](algorithm_name) 알고리즘 알려줘
+- [비트마스킹](algorithm_name) 알고리즘 알려주십시오
+- [분리 집합](algorithm_name) 알고리즘 알려줄래?
+- [분할 정복](algorithm_name) 알고리즘 알려주쇼
+- [애드 혹](algorithm_name) 알고리즘 알려주실래요?
+- [구성적](algorithm_name) 알고리즘 알려주실 수 있나요?
+- [백트래킹](algorithm_name) 알고리즘 알려 줄래요?
+- [스위핑](algorithm_name) 알고리즘 알고 싶어요
+- [Case work](algorithm_name) 알고리즘 알고 싶은데
+- [스택](algorithm_name) 알고리즘 좀
+- [우선순위 큐](algorithm_name) 알고리즘 받습니다
+- [트리에서의 다이나믹 프로그래밍](algorithm_name) 알고리즘 받는다
+- [최대 유량](algorithm_name) 알고리즘 받아요
+- [파싱](algorithm_name) 알고리즘 받고 싶어요
+- [느리게 갱신되는 세그먼트 트리](algorithm_name) 알고리즘 받고 싶어
+- [투 포인터](algorithm_name) 알고리즘 설명해줘
+- [비트필드를 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘 설명해줄래
+- [트리를 사용한 집합과 맵](algorithm_name) 알고리즘 설명해주십시오
+- [소수 판정](algorithm_name) 알고리즘 설명해주쇼
+- [오프라인 쿼리](algorithm_name) 알고리즘 설명
+- [분할 정복을 이용한 거듭제곱](algorithm_name) 알고리즘  알려줘
+- [이분 매칭](algorithm_name) 알고리즘  알려주십시오
+- [임의 정밀도 / 큰 수 연산](algorithm_name) 알고리즘  알려줄래?
+- [최소 스패닝 트리](algorithm_name) 알고리즘  알려주쇼
+- [해싱](algorithm_name) 알고리즘  알려주실래요?
+- [최소 공통 조상](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [재귀](algorithm_name) 알고리즘  알려 줄래요?
+- [에라토스테네스의 체](algorithm_name) 알고리즘  알고 싶어요
+- [해시를 사용한 집합과 맵](algorithm_name) 알고리즘  알고 싶은데
+- [강한 연결 요소](algorithm_name) 알고리즘  설명해줘
+- [플로이드–와샬](algorithm_name) 알고리즘  설명해줄래
+- [고속 푸리에 변환](algorithm_name) 알고리즘  설명해주십시오
+- [위상 정렬](algorithm_name) 알고리즘  설명해주쇼
+- [볼록 껍질](algorithm_name) 알고리즘  설명
+- [트라이](algorithm_name) 알고리즘  알려줘
+- [포함 배제의 원리](algorithm_name) 알고리즘  알려주십시오
+- [값 / 좌표 압축](algorithm_name) 알고리즘  알려줄래?
+- [볼록 껍질을 이용한 최적화](algorithm_name) 알고리즘  알려주쇼
+- [KMP](algorithm_name) 알고리즘  알려주실래요?
+- [배낭 문제](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [접미사 배열과 LCP 배열](algorithm_name) 알고리즘  알려 줄래요?
+- [희소 배열](algorithm_name) 알고리즘  알고 싶어요
+- [최소 비용 최대 유량](algorithm_name) 알고리즘  알고 싶은데
+- [제곱근 분할법](algorithm_name) 알고리즘  좀
+- [작은 집합에서 큰 집합으로 합치는 테크닉](algorithm_name) 알고리즘  받습니다
+- [유클리드 호제법](algorithm_name) 알고리즘  받는다
+- [덱](algorithm_name) 알고리즘  받아요
+- [확률론](algorithm_name) 알고리즘  받고 싶어요
+- [런타임 전의 전처리](algorithm_name) 알고리즘  받고 싶어
+- [스프라그–그런디 정리](algorithm_name) 알고리즘  설명해줘
+- [매개 변수 탐색](algorithm_name) 알고리즘  설명해줄래
+- [가장 긴 증가하는 부분 수열: O(n log n)](algorithm_name) 알고리즘  설명해주십시오
+- [중간에서 만나기](algorithm_name) 알고리즘  설명해주쇼
+- [Heavy-light 분할](algorithm_name) 알고리즘  설명
+- [센트로이드 분할](algorithm_name) 알고리즘  알려줘
+- [슬라이딩 윈도우](algorithm_name) 알고리즘  알려주십시오
+- [무작위화](algorithm_name) 알고리즘  알려줄래?
+- [오일러 경로 테크닉](algorithm_name) 알고리즘  알려주쇼
+- [2-SAT](algorithm_name) 알고리즘  알려주실래요?
+- [삼분 탐색](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [미적분학](algorithm_name) 알고리즘  알려 줄래요?
+- [최대 유량 최소 컷 정리](algorithm_name) 알고리즘  알고 싶어요
+- [가우스 소거법](algorithm_name) 알고리즘  알고 싶은데
+- [휴리스틱](algorithm_name) 알고리즘  좀
+- [단절점과 단절선](algorithm_name) 알고리즘  받습니다
+- [퍼시스턴트 세그먼트 트리](algorithm_name) 알고리즘  받는다
+- [3차원 기하학](algorithm_name) 알고리즘  받아요
+- [오일러 경로](algorithm_name) 알고리즘  받고 싶어요
+- [선인장](algorithm_name) 알고리즘  받고 싶어
+- [비트 집합](algorithm_name) 알고리즘  설명해줘
+- [중국인의 나머지 정리](algorithm_name) 알고리즘  설명해줄래
+- [분할 정복을 사용한 최적화](algorithm_name) 알고리즘  설명해주십시오
+- [큐](algorithm_name) 알고리즘  설명해주쇼
+- [Mo's](algorithm_name) 알고리즘  설명
+- [병렬 이분 탐색](algorithm_name) 알고리즘  알려줘
+- [벌래캠프–매시](algorithm_name) 알고리즘  알려주십시오
+- [오일러 지표 (χ=V-E+F)](algorithm_name) 알고리즘  알려줄래?
+- [다차원 세그먼트 트리](algorithm_name) 알고리즘  알려주쇼
+- [평면 그래프](algorithm_name) 알고리즘  알려주실래요?
+- [아호-코라식](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [스플레이 트리](algorithm_name) 알고리즘  알려 줄래요?
+- [순열 사이클 분할](algorithm_name) 알고리즘  알고 싶어요
+- [페르마의 소정리](algorithm_name) 알고리즘  알고 싶은데
+- [라빈–카프](algorithm_name) 알고리즘  좀
+- [확장 유클리드 호제법](algorithm_name) 알고리즘  받습니다
+- [회전하는 캘리퍼스](algorithm_name) 알고리즘  받는다
+- [커넥션 프로파일을 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘  받아요
+- [물리학](algorithm_name) 알고리즘  받고 싶어요
+- [이중 연결 요소](algorithm_name) 알고리즘  받고 싶어
+- [머지 소트 트리](algorithm_name) 알고리즘  설명해줘
+- [뫼비우스 반전 공식](algorithm_name) 알고리즘  설명해줄래
+- [덱을 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘  설명해주십시오
+- [정규 표현식](algorithm_name) 알고리즘  설명해주쇼
+- [링크/컷 트리](algorithm_name) 알고리즘  설명
+- [볼록 다각형 내부의 점 판정](algorithm_name) 알고리즘  알려줘
+- [오일러 피 함수](algorithm_name) 알고리즘  알려주십시오
+- [연결 리스트](algorithm_name) 알고리즘  알려줄래?
+- [0-1 너비 우선 탐색](algorithm_name) 알고리즘  알려주쇼
+- [수치해석](algorithm_name) 알고리즘  알려주실래요?
+- [외판원 순회 문제](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [인터프리터](algorithm_name) 알고리즘  알려 줄래요?
+- [폴라드 로](algorithm_name) 알고리즘  알고 싶어요
+- [Alien 트릭](algorithm_name) 알고리즘  알고 싶은데
+- [함수 개형을 이용한 최적화](algorithm_name) 알고리즘  좀
+- [모듈로 곱셈 역원](algorithm_name) 알고리즘  받습니다
+- [다각형의 넓이](algorithm_name) 알고리즘  받는다
+- [기댓값의 선형성](algorithm_name) 알고리즘  받아요
+- [오프라인 동적 연결성 판정](algorithm_name) 알고리즘  받고 싶어요
+- [선형 계획법](algorithm_name) 알고리즘  받고 싶어
+- [번사이드 보조정리](algorithm_name) 알고리즘  설명해줘
+- [오목 다각형 내부의 점 판정](algorithm_name) 알고리즘  설명해줄래
+- [피타고라스 정리](algorithm_name) 알고리즘  설명해주십시오
+- [키타마사](algorithm_name) 알고리즘  설명해주쇼
+- [트리 동형 사상](algorithm_name) 알고리즘  설명
+- [헝가리안](algorithm_name) 알고리즘  알려줘
+- [이산 로그](algorithm_name) 알고리즘  알려주십시오
+- [최소 외접원](algorithm_name) 알고리즘  알려줄래?
+- [밀러–라빈 소수 판별법](algorithm_name) 알고리즘  알려주쇼
+- [도미네이터 트리](algorithm_name) 알고리즘  알려주실래요?
+- [단조 큐를 이용한 최적화](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [쌍대성](algorithm_name) 알고리즘  알려 줄래요?
+- [쌍대 그래프](algorithm_name) 알고리즘  알고 싶어요
+- [일반적인 매칭](algorithm_name) 알고리즘  알고 싶은데
+- [회문 트리](algorithm_name) 알고리즘  좀
+- [스토어–바그너](algorithm_name) 알고리즘  받습니다
+- [Z](algorithm_name) 알고리즘  받는다
+- [크누스 최적화](algorithm_name) 알고리즘  받아요
+- [매트로이드](algorithm_name) 알고리즘  받고 싶어요
+- [뤼카 정리](algorithm_name) 알고리즘  받고 싶어
+- [양방향 탐색](algorithm_name) 알고리즘  설명해줘
+- [이산 제곱근](algorithm_name) 알고리즘  설명해줄래
+- [유향 최소 신장 트리](algorithm_name) 알고리즘  설명해주십시오
+- [보로노이 다이어그램](algorithm_name) 알고리즘  설명해주쇼
+- [4차원 이상의 기하학](algorithm_name) 알고리즘  설명
+- [정렬](algorithm_name) 알고리즘  알려줘
+- [통계학](algorithm_name) 알고리즘  알려주십시오
+- [로프](algorithm_name) 알고리즘  알려줄래?
+- [춤추는 링크](algorithm_name) 알고리즘  알려주쇼
+- [크누스 X](algorithm_name) 알고리즘  알려주실래요?
+- [접미사 트리](algorithm_name) 알고리즘  알려주실 수 있나요?
+- [델로네 삼각분할](algorithm_name) 알고리즘  알려 줄래요?
+- [레드-블랙 트리](algorithm_name) 알고리즘  알고 싶어요
+- [탑 트리](algorithm_name) 알고리즘  알고 싶은데
+- [이산 k제곱근](algorithm_name) 알고리즘  좀
+- [홀의 결혼 정리 ](algorithm_name) 알고리즘  받습니다
+- [게임 이론](algorithm_name) 알고리즘  받는다
+- [벨만–포드](algorithm_name) 알고리즘  받아요
+- [선분 교차 판정](algorithm_name) 알고리즘  받고 싶어요
+  
+- [그래프 이론](algorithm_name)이 뭐야?
+- [자료 구조](algorithm_name)가 뭐야?
+- [문자열](algorithm_name)이 뭐야?
+- [그리디 알고리즘](algorithm_name)이 뭐야?
+- [그래프 탐색](algorithm_name)이 뭐야?
+- [브루트포스 알고리즘](algorithm_name)이 뭐야?
+- [세그먼트 트리](algorithm_name)가 뭐야?
 
 ## intent:algorithm_example
-- [정렬](algorithm_type) 예시 좀 알려줘
-- [정렬](algorithm_type) 예시 좀 알려줄래
+- [정렬](algorithm_name) 예시 좀 알려줘
+- [정렬](algorithm_name) 예시 좀 알려줄래
 
-## intent:base_explain
-- [정렬](algorithm_type) 조금 설명해줘
-- [정렬](algorithm_type) 조금 설명해줄래
-- [정렬](algorithm_type) 기초 좀 설명해줄래
 
-## intent:detail_explain
-- [정렬](algorithm_type) 자세히 알려줘
-- [정렬](algorithm_type) 자세히 알려줄래
+## intent:schedule
+- [일정](schedule)
+- [날짜](schedule)
+- [시간](schedule)
+- [언제](schedule)
+- [기간](schedule)
 
-## intent:contest_type
-- [카카오](contest_name)대회 유형이 뭐야?
-- [카카오](contest_name)대회 유형이 뭐니?
+## intent:company
+- [배민](company)
+- [쿠팡](company)
+- [네이버](company)
+- [라인](company)
+- [카카오](company)
+- [크래프톤](company)
+- [원스토어](company)
+- [넷마블](company)
+- [넥슨](company)
+- [당근마켓](company)
+- [직방](company)
+- [스타트업](company)
+- [줌](company)
+- [구글](company)
+- [아마존](company)
+- [배달의 민족](company)
+- [sk](company)
+- [kt](company)
+- [lg](company)
+- [삼성](company)
+- [samgsung](company)
+- [skt](company)
+- [하이닉스](company)
+- [프로그래머스](company)
+- [코드포스](company)
+- [코포](company)
+- [백준](company)
 
-## intent:contest_information
+## intent:contest_explain
+- [준파고를 잡아라](contest_name)대회 알려줘
 - [카카오](contest_name)대회 정보 알려줘
 - [카카오](contest_name)대회 정보 알려줄래
-
-## intent:contest_schedule
+- [카카오](contest_name)대회 좀  알려줘
+- [카카오](contest_name)대회 좀  알려줄래
 - [카카오](contest_name)대회 일정 알려줘
 - [카카오](contest_name)대회 일정 알려줄래
+- [카카오](contest_name)대회가 뭐야?
+- [카카오](contest_name)대회가 뭐니?
+- [scpc](contest_name) 일정 알려줘
+- [scpc](contest_name) 언제 열려?
+- [프로그래머스](contest_name) 최근 대회가 뭐야?
+- [코드포스](contest_name) 일정 알려줘
+- [코포](contest_name) 언제 시작해?
+- [카카오](contest_name)대회 없나?
+- [카카오](contest_name)대회 없어?
+- [카카오](contest_name)대회 정보 줘
+- [카카오](contest_name)대회 정보 줄래
+- [카카오](contest_name)대회 정보 좀
+- [카카오](contest_name)대회 없을까?
+- [카카오](contest_name)대회 알고 싶은데
+- [카카오](contest_name)대회 알고 싶어
+- [카카오](contest_name)대회 알고 싶어요
+- [카카오](contest_name)대회 알려줘
+- [2021 카카오 인턴쉽](contest_name) 알려줘
 
-## intent:contest_detail_information
-- [카카오](contest_name)대회 좀 자세히 알려줘
-- [카카오](contest_name)대회 좀 자세히 알려줄래
 
+## intent:number
+- [1](number)개
+- [2](number)개
+- [3](number)개
+- [4](number)개
+- [5](number)개
+- [6](number)개
+- [7](number)개
+- [8](number)개
+- [9](number)개
+- [10](number)개
+- [1](number)년
+- [2](number)년
+- [3](number)년
+- [4](number)년
+- [5](number)년
+- [2020](number)년
+
+## intent:reception_period
+- [신청 기간](reception_period)알려줘
+- [신청 기간](reception_period)이 어떻게 돼?
+- 언제까지 [신청](reception_period)가능해?
+- 언제까지 [접수](reception_period)하면 돼?
+- [접수 기간](reception_period) 알려줘
+- [신청기간](reception_period)
+- [신청날짜](reception_period)
+- [신청시간](reception_period)
+- [신청](reception_period)
+- [접수](reception_period)
+- 언제 열려?
+
+## intent:homepage
+- 어디서 봐?
+- [홈페이지](homepage) 없어?
+- [홈페이지](homepage) 알려줘
+- [홈페이지](homepage)이 어떻게 돼?
+- [홈페이지](homepage) 내놔
+- [홈페이지](homepage) 알려줘
+- [홈페이지](homepage)
+- [URL](homepage) 알려줘
+- [URL](homepage)이 어떻게 돼?
+- [URL](homepage) 내놔
+- [URL](homepage) 알려줘
+- [URL](homepage) 없어?
+- [url](homepage)
+- [uri](homepage)
+- [URI](homepage)
+- [링크](homepage) 없어?
+- [링크](homepage) 알려줘
+- [링크](homepage)이 어떻게 돼?
+- [링크](homepage) 내놔
+- [링크](homepage) 알려줘
+- [링크](homepage)
+
+## lookup:algorithm_name
+data/lookup/algorithm_name.txt
+
+## lookup:problem_name
+data/lookup/problem_name.txt
