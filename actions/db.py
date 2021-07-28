@@ -5,7 +5,7 @@ import pymysql
 
 debug = True
 
-db = pymysql.connect(host='http://bakauksmith.iptime.org:3307', user='algotalk', password='algojem', db='algotalk_db', autocommit=True,
+db = pymysql.connect(host='mysql_service', user='algotalk', password='algojem', db='algotalk_db', autocommit=True,
                      sql_mode='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION', charset='utf8')
 cur = db.cursor()
 cur.execute('set @@auto_increment_increment=1')
