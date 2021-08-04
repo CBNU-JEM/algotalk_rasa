@@ -164,7 +164,8 @@ db.execute_query('''CREATE TABLE CONTEST (
                     CONTENT VARCHAR(5000),
                     SOURCE VARCHAR(5000),
                     URI VARCHAR(200)
-                    )''')
+                    )ENGINE=InnoDB DEFAULT CHARSET=utf8
+                    ''')
 db.execute_query('''CREATE TABLE ALGORITHM_PROBLEM_CLASSIFICATION (
                     ALGORITHM_NAME VARCHAR(100) not null,
                     PROBLEM_NAME VARCHAR(100) not null,
@@ -177,7 +178,8 @@ db.execute_query('''CREATE TABLE ALGORITHM_PROBLEM_CLASSIFICATION (
                     REFERENCES PROBLEM (NAME)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE
-                    )''')
+                    )ENGINE=InnoDB DEFAULT CHARSET=utf8
+                    ''')
 db.execute_query('''CREATE TABLE CONTEST_PROBLEM (
                     CONTEST_NAME VARCHAR(100) not null,
                     PROBLEM_NAME VARCHAR(100) not null,
@@ -190,7 +192,8 @@ db.execute_query('''CREATE TABLE CONTEST_PROBLEM (
                     REFERENCES PROBLEM (NAME)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE
-                    )''')
+                    )ENGINE=InnoDB DEFAULT CHARSET=utf8
+                    ''')
 
 db.create_algorithm(algorithm_list)
 db.create_problem(problem_list)
