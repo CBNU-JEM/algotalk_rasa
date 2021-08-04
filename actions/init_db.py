@@ -139,8 +139,8 @@ print("algodb create")
 db.execute_query('''CREATE TABLE ALGORITHM (
                     NAME VARCHAR(100) NOT NULL PRIMARY KEY,
                     NORMALIZED_NAME VARCHAR(100),
-                    BRIEF_EXPLAIN VARCHAR(50),
-                    DETAIL_EXPLAIN VARCHAR(250),
+                    BRIEF_EXPLAIN VARCHAR(255),
+                    DETAIL_EXPLAIN VARCHAR(1000),
                     LEVEL VARCHAR(20),
                     EXAMPLE_CODE VARCHAR(5000),
                     PARENT VARCHAR(100),
