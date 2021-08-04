@@ -138,6 +138,7 @@ print("algodb create")
 
 db.execute_query('''CREATE TABLE ALGORITHM (
                     NAME VARCHAR(100) NOT NULL PRIMARY KEY,
+                    NORMALIZED_NAME VARCHAR(100),
                     BRIEF_EXPLAIN VARCHAR(50),
                     DETAIL_EXPLAIN VARCHAR(250),
                     LEVEL VARCHAR(20),
@@ -148,6 +149,7 @@ db.execute_query('''CREATE TABLE ALGORITHM (
                     ''')
 db.execute_query('''CREATE TABLE PROBLEM (
                     NAME VARCHAR(100) NOT NULL PRIMARY KEY,
+                    NORMALIZED_NAME VARCHAR(100),
                     LEVEL VARCHAR(20),
                     CONTENT VARCHAR(5000),
                     INPUT VARCHAR(1000),
@@ -157,6 +159,7 @@ db.execute_query('''CREATE TABLE PROBLEM (
                     ''')
 db.execute_query('''CREATE TABLE CONTEST (
                     NAME VARCHAR(100) NOT NULL PRIMARY KEY,
+                    NORMALIZED_NAME VARCHAR(100),
                     CONTEST_START DATETIME,
                     CONTEST_END DATETIME,
                     RECEPTION_START DATETIME,
