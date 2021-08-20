@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  db:
+    privileged: true
+    image: mariadb
+    container_name: mysql_service
+    volumes:
+      - db_conf:/etc/mysql/conf.d
+      - db_data:/var/lib/mysql
+    env_file: .env
+    environment:
+      TZ: Asia/Seoul
+    networks:
+      - backend
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+    restart: always
+
+  server:
+    build: ./server/
+    container_name: algotalk_server
+    ports:
+      - 5005:5005
+    volumes:
+      - ./git/algotalk_server:/home/algotalk_server
+    networks:
+      - backend
+    depends_on:
+      - db
+    stdin_open: true    # docker run -i
+    tty: true           # docker run -t
+    restart: always
+
+networks:
+  backend:
+
+volumes:
+  db_conf:
+  db_data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./db/data
