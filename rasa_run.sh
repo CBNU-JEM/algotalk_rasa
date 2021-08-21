@@ -1,11 +1,4 @@
 #!/bin/bash
-
-git reset --hard
-printf "git reset hard\n"
-
-git pull origin main
-printf "git pull algotalk_rasa\n"
-
 cp korean_tokenizer.py $RASA_DIR/nlu/tokenizers
 cp crf_entity_extractor_korean.py $RASA_DIR/nlu/extractors
 cp bilou_utils_Kr.py $RASA_DIR/nlu/utils
