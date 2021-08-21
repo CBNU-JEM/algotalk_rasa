@@ -24,7 +24,7 @@ services:
     ports:
       - 5005:5005
     volumes:
-      - ./git/algotalk_server:/home/algotalk_server
+      - git:/home/algotalk_rasa
     networks:
       - backend
     depends_on:
@@ -43,4 +43,10 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: ./db/data
+      device: /C:/dev/docker/algotalk/db/data
+  git:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /C:/dev/docker/algotalk/git/algotalk_rasa
