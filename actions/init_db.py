@@ -16,9 +16,9 @@ db.execute_query('''CREATE TABLE ALGORITHM (
                     BRIEF_EXPLAIN VARCHAR(255),
                     DETAIL_EXPLAIN VARCHAR(1000),
                     LEVEL VARCHAR(20),
-                    PARENT VARCHAR(100),
+                    PARENT INT(11),
                     NORMALIZED_NAME VARCHAR(100),
-                    CONSTRAINT PARENT_ALGORITHM FOREIGN KEY (PARENT) REFERENCES ALGORITHM (NAME)
+                    CONSTRAINT PARENT_ALGORITHM FOREIGN KEY (PARENT) REFERENCES ALGORITHM (id)
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8
                     ''')
 db.execute_query('''CREATE TABLE PROBLEM (
@@ -44,13 +44,13 @@ db.execute_query('''CREATE TABLE CONTEST (
                     ''')
 db.execute_query('''CREATE TABLE ALGORITHM_PROBLEM_CLASSIFICATION (
                     ID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                    ALGORITHM_ID VARCHAR(100) not null,
-                    PROBLEM_ID VARCHAR(100) not null,
-                    FOREIGN KEY (ALGORITHM_ID) 
+                    ALGORITHM_ID INT(11) not null,
+                    PROBLEM_ID INT(11) not null,
+                    CONSTRAINT AP_ALGORITHM_FOREIGN FOREIGN KEY (ALGORITHM_ID) 
                     REFERENCES ALGORITHM (ID)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE,
-                    FOREIGN KEY (PROBLEM_ID) 
+                    CONSTRAINT AP_PROBLEM_FOREIGN FOREIGN KEY (PROBLEM_ID) 
                     REFERENCES PROBLEM (ID)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE
@@ -58,8 +58,8 @@ db.execute_query('''CREATE TABLE ALGORITHM_PROBLEM_CLASSIFICATION (
                     ''')
 db.execute_query('''CREATE TABLE CONTEST_PROBLEM (
                     ID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-                    CONTEST_ID VARCHAR(100) not null,
-                    PROBLEM_ID VARCHAR(100) not null,
+                    CONTEST_ID INT(11) not null,
+                    PROBLEM_ID INT(11) not null,
                     CONSTRAINT CP_CONTEST_FOREIGN FOREIGN KEY (CONTEST_ID) 
                     REFERENCES CONTEST (ID)
                     ON DELETE CASCADE

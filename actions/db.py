@@ -126,7 +126,7 @@ def create_problem(problem_list):
     q = 'INSERT IGNORE INTO PROBLEM (PROBLEM_ID, NAME, LEVEL, URI, NORMALIZED_NAME) VALUES '
     tmp_query = ""
     for problem in problem_list:
-        tmp_query += f', ("{problem.problem_id}", "{problem.name}", "{problem.level}", "{problem.uri}", "{normalize(problem.name)}")'
+        tmp_query += f", ('{problem.problem_id}', '{problem.name}', '{problem.level}', '{problem.uri}', '{normalize(problem.name)}')"
     q += tmp_query.replace(', ', '', 1)
     execute_query(none_to_null(q))
 

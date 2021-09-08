@@ -6,7 +6,7 @@ with open('../baekjoon_crawling/json/problem_information.json') as json_file:
     problem_list = []
 
 
-    for problem in json_data['problem']:
+    for problem in json_data['problem_information']:
         problem_list.append(db.Problem(None, problem['problem_id'], problem['title'], problem['level'], problem['uri']))
 
     db.create_problem(list(set(problem_list)))
