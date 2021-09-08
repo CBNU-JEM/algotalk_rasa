@@ -1,10 +1,9 @@
+import json
 import db
 
-f = open("algorithm_name.txt", 'r')
-algorithm_list = []
-lines = f.readlines()
-for algorithm in lines:
-    algorithm = algorithm.replace('\n', '')
-    algorithm_list.append(db.Algorithm(algorithm))
-db.create_algorithm(list(set(algorithm_list)))
-f.close()
+with open('algorithm_name.json', encoding='UTF8') as json_file:
+    json_data = json.load(json_file)
+    algorithm_list = []
+    for algorithm in json_data['algorithm']:
+        db.create_algorithm(db.Algorithm(None, algorithm['name'], algorithm['brief_explain'], algorithm['detail_explain'],
+                                         algorithm['level'], algorithm['parent']))
