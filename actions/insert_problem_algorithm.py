@@ -6,4 +6,4 @@ with open('problem_algorithm.json') as json_file:
     algorithm_problem_list = set()
 
     for problem in json_data['problem']:
-        db.create_algorithm_problem_classification([db.AlgorithmProblemClassification(problem['classification'], problem['problem_title'])])
+        db.create_algorithm_problem_classification([db.AlgorithmProblemClassification(None, problem['classification'], problem['problem_title'])])
