@@ -30,9 +30,10 @@ class AlgorithmProblemClassification:
 
 
 class Problem:
-    def __init__(self, id, problem_id=None, name=None, level=None, uri=None):
+    def __init__(self, id, problem_id=None, name=None, level=None, uri=None, type=0 ):
         self.id = id
         self.problem_id = problem_id
+        self.type = type
         self.name = name
         self.level = level
         self.uri = uri
@@ -131,7 +132,7 @@ def create_problem(problem_list):
 
 
 def delete_problem(id):
-    q = f'DELETE FROM PROBLEM WHERE id="{id}"'
+    q = f'DELETE FROM PROBLEM WHERE ID="{id}"'
     execute_query(q)
 
 
