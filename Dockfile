@@ -1,0 +1,19 @@
+FROM  algotalk/server_base:latest
+
+ENV RASA_DIR /usr/local/lib/python3.7/dist-packages/rasa
+
+RUN mkdir algotalk_rasa
+
+ENV HOME /home/algotalk_rasa
+
+WORKDIR $HOME
+
+RUN apt-get update && apt-get install -y locales
+RUN locale-gen ko_KR.UTF-8
+ENV LC_ALL ko_KR.UTF-8
+
+RUN chmod 755 /home/algotalk_rasa/
+
+ADD https://api.github.com/repos/CBNU-JEM/algotalk_rasa/git/refs/heads/main .
+
+CMD sh /home/algotalk_rasa/rasa_run.sh > rasa_run_script.log

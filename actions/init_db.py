@@ -13,8 +13,10 @@ print("algodb create")
 db.execute_query('''CREATE TABLE ALGORITHM (
                     ID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                     NAME VARCHAR(100) NOT NULL,
-                    BRIEF_EXPLAIN VARCHAR(50),
-                    DETAIL_EXPLAIN VARCHAR(250),
+                    NAME VARCHAR(100) NOT NULL,
+                    NORMALIZED_NAME VARCHAR(100),
+                    BRIEF_EXPLAIN VARCHAR(255),
+                    DETAIL_EXPLAIN VARCHAR(1000),
                     LEVEL VARCHAR(20),
                     PARENT VARCHAR(100),
                     CONSTRAINT PARENT_ALGORITHM FOREIGN KEY (PARENT) REFERENCES ALGORITHM (NAME)
@@ -25,6 +27,7 @@ db.execute_query('''CREATE TABLE PROBLEM (
                     PROBLEM_ID INT (11) ,
                     TYPE TINYINT(1) default 0,
                     NAME VARCHAR(100) NOT NULL,
+                    NORMALIZED_NAME VARCHAR(100),
                     LEVEL VARCHAR(20),
                     URI VARCHAR(256)
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8
@@ -32,12 +35,14 @@ db.execute_query('''CREATE TABLE PROBLEM (
 db.execute_query('''CREATE TABLE CONTEST (
                     ID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                     NAME VARCHAR(100) NOT NULL,
+                    NORMALIZED_NAME VARCHAR(100),
                     CONTEST_START DATETIME,
                     CONTEST_END DATETIME,
                     RECEPTION_START DATETIME,
                     RECEPTION_END DATETIME,
                     URI VARCHAR(256)
-                    )''')
+                    )ENGINE=InnoDB DEFAULT CHARSET=utf8
+                    ''')
 db.execute_query('''CREATE TABLE ALGORITHM_PROBLEM_CLASSIFICATION (
                     ID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                     ALGORITHM_ID VARCHAR(100) not null,
@@ -50,7 +55,8 @@ db.execute_query('''CREATE TABLE ALGORITHM_PROBLEM_CLASSIFICATION (
                     REFERENCES PROBLEM (ID)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE
-                    )''')
+                    )ENGINE=InnoDB DEFAULT CHARSET=utf8
+                    ''')
 db.execute_query('''CREATE TABLE CONTEST_PROBLEM (
                     ID INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
                     CONTEST_ID VARCHAR(100) not null,
@@ -63,4 +69,5 @@ db.execute_query('''CREATE TABLE CONTEST_PROBLEM (
                     REFERENCES PROBLEM (ID)
                     ON DELETE CASCADE
                     ON UPDATE CASCADE
-                    )''')
+                    )ENGINE=InnoDB DEFAULT CHARSET=utf8
+                    ''')

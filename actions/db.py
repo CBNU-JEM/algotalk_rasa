@@ -5,7 +5,7 @@ import pymysql
 
 debug = True
 
-db = pymysql.connect(host='localhost', user='algotalk', password='algojem', db='algotalk_db', autocommit=True,
+db = pymysql.connect(host='mysql_service', user='algotalk', password='algojem', db='algotalk_db', autocommit=True,
                      sql_mode='STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION', charset='utf8')
 cur = db.cursor()
 cur.execute('set @@auto_increment_increment=1')
@@ -108,7 +108,7 @@ def get_algorithm_by_normalized_name(name):
     rows = execute_query(q)
     algorithms = []
     for row in rows:
-        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4], row[5]))
+        algorithms.append(Algorithm(row[0], row[2], row[3], row[4], row[5], row[6]))
 
     if algorithms:
         return algorithms
@@ -117,7 +117,7 @@ def get_algorithm_by_normalized_name(name):
     rows = execute_query(q)
     algorithms = []
     for row in rows:
-        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4], row[5]))
+        algorithms.append(Algorithm(row[0], row[2], row[3], row[4], row[5], row[6]))
     return algorithms
 
 
