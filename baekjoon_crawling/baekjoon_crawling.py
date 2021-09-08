@@ -6,6 +6,7 @@ from pprint import pprint
 import requests
 import json
 import time
+import solvedacAPI
 
 
 def get_url_of_algorithm():
@@ -49,6 +50,7 @@ def get_problem_url_per_algorithm_step_2(classification, url_per_algorithm):
     soup = BeautifulSoup(html.text, 'html.parser')
 
     trs = soup.select('#problemset > tbody > tr')
+    pid_list = list()
     a_list = list()
     link_list = {}
 
@@ -59,12 +61,14 @@ def get_problem_url_per_algorithm_step_2(classification, url_per_algorithm):
         link_list['problem'] = []
 
     for tr in trs:
+        pid_list.append(tr.select_one('td:nth-child(1)'))
         a_list.append(tr.select_one('td:nth-child(2)').find('a'))
 
-    for a in a_list:
+    for pi, a in zip(pid_list, a_list):
+        problem_id = pi.text
         href = "https://www.acmicpc.net" + a.attrs['href']
         text = a.string
-        link_list['problem'].append({"classification": classification, "problem_title": text, "url": href})
+        link_list['problem'].append({"classification": classification, "problem_id": problem_id, "problem_title": text, "url": href})
 
     print(link_list)
 
@@ -80,11 +84,11 @@ def get_problem_information_step_1():
         # print(problem_list_data)
 
     for a in problem_list_data['problem']:
-        get_problem_information_step_2(a['classification'], a['url'])
+        get_problem_information_step_2(a['classification'], a['problem_id'], a['url'])
         time.sleep(1)
 
 
-def get_problem_information_step_2(classification, url_of_problem):
+def get_problem_information_step_2(classification, problem_id, url_of_problem):
     file_path = "./json/problem_information.json"
     html = requests.get(url_of_problem)
     soup = BeautifulSoup(html.text, 'html.parser')
@@ -110,14 +114,17 @@ def get_problem_information_step_2(classification, url_of_problem):
     output_value = soup.select_one('#problem_output > p')
     if output_value is not None:
         output_value = output_value.text
+    level = solvedacAPI.get_problem_level_from_solvedac(problem_id)
 
     problem_information['problem_information'].append({
         "classification": classification,
+        "problem_id": problem_id,
         "title": title,
         "content": content,
         "input": input_value,
         "output": output_value,
-        "uri": url_of_problem
+        "uri": url_of_problem,
+        "level": level
     })
 
     print(classification)
@@ -135,4 +142,4 @@ def get_problem_information_step_2(classification, url_of_problem):
 get_problem_url_per_algorithm_step_1()
 
 # 각 문제 페이지에서 문제 정보 크롤링
-# get_problem_information_step_1()
+get_problem_information_step_1()
