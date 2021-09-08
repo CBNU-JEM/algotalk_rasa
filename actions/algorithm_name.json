@@ -721,6 +721,286 @@
       "detail_explain": "",
       "level": "중급",
       "parent": "기하학"
+    },
+    {
+      "name": "중간에서 만나기",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "Heavy-light 분할",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "선분 교차 판정",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  ["수학", "기하학"]
+    },
+    {
+      "name": "센트로이드 분할",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  ["그래프 이론", "트리"]
+    },
+    {
+      "name": "슬라이딩 윈도우",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "초급",
+      "parent":  null
+    },
+    {
+      "name": "무작위화",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  null
+    },
+    {
+      "name": "오일러 경로 테크닉",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  ["그래프 이론"]
+    },
+    {
+      "name": "2-SAT",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  "그래프 이론"
+    },
+    {
+      "name": "삼분 탐색",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "분할 정복"
+    },
+    {
+      "name": "미적분학",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "수학"
+    },
+    {
+      "name": "최대 유량 최소 컷 정리",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  "그래프 이론"
+    },
+    {
+      "name": "가우스 소거법",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "휴리스틱",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  null
+    },
+    {
+      "name": "단절점과 단절선",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "퍼시스턴트 세그먼트 트리",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "세그먼트 트리"
+    },
+    {
+      "name": "3차원 기하학",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "기하학"
+    },
+    {
+      "name": "오일러 경로",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "그래프 이론"
+    },
+    {
+      "name": "선인장",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "비트 집합",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "중국인의 나머지 정리",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "수학"
+    },
+    {
+      "name": "분할 정복을 사용한 최적화",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "분할 정복"
+    },
+    {
+      "name": "큐",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "초급",
+      "parent":  "자료 구조"
+    },
+    {
+      "name": "Mo's",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  null
+    },
+    {
+      "name": "벨만–포드",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "최단 거리"
+    },
+    {
+      "name": "병렬 이분 탐색",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "이분 탐색"
+    },
+    {
+      "name": "벌래캠프–매시",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  null
+    },
+    {
+      "name": "오일러 지표 (χ=V-E+F)",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  null
+    },
+    {
+      "name": "다차원 세그먼트 트리",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent": null
+    },
+    {
+      "name": "평면 그래프",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "그래프 이론"
+    },
+    {
+      "name": "아호-코라식",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  "문자열"
+    },
+    {
+      "name": "스플레이 트리",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent": null
+    },
+    {
+      "name": "순열 사이클 분할",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  null
+    },
+    {
+      "name": "페르마의 소정리",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "수학"
+    },
+    {
+      "name": "라빈–카프",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  "해싱"
+    },
+    {
+      "name": "확장 유클리드 호제법",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent": null
+    },
+    {
+      "name": "회전하는 캘리퍼스",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "커넥션 프로파일을 이용한 다이나믹 프로그래밍",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "고급",
+      "parent":  "다이나믹 프로그래밍"
+    },
+    {
+      "name": "물리학",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "이중 연결 요소",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent":  null
+    },
+    {
+      "name": "머지 소트 트리",
+      "brief_explain": "",
+      "detail_explain": "",
+      "level": "중급",
+      "parent": null
     }
   ]
 }
