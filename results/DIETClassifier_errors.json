@@ -1,0 +1,27 @@
+[
+  {
+    "text": "쉽게",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "brief",
+        "start": 0,
+        "end": 2,
+        "extractor": "DIETClassifier",
+        "value": "쉽게"
+      }
+    ]
+  },
+  {
+    "text": "홀의 결혼 정리  알고리즘  받습니다",
+    "entities": [
+      {
+        "start": 0,
+        "end": 9,
+        "value": "홀의 결혼 정리 ",
+        "entity": "algorithm_name"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

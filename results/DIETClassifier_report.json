@@ -1,51 +1,9 @@
 {
-  "contest_name": {
+  "algorithm_name": {
     "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 8
-  },
-  "code": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 51
-  },
-  "algorithm_type": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 819
-  },
-  "number": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16
-  },
-  "algorithm_level": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 2
-  },
-  "brief": {
-    "precision": 0.8823529411764706,
-    "recall": 1.0,
-    "f1-score": 0.9375,
-    "support": 15
-  },
-  "level": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16
-  },
-  "detail": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 18
+    "recall": 0.996011964107677,
+    "f1-score": 0.9980019980019981,
+    "support": 1003
   },
   "user_level": {
     "precision": 1.0,
@@ -53,22 +11,94 @@
     "f1-score": 1.0,
     "support": 4
   },
-  "micro avg": {
-    "precision": 0.9978969505783386,
+  "code": {
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.9989473684210526,
-    "support": 949
+    "f1-score": 1.0,
+    "support": 51
+  },
+  "detail": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 19
+  },
+  "problem_level": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 22
+  },
+  "problem_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 99
+  },
+  "schedule": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 6
+  },
+  "number": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 16
+  },
+  "reception_period": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 17
+  },
+  "homepage": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 17
+  },
+  "contest_name": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 34
+  },
+  "company": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 37
+  },
+  "algorithm_level": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 13
+  },
+  "brief": {
+    "precision": 0.8823529411764706,
+    "recall": 1.0,
+    "f1-score": 0.9375,
+    "support": 15
+  },
+  "micro avg": {
+    "precision": 0.9985196150999259,
+    "recall": 0.9970436067997044,
+    "f1-score": 0.9977810650887573,
+    "support": 1353
   },
   "macro avg": {
-    "precision": 0.9869281045751634,
-    "recall": 1.0,
-    "f1-score": 0.9930555555555556,
-    "support": 949
+    "precision": 0.9915966386554622,
+    "recall": 0.9997151402934055,
+    "f1-score": 0.9953929998572856,
+    "support": 1353
   },
   "weighted avg": {
-    "precision": 0.9981404574474679,
-    "recall": 1.0,
-    "f1-score": 0.9990121180189674,
-    "support": 949
+    "precision": 0.9986957088822225,
+    "recall": 0.9970436067997044,
+    "f1-score": 0.9978259453037726,
+    "support": 1353
   }
 }

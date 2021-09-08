@@ -1,50 +1,66 @@
 [
   {
-    "text": "너무 어려운데 쉬운 걸로",
+    "text": "어려워 쉬운 걸로",
     "intent": "change_easy",
     "intent_prediction": {
       "name": "change_hard",
-      "confidence": 0.5230783224105835
+      "confidence": 0.6855771541595459
     }
   },
   {
-    "text": "쉬워 어려운 걸로",
-    "intent": "change_hard",
+    "text": "어려운 것 같아 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.56063312292099
+      "name": "change_hard",
+      "confidence": 0.5463871359825134
     }
   },
   {
-    "text": "쉬운 것 같아 어려운 걸로",
-    "intent": "change_hard",
+    "text": "어려운 것 같다 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.6065229177474976
+      "name": "change_hard",
+      "confidence": 0.6327703595161438
     }
   },
   {
-    "text": "쉬운 것 같다 어려운 걸로",
-    "intent": "change_hard",
+    "text": "어려운데 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.5929462909698486
+      "name": "change_hard",
+      "confidence": 0.5764421820640564
     }
   },
   {
-    "text": "쉬운데 어려운 걸로",
-    "intent": "change_hard",
+    "text": "어렵다 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.523908793926239
+      "name": "change_hard",
+      "confidence": 0.6651414036750793
     }
   },
   {
-    "text": "쉽다 어려운 걸로",
-    "intent": "change_hard",
+    "text": "너무 어려워 쉬운 걸로",
+    "intent": "change_easy",
     "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.589810848236084
+      "name": "change_hard",
+      "confidence": 0.5445429682731628
+    }
+  },
+  {
+    "text": "너무 어려운 것 같다 쉬운 걸로",
+    "intent": "change_easy",
+    "intent_prediction": {
+      "name": "change_hard",
+      "confidence": 0.5293290615081787
+    }
+  },
+  {
+    "text": "너무 어렵다 쉬운 걸로",
+    "intent": "change_easy",
+    "intent_prediction": {
+      "name": "change_hard",
+      "confidence": 0.515951931476593
     }
   },
   {
@@ -52,23 +68,15 @@
     "intent": "change_hard",
     "intent_prediction": {
       "name": "change_easy",
-      "confidence": 0.5319623947143555
+      "confidence": 0.5471960306167603
     }
   },
   {
-    "text": "너무 쉬운 것 같다 어려운 걸로",
+    "text": "너무 쉬운데 어려운 걸로",
     "intent": "change_hard",
     "intent_prediction": {
       "name": "change_easy",
-      "confidence": 0.5410792231559753
-    }
-  },
-  {
-    "text": "너무 쉽다 어려운 걸로",
-    "intent": "change_hard",
-    "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.521040141582489
+      "confidence": 0.5034916996955872
     }
   },
   {
@@ -76,7 +84,7 @@
     "intent": "brief",
     "intent_prediction": {
       "name": "change_easy",
-      "confidence": 0.6452715396881104
+      "confidence": 0.5762717127799988
     }
   }
 ]
