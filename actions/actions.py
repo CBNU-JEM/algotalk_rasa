@@ -1,12 +1,3 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/core/actions/#custom-actions/
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 import datetime
 from typing import Any, Text, Dict, List
 
@@ -54,7 +45,6 @@ class ActionAlgorithmExplain(FormAction):
         brief = tracker.get_slot('brief')
         detail = tracker.get_slot('detail')
         level = tracker.get_slot('algorithm_level')
-        example_code = tracker.get_slot('code')
         algorithm_name = tracker.get_slot('algorithm_name')
 
         algorithms = db.get_algorithm_by_normalized_name(algorithm_name)
@@ -82,8 +72,6 @@ class ActionAlgorithmExplain(FormAction):
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "brief":"간단한"}}"""},
                            {"title": "난이도",
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}"""},
-                           {"title": "코드",
-                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
                            {"title": "문제 추천",
                             "payload": f"""/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}"""}]
             elif algorithms[0].brief_explain:
@@ -91,8 +79,6 @@ class ActionAlgorithmExplain(FormAction):
                 explain_text += f"\n자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithms[0].brief_explain}"
                 buttons = [{"title": "난이도",
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}"""},
-                           {"title": "코드",
-                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
                            {"title": "문제 추천",
                             "payload": f"""/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}"""}]
             else:
@@ -105,18 +91,10 @@ class ActionAlgorithmExplain(FormAction):
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "detail":"자세한"}}"""},
                            {"title": "난이도",
                             "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}"""},
-                           {"title": "코드",
-                            "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}", "code":"예제"}}"""},
                            {"title": "문제 추천",
                             "payload": f"""/problem_recommendation{{"algorithm_name":"{algorithm_name}"}}"""}]
             else:
                 explain_text += f"나도 잘 모르겠어.";
-
-        if algorithms and example_code:
-            if algorithms[0].example_code:
-                explain_text += f"\n예제 코드\n{algorithms[0].example_code}"
-            else:
-                explain_text += f"\n예제 코드는 준비중이야."
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
@@ -124,11 +102,9 @@ class ActionAlgorithmExplain(FormAction):
         print(f"detail : {detail}")
         print(f"brief : {brief}")
         print(f"level : {level}")
-        print(f"example_code : {example_code}")
         print(f"algorithm_name : {algorithm_name}")
 
-        return [SlotSet("brief", None), SlotSet("detail", None),
-                SlotSet("algorithm_level", None), SlotSet("code", None)]
+        return [SlotSet("brief", None), SlotSet("detail", None), SlotSet("algorithm_level", None)]
 
 
 class ActionProblemRecommended(FormAction):
@@ -165,18 +141,10 @@ class ActionProblemRecommended(FormAction):
                 explain_text += "이름\n" + problem[0].name + "\n"
             else:
                 explain_text += "이름 : 없음"
-            if problem[0].input:
-                explain_text += "\n입력\n" + problem[0].input + "\n"
+            if problem[0].uri:
+                explain_text += "\n홈페이지\n" + problem[0].uri + "\n"
             else:
-                explain_text += "\n입력 : 없음"
-            if problem[0].output:
-                explain_text += "\n출력\n" + problem[0].output + "\n"
-            else:
-                explain_text += "\n출력 : 없음"
-            if problem[0].content:
-                explain_text += "\n설명\n" + problem[0].content + "\n"
-            else:
-                explain_text += "\n설명 : 없음"
+                explain_text += "\n홈페이지 : 없음"
 
             buttons = [{"title": "사용 알고리즘",
                         "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}'},
@@ -191,18 +159,10 @@ class ActionProblemRecommended(FormAction):
                 explain_text += "이름\n" + problem[0].name + "\n"
             else:
                 explain_text += "이름 : 없음"
-            if problem[0].input:
-                explain_text += "\n입력\n" + problem[0].input + "\n"
+            if problem[0].uri:
+                explain_text += "\n홈페이지\n" + problem[0].uri + "\n"
             else:
-                explain_text += "\n입력 : 없음"
-            if problem[0].output:
-                explain_text += "\n출력\n" + problem[0].output + "\n"
-            else:
-                explain_text += "\n출력 : 없음"
-            if problem[0].content:
-                explain_text += "\n설명\n" + problem[0].content + "\n"
-            else:
-                explain_text += "\n설명 : 없음"
+                explain_text += "\n홈페이지 : 없음"
             # 알고리즘 db에서 검색 후 모두 출력
             buttons = [{"title": "사용 알고리즘",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}"""},
@@ -250,7 +210,6 @@ class AlgorithmForm(FormAction):
             "detail": [self.from_entity(entity="detail")],
             "algorithm_level": [self.from_entity(entity="algorithm_level"),
                                 self.from_intent(intent="algorithm_level", value=True)],
-            "code": [self.from_entity(entity="code"), self.from_intent(intent="code", value=True)],
             "algorithm_name": [self.from_entity(entity="algorithm_name")]
         }
 
@@ -300,7 +259,7 @@ class ActionContestExplain(FormAction):
         contests.sort(key=lambda x: x.contest_start)
         today = datetime.datetime.now()
         if past:
-            contests = list(filter(lambda x: x.date < today, contests))
+            contests = list(filter(lambda x: x.reception_end < today, contests))
         elif proceeding:
             contests = list(filter(lambda x: x.reception_start <= today <= x.reception_end, contests))
 
@@ -352,7 +311,7 @@ class ActionContestExplain(FormAction):
             return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
         if contests:
-            explain_text = contests[0].content
+            #explain_text = contests[0].name
             buttons = buttons[1:]
             dispatcher.utter_message(text=explain_text, buttons=buttons)
 

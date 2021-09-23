@@ -1,4 +1,3 @@
-import random
 import re
 
 import pymysql
@@ -30,7 +29,7 @@ class AlgorithmProblemClassification:
 
 
 class Problem:
-    def __init__(self, id, problem_id=None, name=None, level=None, uri=None, type=0 ):
+    def __init__(self, id, problem_id=None, name=None, level=None, uri=None, type=0):
         self.id = id
         self.problem_id = problem_id
         self.type = type
@@ -48,7 +47,8 @@ class ContestProblem:
 
 
 class Contest:
-    def __init__(self, id, name=None, contest_start=None, contest_end=None, reception_start=None, reception_end=None, uri=None):
+    def __init__(self, id, name=None, contest_start=None, contest_end=None, reception_start=None, reception_end=None,
+                 uri=None):
         self.id = id
         self.name = name
         self.contest_start = contest_start
@@ -109,7 +109,7 @@ def get_algorithm_by_normalized_name(name):
     rows = execute_query(q)
     algorithms = []
     for row in rows:
-        algorithms.append(Algorithm(row[0], row[2], row[3], row[4], row[5], row[6]))
+        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4], row[5]))
 
     if algorithms:
         return algorithms
@@ -118,7 +118,7 @@ def get_algorithm_by_normalized_name(name):
     rows = execute_query(q)
     algorithms = []
     for row in rows:
-        algorithms.append(Algorithm(row[0], row[2], row[3], row[4], row[5], row[6]))
+        algorithms.append(Algorithm(row[0], row[1], row[2], row[3], row[4], row[5]))
     return algorithms
 
 
@@ -146,17 +146,26 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
 
     if problem_name:
         q += "WHERE " + f'P.NORMALIZED_NAME LIKE "{normalized_problem_name}" '
+
     if get_algorithm_by_normalized_name(algorithm_name):
         db_algorithm_name = get_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
         q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f'A.NORMALIZED_NAME LIKE "{db_algorithm_name}" '
+
     if get_contest_by_normalized_name(contest_name):
         db_contest_name = get_contest_by_normalized_name(contest_name)[0].normalized_name
         q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'C.NORMALIZED_NAME LIKE "{db_contest_name}" '
+
     if level:
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL LIKE "%{level}%" '
+        if level != 0:
+            level_end = level + 4
+        else:  # 랜덤으로 전체검색
+            level_end = 25
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL BETWEEN {level} AND {level_end}'
+
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
     problems = []
+
     for row in rows:
         problems.append(Problem(row[0], row[1], row[2], row[3], row[4]))
     if problems:
@@ -169,14 +178,22 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
 
     if problem_name:
         q += "WHERE " + f'P.NAME LIKE "%{normalized_problem_name}%" '
+
     if get_algorithm_by_normalized_name(algorithm_name):
         db_algorithm_name = get_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
         q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f'A.NORMALIZED_NAME LIKE "{db_algorithm_name}" '
+
     if get_contest_by_normalized_name(contest_name):
         db_contest_name = get_contest_by_normalized_name(contest_name)[0].normalized_name
         q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'C.NORMALIZED_NAME LIKE "{db_contest_name}" '
+
     if level:
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL LIKE "%{level}%" '
+        if level != 0:
+            level_end = level + 4
+        else:  # 랜덤으로 전체검색
+            level_end = 25
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL BETWEEN {level} AND {level_end}'
+
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
     problems = []
@@ -202,6 +219,7 @@ def create_algorithm_problem_classification(algorithm_problem_list):
     tmp_query = ""
     for algorithm_problem in algorithm_problem_list:
         tmp_query += f', ("{algorithm_problem.algorithm_id}", "{algorithm_problem.problem_id}")'
+
     q += tmp_query.replace(', ', '', 1)
     execute_query(none_to_null(q))
 
@@ -218,6 +236,7 @@ def get_contest_by_normalized_name(name):
     contests = []
     for row in rows:
         contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
+
     if contests:
         return contests
 
