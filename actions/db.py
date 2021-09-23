@@ -203,7 +203,7 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
 
 
 def create_contest(contest_list):
-    q = 'INSERT INTO CONTEST (NAME, CONTEST_START, CONTEST_END, RECEPTION_START, RECEPTION_END, URI, NORMALIZED_NAME) VALUES '
+    q = 'INSERT IGNORE INTO CONTEST (NAME, CONTEST_START, CONTEST_END, RECEPTION_START, RECEPTION_END, URI, NORMALIZED_NAME) VALUES '
     tmp_query = ""
     for contest in contest_list:
         tmp_query += f', ("{contest.name}", "{contest.contest_start}", "{contest.contest_end}", "{contest.reception_start}", ' \

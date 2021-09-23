@@ -113,5 +113,19 @@ def get_url_of_contest():
 
     return link_list
 
+from actions import db
+
+# 크롤링한 대회 데이터 디비에 삽입
+def insert_contest_data():
+    with open('json/url_of_contest.json') as json_file:
+        json_data = json.load(json_file)
+    contest_list = []
+
+    for contest in json_data['contest']:
+        contest_list.append(db.Contest(None, contest['name'], contest['contest_start'], contest['contest_end'],
+                                       contest['reception_start'], contest['reception_end'], contest['uri']))
+
+    db.create_contest(list(set(contest_list)))
 
 get_information_of_contest()
+insert_contest_data()
