@@ -142,9 +142,9 @@ class ActionProblemRecommended(FormAction):
             else:
                 explain_text += "이름 : 없음"
             if problem[0].uri:
-                explain_text += "\n주소\n" + problem[0].uri + "\n"
+                explain_text += "\n홈페이지\n" + problem[0].uri + "\n"
             else:
-                explain_text += "\n주소 : 없음"
+                explain_text += "\n홈페이지 : 없음"
 
             buttons = [{"title": "사용 알고리즘",
                         "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}'},
@@ -160,9 +160,9 @@ class ActionProblemRecommended(FormAction):
             else:
                 explain_text += "이름 : 없음"
             if problem[0].uri:
-                explain_text += "\n주소\n" + problem[0].uri + "\n"
+                explain_text += "\n홈페이지\n" + problem[0].uri + "\n"
             else:
-                explain_text += "\n주소 : 없음"
+                explain_text += "\n홈페이지 : 없음"
             # 알고리즘 db에서 검색 후 모두 출력
             buttons = [{"title": "사용 알고리즘",
                         "payload": f"""/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}"""},
