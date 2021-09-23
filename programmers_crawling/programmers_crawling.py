@@ -113,7 +113,7 @@ def get_url_of_contest():
 
     return link_list
 
-from actions import db
+import db
 
 # 크롤링한 대회 데이터 디비에 삽입
 def insert_contest_data():
