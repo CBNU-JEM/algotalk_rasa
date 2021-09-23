@@ -311,7 +311,19 @@ class ActionContestExplain(FormAction):
             return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
         if contests:
-            #explain_text = contests[0].name
+            explain_text = contests[0].name
+
+            if contests[0].reception_start and contests[0].reception_end:
+                explain_text += "신청 기간은 " + contests[0].reception_start.strftime("%Y/%m/%d %H:%M") \
+                                + "부터 " + contests[0].reception_end.strftime("%Y/%m/%d %H:%M") + "까지야."
+
+            if contests[0].contest_start and contests[0].contest_end:
+                explain_text += "대회 시간은 " + contests[0].contest_start.strftime("%Y/%m/%d %H:%M") \
+                                + "부터 " + contests[0].contest_end.strftime("%Y/%m/%d %H:%M") + "까지야."
+
+            if contests[0].uri:
+                explain_text += "\n홈페이지 : " + contests[0].uri
+
             buttons = buttons[1:]
             dispatcher.utter_message(text=explain_text, buttons=buttons)
 
