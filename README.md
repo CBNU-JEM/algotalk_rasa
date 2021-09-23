@@ -32,6 +32,9 @@ rasa/nlu
 
 
 # rasa 서버
+
+## 현재 도커로 사용중 
+
 ## rasa 서버 실행
 /home/rasa/algotalk_rasa
 screen -p rasa
