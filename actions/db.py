@@ -2,6 +2,22 @@ import re
 
 import pymysql
 
+import logging
+
+# 로그 생성
+logger = logging.getLogger()
+
+# 로그의 출력 기준 설정
+logger.setLevel(logging.INFO)
+
+# log 출력 형식
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# log 출력
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
 debug = True
 
 db = pymysql.connect(host='mysql_service', user='algotalk', password='algojem', db='algotalk_db', autocommit=True,
@@ -160,11 +176,17 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
             level_end = level + 4
         else:  # 랜덤으로 전체검색
             level_end = 25
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL BETWEEN {level} AND {level_end}'
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL BETWEEN {level} AND {level_end} '
 
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
     problems = []
+
+    logger.info(f"problem_recommand sql : {q}")
+    logger.info(f"sql result: {rows}")
+
+    if rows is None:
+        return None
 
     for row in rows:
         problems.append(Problem(row[0], row[1], row[2], row[3], row[4]))
@@ -192,7 +214,7 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
             level_end = level + 4
         else:  # 랜덤으로 전체검색
             level_end = 25
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL BETWEEN {level} AND {level_end}'
+        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'P.LEVEL BETWEEN {level} AND {level_end} '
 
     q += f"ORDER BY RAND() LIMIT {number}"
     rows = execute_query(q)
@@ -325,9 +347,12 @@ def get_algorithm_name_by_problem(problem):
     q = f'SELECT * FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE PROBLEM_ID = "{problem.id}"'
     rows = execute_query(q)
 
-    algorithm_problem_classification = AlgorithmProblemClassification(rows[0][0], rows[0][1], rows[0][2])
+    if len(rows) == 1:
+        algorithm_problem_classification = AlgorithmProblemClassification(rows[0], rows[1], rows[2])
+    else:
+        algorithm_problem_classification = AlgorithmProblemClassification(rows[0][0], rows[0][1], rows[0][2])
     if algorithm_problem_classification.algorithm_id:
         q = f'SELECT name FROM ALGORITHM WHERE ID = "{algorithm_problem_classification.algorithm_id}"'
         rows = execute_query(q)
-        return rows[0][0]
+        return rows[0]
     return None

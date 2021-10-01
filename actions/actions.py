@@ -1,4 +1,6 @@
 import datetime
+import logging
+
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -9,6 +11,24 @@ from rasa_sdk.forms import FormAction
 from actions import db
 from actions.func import level_up, level_down, level_mapping
 
+# 로그 생성
+logger = logging.getLogger()
+
+# 로그의 출력 기준 설정
+logger.setLevel(logging.INFO)
+
+# log 출력 형식
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# log 출력
+stream_handler = logging.StreamHandler()
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
+
+# log를 파일에 출력
+file_handler = logging.FileHandler('../rasa_debug.log')
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
 
 class ActionLevelChangeEasy(Action):
     def name(self) -> Text:
@@ -41,6 +61,8 @@ class ActionAlgorithmExplain(FormAction):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        logger.info("\n----------algorithm explain-----------\n")
 
         brief = tracker.get_slot('brief')
         detail = tracker.get_slot('detail')
@@ -98,11 +120,11 @@ class ActionAlgorithmExplain(FormAction):
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
-        print(algorithms)
-        print(f"detail : {detail}")
-        print(f"brief : {brief}")
-        print(f"level : {level}")
-        print(f"algorithm_name : {algorithm_name}")
+        logger.info(algorithms)
+        logger.info(f"detail : {detail}")
+        logger.info(f"brief : {brief}")
+        logger.info(f"level : {level}")
+        logger.info(f"algorithm_name : {algorithm_name}")
 
         return [SlotSet("brief", None), SlotSet("detail", None), SlotSet("algorithm_level", None)]
 
@@ -114,16 +136,27 @@ class ActionProblemRecommended(FormAction):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        logger.info("\n----------problem recommand-----------\n")
+
         algorithm_name = tracker.get_slot('algorithm_name')
         number = tracker.get_slot('number')
         problem_name = tracker.get_slot('problem_name')
         contest_name = tracker.get_slot('contest_name')
         level = level_mapping(tracker.get_slot('problem_level'))
 
+        logger.info(f"slot algorithm_name : {algorithm_name}")
+        logger.info(f"slot number : {number}")
+        logger.info(f"slot problem_name : {problem_name}")
+        logger.info(f"slot contest_name : {contest_name}")
+        logger.info(f"slot problem_level : {tracker.get_slot('problem_level')}")
+        logger.info(f"level_mapping : {level}")
+
         if number is None:
             number = 1
+
         ##이름, 알고리즘, 난이도, 대회이름
         problem = db.get_problem(problem_name, algorithm_name, level, contest_name, number)
+
         buttons = []
         explain_text = ""
 
@@ -133,8 +166,7 @@ class ActionProblemRecommended(FormAction):
             return [SlotSet("number", None), SlotSet("algorithm_name", None), SlotSet("contest_name", None), SlotSet("problem_level", None) ]
 
         algorithm_name = db.get_algorithm_name_by_problem(problem[0])
-        print(algorithm_name)
-        print(problem)
+
 
         if problem and contest_name:
             if problem[0].name:
@@ -178,12 +210,6 @@ class ActionProblemRecommended(FormAction):
                 explain_text += f"난이도 : 없음"
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
-
-        print(f"number : {number}")
-        print(f"problem_name : {problem_name}")
-        print(f"level : {level}")
-        print(f"contest_name : {contest_name}")
-        print(f"algorithm_name : {algorithm_name}")
 
         return [SlotSet("number", None)]
 
@@ -246,6 +272,7 @@ class ActionContestExplain(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
+        logger.info("\n----------contest explain-----------\n")
         past = tracker.get_slot('past')
         proceeding = tracker.get_slot('proceeding')
 
@@ -270,9 +297,9 @@ class ActionContestExplain(FormAction):
             dispatcher.utter_message(text=explain_text)
             return []
 
-        print(f"contest_name : {contest_name}")
-        print(f"reception_period : {reception_period}")
-        print(f"schedule : {schedule}")
+        logger.info(f"contest_name : {contest_name}")
+        logger.info(f"reception_period : {reception_period}")
+        logger.info(f"schedule : {schedule}")
 
         buttons = [{"title": "대회 정보",
                     "payload": f'/contest_explain{{"contest_name": "{contest_name}"}}'},
@@ -283,42 +310,49 @@ class ActionContestExplain(FormAction):
                    {"title": "신청 기간",
                     "payload": f'/contest_explain{{"contest_name": "{contest_name}", "reception_period": "신청 기간"}}'}]
 
+        explain_text = ""
+
         if homepage:
             if contests[0].name and contests[0].uri:
                 explain_text = contests[0].name
                 explain_text += "\n홈페이지 : " + contests[0].uri
             else:
-                explain_text += "홈페이지 주소는 잘 모르곘어..."
+                explain_text += "\n홈페이지 주소는 잘 모르곘어..."
             dispatcher.utter_message(text=explain_text, buttons=buttons)
             return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
         if reception_period:
+            if contests[0].name:
+                explain_text = contests[0].name
             if contests[0].reception_start and contests[0].reception_end:
-                explain_text += "신청 기간은 " + contests[0].reception_start.strftime("%Y/%m/%d %H:%M") \
+                explain_text += "\n신청 기간은 " + contests[0].reception_start.strftime("%Y/%m/%d %H:%M") \
                                 + "부터 " + contests[0].reception_end.strftime("%Y/%m/%d %H:%M") + "까지야."
             else:
-                explain_text += "신청 기간은 잘 모르겠어."
+                explain_text += "\n신청 기간은 잘 모르겠어."
             dispatcher.utter_message(text=explain_text, buttons=buttons)
             return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
         if schedule:
+            if contests[0].name:
+                explain_text = contests[0].name
             if contests[0].contest_start and contests[0].contest_end:
-                explain_text += "대회 시간은 " + contests[0].contest_start.strftime("%Y/%m/%d %H:%M") \
+                explain_text += "\n대회 시간은 " + contests[0].contest_start.strftime("%Y/%m/%d %H:%M") \
                                 + "부터 " + contests[0].contest_end.strftime("%Y/%m/%d %H:%M") + "까지야."
             else:
-                explain_text += "대회 시간은 잘 모르겠어"
+                explain_text += "\n대회 시간은 잘 모르겠어"
             dispatcher.utter_message(text=explain_text, buttons=buttons)
             return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None)]
 
         if contests:
-            explain_text = contests[0].name
+            if contests[0].name:
+                explain_text = contests[0].name
 
             if contests[0].reception_start and contests[0].reception_end:
-                explain_text += "신청 기간은 " + contests[0].reception_start.strftime("%Y/%m/%d %H:%M") \
+                explain_text += "\n신청 기간은 " + contests[0].reception_start.strftime("%Y/%m/%d %H:%M") \
                                 + "부터 " + contests[0].reception_end.strftime("%Y/%m/%d %H:%M") + "까지야."
 
             if contests[0].contest_start and contests[0].contest_end:
-                explain_text += "대회 시간은 " + contests[0].contest_start.strftime("%Y/%m/%d %H:%M") \
+                explain_text += "\n대회 시간은 " + contests[0].contest_start.strftime("%Y/%m/%d %H:%M") \
                                 + "부터 " + contests[0].contest_end.strftime("%Y/%m/%d %H:%M") + "까지야."
 
             if contests[0].uri:
@@ -409,7 +443,8 @@ class ProblemForm(FormAction):
     ) -> Dict[Text, Any]:
         """check problem level"""
 
-        print(f"problem_level {value}")
+        logger.info("\n----------problem level confirm-----------\n")
+        logger.info(f"problem_level {value}")
         return {"problem_level": value}
 
     def submit(

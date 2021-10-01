@@ -8,7 +8,7 @@ import json
 
 
 def get_information_of_contest():
-    file_path = "./json/url_of_contest.json"
+    file_path = "programmers_crawling/json/url_of_contest.json"
 
     html = requests.get('https://programmers.co.kr/competitions')
     soup = BeautifulSoup(html.text, 'html.parser')
@@ -70,7 +70,7 @@ def get_information_of_contest():
 
 
 def get_url_of_contest():
-    file_path = "./json/url_of_contest.json"
+    file_path = "programmers_crawling/json/url_of_contest.json"
     # html = requests.get('https://programmers.co.kr/competitions')
     # soup = BeautifulSoup(html.text, 'html.parser')
     url = 'https://programmers.co.kr/competitions'
@@ -117,7 +117,7 @@ import db
 
 # 크롤링한 대회 데이터 디비에 삽입
 def insert_contest_data():
-    with open('json/url_of_contest.json') as json_file:
+    with open('programmers_crawling/json/url_of_contest.json') as json_file:
         json_data = json.load(json_file)
     contest_list = []
 
