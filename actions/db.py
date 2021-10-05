@@ -152,9 +152,8 @@ def delete_problem(id):
     execute_query(q)
 
 
-def get_problem(problem_name, algorithm_name, level, contest_name, number):
-    q = f'SELECT P.ID, P.PROBLEM_ID, P.NAME, P.LEVEL, P.URI, C.ID, A.ID FROM PROBLEM AS P ' \
-        'LEFT JOIN CONTEST_PROBLEM AS CP ON P.ID =CP.PROBLEM_ID LEFT JOIN CONTEST AS C ON CP.CONTEST_ID = C.ID ' \
+def get_problem(problem_name, algorithm_name, level, number):
+    q = f'SELECT P.ID, P.PROBLEM_ID, P.NAME, P.LEVEL, P.URI, A.ID FROM PROBLEM AS P ' \
         'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.ID=AP.PROBLEM_ID ' \
         'LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_ID=A.ID '
 
@@ -166,10 +165,6 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
     if get_algorithm_by_normalized_name(algorithm_name):
         db_algorithm_name = get_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
         q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f'A.NORMALIZED_NAME LIKE "{db_algorithm_name}" '
-
-    if get_contest_by_normalized_name(contest_name):
-        db_contest_name = get_contest_by_normalized_name(contest_name)[0].normalized_name
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'C.NORMALIZED_NAME LIKE "{db_contest_name}" '
 
     if level:
         if level != 0:
@@ -193,8 +188,7 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
     if problems:
         return problems
 
-    q = f'SELECT P.ID, P.PROBLEM_ID, P.NAME, P.LEVEL, P.URI, C.ID, A.ID FROM PROBLEM AS P ' \
-        'LEFT JOIN CONTEST_PROBLEM AS CP ON P.ID =CP.PROBLEM_ID LEFT JOIN CONTEST AS C ON CP.CONTEST_ID = C.ID ' \
+    q = f'SELECT P.ID, P.PROBLEM_ID, P.NAME, P.LEVEL, P.URI, A.ID FROM PROBLEM AS P ' \
         'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.ID=AP.PROBLEM_ID ' \
         'LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_ID=A.ID '
 
@@ -204,10 +198,6 @@ def get_problem(problem_name, algorithm_name, level, contest_name, number):
     if get_algorithm_by_normalized_name(algorithm_name):
         db_algorithm_name = get_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
         q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f'A.NORMALIZED_NAME LIKE "{db_algorithm_name}" '
-
-    if get_contest_by_normalized_name(contest_name):
-        db_contest_name = get_contest_by_normalized_name(contest_name)[0].normalized_name
-        q += ("AND " if q.find("WHERE") != -1 else "WHERE ") + f'C.NORMALIZED_NAME LIKE "{db_contest_name}" '
 
     if level:
         if level != 0:
@@ -346,13 +336,17 @@ if __name__ == "__main__":
 def get_algorithm_name_by_problem(problem):
     q = f'SELECT * FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE PROBLEM_ID = "{problem.id}"'
     rows = execute_query(q)
-
-    if len(rows) == 1:
-        algorithm_problem_classification = AlgorithmProblemClassification(rows[0], rows[1], rows[2])
+    logger.info(f"algorithm_problem_classification : {rows}")
+    if not rows:
+        return None
     else:
         algorithm_problem_classification = AlgorithmProblemClassification(rows[0][0], rows[0][1], rows[0][2])
+
+    logger.info(f"algorithm_problem_classification is exist")
+
     if algorithm_problem_classification.algorithm_id:
         q = f'SELECT name FROM ALGORITHM WHERE ID = "{algorithm_problem_classification.algorithm_id}"'
         rows = execute_query(q)
-        return rows[0]
+        logger.info(f"problem {algorithm_problem_classification.problem_id} 관련 algorithm {rows}")
+        return rows[0][0]
     return None

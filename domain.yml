@@ -50,8 +50,6 @@ slots:
     type: unfeaturized
   problem_level:
     type: unfeaturized
-  code:
-    type: unfeaturized
   number:
     type: unfeaturized
   problem_name:
@@ -79,7 +77,6 @@ entities:
   - user_level
   - algorithm_level
   - problem_level
-  - code
   - number
   - problem_name
   - contest_name
@@ -112,7 +109,7 @@ responses:
   - text: "나는 알고봇이라고해."
 
   utter_explain_whatspossible:
-  - text: "나는 알고리즘에 대한 모든 것을 알려줄 수 있어 😀"
+  - text: "나는 알고리즘에 대한 알려줄 수 있어 😀"
 
   utter_thank:
   - text: "나도 너를 도울 수 있어서 기뻐 👍"
@@ -122,6 +119,21 @@ responses:
 
   utter_ask_problem_level:
   - text: "어떤 난이도를 알려줄까?"
+    buttons:
+      - title: "내 수준대로"
+        payload: '/problem_recommendation{{ "problem_level": "0" }}'
+      - title: "랜덤"
+        payload: '/problem_recommendation{{ "problem_level":"랜덤" }}'
+      - title: "브론즈"
+        payload: '/problem_recommendation{{ "problem_level":"브론즈" }}'
+      - title: "실버"
+        payload: '/problem_recommendation{{ "problem_level":"실버" }}'
+      - title: "골드"
+        payload: '/problem_recommendation{{ "problem_level":"골드" }}'
+      - title: "플레"
+        payload: '/problem_recommendation{{ "problem_level":"플레티넘" }}'
+      - title: "다이아"
+        payload: '/problem_recommendation{{ "problem_level":"다이아" }}'
 
   utter_ask_contest_name:
   - text: "어떤 대회를 알려줘?"
