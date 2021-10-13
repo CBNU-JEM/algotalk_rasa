@@ -26,7 +26,7 @@ db.execute_query('''CREATE TABLE PROBLEM (
                     PROBLEM_ID INT (11) ,
                     TYPE TINYINT(1) default 0,
                     NAME VARCHAR(100) NOT NULL,
-                    LEVEL VARCHAR(20),
+                    LEVEL INT(11),
                     URI VARCHAR(256),
                     NORMALIZED_NAME VARCHAR(100)
                     )ENGINE=InnoDB DEFAULT CHARSET=utf8

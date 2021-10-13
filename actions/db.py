@@ -240,6 +240,15 @@ def delete_contest(id):
     q = f'DELETE FROM CONTEST WHERE ID="{id}"'
     execute_query(q)
 
+def get_contests():
+    q = f'SELECT * FROM CONTEST'
+    rows = execute_query(q)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
+
+    if contests:
+        return contests
 
 def get_contest_by_normalized_name(name):
     normalized_name = normalize(name)

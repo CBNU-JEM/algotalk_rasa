@@ -1,6 +1,24 @@
 {
     "contest": [
         {
+            "name": "2021 카페24 개발자 채용 챌린지",
+            "contest_start": "2021-10-23 10:00:00",
+            "contest_end": "2021-10-23 14:00:00",
+            "reception_start": "2021-10-06 10:00:00",
+            "reception_end": "2021-10-20 18:00:00",
+            "source": "https://programmers.co.kr/competitions/1802",
+            "uri": "https://programmers.co.kr/competitions/1802"
+        },
+        {
+            "name": "2021 Dev-Matching: 웹 백엔드 개발자(하반기)",
+            "contest_start": "2021-10-16 14:00:00",
+            "contest_end": "2021-10-16 16:00:00",
+            "reception_start": "2021-09-27 11:00:00",
+            "reception_end": "2021-10-15 17:00:00",
+            "source": "https://programmers.co.kr/competitions/1703",
+            "uri": "https://programmers.co.kr/competitions/1703"
+        },
+        {
             "name": "JetBrains x 프로그래머스 월간 코드 챌린지 시즌3",
             "contest_start": "2021-09-09 19:30:00",
             "contest_end": "2021-10-07 22:30:00",
@@ -12,7 +30,7 @@
         {
             "name": "2022 KAKAO BLIND RECRUITMENT",
             "contest_start": "2021-09-11 14:00:00",
-            "contest_end": "2021-09-11 19:00:00",
+            "contest_end": "2021-09-25 19:20:00",
             "reception_start": "2021-08-19 11:00:00",
             "reception_end": "2021-09-06 17:00:00",
             "source": "https://programmers.co.kr/competitions/1571",
@@ -244,15 +262,6 @@
             "uri": "https://programmers.co.kr/competitions/284"
         },
         {
-            "name": "2020 Dev-Matching: 앱 개발자",
-            "contest_start": "2020-06-06 14:00:00",
-            "contest_end": "2020-06-06 16:30:00",
-            "reception_start": "2020-05-25 11:00:00",
-            "reception_end": "2020-06-05 18:00:00",
-            "source": "https://programmers.co.kr/competitions/148",
-            "uri": "https://programmers.co.kr/competitions/148"
-        },
-        {
             "name": "카카오 경력 개발자 영입 - 프론트엔드 개발 챌린지",
             "contest_start": "2020-06-07 14:00:00",
             "contest_end": "2020-06-13 17:00:00",
@@ -260,6 +269,15 @@
             "reception_end": "2020-06-05 18:00:00",
             "source": "https://programmers.co.kr/competitions/151",
             "uri": "https://programmers.co.kr/competitions/151"
+        },
+        {
+            "name": "2020 Dev-Matching: 앱 개발자",
+            "contest_start": "2020-06-06 14:00:00",
+            "contest_end": "2020-06-06 16:30:00",
+            "reception_start": "2020-05-25 11:00:00",
+            "reception_end": "2020-06-05 18:00:00",
+            "source": "https://programmers.co.kr/competitions/148",
+            "uri": "https://programmers.co.kr/competitions/148"
         },
         {
             "name": "2020 Summer Coding - 여름방학 스타트업 인턴 프로그램",

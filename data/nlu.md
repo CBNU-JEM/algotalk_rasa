@@ -68,6 +68,44 @@
 - 땡쓰
 - 땡스
 
+## intent:past
+- [지난](past)
+- [지난번](past)
+- [저번](past)
+- [저번](past)에
+- [예전](past)
+- [예전](past)에
+- [과거](past)
+- [과거](past)에
+- [끝난](past)
+
+## intent:proceeding
+- 지금
+- 현재
+- 진행중
+- 진행 중
+- 하고있는
+- 열려있는
+- 진행중인
+- 참가가능한
+- 참가 가능한
+- 열린
+- 지원 가능한
+- 지원할 수 있는
+- 참여할 수 있는
+- 참여할
+
+## intent:expected
+- 최근
+- 요즘
+- 요즘에
+- 곧
+- 다음번에
+- 다음에
+- 곧 열리는
+- 열릴 예정인
+- 나중에
+
 ## intent:algorithm_level
 - [난이도](algorithm_level)
 - [레벨](algorithm_level)

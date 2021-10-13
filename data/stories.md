@@ -50,22 +50,20 @@
 * contest_explain
   - contest_form
   - form{"name": "contest_form"}
-  - slot{"requested_slot": "contest_name"}
   - form{"name": null}
   - action_contest_explain
-
+  
 ## recommendation
 * problem_recommendation
   - problem_form
   - form{"name": "problem_form"}
   - slot{"requested_slot":"problem_level"}
-  - form{"name": null}
   - action_problem_recommended
-  
+  - form{"name": null}
+
 ## change_problem
 * change
   - action_problem_recommended
-
 
 ## change_problem_easy
 * change_easy

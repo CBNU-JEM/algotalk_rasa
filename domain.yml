@@ -31,6 +31,9 @@ intents:
   - homepage
   - algorithm_level
   - problem_level
+  - past
+  - proceeding
+  - expected
 
 actions:
   - action_algorithm_explain
@@ -64,12 +67,17 @@ slots:
     type: unfeaturized
   schedule:
     type: unfeaturized
+  past:
+    type: unfeaturized
+  proceeding:
+    type: unfeaturized
+  expected:
+    type: unfeaturized
 
 forms:
   - algorithm_form
   - problem_form
   - contest_form
-  - change_form
 
 entities:
   - brief
@@ -87,6 +95,9 @@ entities:
   - company
   - reception_period
   - homepage
+  - proceeding
+  - past
+  - expected
 
 responses:
   utter_greet:
@@ -121,23 +132,23 @@ responses:
   - text: "어떤 난이도를 알려줄까?"
     buttons:
       - title: "내 수준대로"
-        payload: '/problem_recommendation{{ "problem_level": "0" }}'
+        payload: '/problem_recommendation{ "problem_level": 0 }'
       - title: "랜덤"
-        payload: '/problem_recommendation{{ "problem_level":"랜덤" }}'
+        payload: '/problem_recommendation{ "problem_level": 0 }'
       - title: "브론즈"
-        payload: '/problem_recommendation{{ "problem_level":"브론즈" }}'
+        payload: '/problem_recommendation{ "problem_level":"브론즈" }'
       - title: "실버"
-        payload: '/problem_recommendation{{ "problem_level":"실버" }}'
+        payload: '/problem_recommendation{ "problem_level":"실버" }'
       - title: "골드"
-        payload: '/problem_recommendation{{ "problem_level":"골드" }}'
+        payload: '/problem_recommendation{ "problem_level":"골드" }'
       - title: "플레"
-        payload: '/problem_recommendation{{ "problem_level":"플레티넘" }}'
+        payload: '/problem_recommendation{ "problem_level":"플레티넘" }'
       - title: "다이아"
-        payload: '/problem_recommendation{{ "problem_level":"다이아" }}'
+        payload: '/problem_recommendation{ "problem_level":"다이아" }'
 
   utter_ask_contest_name:
   - text: "어떤 대회를 알려줘?"
 
 session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  session_expiration_time: 30
+  carry_over_slots_to_new_session: false
