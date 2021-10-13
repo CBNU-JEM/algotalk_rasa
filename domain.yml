@@ -11,14 +11,9 @@ intents:
   - user_level
   - recommendation_site
   - problem_recommendation
-  - problem_solve
-  - problem_site
   - algorithm_example
-  - request_algorithm
   - algorithm_explain
-  - brief
   - detail
-  - code
   - number
   - algorithm_name
   - problem_name
@@ -43,8 +38,6 @@ actions:
   - action_level_change_hard
 
 slots:
-  brief:
-    type: unfeaturized
   detail:
     type: unfeaturized
   algorithm_name:
@@ -80,7 +73,6 @@ forms:
   - contest_form
 
 entities:
-  - brief
   - detail
   - user_level
   - algorithm_level

@@ -69,15 +69,15 @@
 - 땡스
 
 ## intent:past
-- [지난](past)
-- [지난번](past)
-- [저번](past)
-- [저번](past)에
-- [예전](past)
-- [예전](past)에
-- [과거](past)
-- [과거](past)에
-- [끝난](past)
+- 지난
+- 지난번
+- 저번
+- 저번에
+- 예전
+- 예전에
+- 과거
+- 과거에
+- 끝난
 
 ## intent:proceeding
 - 지금
@@ -427,18 +427,6 @@
 - [샅샅이](detail)
 - [길게](detail)
 - [깊히](detail)
-
-## intent: brief
-- [간단히](brief)
-- [간단하](brief)
-- [쉽게](brief)
-- [조금](brief)
-- [짧게](brief)
-- [간략하](brief)
-- [대충](brief)
-- [대강](brief)
-- [대략](brief)
-- [쫌만](brief)
 
 ## intent:user_level
 - 나 [초보](user_level)야
@@ -902,14 +890,6 @@
 - [상](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
 - [중](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
 - [하](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
-
-## intent:problem_solve
-- 모르겠어
-- 풀이 알려줘
-
-## intent:problem_site
-- 문제풀이 사이트 있어?
-- 문제풀이 사이트 있니?
 
 ## intent:algorithm_explain
 - [최단거리](algorithm_name) 알고리즘 알려줘

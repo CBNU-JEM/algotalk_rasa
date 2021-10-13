@@ -1,5 +1,6 @@
 import datetime
 import logging
+import random
 from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
@@ -58,58 +59,65 @@ class ActionAlgorithmExplain(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        logger.info("\n----------algorithm explain-----------\n")
+        logger.info("----------algorithm explain-----------\n")
 
-        brief = tracker.get_slot('brief')
         detail = tracker.get_slot('detail')
         level = tracker.get_slot('algorithm_level')
         algorithm_name = tracker.get_slot('algorithm_name')
 
+        logger.info(f"detail : {detail}")
+        logger.info(f"level : {level}")
+        logger.info(f"algorithm_name : {algorithm_name}")
+        
         algorithms = db.get_algorithm_by_normalized_name(algorithm_name)
+        logger.info(algorithms)
+        
         buttons = []
         explain_text = ""
 
         if not algorithms:
             explain_text += "조건에 맞는 알고리즘이 없는거같아..."
             dispatcher.utter_message(text=explain_text)
-            return []
+            return [AllSlotsReset()]
 
-        if algorithms and level:
-            if algorithms[0].level:
-                explain_text += f"\n난이도 : {algorithms[0].level}"
+        algorithm = random.choice(algorithms)
+
+        if level:
+            if algorithm.level:
+                explain_text += f"\n난이도 : {algorithm.level}"
             else:
                 explain_text += f"\n난이도는 모르겠어."
 
             buttons = [{"title": "간단한 설명",
-                        "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "brief":"간단한"}}'},
+                        "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}'},
                        {"title": "문제 추천",
                         "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}'}]
             dispatcher.utter_message(text=explain_text, buttons=buttons)
             return [SlotSet("algorithm_level", None)]
 
-        if algorithms and detail:
-            if algorithms[0].detail_explain:
-                explain_text += "이름 : " + algorithms[0].name
-                explain_text += "\n" + algorithms[0].detail_explain
+        if detail:
+            if algorithm.detail_explain:
+                explain_text += "이름 : " + algorithm.name
+                explain_text += "\n" + algorithm.detail_explain
                 buttons = [{"title": "간단한 설명",
-                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "brief":"간단한"}}'},
+                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}'},
                            {"title": "난이도",
                             "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}'},
                            {"title": "문제 추천",
                             "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}'}]
-            elif algorithms[0].brief_explain:
-                explain_text += "이름 : " + algorithms[0].name
-                explain_text += f"\n자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithms[0].brief_explain}"
+            elif algorithm.brief_explain:
+                explain_text += "이름 : " + algorithm.name
+                explain_text += f"\n자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithm.brief_explain}"
                 buttons = [{"title": "난이도",
                             "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}'},
                            {"title": "문제 추천",
                             "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}'}]
             else:
                 explain_text += f"나도 잘 모르겠어.";
-        elif algorithms:
-            if algorithms[0].brief_explain:
-                explain_text += "이름 : " + algorithms[0].name
-                explain_text += "\n" + algorithms[0].brief_explain
+        else:
+            if algorithm.brief_explain:
+                explain_text += "이름 : " + algorithm.name
+                explain_text += "\n" + algorithm.brief_explain
                 buttons = [{"title": "자세한 설명",
                             "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "detail":"자세한"}}'},
                            {"title": "난이도",
@@ -121,13 +129,7 @@ class ActionAlgorithmExplain(FormAction):
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
-        logger.info(algorithms)
-        logger.info(f"detail : {detail}")
-        logger.info(f"brief : {brief}")
-        logger.info(f"level : {level}")
-        logger.info(f"algorithm_name : {algorithm_name}")
-
-        return [SlotSet("brief", None), SlotSet("detail", None), SlotSet("algorithm_level", None)]
+        return [SlotSet("detail", None), SlotSet("algorithm_level", None)]
 
 
 class ActionProblemRecommended(FormAction):
@@ -160,26 +162,28 @@ class ActionProblemRecommended(FormAction):
             level = 0
 
         ##이름, 알고리즘, 난이도, 대회이름
-        problem = db.get_problem(problem_name, algorithm_name, level, number)
+        problems = db.get_problem(problem_name, algorithm_name, level, number)
 
         buttons = []
         explain_text = ""
 
-        if not problem:
+        if not problems:
             explain_text += "조건에 맞는 문제가 없는거같아..."
             dispatcher.utter_message(text=explain_text)
             return [AllSlotsReset()]
+        
+        problem = random.choice(problems)
+        
+        algorithm_name = db.get_algorithm_name_by_problem(problem)
 
-        algorithm_name = db.get_algorithm_name_by_problem(problem[0])
 
-
-        if problem and contest_name:
-            if problem[0].name:
-                explain_text += "이름\n" + problem[0].name + "\n"
+        if contest_name:
+            if problem.name:
+                explain_text += "이름\n" + problem.name + "\n"
             else:
                 explain_text += "이름 : 없음"
-            if problem[0].uri:
-                explain_text += "\n홈페이지\n" + problem[0].uri + "\n"
+            if problem.uri:
+                explain_text += "\n홈페이지\n" + problem.uri + "\n"
             else:
                 explain_text += "\n홈페이지 : 없음"
 
@@ -191,13 +195,13 @@ class ActionProblemRecommended(FormAction):
                         "payload": f'/problem_recommendation{{ }}'},
                        {"title": "다른 난이도 문제",
                         "payload": f'/problem_recommendation{{"problem_level": null}}'}]
-        elif problem and number:
-            if problem[0].name:
-                explain_text += "이름\n" + problem[0].name + "\n"
+        elif number:
+            if problem.name:
+                explain_text += "이름\n" + problem.name + "\n"
             else:
                 explain_text += "이름 : 없음"
-            if problem[0].uri:
-                explain_text += "\n홈페이지\n" + problem[0].uri + "\n"
+            if problem.uri:
+                explain_text += "\n홈페이지\n" + problem.uri + "\n"
             else:
                 explain_text += "\n홈페이지 : 없음"
             # 알고리즘 db에서 검색 후 모두 출력
@@ -208,15 +212,14 @@ class ActionProblemRecommended(FormAction):
                        {"title": "다른 난이도 문제",
                         "payload": f'/problem_recommendation{{"problem_level": null}}'}]
 
-        if problem:
-            if problem[0].level:
-                explain_text += f"난이도는 {problem[0].level}야"
-            else:
-                explain_text += f"난이도 : 없음"
+        if problem.level:
+            explain_text += f"난이도 : {level_mapping_string(problem.level)}"
+        else:
+            explain_text += f"난이도 : 없음"
 
         dispatcher.utter_message(text=explain_text, buttons=buttons)
 
-        return [SlotSet("number", None), SlotSet("reset_problem_level", None)]
+        return [SlotSet("number", None)]
 
 
 class AlgorithmForm(FormAction):
@@ -237,7 +240,6 @@ class AlgorithmForm(FormAction):
             - a whole message
             or a list of them, where a first match will be picked"""
         return {
-            "brief": [self.from_entity(entity="brief")],
             "detail": [self.from_entity(entity="detail")],
             "algorithm_level": [self.from_entity(entity="algorithm_level"),
                                 self.from_intent(intent="algorithm_level", value=True)],
@@ -279,7 +281,7 @@ class ActionContestExplain(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        logger.info("\n----------contest explain-----------\n")
+        logger.info("----------contest explain-----------\n")
         past = tracker.get_slot('past')
         proceeding = tracker.get_slot('proceeding')
         expected = tracker.get_slot('expected')
@@ -298,7 +300,7 @@ class ActionContestExplain(FormAction):
 
         contests = db.get_contests()
         # contest를 시간순으로 정렬하고 필터링해서 출력한다.
-        contests.sort(key=lambda x: x.contest_start)
+        contests.sort(key=lambda x: x.reception_start)
 
         today = datetime.datetime.now()
         if past:
@@ -313,28 +315,25 @@ class ActionContestExplain(FormAction):
 
         if contest_name:
             contests = list(filter(lambda x: db.normalize(contest_name) in x.normalized_name, contests))
-        else:
-            contest_name = contests[0].name
 
         explain_text = ""
 
         if not contests:
             explain_text += "조건에 맞는 대회가 없는거같아..."
             dispatcher.utter_message(text=explain_text)
-            return [SlotSet("contest_name", None), SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None),
-                    SlotSet("past", None), SlotSet("proceeding", None), SlotSet("expected", None)]
+            return [AllSlotsReset()]
 
+        contest = random.choice(contests)
 
         buttons = [{"title": "상세 정보",
-                    "payload": f'/contest_explain{{"contest_name": "{contest_name}"}}'},
+                    "payload": f'/contest_explain{{"contest_name": "{contest.name}"}}'},
                    {"title": "일정",
-                    "payload": f'/contest_explain{{"contest_name": "{contest_name}", "schedule":"일정"}}'},
+                    "payload": f'/contest_explain{{"contest_name": "{contest.name}", "schedule":"일정"}}'},
                    {"title": "홈페이지",
-                    "payload": f'/contest_explain{{"contest_name": "{contest_name}", "homepage":"홈페이지"}}'},
+                    "payload": f'/contest_explain{{"contest_name": "{contest.name}", "homepage":"홈페이지"}}'},
                    {"title": "신청 기간",
-                    "payload": f'/contest_explain{{"contest_name": "{contest_name}", "reception_period": "신청 기간"}}'}]
+                    "payload": f'/contest_explain{{"contest_name": "{contest.name}", "reception_period": "신청 기간"}}'}]
 
-        explain_text = ""
 
         if homepage:
             if contests[0].name and contests[0].uri:
@@ -428,10 +427,9 @@ class ContestForm(FormAction):
             domain: Dict[Text, Any],
     ) -> List[Dict]:
         # utter submit template
-        return [SlotSet("brief", None), SlotSet("detail", None),
-                SlotSet("problem_level", None), SlotSet("algorithm_level", None),
-                SlotSet("algorithm_name", None), SlotSet("problem_name", None),
-                SlotSet("number", None)]
+        return [SlotSet("detail", None), SlotSet("problem_level", None),
+                SlotSet("algorithm_level", None), SlotSet("algorithm_name", None),
+                SlotSet("problem_name", None), SlotSet("number", None)]
 
 
 class ProblemForm(FormAction):
@@ -489,8 +487,6 @@ class ProblemForm(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> List[Dict]:
-        return [SlotSet("brief", None), SlotSet("detail", None),
-                SlotSet("algorithm_level", None), SlotSet("reception_period", None),
-                SlotSet("homepage", None), SlotSet("schedule", None),
-                SlotSet("past", None), SlotSet("proceeding", None),
-                SlotSet("expected", None)]
+        return [SlotSet("detail", None), SlotSet("algorithm_level", None), SlotSet("reception_period", None),
+                SlotSet("homepage", None), SlotSet("schedule", None), SlotSet("past", None),
+                SlotSet("proceeding", None), SlotSet("expected", None)]
