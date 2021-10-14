@@ -69,42 +69,47 @@
 - 땡스
 
 ## intent:past
-- 지난
-- 지난번
-- 저번
-- 저번에
-- 예전
-- 예전에
-- 과거
-- 과거에
-- 끝난
+- [지난](past)
+- [지난번](past)
+- [저번](past)
+- [저번](past)에
+- [예전](past)
+- [예전](past)에
+- [과거](past)
+- [과거](past)에
+- [과거](past)의
+- [끝난](past)
 
 ## intent:proceeding
-- 지금
-- 현재
-- 진행중
-- 진행 중
-- 하고있는
-- 열려있는
-- 진행중인
-- 참가가능한
-- 참가 가능한
-- 열린
-- 지원 가능한
-- 지원할 수 있는
-- 참여할 수 있는
-- 참여할
+- [지금](procedding)
+- [현재](procedding)
+- [진행](procedding)
+- [진행](procedding)중
+- [진행](procedding) 중
+- [진행](procedding)중인
+- [하고있는](procedding)
+- [열려있는](procedding)
+- [참가](procedding)가능한
+- [참가](procedding) 가능한
+- [열린](procedding)
+- [지원](procedding) 가능한
+- [지원](procedding)할 수 있는
+- [참여](procedding)할 수 있는
+- [참여](procedding)할
 
 ## intent:expected
-- 최근
-- 요즘
-- 요즘에
-- 곧
-- 다음번에
-- 다음에
-- 곧 열리는
-- 열릴 예정인
-- 나중에
+- [최근](expected)
+- [요즘](expected)
+- [요즘](expected)에
+- [곧](expected)
+- [다음번](expected)
+- [다음번](expected)에
+- [다음](expected)에
+- [다음](expected)에
+- [곧](expected) 열리는
+- [열릴](expected) 예정인
+- [나중](expected)
+- [나중](expected)에
 
 ## intent:algorithm_level
 - [난이도](algorithm_level)
@@ -427,13 +432,6 @@
 - [샅샅이](detail)
 - [길게](detail)
 - [깊히](detail)
-
-## intent:user_level
-- 나 [초보](user_level)야
-- [초보](user_level)야
-- [처음](user_level)이야
-- 난 [처음](user_level)해봐
-
 
 ## intent:recommendation_site
 - 추천 공부 사이트 있어?
@@ -894,9 +892,6 @@
 ## intent:algorithm_explain
 - [최단거리](algorithm_name) 알고리즘 알려줘
 - [매내처](algorithm_name) 알고리즘 알려줘
-- 알려줘
-- 설명해줘
-- 이게 뭐야?
 - [인터프리터](algorithm_name)가 뭐야?
 - [고속 푸리에 변환](algorithm_name) 알려줘
 - [위상 정렬](algorithm_name) 좀 설명해줘
@@ -1097,11 +1092,6 @@
 - [브루트포스 알고리즘](algorithm_name)이 뭐야?
 - [세그먼트 트리](algorithm_name)가 뭐야?
 
-## intent:algorithm_example
-- [정렬](algorithm_name) 예시 좀 알려줘
-- [정렬](algorithm_name) 예시 좀 알려줄래
-
-
 ## intent:schedule
 - [일정](schedule)
 - [날짜](schedule)
@@ -1144,15 +1134,15 @@
 - [카카오](contest_name)대회 정보 알려줄래
 - [카카오](contest_name)대회 좀  알려줘
 - [카카오](contest_name)대회 좀  알려줄래
-- [카카오](contest_name)대회 일정 알려줘
-- [카카오](contest_name)대회 일정 알려줄래
+- [카카오](contest_name)대회 [일정](schedule) 알려줘
+- [카카오](contest_name)대회 [일정](schedule) 알려줄래
 - [카카오](contest_name)대회가 뭐야?
 - [카카오](contest_name)대회가 뭐니?
-- [scpc](contest_name) 일정 알려줘
-- [scpc](contest_name) 언제 열려?
-- [프로그래머스](contest_name) 최근 대회가 뭐야?
-- [코드포스](contest_name) 일정 알려줘
-- [코포](contest_name) 언제 시작해?
+- [scpc](contest_name) [일정](schedule) 알려줘
+- [scpc](contest_name) [언제 열려](schedule)?
+- [프로그래머스](contest_name) [최근](expected) 대회가 뭐야?
+- [코드포스](contest_name) [일정](schedule) 알려줘
+- [코포](contest_name) [언제 접수](reception_period)해?
 - [카카오](contest_name)대회 없나?
 - [카카오](contest_name)대회 없어?
 - [카카오](contest_name)대회 정보 줘
@@ -1164,6 +1154,25 @@
 - [카카오](contest_name)대회 알고 싶어요
 - [카카오](contest_name)대회 알려줘
 - [2021 카카오 인턴쉽](contest_name) 알려줘
+- [지난](past) [카카오](contest_name)대회 정보 알려줘
+- [저번](past) [카카오](contest_name)대회 정보 알려줄래
+- [끝난](past) [카카오](contest_name)대회 좀 알려줘
+- [카카오](contest_name) [예전](past) 대회 좀 알려줄래
+- [카카오](contest_name) [옛날](past) 대회가 알려줄 수 있어?
+- [카카오](contest_name) [지난](past) 대회 있나?
+- [scpc](contest_name) [했던](past) 대회 있어?
+- [진행중인](procedding) [코포](contest_name) 언제 시작해?
+- [진행 중인](procedding) [카카오](contest_name)대회 없나?
+- [하고있는](procedding) [카카오](contest_name)대회 없어?
+- [열린](procedding) [카카오](contest_name)대회 정보 줘
+- [등록가능한](procedding) [카카오](contest_name)대회 정보 줄래
+- [신청할](procedding) [카카오](contest_name)대회 정보 좀
+- [곧 열리는](expected) [카카오](contest_name)대회 없을까?
+- [나중에 열리는](expected) [카카오](contest_name)대회 알고 싶은데
+- [곧 할](expected) [카카오](contest_name)대회 알고 싶어
+- [예정된](expected) [카카오](contest_name)대회 알고 싶어요
+- [예정된](expected) [카카오](contest_name)대회 알려줘
+- [예정된](expected) [2021 카카오 인턴쉽](contest_name) 알려줘
 
 
 ## intent:number

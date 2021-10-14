@@ -370,15 +370,6 @@
             "uri": "https://programmers.co.kr/competitions/130"
         },
         {
-            "name": "백패커(아이디어스) 블라인드 채용 - 앱 개발 챌린지",
-            "contest_start": "2019-12-02 09:00:00",
-            "contest_end": "2019-12-16 15:10:00",
-            "reception_start": "2019-12-02 09:00:00",
-            "reception_end": "2019-12-16 12:00:00",
-            "source": "https://programmers.co.kr/competitions/125",
-            "uri": "https://programmers.co.kr/competitions/125"
-        },
-        {
             "name": "2019 머신러닝 온라인 잡페어",
             "contest_start": "2019-12-02 12:00:00",
             "contest_end": "2019-12-17 15:00:00",
@@ -386,6 +377,15 @@
             "reception_end": "2019-12-16 12:00:00",
             "source": "https://programmers.co.kr/competitions/116",
             "uri": "https://programmers.co.kr/competitions/116"
+        },
+        {
+            "name": "백패커(아이디어스) 블라인드 채용 - 앱 개발 챌린지",
+            "contest_start": "2019-12-02 09:00:00",
+            "contest_end": "2019-12-16 15:10:00",
+            "reception_start": "2019-12-02 09:00:00",
+            "reception_end": "2019-12-16 12:00:00",
+            "source": "https://programmers.co.kr/competitions/125",
+            "uri": "https://programmers.co.kr/competitions/125"
         },
         {
             "name": "당근마켓 블라인드 채용 - 웹 개발 챌린지",

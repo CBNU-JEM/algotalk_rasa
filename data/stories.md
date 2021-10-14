@@ -58,21 +58,32 @@
   - problem_form
   - form{"name": "problem_form"}
   - slot{"requested_slot":"problem_level"}
-  - action_problem_recommended
   - form{"name": null}
+  - action_problem_recommended
 
 ## change_problem
 * change
+  - problem_form
+  - form{"name": null}
+  - slot{"requested_slot":"problem_level"}
   - action_problem_recommended
 
 ## change_problem_easy
 * change_easy
+  - problem_form
+  - form{"name": "problem_form"}
+  - form{"name": null}
+  - slot{"requested_slot":"problem_level"}
   - action_level_change_easy
   - action_problem_recommended
 
 
 ## change_problem_hard
 * change_hard
+  - problem_form
+  - form{"name": "problem_form"}
+  - form{"name": null}
+  - slot{"requested_slot":"problem_level"}
   - action_level_change_hard
   - action_problem_recommended
   

@@ -124,7 +124,7 @@ responses:
   - text: "어떤 난이도를 알려줄까?"
     buttons:
       - title: "내 수준대로"
-        payload: '/problem_recommendation{ "problem_level": 0 }'
+        payload: '/problem_recommendation{ "problem_level": -1 }'
       - title: "랜덤"
         payload: '/problem_recommendation{ "problem_level": 0 }'
       - title: "브론즈"

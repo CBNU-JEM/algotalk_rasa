@@ -1,8 +1,7 @@
 import re
-
 import pymysql
-
 import logging
+import datetime
 
 # 로그 생성
 logger = logging.getLogger()
@@ -242,6 +241,50 @@ def delete_contest(id):
 
 def get_contests():
     q = f'SELECT * FROM CONTEST'
+    rows = execute_query(q)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
+
+    if contests:
+        return contests
+
+def get_last_contests():
+    today = datetime.datetime.now()
+    q = f'SELECT * FROM CONTEST WHERE "{today}" > reception_end '
+    rows = execute_query(q)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
+
+    if contests:
+        return contests
+
+def get_contests_in_proceeding():
+    today = datetime.datetime.now()
+    q = f'SELECT * FROM CONTEST WHERE reception_start <= "{today}" and "{today}" <= reception_end '
+    rows = execute_query(q)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
+
+    if contests:
+        return contests
+
+def get_expected_contests():
+    today = datetime.datetime.now()
+    q = f'SELECT * FROM CONTEST WHERE reception_start > "{today}"'
+    rows = execute_query(q)
+    contests = []
+    for row in rows:
+        contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
+
+    if contests:
+        return contests
+
+def get_unfinished_contests():
+    today = datetime.datetime.now()
+    q = f'SELECT * FROM CONTEST WHERE contest_end > "{today}"'
     rows = execute_query(q)
     contests = []
     for row in rows:
