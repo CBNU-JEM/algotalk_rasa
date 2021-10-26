@@ -151,5 +151,7 @@ Thumbs.db
 # profiling data
 .prof
 
-
+# custom
+.bash_history
+.keras/
 # End of https://www.toptal.com/developers/gitignore/api/python
