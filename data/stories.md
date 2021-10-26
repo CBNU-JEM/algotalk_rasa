@@ -37,6 +37,26 @@
 ## say thanks
 * thanks
   - utter_thank
+  
+## are you babo
+* babo
+  - utter_babo
+
+## how old are you
+* how_old
+  - utter_how_old
+  
+## i am boring
+* boring
+  - utter_boring
+  
+## mooyahoyaho
+* mooyaho
+  - utter_mooyaho
+  
+## mohani
+* mohae
+  - utter_mohae
 
 ## algorithm explain 
 * algorithm_explain

@@ -39,14 +39,14 @@ changed_level = dict()
 # value = ["브론즈", "실버", "골드", "플레티넘", "플레티넘", "다이아", "플레티넘", "골드", "실버", "실버", "골드", "플레티넘", "실버", "실버", "실버", "실버",
 #         "플레티넘", "플레티넘", "플레티넘", "플레티넘"]
 
-key = ["브론즈", "실버", "골드", "플레티넘", "다이아", "루비"]
-value = [1, 6, 11, 16, 21, 26]
+key = ["랜덤", "브론즈", "실버", "골드", "플레티넘", "다이아", "루비"]
+value = [0, 1, 6, 11, 16, 21, 26]
 
 for i in range(len(key)):
     changed_level[key[i]] = value[i]
 
 
-def level_mapping(level):
+def slot_level_mapping(level):
     if not level:
         return 0
 
@@ -57,7 +57,7 @@ def level_mapping(level):
     return changed_level.get(level, 0)
 
 
-def level_mapping_string(level):
+def level_num_to_string(level):
     if level == 0:
         return "없음"
 
@@ -76,6 +76,23 @@ def level_mapping_string(level):
     logger.info(f'level_mapping_string : {(level - 1) // 5}')
     ret = changed_level_string.get((level - 1) // 5, "없음") + str((level - 1) % 5 + 1)
     return ret
+
+
+def level_explain(level):
+    if level == "브론즈":
+        return "(기초 개념 공부할때)\n"
+    elif level == "실버":
+        return "(쉬운 코테 수준)\n"
+    elif level == "골드":
+        return "(어려운 코테 수준)\n"
+    elif level == "플레티넘":
+        return "(알고리즘 심화 응용 수준)\n"
+    elif level == "다이아":
+        return "(고수들만 도전)\n"
+    elif level == "루비":
+        return "(초고수들만 도전)\n"
+    else:
+        return ""
 
 
 class OverlapProblem:

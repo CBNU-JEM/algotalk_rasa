@@ -122,10 +122,13 @@ def insert_contest_data():
     contest_list = []
 
     for contest in json_data['contest']:
+        if db.find_contest_by_name(contest['name']):
+            continue
         contest_list.append(db.Contest(None, contest['name'], contest['contest_start'], contest['contest_end'],
                                        contest['reception_start'], contest['reception_end'], contest['uri']))
 
-    db.create_contest(list(set(contest_list)))
+    if contest_list:
+        db.create_contest(list(set(contest_list)))
 
 get_information_of_contest()
 insert_contest_data()

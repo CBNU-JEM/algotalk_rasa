@@ -118,7 +118,7 @@ def delete_algorithm(id):
     execute_query(q)
 
 
-def get_algorithm_by_normalized_name(name):
+def find_algorithm_by_normalized_name(name):
     normalized_name = normalize(name)
     q = f'SELECT * FROM ALGORITHM WHERE NORMALIZED_NAME LIKE "{normalized_name}"'
     rows = execute_query(q)
@@ -151,7 +151,7 @@ def delete_problem(id):
     execute_query(q)
 
 
-def get_problem(problem_name, algorithm_name, level, number):
+def find_problem(problem_name, algorithm_name, level, number):
     q = f'SELECT P.ID, P.PROBLEM_ID, P.NAME, P.LEVEL, P.URI, A.ID FROM PROBLEM AS P ' \
         'LEFT JOIN ALGORITHM_PROBLEM_CLASSIFICATION AS AP ON P.ID=AP.PROBLEM_ID ' \
         'LEFT JOIN ALGORITHM AS A ON AP.ALGORITHM_ID=A.ID '
@@ -161,8 +161,8 @@ def get_problem(problem_name, algorithm_name, level, number):
     if problem_name:
         q += "WHERE " + f'P.NORMALIZED_NAME LIKE "{normalized_problem_name}" '
 
-    if get_algorithm_by_normalized_name(algorithm_name):
-        db_algorithm_name = get_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
+    if find_algorithm_by_normalized_name(algorithm_name):
+        db_algorithm_name = find_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
         q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f'A.NORMALIZED_NAME LIKE "{db_algorithm_name}" '
 
     if level:
@@ -194,8 +194,8 @@ def get_problem(problem_name, algorithm_name, level, number):
     if problem_name:
         q += "WHERE " + f'P.NAME LIKE "%{normalized_problem_name}%" '
 
-    if get_algorithm_by_normalized_name(algorithm_name):
-        db_algorithm_name = get_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
+    if find_algorithm_by_normalized_name(algorithm_name):
+        db_algorithm_name = find_algorithm_by_normalized_name(algorithm_name)[0].normalized_name
         q += ("OR " if q.find("WHERE") != -1 else "WHERE ") + f'A.NORMALIZED_NAME LIKE "{db_algorithm_name}" '
 
     if level:
@@ -239,7 +239,7 @@ def delete_contest(id):
     q = f'DELETE FROM CONTEST WHERE ID="{id}"'
     execute_query(q)
 
-def get_contests():
+def find_contests():
     q = f'SELECT * FROM CONTEST'
     rows = execute_query(q)
     contests = []
@@ -249,7 +249,7 @@ def get_contests():
     if contests:
         return contests
 
-def get_last_contests():
+def find_last_contests():
     today = datetime.datetime.now()
     q = f'SELECT * FROM CONTEST WHERE "{today}" > reception_end '
     rows = execute_query(q)
@@ -260,7 +260,7 @@ def get_last_contests():
     if contests:
         return contests
 
-def get_contests_in_proceeding():
+def find_contests_in_proceeding():
     today = datetime.datetime.now()
     q = f'SELECT * FROM CONTEST WHERE reception_start <= "{today}" and "{today}" <= reception_end '
     rows = execute_query(q)
@@ -271,7 +271,7 @@ def get_contests_in_proceeding():
     if contests:
         return contests
 
-def get_expected_contests():
+def find_expected_contests():
     today = datetime.datetime.now()
     q = f'SELECT * FROM CONTEST WHERE reception_start > "{today}"'
     rows = execute_query(q)
@@ -282,7 +282,7 @@ def get_expected_contests():
     if contests:
         return contests
 
-def get_unfinished_contests():
+def find_unfinished_contests():
     today = datetime.datetime.now()
     q = f'SELECT * FROM CONTEST WHERE contest_end > "{today}"'
     rows = execute_query(q)
@@ -290,10 +290,8 @@ def get_unfinished_contests():
     for row in rows:
         contests.append(Contest(row[0], row[1], row[2], row[3], row[4], row[5], row[6]))
 
-    if contests:
-        return contests
 
-def get_contest_by_normalized_name(name):
+def find_contest_by_normalized_name(name):
     normalized_name = normalize(name)
     q = f'SELECT * FROM CONTEST WHERE NORMALIZED_NAME LIKE "{normalized_name}"'
     rows = execute_query(q)
@@ -312,7 +310,7 @@ def get_contest_by_normalized_name(name):
     return contests
 
 
-def get_contest_by_sql(sql):
+def find_contest_by_sql(sql):
     rows = execute_query(sql)
     contests = []
     for row in rows:
@@ -370,7 +368,7 @@ def update_contest(contest):
 def normalize(name):
     if not name:
         return None
-    return re.sub("[-/: –\\s]", "", name)
+    return re.sub("[-/: –\\s]", "", name).lower()
 
 
 def none_to_null(q):
@@ -385,7 +383,7 @@ if __name__ == "__main__":
         execute_query(q)
 
 
-def get_algorithm_name_by_problem(problem):
+def find_algorithm_name_by_problem(problem):
     q = f'SELECT * FROM ALGORITHM_PROBLEM_CLASSIFICATION WHERE PROBLEM_ID = "{problem.id}"'
     rows = execute_query(q)
     logger.info(f"algorithm_problem_classification : {rows}")

@@ -8,13 +8,17 @@ intents:
   - bot_challenge
   - ask_whatspossible
   - thanks
+  - babo
+  - how_old
+  - boring
+  - mooyaho
+  - mohae
   - user_level
   - recommendation_site
   - problem_recommendation
   - algorithm_example
   - algorithm_explain
   - detail
-  - number
   - algorithm_name
   - problem_name
   - change
@@ -90,6 +94,8 @@ entities:
   - proceeding
   - past
   - expected
+  - year
+  - month
 
 responses:
   utter_greet:
@@ -112,10 +118,25 @@ responses:
   - text: "나는 알고봇이라고해."
 
   utter_explain_whatspossible:
-  - text: "나는 알고리즘에 대한 알려줄 수 있어 😀"
+  - text: "🤖나와 대화하는 방법에 대해서 알려줄게🤖\n나에게 궁금한 것을 물어봐줘~ 내가 알려줄수 있는 정보는 아래를 확인해줘ㅎㅎ\n\n🔸 알고리즘\n나는 알고리즘에 대한 설명과 난이도를 알려줄 수 있어.\nex) 정렬 알고리즘 (자세하게) 알려줘, 정렬 알고리즘 난이도 알려줘\n🔸 문제추천\n나는 알고리즘에 관련된 문제를 추천해줄 수도 있어ㅎㅎ\nex) A+B 문제 알려줘 -> 난이도 선택버튼, 정렬 알고리즘 문제 추천해줘 -> 난이도 선택버튼, 랜덤으로 문제 추천해줘\n🔸 대회정보\n너를 위해 대회 정보도 준비해놨지~ 히힛\nex) 준파고를 잡아라 대회 알려줘, 진행중인(or 지난 or 최근) 대회 알려줘\n\n🔹왼쪽 아래에 더보기버튼을 누르면 너의 알고리즘 수준을 설정할 수 있어! 알고리즘 수준을 모르겠다면 https://solved.ac 사이트를 참고해줘😉"
 
   utter_thank:
   - text: "나도 너를 도울 수 있어서 기뻐 👍"
+
+  utter_babo:
+  - text: "난 바보가 아니라 알고봇이라고해 🤖"
+
+  utter_how_old:
+  - text: "난 2021년에 태어났어 👶🏻"
+
+  utter_boring:
+  - text: "그럼 우리 같이 알고리즘 공부나 해볼까?👨🏻‍💻"
+
+  utter_mooyaho:
+  - text: "그만큼 신나시는 거지~"
+
+  utter_mohae:
+    - text: "알고리즘 공부중이야🔥"
 
   utter_ask_algorithm_name:
   - text: "무슨 알고리즘을 알려줘?"

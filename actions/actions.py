@@ -10,7 +10,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 
 from actions import db
-from actions.func import level_up, level_down, level_mapping, level_mapping_string
+from actions.func import level_up, level_down, slot_level_mapping, level_num_to_string
 
 # 로그 생성
 logger = logging.getLogger()
@@ -35,7 +35,7 @@ class ActionLevelChangeEasy(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         level = tracker.get_slot('problem_level')
-        level_up(level_mapping(level))
+        level_up(slot_level_mapping(level))
         return [SlotSet('problem_level', level)]
 
 
@@ -47,7 +47,7 @@ class ActionLevelChangeHard(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         level = tracker.get_slot('problem_level')
-        level_down(level_mapping(level))
+        level_down(slot_level_mapping(level))
         return [SlotSet('problem_level', level)]
 
 
@@ -65,69 +65,95 @@ class ActionAlgorithmExplain(FormAction):
         level = tracker.get_slot('algorithm_level')
         algorithm_name = tracker.get_slot('algorithm_name')
 
+        problem_name = tracker.get_slot('problem_name')
+
         logger.info(f"detail : {detail}")
         logger.info(f"level : {level}")
         logger.info(f"algorithm_name : {algorithm_name}")
-        
-        algorithms = db.get_algorithm_by_normalized_name(algorithm_name)
-        logger.info(algorithms)
-        
-        buttons = []
-        explain_text = ""
+        logger.info(f"problem_name : {problem_name}")
 
+        algorithms = []
+        if problem_name:
+            algorithms = db.find_algorithm_name_by_problem(problem_name)
+        else:
+            algorithms = db.find_algorithm_by_normalized_name(algorithm_name)
+        logger.info(algorithms)
+
+        explain_text = ""
+        search_text = ""
         if not algorithms:
             explain_text += "조건에 맞는 알고리즘이 없는거같아..."
             dispatcher.utter_message(text=explain_text)
             return [AllSlotsReset()]
 
-        algorithm = random.choice(algorithms)
+        # algorithm = random.choice(algorithms)
 
-        if detail:
-            if algorithm.detail_explain:
-                explain_text += f"{algorithm.name}\n"
-                explain_text += f"\n{algorithm.detail_explain}\n"
+        logger.info(f"choice algorithm level : {level}")
+        # logger.info(f"choice algorithm name : {algorithm.name}")
+        algorithms_dict = []
+
+        for algorithm in algorithms:
+            buttons = []
+            explain_text = ""
+            if problem_name:
+                search_text = f"{problem_name}으로 검색한 알고리즘"
+
+
+            if detail:
+                if algorithm.detail_explain:
+
+                    explain_text += f"{algorithm.name}\n"
+                    explain_text += f"\n{algorithm.detail_explain}\n"
+                    buttons = [{"title": "간단한 설명",
+                                "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm.name}"}}'},
+                               {"title": "난이도",
+                                "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm.name}", "algorithm_level":"난이도"}}'},
+                               {"title": "문제 추천",
+                                "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm.name}"}}'}]
+                elif algorithm.brief_explain:
+                    explain_text += f"{algorithm.name}\n"
+                    explain_text += f"\n자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithm.brief_explain}\n"
+                    buttons = [{"title": "난이도",
+                                "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm.name}", "algorithm_level":"난이도"}}'},
+                               {"title": "문제 추천",
+                                "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm.name}"}}'}]
+                else:
+                    explain_text += f"나도 잘 모르겠어.";
+            else:
+
+                if algorithm.brief_explain:
+                    explain_text += f"{algorithm.name}\n"
+                    explain_text += f"\n{algorithm.brief_explain}\n"
+                    buttons = [{"title": "자세한 설명",
+                                "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm.name}", "detail":"자세한"}}'},
+                               {"title": "난이도",
+                                "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm.name}", "algorithm_level":"난이도"}}'},
+                               {"title": "문제 추천",
+                                "payload": f'/problem_recommendation{{"algorithm_name":"{algorithm.name}"}}'}]
+                else:
+                    explain_text += f"나도 잘 모르겠어.";
+            if level:
+                if algorithm.level:
+                    explain_text += f"\n난이도 : {algorithm.level}"
+                else:
+                    explain_text += f"\n난이도는 모르겠어."
+
                 buttons = [{"title": "간단한 설명",
-                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}'},
-                           {"title": "난이도",
-                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}'},
+                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm.name}"}}'},
                            {"title": "문제 추천",
-                            "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}'}]
-            elif algorithm.brief_explain:
-                explain_text += f"{algorithm.name}\n"
-                explain_text += f"\n자세하게는 나도 모르겠어. 대신 간단하게 설명해줄게.\n{algorithm.brief_explain}\n"
-                buttons = [{"title": "난이도",
-                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}'},
-                           {"title": "문제 추천",
-                            "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}'}]
-            else:
-                explain_text += f"나도 잘 모르겠어.";
+                            "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm.name}"}}'}]
+
+            algorithms_dict.append({"text": explain_text, "buttons": buttons})
+            if len(algorithms_dict) == 5:
+                break
+
+        algorithms_json = {"list": algorithms_dict}
+        if search_text:
+            dispatcher.utter_message(text=search_text, json_message=algorithms_json)
         else:
-            if algorithm.brief_explain:
-                explain_text += f"{algorithm.name}\n"
-                explain_text += f"\n{algorithm.brief_explain}\n"
-                buttons = [{"title": "자세한 설명",
-                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "detail":"자세한"}}'},
-                           {"title": "난이도",
-                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}", "algorithm_level":"난이도"}}'},
-                           {"title": "문제 추천",
-                            "payload": f'/problem_recommendation{{"algorithm_name":"{algorithm_name}"}}'}]
-            else:
-                explain_text += f"나도 잘 모르겠어.";
+            dispatcher.utter_message(json_message=algorithms_json)
 
-        if level:
-            if algorithm.level:
-                explain_text += f"\n난이도 : {algorithm.level}"
-            else:
-                explain_text += f"\n난이도는 모르겠어."
-
-            buttons = [{"title": "간단한 설명",
-                        "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}'},
-                       {"title": "문제 추천",
-                        "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm_name}"}}'}]
-
-        dispatcher.utter_message(text=explain_text, buttons=buttons)
-
-        return [SlotSet("detail", None), SlotSet("algorithm_level", None)]
+        return [SlotSet("detail", None), SlotSet("algorithm_level", None), SlotSet("problem_name", None)]
 
 
 class ActionProblemRecommended(FormAction):
@@ -145,7 +171,7 @@ class ActionProblemRecommended(FormAction):
         algorithm_name = tracker.get_slot('algorithm_name')
         number = tracker.get_slot('number')
         problem_name = tracker.get_slot('problem_name')
-        level = level_mapping(tracker.get_slot('problem_level'))
+        level = slot_level_mapping(tracker.get_slot('problem_level'))
 
         logger.info(f"slot algorithm_name : {algorithm_name}")
         logger.info(f"slot number : {number}")
@@ -154,48 +180,71 @@ class ActionProblemRecommended(FormAction):
         logger.info(f"level_mapping : {level}")
 
         if number is None:
-            number = 1
+            number = 5
 
         if level is None:
             level = 0
 
         ##이름, 알고리즘, 난이도
-        problems = db.get_problem(problem_name, algorithm_name, level, number)
-
-        explain_text = ""
+        problems = db.find_problem(problem_name, algorithm_name, level, number)
 
         if not problems:
-            explain_text += "조건에 맞는 문제가 없는거같아..."
+            explain_text = "조건에 맞는 문제가 없는거같아..."
             dispatcher.utter_message(text=explain_text)
             return [AllSlotsReset()]
-        
-        problem = random.choice(problems)
-        
-        algorithm_name = db.get_algorithm_name_by_problem(problem)
 
-        if problem.name:
-            explain_text += problem.name + "\n"
+        search_text = ""
+        problems_dict = []
+        if level:
+            level_string = level_num_to_string(level)
+            if level_string == "없음":
+                level_string = "랜덤"
+            search_text += f"난이도가 {level_string}인 {level_explain(level)}"
+
+        if problem_name:
+            search_text += f"{problem_name}으로 검색한 문제"
+
+        for problem in problems:
+            explain_text = ""
+            algorithm_name = db.find_algorithm_name_by_problem(problem)
+
+            logger.info(f"problem's algorithm_name : {algorithm_name}")
+            logger.info(f"choice problem_name : {problem.name}")
+
+            if problem.name:
+                explain_text += problem.name + "\n"
+            else:
+                explain_text += "이름 : 없음\n"
+
+            if problem.level:
+                explain_text += f"\n난이도 : {level_num_to_string(problem.level)}\n"
+            else:
+                explain_text += "\n난이도 : 없음\n"
+
+            if problem.uri:
+                explain_text += f"\n홈페이지 : {problem.uri}"
+            else:
+                explain_text += "\n홈페이지 : 없음"
+
+            buttons = [{"title": "사용 알고리즘",
+                        "payload": f'/algorithm_explain{{"problem_name": "{problem.name}"}}'},
+                       {"title": "다른 문제",
+                        "payload": f'/problem_recommendation{{ }}'},
+                       {"title": "다른 난이도 문제",
+                        "payload": f'/problem_recommendation{{"problem_level": null}}'}]
+
+            problems_dict.append({"text": explain_text, "buttons": buttons})
+
+            if len(problems_dict) == 5:
+                break
+
+        logger.info(f"problems_json : {problems_dict}")
+        problems_json = {"list": problems_dict}
+
+        if search_text:
+            dispatcher.utter_message(text=search_text, json_message=problems_json)
         else:
-            explain_text += "이름 : 없음\n"
-
-        if problem.level:
-            explain_text += f"\n난이도 : {level_mapping_string(problem.level)}\n"
-        else:
-            explain_text += "\n난이도 : 없음\n"
-
-        if problem.uri:
-            explain_text += f"\n홈페이지 : {problem.uri}"
-        else:
-            explain_text += "\n홈페이지 : 없음"
-
-        buttons = [{"title": "사용 알고리즘",
-                    "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm_name}"}}'},
-                   {"title": "다른 문제",
-                    "payload": f'/problem_recommendation{{ }}'},
-                   {"title": "다른 난이도 문제",
-                    "payload": f'/problem_recommendation{{"problem_level": null}}'}]
-
-        dispatcher.utter_message(text=explain_text, buttons=buttons)
+            dispatcher.utter_message(json_message=problems_json)
 
         return [SlotSet("number", None)]
 
@@ -267,78 +316,110 @@ class ActionContestExplain(FormAction):
         logger.info(f"reception_period : {reception_period}")
         logger.info(f"schedule : {schedule}")
 
-        if past:
-            contests = db.get_last_contests()
-        elif proceeding:
-            contests = db.get_contests_in_proceeding()
-        elif expected:
-            contests = db.get_expected_contests()
-        else:
-            contests = db.get_unfinished_contests()
-
+        search_text = ""
+        contests = []
         if contest_name:
-            contests = list(filter(lambda x: db.normalize(contest_name) in x.normalized_name, contests))
+            contests = db.find_contest_by_normalized_name(contest_name)
 
-        explain_text = ""
+            today = datetime.datetime.now()
+            if past:
+                search_text += "신청기간이 지난 "
+                contests = list(filter(lambda x: x.reception_end < today, contests))
+            elif proceeding:
+                search_text += "접수가 진행중인 "
+                contests = list(filter(lambda x: x.reception_start <= today and today <= x.reception_end, contests))
+            elif expected:
+                search_text += "곧 접수가 시작될 "
+                contests = list(filter(lambda x: x.reception_start > today, contests))
+            else:
+                search_text += "대회가 끝나지 않은 "
+                contests = list(filter(lambda x: x.contest_end > today, contests))
+
+            search_text += f"{contest_name}으로 검색한 대회"
+        else:
+            if past:
+                search_text += "신청기간이 지난 모든 대회"
+                contests = db.find_last_contests()
+            elif proceeding:
+                search_text += "접수가 진행중인 모든 대회"
+                contests = db.find_contests_in_proceeding()
+            elif expected:
+                search_text += "곧 접수가 시작될 모든 대회"
+                contests = db.find_expected_contests()
+            else:
+                search_text += "대회가 끝나지 않은 모든 대회"
+                contests = db.find_unfinished_contests()
+
+        logger.info(f"contests : {contests}")
 
         if not contests:
-            explain_text += "조건에 맞는 대회가 없는거같아..."
+            explain_text = "조건에 맞는 대회가 없는거같아..."
             dispatcher.utter_message(text=explain_text)
             return [AllSlotsReset()]
 
-        contest = random.choice(contests)
+        contests_dict = []
 
-        buttons = [{"title": "상세 정보",
-                    "payload": f'/contest_explain{{"contest_name": "{contest.name}"}}'},
-                   {"title": "일정",
-                    "payload": f'/contest_explain{{"contest_name": "{contest.name}", "schedule":"일정"}}'},
-                   {"title": "홈페이지",
-                    "payload": f'/contest_explain{{"contest_name": "{contest.name}", "homepage":"홈페이지"}}'}]
+        for contest in contests:
+            explain_text = ""
+            buttons = [{"title": "상세 정보",
+                        "payload": f'/contest_explain{{"contest_name": "{contest.name}"}}'},
+                       {"title": "일정",
+                        "payload": f'/contest_explain{{"contest_name": "{contest.name}", "schedule":"일정"}}'},
+                       {"title": "홈페이지",
+                        "payload": f'/contest_explain{{"contest_name": "{contest.name}", "homepage":"홈페이지"}}'}]
 
+            if homepage or schedule:
+                if schedule:
+                    search_text += " 일정"
+                    if contest.name:
+                        explain_text = contest.name + '\n'
 
-        if homepage:
-            if contest.name and contest.uri:
-                explain_text = contest.name + '\n'
-                explain_text += f"\n홈페이지 : {contest.uri}"
+                    if contest.reception_start and contest.reception_end:
+                        explain_text += f"\n신청 기간 : {contest.reception_start.strftime('%Y/%m/%d %H:%M')} ~ {contest.reception_end.strftime('%Y/%m/%d %H:%M')}"
+                    else:
+                        explain_text += "\n신청 기간 : 정보 없음"
+
+                    if contest.contest_start and contest.contest_end:
+                        explain_text += f"\n대회 기간 : {contest.contest_start.strftime('%Y/%m/%d %H:%M')} ~ {contest.contest_end.strftime('%Y/%m/%d %H:%M')}"
+                    else:
+                        explain_text += "\n대회 시간 : 정보 없음"
+
+                if homepage:
+                    if schedule:
+                        explain_text += '\n'
+                        search_text += "과 홈페이지"
+                    else:
+                        search_text += " 홈페이지"
+
+                    if contest.name and contest.uri:
+                        explain_text = contest.name + '\n'
+                        explain_text += f"\n홈페이지 : {contest.uri}"
+                    else:
+                        explain_text += "\n홈페이지 : 정보 없음"
             else:
-                explain_text += "\n홈페이지 : 정보 없음"
-            dispatcher.utter_message(text=explain_text, buttons=buttons)
-            return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None),
-                    SlotSet("past", None), SlotSet("proceeding", None), SlotSet("expected", None)]
+                if contest.name:
+                    explain_text = contest.name + '\n'
 
-        if schedule:
-            if contest.name:
-                explain_text = contest.name + '\n'
+                if contest.reception_start and contest.reception_end:
+                    explain_text += f"\n신청 기간 : {contest.reception_start.strftime('%Y/%m/%d %H:%M')} ~ {contest.reception_end.strftime('%Y/%m/%d %H:%M')}\n"
 
-            if contest.reception_start and contest.reception_end:
-                explain_text += f"\n신청 기간 : {contest.reception_start.strftime('%Y/%m/%d %H:%M')} ~ {contest.reception_end.strftime('%Y/%m/%d %H:%M')}\n"
-            else:
-                explain_text += "\n신청 기간 : 정보 없음\n"
+                if contest.contest_start and contest.contest_end:
+                    explain_text += f"\n대회 기간 : {contest.contest_start.strftime('%Y/%m/%d %H:%M')} ~ {contest.contest_end.strftime('%Y/%m/%d %H:%M')}\n"
 
-            if contest.contest_start and contest.contest_end:
-                explain_text += f"\n대회 기간 : {contest.contest_start.strftime('%Y/%m/%d %H:%M')} ~ {contest.contest_end.strftime('%Y/%m/%d %H:%M')}"
-            else:
-                explain_text += "\n대회 시간 : 정보 없음"
+                if contest.uri:
+                    explain_text += f"\n홈페이지 : {contest.uri}"
 
-            dispatcher.utter_message(text=explain_text, buttons=buttons)
-            return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None),
-                    SlotSet("past", None), SlotSet("proceeding", None), SlotSet("expected", None)]
+                buttons = buttons[1:]
 
-        if contests:
-            if contest.name:
-                explain_text = contest.name + '\n'
+            contests_dict.append({"text": explain_text, "buttons": buttons})
 
-            if contest.reception_start and contest.reception_end:
-                explain_text += f"\n신청 기간 : {contest.reception_start.strftime('%Y/%m/%d %H:%M')} ~ {contest.reception_end.strftime('%Y/%m/%d %H:%M')}\n"
+            if len(contests_dict) == 5:
+                break
 
-            if contest.contest_start and contest.contest_end:
-                explain_text += f"\n대회 기간 : {contest.contest_start.strftime('%Y/%m/%d %H:%M')} ~ {contest.contest_end.strftime('%Y/%m/%d %H:%M')}\n"
+        logger.info(f"contests_json : {contests_dict}")
+        contests_json = {"list": contests_dict}
 
-            if contest.uri:
-                explain_text += f"\n홈페이지 : {contest.uri}"
-
-            buttons = buttons[1:]
-            dispatcher.utter_message(text=explain_text, buttons=buttons)
+        dispatcher.utter_message(text=search_text, json_message=contests_json)
 
         return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None),
                 SlotSet("past", None), SlotSet("proceeding", None), SlotSet("expected", None)]
@@ -356,7 +437,8 @@ class ContestForm(FormAction):
         return {
             "contest_name": [self.from_entity(entity="contest_name"), self.from_entity(entity="company")],
             "schedule": [self.from_entity(entity="schedule"), self.from_entity(entity="reception_period"),
-                         self.from_intent(intent="schedule", value=True), self.from_intent(intent="reception_period", value=True)]
+                         self.from_intent(intent="schedule", value=True),
+                         self.from_intent(intent="reception_period", value=True)]
         }
 
     def validate_contest_name(
@@ -389,7 +471,6 @@ class ProblemForm(FormAction):
 
     @staticmethod
     def required_slots(tracker: Tracker) -> List[Text]:
-
         return ["problem_level"]
 
     def slot_mappings(self):

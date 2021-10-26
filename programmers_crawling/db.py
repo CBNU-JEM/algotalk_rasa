@@ -331,3 +331,12 @@ def get_algorithm_name_by_problem(problem):
         rows = execute_query(q)
         return rows[0][0]
     return None
+
+
+def find_contest_by_name(name):
+    q = f'SELECT * FROM CONTEST WHERE name = "{name}"'
+    rows = execute_query(q)
+
+    if rows:
+        return rows
+    return None
