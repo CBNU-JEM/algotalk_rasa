@@ -17,20 +17,20 @@ logger.addHandler(stream_handler)
 
 def level_down(level="실버"):
     le = ["브론즈", "실버", "골드", "플레티넘", "다이아", "루비"]
-    for i, v in enumerate(le):
-        if v.find(level) != -1:
-            idx = i - 1 if i > 0 else i
-            return le[idx]
-    return level
+    if isinstance(level,int):
+        if level > 5:
+            level = level - 5
+
+    return le[level/5]
 
 
 def level_up(level="실버"):
     le = ["브론즈", "실버", "골드", "플레티넘", "다이아", "루비"]
-    for i, v in enumerate(le):
-        if v.find(level) != -1:
-            idx = i + 1 if i < 4 else i
-            return le[idx]
-    return level
+    if isinstance(level,int):
+        if level < 22:
+            level = level + 5
+
+    return le[level/5]
 
 
 changed_level = dict()
@@ -78,22 +78,37 @@ def level_num_to_string(level):
     return ret
 
 
+def slot_level_num_to_string(level):
+    logger.info(f'slot_level_num_to_string : {level}')
+    if level == 0:
+        return "랜덤"
+    changed_level_string = dict()
+    key = [0, 1, 2, 3, 4, 5]
+    value = ["브론즈", "실버", "골드", "플레티넘", "다이아", "루비"]
+
+    for i in range(len(key)):
+        changed_level_string[key[i]] = value[i]
+
+    logger.info(f'level_mapping_string : {level}')
+    ret = changed_level_string.get((level - 1) // 5, "랜덤")
+    return ret
+
+
 def level_explain(level):
-    if level == "브론즈":
+    if "브론즈" in level:
         return "(기초 개념 공부할때)\n"
-    elif level == "실버":
+    elif "실버" in level:
         return "(쉬운 코테 수준)\n"
-    elif level == "골드":
+    elif "골드" in level:
         return "(어려운 코테 수준)\n"
-    elif level == "플레티넘":
+    elif "플레티넘" in level:
         return "(알고리즘 심화 응용 수준)\n"
-    elif level == "다이아":
+    elif "다이아" in level:
         return "(고수들만 도전)\n"
-    elif level == "루비":
+    elif "루비" in level:
         return "(초고수들만 도전)\n"
     else:
         return ""
-
 
 class OverlapProblem:
     def __init__(self, problem=None):

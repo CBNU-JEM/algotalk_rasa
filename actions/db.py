@@ -150,6 +150,13 @@ def delete_problem(id):
     q = f'DELETE FROM PROBLEM WHERE ID="{id}"'
     execute_query(q)
 
+def find_problem_by_name(problem_name):
+    q = f'SELECT * FROM PROBLEM WHERE NAME="{problem_name}"'
+    rows = execute_query(q)
+    if rows:
+        row = rows[0]
+        return Problem(row[0], row[1], row[2], row[3], row[4])
+    return None
 
 def find_problem(problem_name, algorithm_name, level, number):
     q = f'SELECT P.ID, P.PROBLEM_ID, P.NAME, P.LEVEL, P.URI, A.ID FROM PROBLEM AS P ' \

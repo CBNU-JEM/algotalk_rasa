@@ -4,12 +4,27 @@
 - 하이
 - 잘 지내?
 - 좋은 아침
+- 하이루
+- 방가방가
+- 잘지냈니
+- 오랜만
+- 헬로
+- 굿모닝
 
 ## intent:goodbye
 - 잘가
 - 나중에봐
 - 다음에봐
 - 바이바이
+- 바이
+- 바이바이
+- 빠이
+- 잘자
+- 굿나잇
+- 낼봐
+- 내일봐
+- 잘있어
+- 담에봐
 
 ## intent:affirm
 - 그래
@@ -17,12 +32,34 @@
 - 예
 - 당연하지
 - 알았어
+- 오키
+- 알겠어
+- 오케바리
+- 옼돜
+- 오키도키
+- 오킹
+- 아이가릿
+- 아가릿
+- 알써
+- 예쓰
+- 얍
+- 옙
+- 응
+- ㅇㅇ
+- ㅇㅋ
 
 ## intent:deny
 - 아니
 - 아니야
 - 아니요
 - 싫어
+- 응 아니야
+- 놉
+- 별루
+- 시른디
+- 시른뎅
+- 시룬뎅
+- ㄴㄴ
 
 ## intent:mood_great
 - 좋아
@@ -31,6 +68,11 @@
 - 기분 좋아
 - 훌륭해
 - 너무 좋아
+- 오예
+- 야호
+- 행복해
+- 해피
+- 암 굿
 
 ## intent:mood_unhappy
 - 우울해
@@ -41,6 +83,13 @@
 - 흑흑
 - 너무 슬퍼
 - 슬퍼
+- 아무것도 하기 싫다
+- 살기 싫다
+- 살려줘
+- 지겹다
+- 지겨워
+- 열받네
+- 열받어
 
 ## intent:bot_challenge
 - 너 봇이야?
@@ -58,6 +107,20 @@
 - 뭐 할 수 있냐
 - 할 줄 아는게 뭐야?
 - 뭘 도와줄 수 있어?
+- 어떻게 도와줄 수 있어?
+- 도와줄 수 있니?
+- 도와줘
+- 헬프
+- 헬프미
+- 어떻게 도와줄 수 있어?
+- 도와줘
+- 도와주삼
+- 설명서 없니
+- 어떻게 쓰는거야
+- 설명서 좀 줘봐
+- 메뉴얼 없냐
+- 메뉴얼 좀 주셈
+- 어케 쓰는겨
 
 ## intent:thanks
 - 고마워
@@ -67,6 +130,8 @@
 - 감사
 - 땡쓰
 - 땡스
+- ㄱㅅ
+- 감사요
 
 ## intent:babo
 - 바보
@@ -103,8 +168,6 @@
 ## intent:boring
 - 심심해
 - 놀아줘
-- 아무것도 하기 싫다
-- 살기 싫다
 - 지루해
 - 뭐할까
 - 뭐하지
@@ -123,6 +186,15 @@
 - 모해
 - 모해?
 
+## intent:user_level
+- user_level [0](user_level)
+- user_level [1](user_level)
+- user_level [2](user_level)
+- user_level [3](user_level)
+- user_level [4](user_level)
+- user_level [5](user_level)
+- user_level [6](user_level)
+
 ## intent:past
 - [지난](past)
 - [지난번](past)
@@ -134,6 +206,8 @@
 - [과거](past)에
 - [과거](past)의
 - [끝난](past)
+- [옛날](past)
+- [옛날](past)에
 
 ## intent:proceeding
 - [지금](proceeding)
@@ -165,12 +239,12 @@
 - [열릴](expected) 예정인
 - [나중](expected)
 - [나중](expected)에
+- [예정](expected)된
 
 ## intent:algorithm_level
 - [난이도](algorithm_level)
 - [레벨](algorithm_level)
 - [수준](algorithm_level)
-- [algorithm_level](algorithm_level)
 - [어려워?](algorithm_level)
 - [쉬워?](algorithm_level)
 
@@ -297,6 +371,31 @@
 - 너무 쉽다 어려운 걸로
 - 너무 쉬워요 어려운 걸로
 - 쉬워 어려운 걸로
+- 심화 문제
+
+## intent:change_level
+- 다른 난이도 문제 없나?
+- 다른 난이도로 알려줘
+- 다른 레벨 없어?
+- 레벨 다른거
+- 난이도 다른거
+- 레벨 다른것 좀 알려줘
+- 좀 다른 레벨
+- 레벨 바꾸자
+- 난이도 바꾸자
+- 난이도 바꿔
+- 다른 난이도
+- 다른 레벨
+- 레벨 체인지
+- 난이도 체인지
+- 레벨 바꿔줘
+
+## intent:all
+- [모든](all)
+- [전체](all)
+- [다](all)
+- [전부](all)
+- [모두](all)
 
 ## intent:change
 - 다른 걸로 바꿔줘
@@ -497,7 +596,10 @@
 - 추천 공부 사이트 있니?
 
 ## intent:problem_recommendation
-- [정렬](algorithm_name) 문제 알려줘
+- [정렬](problem_name) 문제 알려줘
+- [정렬](problem_name) 문제 검색해줘
+- [다익스트라](algorithm_name) 알고리즘 쓰는 문제 검색해줘
+- [다리놓기](problem_name) 문제 검색
 - [최단거리](algorithm_name) 문제 알려줄래?
 - [bfs](algorithm_name) 알고리즘 문제 풀고싶어
 - [dfs](algorithm_name) 알고리즘 문제 풀고싶은데
@@ -958,6 +1060,30 @@
 - [상](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
 - [중](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
 - [하](problem_level) [정렬](algorithm_name) 알고리즘 문제 받고 싶어
+- [브론즈](problem_level) 문제 알려줘
+- [플레](problem_level) 문제 궁금해
+- [다이아](problem_level) 문제 추천해줘
+- [골드](problem_level) 문제
+- [실버](problem_level) 문제 추천 
+- [상](problem_level) 문제 받고 싶어
+- [중](problem_level) 문제 받고 싶어
+- [하](problem_level) 문제 받고 싶어
+- 알고리즘이 [분할정복](algorithm_name)인 문제 있을까?
+- 문제 추천해줄래? [분할정복](algorithm_name)알고리즘으로
+- 문제 추천해줄래? [분할정복](algorithm_name)으로
+- 문제 풀고싶어 [분할정복](algorithm_name)으로 몇개 알려줄래?
+- 문제 풀고싶은데 [분할정복](algorithm_name)으로 추천해줘
+- 문제 풀고싶은데 [분할정복](algorithm_name)알고리즘으로 알려줘
+- [분할정복](algorithm_name)문제 풀고싶어
+- 심심한데 [분할정복](algorithm_name)문제나 풀어볼까
+- [분할정복](algorithm_name) 공부할거야
+- [분할정복](algorithm_name)알고리즘 공부하게 문제 좀 보내봐
+- 심심하니까 [분할정복](algorithm_name) 공부나 해볼까
+- 오늘은 [분할정복](algorithm_name) 문제를 풀어볼거야
+- 오늘 [분할정복](algorithm_name) 공부할거니깐 [분할정복](algorithm_name) 문제 좀 보내봐
+- 오늘 [분할정복](algorithm_name) 공부할거니깐 문제 좀 보내봐
+- [분할정복](algorithm_name) 공부하기 딱 좋은날이군
+
 
 ## intent:algorithm_explain
 - [최단거리](algorithm_name) 알고리즘 알려줘
@@ -1161,6 +1287,10 @@
 - [그래프 탐색](algorithm_name)이 뭐야?
 - [브루트포스 알고리즘](algorithm_name)이 뭐야?
 - [세그먼트 트리](algorithm_name)가 뭐야?
+- 왓 이즈 [분할정복](algorithm_name)
+- [분할정복](algorithm_name) 잘 모르겠어
+- [분할정복](algorithm_name) 알고리즘 모르겠어
+- 공부하다가 [분할정복](algorithm_name)에서 막혔어 좀 알려줄래?
 
 ## intent:schedule
 - [일정](schedule)
@@ -1201,11 +1331,11 @@
 ## intent:contest_explain
 - [준파고를 잡아라](contest_name)대회 알려줘
 - [카카오](contest_name)대회 정보 알려줘
-- [카카오](contest_name)대회 정보 알려줄래
+- [카카오](contest_name)코테 정보 알려줄래
 - [카카오](contest_name)대회 좀  알려줘
-- [카카오](contest_name)대회 좀  알려줄래
+- [카카오](contest_name)코딩 테스트 좀  알려줄래
 - [카카오](contest_name)대회 [일정](schedule) 알려줘
-- [카카오](contest_name)대회 [일정](schedule) 알려줄래
+- [카카오](contest_name)코테 [일정](schedule) 알려줄래
 - [카카오](contest_name)대회가 뭐야?
 - [카카오](contest_name)대회가 뭐니?
 - [scpc](contest_name) [일정](schedule) 알려줘
@@ -1214,22 +1344,22 @@
 - [코드포스](contest_name) [일정](schedule) 알려줘
 - [코포](contest_name) [언제 접수](reception_period)해?
 - [카카오](contest_name)대회 없나?
-- [카카오](contest_name)대회 없어?
+- [카카오](contest_name) 경진 대회 없어?
 - [카카오](contest_name)대회 정보 줘
-- [카카오](contest_name)대회 정보 줄래
+- [카카오](contest_name)코딩 테스트 정보 줄래
 - [카카오](contest_name)대회 정보 좀
-- [카카오](contest_name)대회 없을까?
+- [카카오](contest_name)코테 없을까?
 - [카카오](contest_name)대회 알고 싶은데
-- [카카오](contest_name)대회 알고 싶어
-- [카카오](contest_name)대회 알고 싶어요
+- [카카오](contest_name) 컨테스트 알고 싶어
+- [카카오](contest_name) 코딩 대회 알고 싶어요
 - [카카오](contest_name)대회 알려줘
 - [2021 카카오 인턴쉽](contest_name) 알려줘
 - [지난](past) [카카오](contest_name)대회 정보 알려줘
-- [저번](past) [카카오](contest_name) 대회 정보 알려줄래
+- [저번](past) [카카오](contest_name) 프로그래밍 대회 정보 알려줄래
 - [끝난](past) [카카오](contest_name)대회 좀 알려줘
 - [카카오](contest_name) [예전](past) 대회 좀 알려줄래
 - [카카오](contest_name) [옛날](past) 대회가 알려줄 수 있어?
-- [카카오](contest_name) [지난](past) 대회 있나?
+- [카카오](contest_name) [지난](past) 프로그래밍 대회 있나?
 - [scpc](contest_name) [했던](past) 대회 있어?
 - [진행중인](proceeding) [코포](contest_name) 언제 시작해?
 - [진행 중인](proceeding) [카카오](contest_name)대회 없나?
@@ -1237,14 +1367,14 @@
 - [열린](proceeding) [카카오](contest_name)대회 정보 줘
 - [등록가능한](proceeding) [카카오](contest_name)대회 정보 줄래
 - [신청할](proceeding) [카카오](contest_name)대회 정보 좀
-- [진행중인](proceeding) 대회 알려줘
+- [진행중인](proceeding) 콘테스트 알려줘
 - [진행 중인](proceeding) 대회 없나?
 - [하고있는](proceeding) 모든 대회 없어?
 - [열린](proceeding) 대회 정보 줘
 - [등록가능한](proceeding) 대회 정보 줄래
 - [신청할](proceeding) 대회 정보 좀
 - [진행중인](proceeding) 대회
-- [진행 중인](proceeding) 대회
+- [진행 중인](proceeding) 알고리즘 대회
 - [하고있는](proceeding) 모든 대회
 - [열린](proceeding) 대회 정보
 - [등록가능한](proceeding) 대회 정보
@@ -1258,7 +1388,7 @@
 - [2021](year)년 [카카오](contest_name)대회 알려줘
 - [2020](year)년 [카카오](contest_name)대회 알려줘
 - [2019](year)년 [카카오](contest_name)대회 알려줘
-- [2018](year)년 [카카오](contest_name)대회 알려줘
+- [2018](year)년 [카카오](contest_name) 알고리즘 대회 알려줘
 - [2017](year)년 [카카오](contest_name)대회 알려줘
 - [2021](year) [카카오](contest_name)대회 알려줘
 - [2020](year) [카카오](contest_name)대회 알려줘
@@ -1271,12 +1401,55 @@
 - [4](month)월 [카카오](contest_name)대회 알려줘
 - [5](month)월 [카카오](contest_name)대회 알려줘
 - [6](month)월 [카카오](contest_name)대회 알려줘
-- [7](month)월 [카카오](contest_name)대회 알려줘
+- [7](month)월 [카카오](contest_name)대회 [홈페이지](homepage) 알려줘
 - [8](month)월 [카카오](contest_name)대회 알려줘
 - [9](month)월 [카카오](contest_name)대회 알려줘
 - [10](month)월 [카카오](contest_name)대회 알려줘
 - [11](month)월 [카카오](contest_name)대회 알려줘
-- [12](month)월 [카카오](contest_name)대회 알려줘
+- [12](month)월 [카카오](contest_name)대회 [일정](scheduel) 알려줘
+- [2020](year)년 대회 [일정](scheduel) 알려줘
+- [2019](year)년 대회 [홈페이지](homepage) 알려줘
+- [2018](year)년 대회 알려줘
+- [2017](year)년도 [지난](past) 대회 알려줘
+- [2021](year)년 대회 알려줘
+- [2021](year)년 대회 알려줘
+- [2020](year)년 [예정된](expected) 대회 알려줘
+- [2019](year)년 대회 알려줘
+- [2018](year)년 대회 알려줘
+- [2017](year)년 대회 알려줘
+- [20](year)년 대회 [일정](scheduel) 알려줘
+- [19](year)년 대회 [홈페이지](homepage) 알려줘
+- [18](year)년 대회 알려줘
+- [17](year)년 [지난](past) 대회 알려줘
+- [21](year)년 대회 알려줘
+- [21](year)년 대회 알려줘
+- [20](year)년도 [예정된](expected) 대회 알려줘
+- [19](year)년도 대회 알려줘
+- [18](year)년도 대회 알려줘
+- [17](year)년도 대회 알려줘
+- [1](month)월 대회 [일정](scheduel) 알려줘
+- [2](month)월 대회 알려줘
+- [3](month)월 대회 알려줘
+- [4](month)월 대회 알려줘
+- [5](month)월 [진행중인](proceeding) 대회 알려줘
+- [6](month)월 대회 알려줘
+- [7](month)월 대회 알려줘
+- [8](month)월 대회 알려줘
+- [9](month)월 대회 알려줘
+- [10](month)월 대회 [홈페이지](homepage) 알려줘
+- [11](month)월 [신청가능한](proceeding) 대회 알려줘
+- [12](month)월 대회 알려줘
+- [2020](year)년 [1](month)월 대회 [일정](scheduel) 알려줘
+- [2019](year)년 [2](month)월 대회 [홈페이지](homepage) 알려줘
+- [2018](year)년 [5](month)월 대회 알려줘
+- [2017](year)년 [4](month)월 [지난](past) [카카오](contest_name) 대회 알려줘
+- [2021](year)년 [8](month)월 대회 알려줘
+- [2021](year)년도 [11](month)월 대회 알려줘
+- [2020](year)년도 [7](month)월 [예정된](expected) 대회 알려줘
+- [2019](year)년도 [12](month)월 대회 알려줘
+- [2018](year)년도 [8](month)월 [카카오](contest_name) 대회 알려줘
+- [2017](year)년도 [10](month)월 대회 알려줘
+- [2022](year)년도 [3](month)월 [신청가능한](proceeding) [카카오](contest_name) 대회 알려줘
 
 ## intent:reception_period
 - [신청 기간](reception_period)알려줘
@@ -1319,3 +1492,6 @@ data/lookup/algorithm_name.txt
 
 ## lookup:problem_name
 data/lookup/problem_name.txt
+
+## lookup:contest_name
+data/lookup/contest_name.txt
