@@ -28,6 +28,7 @@ intents:
   - contest_explain
   - company
   - schedule
+  - reception_period
   - homepage
   - algorithm_level
   - problem_level

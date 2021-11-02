@@ -21,7 +21,7 @@ def level_down(level="실버"):
         if level > 5:
             level = level - 5
 
-    return le[level/5]
+    return le[level//5]
 
 
 def level_up(level="실버"):
@@ -30,7 +30,7 @@ def level_up(level="실버"):
         if level < 22:
             level = level + 5
 
-    return le[level/5]
+    return le[level//5]
 
 
 changed_level = dict()
@@ -50,8 +50,8 @@ def slot_level_mapping(level):
     if not level:
         return 0
 
-    if level.isdigit():
-        return level
+    if isinstance(level, str) and level.isdigit():
+        return int(level)
 
     print(changed_level.get(level, 0))
     return changed_level.get(level, 0)
@@ -107,6 +107,8 @@ def level_explain(level):
         return "(고수들만 도전)\n"
     elif "루비" in level:
         return "(초고수들만 도전)\n"
+    elif "랜덤" in level:
+        return "(모든 난이도)\n"
     else:
         return ""
 

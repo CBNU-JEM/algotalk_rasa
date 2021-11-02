@@ -36,6 +36,7 @@ class ActionSetUserLevel(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         user_level = tracker.latest_message['entities'][0]['value']
         logger.info(f"user_level : {user_level}")
+
         dispatcher.utter_message("set user_level : success")
         return [SlotSet('user_level', user_level)]
 
@@ -47,12 +48,17 @@ class ActionLevelChangeEasy(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
         level = tracker.get_slot('problem_level')
+        logger.info(f"level_down before : {level}")
+
         if level is None:
             level = tracker.get_slot('user_level')
             if isinstance(level, str):
                 level = int(level)
-        level_up(slot_level_mapping(level))
+
+        level = level_down(slot_level_mapping(level))
+        logger.info(f"level_down after : {level}")
         return [SlotSet('problem_level', level)]
 
 
@@ -63,12 +69,17 @@ class ActionLevelChangeHard(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
         level = tracker.get_slot('problem_level')
+        logger.info(f"level_up before : {level}")
+
         if level is None:
             level = tracker.get_slot('user_level')
             if isinstance(level, str):
                 level = int(level)
-        level_down(slot_level_mapping(level))
+
+        level = level_up(slot_level_mapping(level))
+        logger.info(f"level_up after : {level}")
         return [SlotSet('problem_level', level)]
 
 
@@ -102,9 +113,12 @@ class ActionAlgorithmExplain(FormAction):
             problem = db.find_problem_by_name(problem_name)
             if problem:
                 algorithm_name = db.find_algorithm_name_by_problem(problem)
-            search_text += f"{problem_name} 문제에 사용하는 알고리즘"
+            search_text += f"{problem_name} 문제에 사용하는 알고리즘 "
         else:
-            search_text += f"{algorithm_name} 이름으로 검색한 알고리즘"
+            search_text += f"{algorithm_name} 이름으로 검색한 알고리즘 "
+
+        if detail:
+            search_text += f"상세 설명"
 
         algorithms = db.find_algorithm_by_normalized_name(algorithm_name)
         logger.info(algorithms)
@@ -159,8 +173,8 @@ class ActionAlgorithmExplain(FormAction):
                 else:
                     explain_text += f"\n난이도는 모르겠어."
 
-                buttons = [{"title": "간략 설명",
-                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm.name}"}}'},
+                buttons = [{"title": "상세 설명",
+                            "payload": f'/algorithm_explain{{"algorithm_name": "{algorithm.name}", "detail":"자세한"}}'},
                            {"title": "문제 추천",
                             "payload": f'/problem_recommendation{{"algorithm_name:"{algorithm.name}"}}'}]
 
@@ -174,7 +188,7 @@ class ActionAlgorithmExplain(FormAction):
         else:
             dispatcher.utter_message(json_message=algorithms_json)
 
-        return [SlotSet("detail", None), SlotSet("algorithm_level", None), SlotSet("problem_name", None)]
+        return [SlotSet("detail", None), SlotSet("algorithm_level", None), SlotSet("problem_name", None), SlotSet("contest_name", None)]
 
 
 class ActionProblemRecommended(FormAction):
@@ -281,7 +295,6 @@ class ActionProblemRecommended(FormAction):
                 explain_text += f"\n홈페이지 : {problem.uri}"
             else:
                 explain_text += "\n홈페이지 : 없음"
-
             buttons = [{"title": "알고리즘",
                         "payload": f'/algorithm_explain{{"algorithm_name": "algorithm_problem_classification", "problem_name": "{problem.name}"}}'},
                        {"title": "다른 문제",
@@ -302,7 +315,7 @@ class ActionProblemRecommended(FormAction):
         else:
             dispatcher.utter_message(json_message=problems_json)
 
-        return [SlotSet("number", None)]
+        return [SlotSet("number", None), SlotSet("contest_name", None), SlotSet("year", None), SlotSet("month", None)]
 
 
 class AlgorithmForm(FormAction):
@@ -367,6 +380,8 @@ class ActionContestExplain(FormAction):
         year = tracker.get_slot('year')
         month = tracker.get_slot('month')
 
+        user_level = tracker.get_slot('user_level')
+
         logger.info(f"contest_name : {contest_name}")
         logger.info(f"past : {past}")
         logger.info(f"proceeding : {proceeding}")
@@ -378,8 +393,14 @@ class ActionContestExplain(FormAction):
 
         if year and isinstance(year, str):
             year = int(year)
+            if 50 < year and year < 100:
+                year = year + 1900
+            elif year < 100:
+                year = year + 2000
         if month and isinstance(month, str):
             month = int(month)
+            if month < 1 or month > 12:
+                month = None
 
         search_text = ""
         contests = []
@@ -435,6 +456,15 @@ class ActionContestExplain(FormAction):
                 search_text += "대회가 끝나지 않은 모든 대회"
                 contests = list(filter(lambda x: x.contest_end > today, contests))
 
+        if schedule:
+            search_text += " 일정"
+
+        if homepage:
+            if schedule:
+                search_text += "과 홈페이지"
+            else:
+                search_text += " 홈페이지"
+
         logger.info(f"contests : {contests}")
 
         if not contests:
@@ -456,7 +486,6 @@ class ActionContestExplain(FormAction):
 
             if homepage or schedule:
                 if schedule:
-                    search_text += " 일정"
                     if contest.name:
                         explain_text = contest.name + '\n'
 
@@ -473,9 +502,6 @@ class ActionContestExplain(FormAction):
                 if homepage:
                     if schedule:
                         explain_text += '\n'
-                        search_text += "과 홈페이지"
-                    else:
-                        search_text += " 홈페이지"
 
                     if contest.name and contest.uri:
                         explain_text = contest.name + '\n'
@@ -507,9 +533,7 @@ class ActionContestExplain(FormAction):
 
         dispatcher.utter_message(text=search_text, json_message=contests_json)
 
-        return [SlotSet("homepage", None), SlotSet("reception_period", None), SlotSet("schedule", None),
-                SlotSet("past", None), SlotSet("proceeding", None), SlotSet("expected", None),
-                SlotSet("year", None), SlotSet("month", None)]
+        return [AllSlotsReset(), SlotSet("user_level", user_level), SlotSet("contest_name", contest_name),]
 
 
 class ContestForm(FormAction):

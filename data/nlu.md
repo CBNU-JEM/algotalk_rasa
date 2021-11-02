@@ -318,8 +318,12 @@
 - 너무 어렵다 쉬운 걸로
 - 너무 어려워요 쉬운 걸로
 - 어려워 쉬운 걸로
+- 너무 어려워
+- 어려워
 
 ## intent:change_hard
+- 쉬워
+- 너무 쉬워
 - 어려운걸로
 - 어려운거
 - 어렵게
@@ -582,11 +586,23 @@
 ## intent:detail
 - [자세히](detail)
 - [자세하](detail)
+- [자세하게](detail)
 - [좀 더](detail)
 - [정확히](detail)
 - [상세하](detail)
 - [정확하](detail)
-- [어렵게 해](detail)
+- [정확하게](detail)
+- [샅샅이](detail)
+- [길게](detail)
+- [깊히](detail)
+- [자세히](detail) 알려줘
+- [자세하](detail) 설명해줘
+- [자세하게](detail) 설명
+- [좀 더](detail) 알려줘
+- [정확히](detail) 말해줘
+- [상세하](detail) 말해
+- [정확하](detail) 
+- [정확하게](detail) 써
 - [샅샅이](detail)
 - [길게](detail)
 - [깊히](detail)
@@ -1086,20 +1102,20 @@
 
 
 ## intent:algorithm_explain
-- [최단거리](algorithm_name) 알고리즘 알려줘
-- [매내처](algorithm_name) 알고리즘 알려줘
+- 그럼 [최단거리](algorithm_name) 알고리즘 [난이도](algorithm_level) 알려줘
+- 이제 [매내처](algorithm_name) 알고리즘 [레벨](algorithm_level) 알려줘
 - [인터프리터](algorithm_name)가 뭐야?
-- [고속 푸리에 변환](algorithm_name) 알려줘
-- [위상 정렬](algorithm_name) 좀 설명해줘
+- [고속 푸리에 변환](algorithm_name) [수준](algorithm_level) 알려줘
+- [위상 정렬](algorithm_name) 좀 [상세히](detail) 설명해줘
 - [최단거리](algorithm_name) 알고리즘 알려줘
-- [정렬](algorithm_name) 알고리즘 알려줘
-- [스택](algorithm_name)이 뭐야?
+- 그럼 [정렬](algorithm_name) 알고리즘 알려줘
+- 그러면 [스택](algorithm_name)이 뭐야?
 - [정렬](algorithm_name)이 뭐야
 - [선형대수학](algorithm_name)이 뭐니?
-- [정렬](algorithm_name)이 뭔데?
-- [알고리즘](algorithm_name)이 뭐야?
-- [기하학](algorithm_name)  설명해줘
-- [볼록 껍질](algorithm_name)  설명해줄래
+- 또 [정렬](algorithm_name)이 뭔데?
+- 그리고 [알고리즘](algorithm_name)이 뭐야?
+- 음 [기하학](algorithm_name)  설명해줘
+- 이제 [볼록 껍질](algorithm_name)  설명해줄래
 - [수학](algorithm_name)  좀 설명해줄래
 - [선형대수학](algorithm_name)  알려줘
 - [정렬](algorithm_name)  알려줄래
@@ -1109,7 +1125,14 @@
 - [정렬](algorithm_name)이 뭐니?
 - [알고리즘](algorithm_name)이 뭐야?
 - [시뮬레이션](algorithm_name) 설명해줘
-- [스택](algorithm_name) 설명해줄래
+- [스택](algorithm_name) 간단하게 설명해줄래
+- 간단하게 설명
+- 간단히 설명
+- 간단히
+- 간단하게
+- 쉽게 설명
+- 쉽게 설명해줘
+- 간단히 알려줘
   
 - [수학](algorithm_name) 알려줘
 - [다이나믹 프로그래밍](algorithm_name) 알려주십시오
@@ -1218,21 +1241,21 @@
 - [확장 유클리드 호제법](algorithm_name) 알고리즘  받습니다
 - [회전하는 캘리퍼스](algorithm_name) 알고리즘  받는다
 - [커넥션 프로파일을 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘  받아요
-- [물리학](algorithm_name) 알고리즘  받고 싶어요
+- [물리학](algorithm_name) 알고리즘 [자세히](detail)  받고 싶어요
 - [이중 연결 요소](algorithm_name) 알고리즘  받고 싶어
-- [머지 소트 트리](algorithm_name) 알고리즘  설명해줘
-- [뫼비우스 반전 공식](algorithm_name) 알고리즘  설명해줄래
+- [머지 소트 트리](algorithm_name) 알고리즘 [자세하게](detail)  설명해줘
+- [뫼비우스 반전 공식](algorithm_name) 알고리즘 [상세히](detail) 설명해줄래
 - [덱을 이용한 다이나믹 프로그래밍](algorithm_name) 알고리즘  설명해주십시오
 - [정규 표현식](algorithm_name) 알고리즘  설명해주쇼
 - [링크/컷 트리](algorithm_name) 알고리즘  설명
 - [볼록 다각형 내부의 점 판정](algorithm_name) 알고리즘  알려줘
-- [오일러 피 함수](algorithm_name) 알고리즘  알려주십시오
-- [연결 리스트](algorithm_name) 알고리즘  알려줄래?
+- [오일러 피 함수](algorithm_name) 알고리즘 [상세하게](detail)  알려주십시오
+- [연결 리스트](algorithm_name) 알고리즘 [정확히](detail)   알려줄래?
 - [0-1 너비 우선 탐색](algorithm_name) 알고리즘  알려주쇼
 - [수치해석](algorithm_name) 알고리즘  알려주실래요?
 - [외판원 순회 문제](algorithm_name) 알고리즘  알려주실 수 있나요?
 - [인터프리터](algorithm_name) 알고리즘  알려 줄래요?
-- [폴라드 로](algorithm_name) 알고리즘  알고 싶어요
+- [폴라드 로](algorithm_name) 알고리즘 [명확하게](detail)  알고 싶어요
 - [Alien 트릭](algorithm_name) 알고리즘  알고 싶은데
 - [함수 개형을 이용한 최적화](algorithm_name) 알고리즘  좀
 - [모듈로 곱셈 역원](algorithm_name) 알고리즘  받습니다
@@ -1245,9 +1268,11 @@
 - [피타고라스 정리](algorithm_name) 알고리즘  설명해주십시오
 - [키타마사](algorithm_name) 알고리즘  설명해주쇼
 - [트리 동형 사상](algorithm_name) 알고리즘  설명
-- [헝가리안](algorithm_name) 알고리즘  알려줘
-- [이산 로그](algorithm_name) 알고리즘  알려주십시오
-- [최소 외접원](algorithm_name) 알고리즘  알려줄래?
+- [헝가리안](algorithm_name) 알고리즘 [깊게](detail) 알려줘
+- [이산 로그](algorithm_name) 알고리즘 [깊히](detail) 알려주십시오
+- [최소 외접원](algorithm_name) 알고리즘 [길게](detail)  알려줄래?
+- [이산 로그](algorithm_name) 알고리즘 [자세하게](detail)
+- [최소 외접원](algorithm_name) 알고리즘
 - [밀러–라빈 소수 판별법](algorithm_name) 알고리즘  알려주쇼
 - [도미네이터 트리](algorithm_name) 알고리즘  알려주실래요?
 - [단조 큐를 이용한 최적화](algorithm_name) 알고리즘  알려주실 수 있나요?

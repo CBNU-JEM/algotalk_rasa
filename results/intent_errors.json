@@ -1,34 +1,10 @@
 [
   {
-    "text": "어려워 쉬운 걸로",
-    "intent": "change_easy",
-    "intent_prediction": {
-      "name": "change_hard",
-      "confidence": 0.6855771541595459
-    }
-  },
-  {
-    "text": "어려운 것 같아 쉬운 걸로",
-    "intent": "change_easy",
-    "intent_prediction": {
-      "name": "change_hard",
-      "confidence": 0.5463871359825134
-    }
-  },
-  {
-    "text": "어려운 것 같다 쉬운 걸로",
-    "intent": "change_easy",
-    "intent_prediction": {
-      "name": "change_hard",
-      "confidence": 0.6327703595161438
-    }
-  },
-  {
     "text": "어려운데 쉬운 걸로",
     "intent": "change_easy",
     "intent_prediction": {
       "name": "change_hard",
-      "confidence": 0.5764421820640564
+      "confidence": 0.584089457988739
     }
   },
   {
@@ -36,7 +12,7 @@
     "intent": "change_easy",
     "intent_prediction": {
       "name": "change_hard",
-      "confidence": 0.6651414036750793
+      "confidence": 0.5356011390686035
     }
   },
   {
@@ -44,7 +20,23 @@
     "intent": "change_easy",
     "intent_prediction": {
       "name": "change_hard",
-      "confidence": 0.5445429682731628
+      "confidence": 0.5040241479873657
+    }
+  },
+  {
+    "text": "너무 어려운 것 같아 쉬운 걸로",
+    "intent": "change_easy",
+    "intent_prediction": {
+      "name": "change_hard",
+      "confidence": 0.5705886483192444
+    }
+  },
+  {
+    "text": "너무 어려운데 쉬운 걸로",
+    "intent": "change_easy",
+    "intent_prediction": {
+      "name": "change_hard",
+      "confidence": 0.689063549041748
     }
   },
   {
@@ -52,7 +44,7 @@
     "intent": "change_easy",
     "intent_prediction": {
       "name": "change_hard",
-      "confidence": 0.5293290615081787
+      "confidence": 0.5794169902801514
     }
   },
   {
@@ -60,31 +52,7 @@
     "intent": "change_easy",
     "intent_prediction": {
       "name": "change_hard",
-      "confidence": 0.515951931476593
-    }
-  },
-  {
-    "text": "너무 쉬운 것 같아 어려운 걸로",
-    "intent": "change_hard",
-    "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.5471960306167603
-    }
-  },
-  {
-    "text": "너무 쉬운데 어려운 걸로",
-    "intent": "change_hard",
-    "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.5034916996955872
-    }
-  },
-  {
-    "text": "쉽게",
-    "intent": "brief",
-    "intent_prediction": {
-      "name": "change_easy",
-      "confidence": 0.5762717127799988
+      "confidence": 0.5617160797119141
     }
   }
 ]
